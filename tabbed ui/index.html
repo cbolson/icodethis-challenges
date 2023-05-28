@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabbed Ui</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <nav class="nav">
+               <ul>
+                   <li class="nav__item">
+                       <input type="radio" id="nav-details" class="toggle" name="toggle" value="details" checked>
+                        <label for="nav-details">Details</label>
+                    </li>
+                    <li class="nav__item">
+                        <input type="radio" id="nav-tutorials" class="toggle" name="toggle" value="tutorials">
+                        <label for="nav-tutorials">Tutorials</label>
+                    </li>
+                    <li class="nav__item">
+                        <input type="radio" id="nav-snippets" class="toggle" name="toggle" value="snippets">
+                        <label for="nav-snippets">Code snippets</label>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container__inner">
+        <section id="details">
+            <h2>Color Palette</h2>
+            <p>Click on the color to copy code</p>
+            <ul class="color-pickers">
+                <li><button type="button" class="picker" value="#BAC$E0" style="--_picker-bg: #BAC$E0;">#BAC$E0</button></li>
+                <li><button type="button" class="picker" value="#E9EFFD" style="--_picker-bg: #E9EFFD">#E9EFFD</button></li>
+                <li><button type="button" class="picker" value="#F2F3F6" style="--_picker-bg: #F2F3F6">#F2F3F6</button></li>
+                <li><button type="button" class="picker" value="#8F95A7" style="--_picker-bg: #8F95A7">#8F95A7</button></li>
+                <li><button type="button" class="picker" value="#5282F6" style="--_picker-bg: #5282F6">#5282F6</button></li>
+                <li><button type="button" class="picker" value="#222E4E" style="--_picker-bg: #222E4E">#222E4E</button></li>
+            </ul>
+            <h2>Fonts</h2>
+            <ul class="font-pickers">
+                <li><button type="button" class="picker font" value="Muli regular">Muli regular</button></li>
+                <li><button type="button" class="picker font" value="Muli bold<">Muli bold</button></li>
+            </ul>
+        </section>
+
+        <section id="tutorials">
+            <h2>Tutorials</h2>
+            <p>Learn how to build this component</p>
+            <h3>HTML/CSS</h3>
+            <article class="card">
+                <a href="#" class="btn-arrow">
+                    <div class="card__title">
+                        Andrew Gabriel
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </div>
+                    <p>https://www.youtube.com/watch?v-Do!WW5p/Qcs</p>
+                
+                    
+                </a>
+            </article>
+            <article class="card">
+                <a href="#" class="btn-arrow">
+                    <div class="card__title">
+                        Shanghai Raj
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </div>
+                    <p>https://www.youtube.com/watch?v=dgjTUa7Wgjl</p>
+                </a>
+            </article>
+            <h3>React Native</h3>
+
+            <article class="card">
+                <a href="#" class="btn-arrow">
+                    <div class="card__title">
+                        Jason Brown
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </div>
+                    <p>https://codedaily.io/tutorials/177/Create-an-Animated-Product-Review Display with-React Native</p>
+                </a>
+            </article>
+            <footer class="card__footer">
+                <p>Did you make a tutorial with this component? <a href="#">Send your link</a> and we will post it here.</p>
+            </footer>
+        </section>
+
+        <section id="snippets">
+            <h2>Code snippets</h2>
+            <p>Inspect the solutions others implemented.</p>
+            
+            <article class="card">
+                <a href="#" class="btn-arrow">
+                    <div class="card__title">
+                        Stegan Galescu
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </div>
+                    <p>https://codepen.io/stefan-galescu/pen/OJMNvPp</p>
+                </a>
+            </article>
+            <article class="card">
+                <a href="#" class="btn-arrow">
+                    <div class="card__title">
+                        frederic
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </div>
+                    <p>https://codepen.io/fede 19/pen/MWKDar</p>
+                </a>
+            </article>
+           
+            <footer class="card__footer">
+                <p>Did you build this component? <a href="#">Send your link</a> and we will post it here. </p>
+            </footer>
+        </section>
+        </div>
+
+    </main>
+</body>
+
+</html>
