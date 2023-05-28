@@ -1,182 +1,179 @@
-/* Add CSS here *//* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
+/* Add CSS here */ /* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root{
-    --padding: .5rem 1rem;
-    --radius: 10px;
-    --clr-primary-300: hsl(249, 95%, 94%);
-    --clr-primary-400: hsl(249, 95%, 84%);
-    --clr-primary-600: hsl(249, 95%, 64%);
+:root {
+  --padding: 0.5rem 1rem;
+  --radius: 10px;
+  --clr-primary-300: hsl(249, 95%, 94%);
+  --clr-primary-400: hsl(249, 95%, 84%);
+  --clr-primary-600: hsl(249, 95%, 64%);
 }
 img,
-svg{
-    display: block;
-    max-width: 100%;
+svg {
+  display: block;
+  max-width: 100%;
 }
-body{
-    background: var(--clr-primary-400);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
+body {
+  background: var(--clr-primary-400);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
   min-height: 100vh;
   display: grid;
-  
-  place-items: center; 
+
+  place-items: center;
 }
-.btn-icon{
-    border: none;
-    background: transparent;
-    border-radius: 50%;
-    width:40px;
-    height:40px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
+.btn-icon {
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
 }
-.btn-icon:hover{
-    background-color: var(--clr-primary-400);
-    color: #FFF;
+.btn-icon:hover {
+  background-color: var(--clr-primary-400);
+  color: #fff;
 }
-main{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: hidden;
-    position: relative;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  position: relative;
 }
 .preselect,
 .ppreselect-list,
-.calendar{
+.calendar {
   max-width: calc(100vw - 2rem);
   width: 350px;
   background: #fff;
   border-radius: var(--radius);
   box-shadow: 0 15px 20px rgba(39, 39, 39, 0.12);
-    position: relative;
+  position: relative;
 }
-.preselect{
-    z-index: 2;
-
+.preselect {
+  z-index: 2;
 }
-.preselect__header{
+.preselect__header {
   padding: var(--padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 2;
 }
-.preselect__header > *{
-    /*outline: 1px dashed red;;*/
+.preselect__header > * {
+  /*outline: 1px dashed red;;*/
 }
-.preselect-list{
-    position: absolute;
-    list-style: none;
-    padding-inline: var(--padding);
-    background: #FFF;
-    box-shadow: 0 15px 20px rgba(39, 39, 39, 0.12);
-    z-index: 1;
-    width: 80%;
-    left: 10%;
-    border-radius: 0 0 var(--radius) var(--radius);
-    overflow: hidden;
-    top: 55px;
-    padding: 1rem;
-    translate: 0 -350px;
-    opacity: 0;
-    transition: translate 500ms ease-out, opacity 10ms ease-out;
+.preselect-list {
+  position: absolute;
+  list-style: none;
+  padding-inline: var(--padding);
+  background: #fff;
+  box-shadow: 0 15px 20px rgba(39, 39, 39, 0.12);
+  z-index: 1;
+  width: 80%;
+  left: 10%;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+  top: 55px;
+  padding: 1rem;
+  translate: 0 -350px;
+  opacity: 0;
+  transition: translate 500ms ease-out, opacity 10ms ease-out;
 }
-.preselect-list.show{
-    translate: 0;
-    opacity: 1;
+.preselect-list.show {
+  translate: 0;
+  opacity: 1;
 }
-.preselect-list li{
- display: flex;
- justify-content: space-between;
- align-items: center;
-    
+.preselect-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.date-preselect{
+.date-preselect {
   border-radius: 5px;
-    display: block;
-    padding: 1rem;
-    background: transparent;
-    border: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    font-size: 1rem
-    color: var(--clr-primary-600);
+  display: block;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--clr-primary-600);
 }
-.date-preselect:hover{
-    background-color: var(--clr-primary-400);
-    color: #FFF;
+.date-preselect:hover {
+  background-color: var(--clr-primary-400);
+  color: #fff;
 }
 
 /* CALENNDAR */
-.calendar{
-    z-index: 0;
+.calendar {
+  z-index: 0;
 }
-.calendar__header{
- padding: var(--padding);
+.calendar__header {
+  padding: var(--padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--clr-primary-400);
 }
-.calendar__current{
-    font-size: 1rem;
+.calendar__current {
+  font-size: 1rem;
 }
 
-.current-month{
+.current-month {
   font-size: 1.45rem;
   font-weight: 500;
 }
-.month{
- padding:  var(--padding);
+.month {
+  padding: var(--padding);
 }
-.month ul{
+.month ul {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   list-style: none;
   text-align: center;
-  gap:1px;
+  gap: 1px;
 }
-.month ul > *{
-   /* outline: 1px dashed red;*/
-    aspect-ratio: 1/1;
-    display: grid;
-    place-items: center;
-    color: #333;
+.month ul > * {
+  /* outline: 1px dashed red;*/
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  color: #333;
 }
 
-.weedays li{
-    font-weight: 600;
+.weedays li {
+  font-weight: 600;
 }
-.days{
-    grid-template-rows: repeat(6, 1fr); /* I want every moth to have 6 rows*/
-    cursor: default;
-    
+.days {
+  grid-template-rows: repeat(6, 1fr); /* I want every moth to have 6 rows*/
+  cursor: default;
 }
-.days li{
+.days li {
   cursor: pointer;
   border-radius: 5px;
   transition: background 150ms ease-in-out, border-radius 150ms ease-in-out;
 }
-.days li:hover{
-    background-color: var(--clr-primary-300);
-    border-radius: 50%;
+.days li:hover {
+  background-color: var(--clr-primary-300);
+  border-radius: 50%;
 }
-.days li.selected{
-    background-color:  var(--clr-primary-300);
+.days li.selected {
+  background-color: var(--clr-primary-300);
 }
-.days li.inactive{
+.days li.inactive {
   color: rgb(153, 153, 153);
 }
-.days li.today{
+.days li.today {
   font-weight: 600;
 }

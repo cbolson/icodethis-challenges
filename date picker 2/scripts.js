@@ -135,6 +135,10 @@ function getRangeType(type) {
       // last 30 days
       dateFrom = daysAgo(dateTo, 30);
       break;
+    case "year":
+      // year to date
+      dateFrom = `${currYear}/01/01`;
+      break;
   }
 
   dateFrom = new Date(dateFrom).setHours(0, 0, 0, 0);
