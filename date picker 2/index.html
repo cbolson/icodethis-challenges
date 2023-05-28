@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker 2 - challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<body >
+    <main>
+        <section class="preselect">
+            <header class="preselect__header">
+            <div id="preselect__desc">Choose your dates</div>
+            <button type="button" id="btn-preselects" class="btn-icon preselect__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="" width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 6l16 0"></path>
+                    <path d="M4 12l16 0"></path>
+                    <path d="M4 18l16 0"></path>
+                </svg>
+            </button>
+            </header>
+        
+
+        </section>
+
+        <ul id="preselect-list" class="preselect-list">
+            <li><button type="button" preselect-select="today" class="date-preselect">Today</button></li>
+            <li><button type="button" preselect-select="yesterday" class="date-preselect">yesterday</button></li>
+            <li><button type="button" preselect-select="7-days" class="date-preselect">Last seven days</button></li>
+            <li><button type="button" preselect-select="month" class="date-preselect">Month to date</button></li>
+            <li><button type="button" preselect-select="30-days" class="date-preselect">Last 30 days</button>
+            </li>
+        </ul>
+
+
+        <section id="calendar" class="calendar">
+            <header class="calendar__header">
+                <button type="button" id="prev" class="btn-icon calendar__nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M15 6l-6 6l6 6"></path>
+                    </svg>
+                </button>
+                <h1 id="current-month" class="calendar__current"></h1>
+                <button type="button" id="next" class="btn-icon calendar__nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="24" height="24"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                    </svg>
+                </button>
+            </header>
+            
+            <div class="month">
+                <ul class="weedays">
+                    <li>S</li>
+                    <li>M</li>
+                    <li>T</li>
+                    <li>W</li>
+                    <li>T</li>
+                    <li>F</li>
+                    <li>S</li>
+                </ul>
+            
+                <ul class="days"></ul>
+            </div>
+        </section>
+    </main>
+  
+</body>
+</html>
