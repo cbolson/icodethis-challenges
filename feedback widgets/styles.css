@@ -25,7 +25,7 @@ img {
   --secondary-clr-300: hsl(227, 16%, 80%);
 }
 body {
-  background: linear-gradient(45deg, red, blue);
+  background: linear-gradient(45deg, green, blue);
   height: 100vh;
   display: grid;
   place-items: center;
