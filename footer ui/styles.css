@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+     --body-padding: 2rem 1rem;
+     --body-clr: hsl(233, 39%, 22%);
+     --body-bg: #FFF;
+      --footer-padding: 2rem;
+      --primary-clr-300: hsl(217, 99%, 71%);
+      --primary-clr-500: hsl(230, 81%, 64%);
+}
+body{
+    height: 100vh;
+    background-color: var(--body-bg);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    color: var(--body-clr);
+    padding: var(--body-padding)
+}
+a{
+    text-decoration: none;
+    color: var(--body-clr);
+}
+a:hover{
+    text-decoration: underline;
+}
+a.current{
+    color: var(--primary-clr-300);
+}
+
+input,
+button{
+    border: 1px solid #DDD;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+}
+svg {
+  fill: red;
+}
+input[type=email]{
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-mail-filled' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z' stroke-width='0' fill='hsl(230, 81%, 74%)' /%3E%3Cpath d='M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z' stroke-width='0' fill='hsl(230, 81%, 74%)' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position:  1rem 50%;
+    padding-left: 3rem;
+}
+.btn--subscribe{
+    background: linear-gradient(90deg, var(--primary-clr-300), var(--primary-clr-500));
+    color: #FFF;
+    border-color: #FFF;
+
+}
+footer{
+    max-width: 1200px;
+    position: relative;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 40px 0 #00000030;
+    padding: var(--footer-padding);
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+}
+footer::before{
+    content: '';
+    position: absolute;
+    width: 90%;
+   
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-image: linear-gradient(-45deg, hsl(42, 92%, 65%), hsl(330, 58%, 69%));
+    z-index: -1;
+    inset: 0;
+    margin: auto;
+}
+.footer__links{
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 2rem;
+}
+.footer__links > * {
+
+}
+.footer__links h3{
+    font-weight: 400; 
+    margin-bottom: 1rem;
+}
+.footer__nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.footer__nav nav{
+    flex: 1;
+}
+footer ul{
+    list-style: none;
+}
+footer ul li{
+    padding: .4rem 0;
+}
+.form-subscribe{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.footer__base{
+    width: 100%;
+    padding: 1rem 0 0;
+    border-top: 1px solid #EEE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+.footer__base a{
+    color: hsl(236, 13%, 65%);
+}
+.footer__base ul{
+    display: flex;
+    gap: .5rem;
+    
+}
+.footer__base li + li::before{
+    content: '-';
+    padding-inline: 0 .5rem;
+    color: sl(236, 13%, 65%);
+}
+
+
+@media (min-width: 550px){
+    :root{
+        --footer-padding: 3rem;
+    }
+    .footer__nav{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer__base{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media (min-width: 800px){
+     :root{
+        --footer-padding: 4rem 5rem;
+    }
+    .footer__links{
+        grid-template-columns: 2fr 1fr;
+    }
+}
