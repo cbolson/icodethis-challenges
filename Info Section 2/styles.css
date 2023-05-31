@@ -1,5 +1,5 @@
 #section {
-  transition: transform 1000ms ease-in-out;
+  transition: transform 700ms ease-in-out;
 }
 .flip {
   transform: rotate3d(0, 1, 0, 180deg);

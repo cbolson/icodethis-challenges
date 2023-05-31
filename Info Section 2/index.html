@@ -10,37 +10,39 @@
   </head>
 
   <body class="bg-[#110E1E] flex justify-center items-center min-h-screen">
-    <div class="bg-[#18152B] text-[#121020] p-12 rounded-xl w-4/5 relative">
-      <button
-        class="absolute top-5 right-5 z-10 p-2 bg-[#EEEEEE] rounded-full hover:bg-[#DDDDDD]"
-        onclick="flipIt()">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class=""
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          stroke-width="2"
-          stroke="currentColor"
-          fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M18 6l-12 12"></path>
-          <path d="M6 6l12 12"></path>
-        </svg>
-      </button>
+    <div class="bg-[#18152B] text-[#121020] sm:p-6 md:p-12 rounded-xl w-4/5">
       <div
         id="section"
-        class="bg-white p-8 rounded-md relative grid gap-6 grid-cols-[1fr] md:grid-cols-[2fr,1fr] md:py-12 md:px-16">
+        class="bg-white p-6 sm:p-12 md:px-16 rounded-md relative grid gap-6 grid-cols-[1fr] lg:grid-cols-[2fr,1fr] transition transform duration-700">
         <!--<div class="bg-red-100 border border-red-400 text-red-700 mb-6 px-4 py-3 rounded relative" role="alert">
                 THIS IS NOT FINISHED <br>Just setting up the HTML for now
             </div>-->
 
+        <button
+          class="absolute top-5 right-5 p-2 bg-[#EEEEEE] rounded-full hover:bg-[#DDDDDD] ease-out"
+          onclick="flipIt()"
+          title="Go on, you know you want to...">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class=""
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+
         <div class="grid md:gap-4 grid-cols-1 sm:grid-cols-2">
           <div
-            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
-            <div class="md:pt-4">
+            class="group flex gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer gap-4">
+            <div class="pt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="p-1 rounded-full border-2 border-[#E062B9] aspect-square transition duration-150 ease-out group-hover:bg-[#E062B9] group-hover:text-white"
@@ -59,16 +61,16 @@
               </svg>
             </div>
             <div>
-              <h2 class="font-semibold mb-2 text-center md:text-left">API</h2>
-              <p class="">
+              <h2 class="font-semibold mb-2">API</h2>
+              <p class="text-xs">
                 Every day besides so many people joining this community.
               </p>
             </div>
           </div>
 
           <div
-            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
-            <div class="md:pt-4">
+            class="group flex gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer gap-4">
+            <div class="pt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="p-1 rounded-full border-2 border-[#6BADE8] aspect-square transition duration-150 ease-out group-hover:bg-[#6BADE8] group-hover:text-white"
@@ -91,18 +93,16 @@
               </svg>
             </div>
             <div class="">
-              <h2 class="font-semibold mb-2 text-center md:text-left">
-                Calendar
-              </h2>
-              <p class="">
+              <h2 class="font-semibold mb-2">Calendar</h2>
+              <p class="text-xs">
                 This will make a world of a difference to your profile.
               </p>
             </div>
           </div>
 
           <div
-            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
-            <div class="md:pt-4">
+            class="group flex gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer gap-4">
+            <div class="pt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="p-1 rounded-full border-2 border-[#7172EB] aspect-square transition duration-150 ease-out group-hover:bg-[#7172EB] group-hover:text-white"
@@ -124,18 +124,16 @@
               </svg>
             </div>
             <div class="">
-              <h2 class="font-semibold mb-2 text-center md:text-left">
-                Support
-              </h2>
-              <p class="">
+              <h2 class="font-semibold mb-2">Support</h2>
+              <p class="text-xs">
                 You should customize your profile as best as you can.
               </p>
             </div>
           </div>
 
           <div
-            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
-            <div class="md:pt-4">
+            class="group flex gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer gap-4">
+            <div class="pt-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="p-1 rounded-full border-2 border-[#EEAA5D] aspect-square transition duration-150 ease-out group-hover:bg-[#EEAA5D] group-hover:text-white"
@@ -156,8 +154,10 @@
               </svg>
             </div>
             <div class="">
-              <h2 class="font-semibold mb-2 text-center md:text-left">Hubs</h2>
-              <p class="">They would not spend another minute looking at it.</p>
+              <h2 class="font-semibold mb-2">Hubs</h2>
+              <p class="text-xs">
+                They would not spend another minute looking at it.
+              </p>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@
 
           <div class="p-6">
             <h2 class="font-semibold mb-4">When Errors become a problem</h2>
-            <p class="">
+            <p class="text-xs">
               Every day besides so many people joining this community.
             </p>
           </div>
