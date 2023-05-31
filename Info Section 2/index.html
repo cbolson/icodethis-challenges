@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info section 2 - icodethis.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-[#110E1E] flex justify-center items-center min-h-screen">
+    <div class="bg-[#18152B] text-[#121020] p-12 rounded-xl w-4/5">
+      <div
+        class="bg-white p-8 rounded-md relative grid gap-6 grid-cols-[1fr] md:grid-cols-[2fr,1fr] md:py-12 md:px-16">
+        <!--<div class="bg-red-100 border border-red-400 text-red-700 mb-6 px-4 py-3 rounded relative" role="alert">
+                THIS IS NOT FINISHED <br>Just setting up the HTML for now
+            </div>-->
+
+        <button
+          class="absolute top-5 right-5 p-2 bg-[#EEEEEE] rounded-full hover:bg-[#DDDDDD]"
+          onclick="msg()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class=""
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M18 6l-12 12"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <div class="grid md:gap-4 grid-cols-1 sm:grid-cols-2">
+          <div
+            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
+            <div class="md:pt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="p-1 rounded-full border-2 border-[#E062B9] aspect-square transition duration-150 ease-out group-hover:bg-[#E062B9] group-hover:text-white"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 8l-4 4l4 4"></path>
+                <path d="M17 8l4 4l-4 4"></path>
+                <path d="M14 4l-4 16"></path>
+              </svg>
+            </div>
+            <div>
+              <h2 class="font-semibold mb-2 text-center md:text-left">API</h2>
+              <p class="">
+                Every day besides so many people joining this community.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
+            <div class="md:pt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="p-1 rounded-full border-2 border-[#6BADE8] aspect-square transition duration-150 ease-out group-hover:bg-[#6BADE8] group-hover:text-white"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+                <path d="M16 3v4"></path>
+                <path d="M8 3v4"></path>
+                <path d="M4 11h16"></path>
+                <path d="M11 15h1"></path>
+                <path d="M12 15v3"></path>
+              </svg>
+            </div>
+            <div class="">
+              <h2 class="font-semibold mb-2 text-center md:text-left">
+                Calendar
+              </h2>
+              <p class="">
+                This will make a world of a difference to your profile.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
+            <div class="md:pt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="p-1 rounded-full border-2 border-[#7172EB] aspect-square transition duration-150 ease-out group-hover:bg-[#7172EB] group-hover:text-white"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                <path d="M15 15l3.35 3.35"></path>
+                <path d="M9 15l-3.35 3.35"></path>
+                <path d="M5.65 5.65l3.35 3.35"></path>
+                <path d="M18.35 5.65l-3.35 3.35"></path>
+              </svg>
+            </div>
+            <div class="">
+              <h2 class="font-semibold mb-2 text-center md:text-left">
+                Support
+              </h2>
+              <p class="">
+                You should customize your profile as best as you can.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="group flex flex-col place-items-center gap-2 w-full p-4 rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer md:flex-row md:place-items-start md:gap-4">
+            <div class="md:pt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="p-1 rounded-full border-2 border-[#EEAA5D] aspect-square transition duration-150 ease-out group-hover:bg-[#EEAA5D] group-hover:text-white"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M21 16.008v-8.018a1.98 1.98 0 0 0 -1 -1.717l-7 -4.008a2.016 2.016 0 0 0 -2 0l-7 4.008c-.619 .355 -1 1.01 -1 1.718v8.018c0 .709 .381 1.363 1 1.717l7 4.008a2.016 2.016 0 0 0 2 0l7 -4.008c.619 -.355 1 -1.01 1 -1.718z"></path>
+                <path d="M12 22v-10"></path>
+                <path d="M12 12l8.73 -5.04"></path>
+                <path d="M3.27 6.96l8.73 5.04"></path>
+              </svg>
+            </div>
+            <div class="">
+              <h2 class="font-semibold mb-2 text-center md:text-left">Hubs</h2>
+              <p class="">They would not spend another minute looking at it.</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-2 rounded-xl overflow-hidden rounded-xl transition duration-150 ease-out hover:shadow-md cursor-pointer">
+          <div class="">
+            <img
+              src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODU1MzIzMTZ8&ixlib=rb-4.0.3&q=85"
+              alt="error"
+              class="" />
+          </div>
+
+          <div class="p-6">
+            <h2 class="font-semibold mb-4">When Errors become a problem</h2>
+            <p class="">
+              Every day besides so many people joining this community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function msg() {
+        alert("Learning Tailwind...");
+      }
+    </script>
+  </body>
+</html>
