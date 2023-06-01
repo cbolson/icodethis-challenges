@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Section Links - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+
+  <body
+    class="bg-[#F5F7FB] flex justify-center items-center min-h-screen text-[#576081] text-xs leading-6">
+    <div
+      id="section"
+      class="bg-white p-8 md:p-12 lg:p-16 rounded-lg w-4/5 relative shadow-xl">
+      <button
+        class="absolute top-5 right-5 p-2 bg-[#EEEEEE] rounded-full hover:bg-[#DDDDDD] ease-out"
+        onclick="closeIt()"
+        title="You ain't getting rid of me that easily!">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=""
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M18 6l-12 12"></path>
+          <path d="M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <header
+        class="bg-[#F5F7FB] w-auto inline-block rounded-lg p-3 relative mx-auto sm:mx-0">
+        <ul class="grid grid-cols-2 gap-2">
+          <li>
+            <input
+              id="personal"
+              class="sr-only peer"
+              type="radio"
+              value="personal"
+              name="account-type" />
+            <label
+              class="px-4 py-2 rounded-lg cursor-pointer focus:outline-none hover:bg-white peer-checked:bg-white peer-checked:shadow-md ease-in"
+              for="personal"
+              >personal</label
+            >
+          </li>
+          <li>
+            <input
+              id="business"
+              class="sr-only peer"
+              type="radio"
+              value="business"
+              name="account-type"
+              checked />
+            <label
+              class="px-4 py-2 rounded-lg cursor-pointer focus:outline-none hover:bg-white peer-checked:bg-white peer-checked:shadow-md ease-in"
+              for="business"
+              >Business</label
+            >
+          </li>
+        </ul>
+      </header>
+
+      <section
+        class="mt-8 sm:mt-12 md:mt-20 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div class="">
+          <h2 class="uppercase mb-4 font-light">Financing</h2>
+          <nav>
+            <ul>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Loans</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Overdraft facilities</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Bank guaranties</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Leasing</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Factoring</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Trade Solutions</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="">
+          <h2 class="uppercase mb-4 font-light">Savings and investments</h2>
+          <nav>
+            <ul>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Saving accounts</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Asset Management</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Commercial paper</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Equities</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Investment Products</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Cash Management</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="">
+          <h2 class="uppercase mb-4 font-light">Transaction banking</h2>
+          <nav>
+            <ul>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Corporate app</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Internet banking</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Mobile banking</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Alert services</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Accounts</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Cards</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="">
+          <h2 class="uppercase mb-4 font-light">Markets</h2>
+          <nav>
+            <ul>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Market reports</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Equity rates</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Commodities</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Equities</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Foreign Exchange</a
+                >
+              </li>
+              <li class="capitalize">
+                <a
+                  href="#"
+                  class="hover:underline hover:text-blue-500 hover:pl-1 transition-all"
+                  >Investment products</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="mt-8 sm:mt-12 md:mt-20 p-8 bg-[#F5F7FB] rounded-lg">
+        <h3 class="uppercase mb-4">Calculations and tools</h3>
+
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          <div class="group bg-white py-3 cursor-pointer hover:shadow-sm">
+            <div
+              class="bg-[#F4F6FF] w-[2.25rem] group-hover:w-full group-hover:rounded-none transition-all p-1 pl-4 pr-2 rounded-r-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="stroke-current text-[#4B68F1]"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M6 6h8a3 3 0 0 1 0 6a3 3 0 0 1 0 6h-8"></path>
+                <path d="M8 6l0 12"></path>
+                <path d="M8 12l6 0"></path>
+                <path d="M9 3l0 3"></path>
+                <path d="M13 3l0 3"></path>
+                <path d="M9 18l0 3"></path>
+                <path d="M13 18l0 3"></path>
+              </svg>
+            </div>
+            <p class="p-2 pb-0 font-medium">Currency converter</p>
+          </div>
+
+          <div class="group bg-white py-3 cursor-pointer hover:shadow-sm">
+            <div
+              class="bg-[#FBEFFF] w-[2.25rem] group-hover:w-full group-hover:rounded-none transition-all p-1 pl-4 pr-2 rounded-r-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="stroke-current text-[#D15DFC]"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M7 9m0 2a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2z"></path>
+                <path d="M14 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path
+                  d="M17 9v-2a2 2 0 0 0 -2 -2h-10a2 2 0 0 0 -2 2v6a2 2 0 0 0 2 2h2"></path>
+              </svg>
+            </div>
+            <p class="p-2 pb-0 font-medium">Hourly Rate converter</p>
+          </div>
+
+          <div class="group bg-white py-3 cursor-pointer hover:shadow-sm">
+            <div
+              class="bg-[#FAE4EE] w-[2.25rem] group-hover:w-full group-hover:rounded-none transition-all p-1 pl-4 pr-2 rounded-r-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="stroke-current text-[#F05A95]"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 10l5 -6l5 6"></path>
+                <path
+                  d="M21 10l-2 8a2 2.5 0 0 1 -2 2h-10a2 2.5 0 0 1 -2 -2l-2 -8z"></path>
+                <path d="M12 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+              </svg>
+            </div>
+            <p class="p-2 pb-0 font-medium">International trade</p>
+          </div>
+
+          <div class="group bg-white py-3 cursor-pointer hover:shadow-sm">
+            <div
+              class="bg-[#F6FCE8] w-[2.25rem] group-hover:w-full group-hover:rounded-none transition-all p-1 pl-4 pr-2 rounded-r-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="stroke-current text-[#81BC33]"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M4 3m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                <path
+                  d="M8 7m0 1a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1z"></path>
+                <path d="M8 14l0 .01"></path>
+                <path d="M12 14l0 .01"></path>
+                <path d="M16 14l0 .01"></path>
+                <path d="M8 17l0 .01"></path>
+                <path d="M12 17l0 .01"></path>
+                <path d="M16 17l0 .01"></path>
+              </svg>
+            </div>
+            <p class="p-2 pb-0 font-medium">IBAN calculator</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

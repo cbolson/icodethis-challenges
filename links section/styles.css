@@ -1,0 +1,12 @@
+.scale{
+    animation: shrink 750ms ease-in-out forwards;
+}
+@keyframes shrink{
+    0%,100%{
+        transform: scale(1);
+    }
+    70%{
+         transform: scale(0.1);
+    }
+
+}
