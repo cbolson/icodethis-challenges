@@ -1,0 +1,23 @@
+.playing {
+  background-color: #4c60ff;
+  color: #fff;
+}
+.playing svg:first-child {
+  display: none;
+}
+.playing svg:last-child {
+  display: block;
+}
+.scare-me {
+  display: block;
+  animation: easter 400ms forwards 300ms;
+}
+@keyframes easter {
+  40% {
+    scale: 1.2;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
