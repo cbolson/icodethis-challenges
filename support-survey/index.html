@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Survery - icodethis</title>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+</head>
+<body class="bg-purple-100 flex justify-center items-center min-h-screen">
+    <!-- https://icodethis.com/submissions/15186 {}-->
+    <div class="bg-white text-[#181028] p-4 md:p-8 space-y-6 shadow-lg rounded-xl rounded-tr-none max-w-md md:max-w-lg flex gap-2 md:gap-6 flex-col relative">
+        <button type="button" role="close" class="absolute -top-6 right-0 px-4 bg-white rounded-t-lg">-</button>
+       <h1 class="text-center font-bold text-lg sm:w-3/4 mx-auto">Why did you come to our support site today?</h1>
+       <ul class="flex flex-col gap-4">
+            <li>
+         <input type="radio" id="reason-1" name="reason" value="1" class="sr-only peer">
+            <label for="reason-1" class="block p-4 bg-[#F9F8FE] rounded border border-[#CCC] font-light peer-checked:bg-[#5152FE] peer-checked:text-white peer-checked:shadow-md ease-in hover:bg-[#3E32FD30] hover:shadow-md transition cursor-pointer"> I found some bugs and I want to report them.
+       </label>
+</li>
+<li>
+        <input type="radio" id="reason-2" name="reason" value="2" class="sr-only peer">
+        <label for="reason-2" class="block p-4 bg-[#F9F8FE] rounded border border-[#CCC] font-light peer-checked:bg-[#5152FE] peer-checked:text-white peer-checked:shadow-md ease-in hover:bg-[#3E32FD30] hover:shadow-md transition cursor-pointer">I can't post to the forum
+       </label>
+        </li>
+        <li>
+     
+        <input type="radio" id="reason-3" name="reason" value="3" class="sr-only peer" checked>
+        <label for="reason-3" class="block p-4 bg-[#F9F8FE] rounded border border-[#CCC] font-light peer-checked:bg-[#5152FE] peer-checked:text-white peer-checked:shadow-md ease-in hover:bg-[#3E32FD30] hover:shadow-md transition cursor-pointer">I have in-game purchasing issues.</label>
+        </li>
+</ul>
+       <div class="text-center">
+       <button type="submit" class="px-3 py-1 rounded border border-1 border-white text-[#5152FE] uppercase hover:border-[#5152FE] hover:shadow-md transition">Submit</button>
+       </div>
+    </div>
+</body>
+</html>
