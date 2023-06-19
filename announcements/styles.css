@@ -1,0 +1,7 @@
+
+.dismiss:nth-child(even){
+  translate: 100% 0;
+}
+.dismiss:nth-child(odd){
+  translate:  -100% 0;
+}

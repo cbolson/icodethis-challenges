@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Announcements - icodethis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="scripts.js" defer></script>
+  </head>
+
+  <body
+    class="bg-[#181F37] flex flex-col justify-center items-center min-h-screen">
+    <div
+      class="bg-[#232A4B] text-white p-8 space-y-6 shadow-lg rounded-xl max-w-md md:max-w-lg flex flex-col">
+      <h2 class="mb-2">
+        <span id="num-alerts" class="inline-block w-4">2</span>
+        <span id="num-alerts-txt">Announcements</span>
+      </h2>
+
+      <div class="flex flex-col gap-4 overflow-hidden">
+        <div
+          class="group flex flex-col gap-2 bg-[#181F37] hover:bg-[#0D101C] p-4 rounded transition-all duration-500"
+          data-alert>
+          <div class="flex items-center">
+            <p class="text-sm w-3/4 font-light">
+              Ms. Phillips is away this week. I am going to replace her.
+            </p>
+            <button
+              dismiss-alert="0"
+              title="Dismiss"
+              type="button"
+              class="ml-auto text-[#65709B] text-2xl p-0">
+              ...
+            </button>
+          </div>
+          <div
+            class="w-full flex flex-row gap-4 sm:items-center text-[#65709B] group-hover:text-white transition text-sm">
+            <img
+              src="https://i.pravatar.cc/30?img=51"
+              class="rounded-full w-[30px] border-2 border-[#425192] group-hover:scale-125 transform transition" />
+            <div
+              class="flex flex-col sm:flex-row justify-between sm:items-center w-full">
+              <div class="font-bold">Phil A. Delphia</div>
+              <div class="sm:ml-auto">2 hours ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="group flex flex-col gap-4 bg-[#181F37] hover:bg-[#0D101C] p-4 rounded transition-all duration-500"
+          data-alert>
+          <div class="flex items-center">
+            <p class="text-sm w-3/4 font-light">
+              Bring your book "I Love Mathematics"
+            </p>
+            <button
+              dismiss-alert="1"
+              title="Dismiss"
+              type="button"
+              class="ml-auto text-[#65709B] text-2xl p-0">
+              ...
+            </button>
+          </div>
+
+          <div
+            class="w-full flex flex-row gap-4 sm:items-center text-[#65709B] group-hover:text-white transition text-sm">
+            <img
+              src="https://i.pravatar.cc/30?img=52"
+              class="rounded-full w-[30px] border-2 border-[#425192] group-hover:scale-125 transform transition" />
+            <div
+              class="flex flex-col sm:flex-row justify-between sm:items-center w-full">
+              <div class="font-bold">Adam Up</div>
+              <div class="sm:ml-auto">3 hours ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="btn-dismiss"
+        class="mt-auto bg-[#3C85FF] py-2 px-4 rounded w-fit mx-auto whitespace-nowrap transition disabled:opacity-50">
+        Dismiss All
+      </button>
+    </div>
+    <div class="text-xs text-white mt-4">
+      Try as you might, they just won't go away for long
+    </div>
+    <svg
+      class="fixed -z-10"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill="#F0951C"
+        d="M41.8,25C30,44.5,-20.3,42.6,-33.7,22.2C-47.1,1.8,-23.5,-37.1,1.6,-36.1C26.8,-35.2,53.5,5.6,41.8,25Z"
+        transform="translate(50 50)" />
+    </svg>
+  </body>
+</html>
