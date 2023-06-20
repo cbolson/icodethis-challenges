@@ -1,0 +1,68 @@
+.box{
+  --_delay: 300ms;
+  animation: show-me 300ms ease-out var(--_delay) forwards;
+  scale: 0;
+  border-radius: 10px;
+}
+@keyframes show-me{
+  from{
+    scale: 0;
+  }
+  to{
+    scale: 1;
+  }
+}
+.box:nth-child(1){
+  --_delay: 300ms
+}
+.box:nth-child(2){
+  --_delay: 350ms
+}
+.box:nth-child(3){
+  --_delay: 400ms
+}
+
+.flip-it{
+   rotate: 360deg;
+   overflow: hidden;
+}
+.flip-it::before{
+   content : attr(data-back);
+    position: absolute;
+    inset: 0;
+    background-color: inherit;
+    
+    border-radius: inherit;
+      color: #FFF;
+     font-size: 0.8rem;
+     line-height: 1.5;
+    padding: 1rem 1.5rem;
+    display: flex;
+    place-items: end;
+}
+.flip-it::after{
+    content : 'center';
+    position: absolute;
+    border-radius: inherit;
+    inset: 1rem 1rem 3rem;
+    background-color: #FFFFFF50;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    place-items: center;
+   
+}
+
+.flip-it:nth-child(1)::after{
+    background-image: url("https://cdn.dribbble.com/users/2577653/screenshots/16182092/media/106065608f513c0fd585a7c1082b87c1.png");
+}
+
+.flip-it:nth-child(2)::after{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/RO_MS_Reghin_Piata_Petru_Maior_%284%29.jpg/1280px-RO_MS_Reghin_Piata_Petru_Maior_%284%29.jpg");
+  }
+.flip-it:nth-child(3)::after{
+    background: white;
+    border:4rem solid #FC57AE;
+    color: #241A32;
+  }
