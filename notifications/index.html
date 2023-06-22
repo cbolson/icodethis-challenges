@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notications - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/16096 -->
+  <body
+    class="bg-[#E5EDFE] flex justify-center items-center min-h-screen overflow-hidden p-4">
+    <div
+      id="alerts"
+      class="bg-[#3557dc] text-white py-16 px-12 flex flex-col gap-4 shadow-lg rounded-md max-w-xl w-full h-[400px] md:h-[300px] overflow-hidden">
+      <div
+        class="toast alert flex gap-2 items-center rounded py-2 px-4 bg-[#465DEF] hover:shadow-lg text-sm">
+        <span class="material-symbols-outlined">done</span>
+        <p>Payment successfuly processed</p>
+        <button
+          type="button"
+          toggle-state
+          class="ml-auto material-symbols-outlined close">
+          close
+        </button>
+      </div>
+
+      <div
+        class="toast flex gap-2 items-center rounded py-2 px-4 bg-[#E14C68] hover:shadow-lg text-sm">
+        <span class="material-symbols-outlined">warning</span>
+        <p>An error occured whilst processing your request</p>
+        <button
+          type="button"
+          toggle-state
+          class="ml-auto material-symbols-outlined close">
+          close
+        </button>
+      </div>
+
+      <div
+        class="toast flex gap-2 items-center rounded py-2 px-4 bg-[#465DEF] hover:shadow-lg text-sm">
+        <span class="material-symbols-outlined">done</span>
+        <p>Your changes have been saved</p>
+        <button
+          type="button"
+          toggle-state
+          class="ml-auto material-symbols-outlined close">
+          close
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

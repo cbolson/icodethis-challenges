@@ -1,0 +1,25 @@
+.toast{
+    translate: 0 500px;
+    animation: show-it 500ms ease-in forwards;
+    animation-delay: var(--delay, 250ms);
+    transition: transform 500ms;
+}
+.toast:nth-child(2){
+    --delay: 750ms;
+}
+.toast:nth-child(3){
+    --delay: 1250ms;
+}
+
+@keyframes show-it{
+   from{
+       translate: 0 1000px;
+   }
+    to{
+        translate: 0;
+    }
+}
+
+.toast.hide{
+   transform: translateX(-1000px);
+}
