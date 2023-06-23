@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+        <script src="scripts.js" defer></script>
+    </head>
+<!-- https://icodethis.com/editor?challengeId=233 -->
+<body class="bg-[#F0F3FB] flex justify-center items-center min-h-screen px-4">
+    <div class="relative bg-white text-[#181028] p-8 flex flex-col gap-6 shadow-lg rounded-xl max-w-sm">
+          
+            <div id="toast" class="absolute bg-[#EF8D12] text-white rounded-lg p-4 w-11/12 shadow-lg transition-transform inset-x-0 mx-auto top-[1.5rem] scale-0 z-10">
+                <button id="btn-close-toast" type="button" class="absolute material-symbols-outlined hover:text-[#5358BB] top-2 right-2 text-sm">close</button>
+                I hope Florin is having a great holiday!
+            </div>
+
+            <header class="flex justify-between text-[#B1B5E3]">
+                <ul class="flex gap-6 justify-center items-center rounded-full shadow-lg py-2 px-4 border">
+                    <li class="relative grid items-center">
+                        <button type="button" class="group relative hover:text-[#5358BB] material-symbols-outlined">email</button>
+                        <div class="absolute grid place-content-center w-4 h-4 text-[.4rem] font-bold text-white bg-[#EF8D12] border border-white rounded-full -top-1 -right-1 group-hover:scale-125 tansition-transform z-0"> 4</div>
+                    </li>
+                    <li class="relative grid items-center">
+                        <button type="button" id="btn-toast" class="group relative hover:text-[#5358BB] material-symbols-outlined">notifications</button>
+                            <div  class="absolute grid place-content-center w-4 h-4 text-[.4rem] font-bold text-white bg-[#EF8D12] border border-white rounded-full -top-1 -right-1 group-hover:scale-125 tansition-transform z-0">
+                            1</div>
+                        </li>
+                    </ul>
+                    <button type="button" class="ml-auto rounded-full shadow-lg  p-2 material-symbols-outlined hover:text-[#5358BB]">add</button>
+            </header>
+
+            <section class="flex gap-4 items-center pb-4 border-b border-[#F9FAFA]">
+                <img src="https://images.unsplash.com/photo-1506508618093-6fe5ce3def4c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODc1Mzg4MTh8&ixlib=rb-4.0.3&q=25" class="w-[80px] h-[80px] rounded-full object-cover  border-4 border-[#F0F3FB]">
+                <div >
+                    <p class="text-[#5358BB] font-bold">Mfwooddesign</p>
+                    <p class="text-xs">
+                    Hand painted unique decorations for your home. Send us your ideas and we'll bring them to life.
+                    </p>
+                </div>
+            </section>
+
+            <section class="flex flex-col sm:flex-row gap-6 text-center text-[#C1C1C1]">
+                <div class="flex-1">
+                    <p class="text-xs">Likes</p>
+                <p class="text-[#5358BB] font-bold text-lg">32,395</p>
+                </div>
+            <div class="flex-1">
+                <p class="text-xs">Post Engagements</p>
+                    <p class="text-[#5358BB] font-bold text-lg">12,493</p>
+                </div>
+            </section>
+
+            <section id="profile" class="relative py-6 p-4 bg-[#F0F3FB] text-[#7C8C9B] text-xs flex flex-col gap-4 items-center rounded transition-transform">
+                <button type="button" id="bt-close-profile" class="absolute material-symbols-outlined hover:text-[#5358BB] top-2 right-2 text-sm">close</button>
+                <p>Say more about your mission and goals on your page. It may help people find you more easily.</p>
+                <button type="button" class="rounded-full w-fit bg-white py-2 px-4  shadow-lg font-bold text-[#5358BB] transition  hover:bg-[#5358BB] hover:text-white">Update Profile</button>
+            </section>
+        </div>
+</body>
+
+</html>
