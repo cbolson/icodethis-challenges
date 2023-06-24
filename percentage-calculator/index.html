@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Percentage Calculator - icodethis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script type="module" src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/16420 -->
+  <body
+    class="bg-[#EFEFEF] flex justify-center items-center min-h-screen text-[#72828F] text-center px-4 [&_section]:border-b [&_section]:border-[#72828F50] [&_section]:pb-6 [&_section]:mb-6">
+    <div
+      class="bg-white p-8 space-y-6 shadow-lg rounded-xl max-w-md md:max-w-lg">
+      <section>
+        <h1 class="text-md md:text-2xl">Percentage Calculator</h1>
+        <h2 class="text-sm text-[#72828F70]">
+          Calculate percentages for free.
+        </h2>
+      </section>
+      <section
+        class="[&_input]:bg-transparent [&_input]:border-b-2 [&_input]:outline-none [&_input]:w-[4rem] [&_input]:text-[#7C89E6] [&_input]:text-center text-black space-y-4">
+        <p>
+          What is
+          <input
+            type="text"
+            id="percentage"
+            required
+            onkeypress="return onlyNumberKey(event)" />
+          % of
+          <input
+            type="text"
+            id="amount"
+            required
+            onkeypress="return onlyNumberKey(event)" />
+          ?
+        </p>
+        <button
+          type="submit"
+          id="btn-submit"
+          class="bg-[#7C89E6] text-white hover:bg-[#5C67AF] py-2 px-6 rounded text-sm">
+          Calculate
+        </button>
+        <ul id="results" class="space-y-2"></ul>
+      </section>
+      <p class="text-xs">
+        Check out a similar
+        <a href="#" class="text-[#7C89E6] hover:underline"
+          >percentage calculator</a
+        >
+      </p>
+    </div>
+
+    <template id="template-toast">
+      <li
+        class="flex justify-between rounded py-1 px-2 text-sm fade-in transition-transform text-left">
+        <p>message</p>
+        <button type="button" class="text-xs material-symbols-outlined">
+          close
+        </button>
+      </li>
+    </template>
+  </body>
+</html>
