@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Picker 2 - icodethis</title>
+ <script src="https://cdn.tailwindcss.com"></script><script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/16492 -->
+<body class="bg-[#DAE6F0] flex justify-center items-center min-h-screen px-8">
+    <section class=" text-[#181028]  max-w-sm text-center flex gap-6">
+      
+            <div id="icon-alarm" class="text-blue-500 font-bold material-symbols-outlined mt-[55px]">alarm</div>
+            <div class="
+                relative 
+                bg-white 
+                shadow-lg 
+                before:absolute 
+                before:content-['] 
+                before:top-[60px]
+                before:left-0 
+                before:transform 
+                before:-translate-x-1/2
+                before:w-4
+                before:h-4
+                before:bg-white
+                before:rotate-45
+                before:shadow-md
+            ">
+                <header class="bg-[#F7F9FB] font-xl grid items-center p-4">Set Your Alarms</header>
+                <div class="flex flex-col sm:flex-row gap-2 py-6 px-8 
+                [&_select]:bg-gray-50
+                [&_select]:border
+                [&_select]:border-gray-300
+                [&_select]:text-gray-900 
+                [&_select]:rounded-lg
+                [&_select]:focus:ring-blue-500
+                [&_select]:focus:border-blue-500
+                [&_select]:w-full
+                [&_select]:p-2
+                ">
+                    <div class="flex gap-2 items-center">
+                        <select id="hour" value=""></select>
+                        <span>:</span>
+                        <select id="min" value=""></select>
+                    </div>
+                   <button type="button" id="btn-set" class="bg-blue-500 text-white rounded-lg py-2 px-4 whitespace-nowrap hover:bg-blue-700">Set Alarm</button>
+                </div>
+                <ul id="alarms" class=" pb-4 px-8  space-y-2 ">
+                    <!-- alarms will be inserted here -->
+                </ul>
+    </section>
+    <template id="template-alarm">
+        <li class="flex gap-2 rounded py-1 px-2 text-sm fade-in transition-transform text-left bg-blue-100 hover:bg-blue-300 shadow-sm text-left">
+            <span class="material-symbols-outlined text-sm">alarm_on</span>
+            <p>alarm</p>
+            <button type="button" class="ml-auto text-xs material-symbols-outlined ">close</button>
+        </li>
+    </template>
+</body>
+
+</html>
