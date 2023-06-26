@@ -1,0 +1,10 @@
+.bubble {
+  animation-name: float-up;
+  animation-iteration-count: infinite;
+  /* animation delays etc defined in JS */
+}
+@keyframes float-up {
+  to {
+    transform: translateY(-200vh);
+  }
+}
