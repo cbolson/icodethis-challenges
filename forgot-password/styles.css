@@ -1,0 +1,29 @@
+input:not(:focus):not(:placeholder-shown):invalid {
+  border-color: red;
+}
+input:not(:focus):not(:placeholder-shown):valid {
+  border-color: green;
+}
+.hide {
+  animation: hide-it 300ms forwards;
+}
+.show {
+  animation: show-it 500ms forwards 300ms;
+}
+@keyframes hide-it {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes show-it {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    z-index: 2;
+  }
+}

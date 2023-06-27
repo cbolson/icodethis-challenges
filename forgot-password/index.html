@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password - icodethis</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/16816 -->
+  <body
+    class="bg-[#FAFAFA] flex justify-center items-center min-h-screen [&_a]:underline [&_a:hover]:text-red-400">
+    <div
+      class="bg-white text-[#1B223B] py-20 px-8 shadow-lg rounded w-9/12 flex justify-center items-center relative">
+      <p class="absolute top-6 right-6 text-xs text-[#A1A7BE]">
+        Don't have an account? <a href="#">Sign Up</a>
+      </p>
+      <div class="w-[400px] text-center space-y-8">
+        <h2 class="text-center font-medium text-xl">
+          Did you forget your password?
+        </h2>
+
+        <div class="relative">
+          <div id="wrapper-form">
+            <p class="text-sm mb-8">
+              Enter your email and we will send you a password reset link
+            </p>
+
+            <form id="form-pass-reset" class="[&>*]:w-full">
+              <label class="block text-left text-sm font-medium mb-2"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="myemail@address.com"
+                class="peer border border-gray-400 rounded py-2 px-4 focus:outline-none focus:bg-gray-100 placeholder-gray-400"
+                pattern="[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+" />
+              <button
+                type="submit"
+                class="mt-4 bg-[#1B223B] shadow-lg text-white py-4 px-8 rounded text-xs hover:bg-[#26315F]">
+                ` Request Reset Link
+              </button>
+            </form>
+          </div>
+
+          <div
+            id="wrapper-msg"
+            class="absolute bg-[#1B223B] text-white inset-0 flex flex-col justify-center items-center -z-10 transition-transform w-full h-full rounded shadow-lg">
+            message
+          </div>
+        </div>
+
+        <p class="text-[#A1A7BE] text-sm"><a href="#">Back to Sign In</a></p>
+      </div>
+    </div>
+  </body>
+</html>
