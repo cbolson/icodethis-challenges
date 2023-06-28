@@ -1,0 +1,94 @@
+<html>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Get in Touch - icodethis</title>
+      <script src="https://cdn.tailwindcss.com" defer></script>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <link rel="stylesheet" href="styles.css" />
+      <script src="scripts.js" defer></script>
+    </head>
+
+    <body
+      class="bg-white flex justify-center items-center min-h-screen px-6 bg-white transition dark:bg-[#00144E] dark:text-white">
+      <div id="popup" class="space-y-4 w-[400px] transition">
+        <div
+          class="relative rounded-xl border-4 bg-white transition dark:bg-[#071029] border-[#00144E] dark:border-white space-y-6 text-center pb-6">
+          <div
+            class="group p-2 rounded-b-lg transition bg-[#00144E] dark:bg-white text-white dark:text-[#00144E] w-4/6 mx-auto text-xs flex justify-center items-center gap-2">
+            Created with
+            <span
+              class="material-symbols-outlined inline text-sm group-hover:text-[#FD8331] group-hover:animate-pulse"
+              >favorite</span
+            >
+            by
+            <a
+              href="https://www.cbolson.com"
+              target="_blank"
+              class="text-[#FD8331]"
+              >Chris Bolson</a
+            >
+          </div>
+          <p class="uppercase">Get in touch on</p>
+          <ul
+            class="flex justify-center gap-4 [&_img]:w-[32px] [&_li]:border [&_li]:rounded-full [&_li]:p-4 [&_li]:transition [&_li:hover]:border-[#FD8331] [&_li:hover]:shadow-lg [&_li:hover]:scale-110 dark:[&_li]:border-[#0B2582] dark:[&_li:hover]:border-[#0E34C3]">
+            <li>
+              <a href="https://twitter.com/cbolson" target="_blank"
+                ><img
+                  src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/social/twitter.png"
+              /></a>
+            </li>
+            <!--<li>
+                    <a href="https://github.com/cbolson" target="_blank">
+                        <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/social/github.png?v=3" class="bg-white" >
+                        
+                    </a>
+            </li>-->
+            <li>
+              <a href="https://iCodeThis.com/?ref=Chris" target="_blank"
+                ><img
+                  src="https://icodethis.com/logos/small-dark.svg"
+                  class="rounded-full"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/chrisbolson/" target="_blank"
+                ><img
+                  src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/social/linkedin.png"
+              /></a>
+            </li>
+          </ul>
+          <button
+            type="button"
+            id="btn-close"
+            class="absolute -top-4 right-3 material-symbols-outlined transition-scale hover:animate-spin">
+            close
+          </button>
+        </div>
+        <div
+          class="flex justify-between [&_button]:rounded-full [&_button]:text-xs [&_button]:py-2 [&_button]:px-6 [&_button]:shadow-lg [&_button]:bg-[#00144E] [&_button]:text-white [&_button]:transition [&_button:hover]:bg-[#FD8331] dark:[&_button]:text-[#00144E] dark:[&_button]:bg-white dark:[&_button:hover]:bg-[#FD8331]">
+          <button class="flex items-center gap-2">
+            <span class="material-symbols-outlined">email</span>Get in Touch
+          </button>
+          <button id="mode">
+            <span
+              class="material-symbols-outlined hidden dark:block"
+              title="Light mode"
+              >light_mode</span
+            >
+            <span
+              class="material-symbols-outlined block dark:hidden"
+              title="Dark mode"
+              >dark_mode</span
+            >
+          </button>
+        </div>
+      </div>
+      <div class="absolute -z-10">I'll be back!</div>
+    </body>
+  </html>
+</html>
