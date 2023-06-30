@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar Chart</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    
+</head>
+
+<body class="bg-[var(--bg-body)] items-center min-h-screen min-h-screen h-screen space-y-20">
+
+    <header class="text-center p-12 bg-[#DCE1FB]">
+        <div class="flex justify-between items-center rounded-full px-4 py-3 w-full sm:w-3/4  md:2/4 max-w-[400px] bg-white m-auto">
+            <img src="https://i.pravatar.cc/80?img=49" class="w-[80px] rounded-full border-8 border-red-[#A6AEFE] transition hover:scale-110">
+            <div class="flex gap-1 md:gap-4  flex-col sm:flex-row">
+                <span class="font-bold">Christine</span>
+                <span>vs</span>
+                <span class="font-bold">Jorndan</span>
+            </div>
+            <img src="https://i.pravatar.cc/80?img=9" class="w-[80px] rounded-full border-8 border-[#F595A1] transition hover:scale-110">
+        </div>
+    </header>
+
+    <main class="grid place-content-center m-auto">
+        <section class="grid place-content-center w-[80vw] h-full aspect-square md:max-w-[50vw]">   
+        <canvas id="myChart" class="w-full h-full z-10"></canvas>
+        </section>
+    </main>
+</body>
+
+</html>
