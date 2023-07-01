@@ -1,62 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SMS Sharer - icodethis</title>
-<html>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+      </head>
+      <!--https://icodethis.com/submissions/17319-->
+      <body
+        class="bg-purple-100 flex justify-center items-center min-h-screen px-4">
+        <div
+          id="popup"
+          class="bg-white text-[#181028] py-8 px-12 space-y-6 shadow-lg rounded-xl max-w-md md:max-w-lg relative transition">
+          <button
+            type="button"
+            id="btn-close"
+            class="absolute top-5 right-5 material-symbols-outlined hover:text-pink-500">
+            close
+          </button>
+          <p class="font-bold text-lg">Send install link to mobile device</p>
+          <p class="text-xs">
+            Send via SMS or visit the private URL on the mobile device to
+            install this app directly on the device.
+          </p>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <script src="scripts.js" defer></script>
-</head>
-<!--https://icodethis.com/submissions/17319-->
-<body class="bg-purple-100 flex justify-center items-center min-h-screen px-4">
-    <div id="popup" class="bg-white text-[#181028] py-8 px-12 space-y-6 shadow-lg rounded-xl max-w-md md:max-w-lg relative transition">
-        
-        <button type="button" id="btn-close" class="absolute top-5 right-5 material-symbols-outlined  hover:text-pink-500">close</button>
-        <p class="font-bold text-lg">Send install link to mobile device</p>
-        <p class="text-xs">Send via SMS or vist the priovatge URL on the mobile device to install this app directly to the device.</p>
-        
-        <div class="
-            flex 
-            items-center
-            w-full 
-            rounded-md
-            overflow-hidden
-            bg-gray-100
-            p
-            [&>*]:py-4 
-           
-            [&>*]:outline-none
-        ">
-            <select id="list-codes" class="bg-transparent  w-fit px-2">
-                <option value="">flags</option>
+          <div
+            class="flex items-center w-full rounded-md overflow-hidden bg-gray-100 p [&>*]:py-4 [&>*]:outline-none">
+            <select id="list-codes" class="bg-transparent w-fit px-2">
+              <option value="">flags</option>
             </select>
-            <div  id="country-code" class="w-[100px] px-2">&nbsp;&nbsp;&nbsp;</div>
-            <input type="tel" id="tel" placeholder="Enter mobile" class="bg-transparent w-full" onkeypress="return onlyNumberKey(event)" >
-            <button type="button" id="btn-submit" class="group px-2 min-w-[60px] bg-[#357BF1] text-white transition hover:bg-pink-500 material-symbols-outlined " title="Send">send</button>
-        </div>
-       
-        <div class="text-sm">
+            <div id="country-code" class="w-[100px] px-2">
+              &nbsp;&nbsp;&nbsp;
+            </div>
+            <input
+              type="tel"
+              id="tel"
+              placeholder="Enter mobile"
+              class="bg-transparent w-full"
+              onkeypress="return onlyNumberKey(event)" />
+            <button
+              type="button"
+              id="btn-submit"
+              class="group px-2 min-w-[60px] bg-[#357BF1] text-white transition hover:bg-pink-500 material-symbols-outlined"
+              title="Send">
+              send
+            </button>
+          </div>
+
+          <div class="text-sm">
             <p class="font-bold">Share Link</p>
             <p class="flex justify-between flex-col md:flex-row text-sm">
-                <span id="copy-this">https://iCodeThis.com/?ref=Chris</span>
-                <button type="button" id="btn-copy" class="flex gap-1 items-center transition hover:text-pink-500 text-[#357BF1] "><span class="material-symbols-outlined">content_copy</span>Copy</button>    
+              <span id="copy-this">https://iCodeThis.com/?ref=Chris</span>
+              <button
+                type="button"
+                id="btn-copy"
+                class="flex gap-1 items-center transition hover:text-pink-500 text-[#357BF1]">
+                <span class="material-symbols-outlined">content_copy</span>Copy
+              </button>
             </p>
-        </div>
-        
-        <div  id="msg" class="bg-pink-500 absolute w-full h-full inset-0 rounded-lg text-white transition-transform  delay-300  flex flex-col gap-4  justify-center py-6  px-12 items-center text-center scale-0">
-                <button type="button" id="btn-close-msg" class="absolute top-5 right-5 material-symbols-outlined ">close</button>
-               
-                <p></p>
-            </div>
-    </div>
-</body>
+          </div>
 
+          <div
+            id="msg"
+            class="bg-pink-500 absolute w-full h-full inset-0 rounded-lg text-white transition-transform delay-300 flex flex-col gap-4 justify-center py-6 px-12 items-center text-center scale-0">
+            <button
+              type="button"
+              id="btn-close-msg"
+              class="absolute top-5 right-5 material-symbols-outlined">
+              close
+            </button>
+
+            <p></p>
+          </div>
+        </div>
+      </body>
+    </html>
+    <!-- <span class="material-symbols-outlined text-green-500 font-bold text-[3rem]">check</span> -->
+  </head>
 </html>
-<!-- <span class="material-symbols-outlined text-green-500 font-bold text-[3rem]">check</span> -->
