@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversations - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!--  -->
+<body class="bg-[#EBEFF4] flex justify-center items-center min-h-screen px-6">
+    <div class="grid grid-cols-1 md:grid-cols-[200px_500px] w-full justify-center gap-4 place-items-center">
+
+        <section  class="
+        h-[180px]
+        w-full
+        md:w-auto
+        md:h-[700px]
+        relative
+        overflow-hidden
+
+        before:absolute
+        before:top-0
+        before:bg-gradient-to-b 
+        before:from-[#EBEFF4]
+        before:w-full
+        before:z-10
+        before:h-[10px]
+        md:before:h-[60px]
+        
+        after:absolute
+        after:bottom-0
+        after:bg-gradient-to-t 
+        after:from-[#EBEFF4]
+        after:w-full
+        after:z-10
+        after:h-[10px]
+        md:after:h-[60px]
+        ">
+            <div  class=" overflow-y-scroll h-full">
+                <div id="users" class="flex justify-center gap-2 md:gap-4 flex-col  h-fit md:mb-[50px]">
+                <!-- users load here -->
+                </div>
+            </div>
+        
+        </section>
+
+        <section class="flex-2 bg-white text-[#181028] max-w-full min-w-full h-[500px] shadow-lg rounded-md  relative">
+           
+                <!--<button type="button" id="btn-close" class="absolute top-0 right-0 p-2 bg-gray-400 rounded-bl-md material-symbols-outlined   text-white">close</button>-->
+                <div id="chat-header" class="
+                font-bold 
+                text-lg 
+                py-2 
+                px-4 
+                flex 
+                gap-2
+                items-center
+                border border-b-1
+                relative
+                 before:w-4
+                before:h-4
+                before:rounded-full
+                before:block
+                before:bg-gray-400
+                ">_name_</div>
+                <div class="overflow-y-scroll w-full max-w-full h-[380px] py-1 px-4">
+                    <div id="messages"><!--messages load here --></div>
+                </div>
+           
+
+            <div class="p-4 bg-[#F9FBFF] space-y-4 ">
+                <form class="send-message-form flex gap-4">
+                    <textarea type="text" placeholder="Type your message here" class="bg-transparent resize-none h-12 w-full p-2"></textarea>
+                    <div class="flex">
+                        <button type="submit" class="mt-auto py-2 px-6 rounded-full bg-blue-500 text-white hover:bg-blue-700 transition">Send</button>
+                    </div>
+                </form>
+                <div class="flex gap-2 [&_button]:text-blue-400 transition [&_button:hover]:text-blue-700">
+                    <button type="button" class="material-symbols-outlined">photo</button>
+                    <button type="button" class="material-symbols-outlined">photo_camera</button>
+                    <button type="button" class="material-symbols-outlined">mic</button>
+                </div>
+        </div>
+        
+    </section>
+
+    <template id="tpl-message">
+        <div class="space-y-4 mt-2">
+            <div data-user class="flex gap-2 items-center">
+                <img src="" class="w-8 rounded-sm">
+                <p data-name class="font-bold">name</p>
+                <p data-time class="text-gray-300 text-xs">time</p>
+            </div>
+            <p data-msg class="p-2 px-4 rounded-md w-fit ">message</p>
+        </div>
+    </template>
+
+    <template id="tpl-profile">
+
+        <div user-wrapper class="py-2 pl-8 pr-4 md:px-4 rounded-md bg-white text-sm shadow-lg  text-center relative overflow-hidden w-full md:w-[200px] h-fit flex gap-4 items-center md:flex-col">
+            <div msg-counter class="absolute top-0 left-0 py-1 px-2 bg-red-400 rounded-br-md text-sm text-white">3</div>
+            <!--<button type="button" class="material-symbols-outlined">more_horiz</button>-->
+            <img src="https://i.pravatar.cc/150?img=11" class="aspect-sqaure w-[40px] md:w-full rounded">
+            <div class="">
+                <p user-name class="
+                font-bold
+                flex gap-2
+                items-center justify-center
+                before:w-2
+                before:h-2
+                before:rounded-full
+                before:block
+                ">name</p>
+                <p user-role class="text-xs">role</p>
+            </div>
+            <button btn-chat type="button" class="md:border border-blue-500  h-8 w-fit ml-auto md:mx-auto py-1 px-4 rounded-full hover:bg-blue-700 hover:text-white material-symbols-outlined text-blue-400 transition">forum</button>
+        </div>
+
+    </template>
+</body>
+
+</html>
