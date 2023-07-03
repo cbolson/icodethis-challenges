@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message - icodethis</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/17546 -->
+<body class="bg-purple-100 flex justify-center items-center min-h-screen px-4">
+    <div class="bg-white text-[#181028] p-8  shadow-lg rounded-xl max-w-sm md:max-w-sm relative transition">
+
+        <header class="px-2 space-y-4 mb-4">
+        <h1 class="text-lg">New Message</h1>
+        <div class="relative">
+                <input type="text"  placeholder="Type to search" class="border rounded py-4 px-4 pl-12 bg-gray-200">
+                <div class="absolute left-3 top-3 text-3xl text-gray-500 material-symbols-outlined ">search</div>
+            </div>
+         <h2 class="uppercase font-bold text-sm">Recent conversations</h2>
+        </header>
+       
+       <section class="space-y-4 [&>div:hover]:bg-gray-100 [&>div]:rounded-md [&>div]:items-center [&>div]:flex [&>div]:gap-4 [&>div]:py-2 [&>div]:px-4 [&>div]:cursor-pointer">
+
+            <div>
+                <img src="https://i.pravatar.cc/40?img=61" class="rounded-full w-10 aspect-square">
+                <div class="">
+                    <p class="font-bold">David Jacobsen</p>
+                    <p>@dex_id</p>
+                </div>
+                <div class="ml-auto material-symbols-outlined text-sm w-4 h-4 flex justify-center items-center aspect-square rounded-full border bg-white text-white p-2"></div>
+            </div>
+
+            <div>
+                <img src="https://i.pravatar.cc/40?img=21" class="rounded-full w-10 aspect-square">
+                <div>
+                    <p class="font-bold">Christy Richio</p>
+                    <p>@christy_ric</p>
+                </div>
+                <div class="ml-auto material-symbols-outlined text-sm w-4 h-4 flex justify-center items-center aspect-square rounded-full border bg-white p-2"></div>
+            </div>
+
+            <div>
+                <img src="https://i.pravatar.cc/40?img=15" class="rounded-full w-10 aspect-square">
+                <div>
+                    <p class="font-bold">James Lowther</p>
+                    <p>@james_lowther</p>
+                </div>
+               <div class="ml-auto material-symbols-outlined text-sm w-4 h-4 flex justify-center items-center aspect-square rounded-full
+                border bg-blue-500 text-white p-2">check</div>
+            </div>
+
+            <div>
+                <img src="https://i.pravatar.cc/40?img=48" class="rounded-full w-10 aspect-square">
+                <div>
+                    <p class="font-bold">Danica Doggett</p>
+                    <p>@dani-dani-d</p>
+                </div>
+                <div
+                    class="ml-auto material-symbols-outlined text-sm w-4 h-4 flex justify-center items-center aspect-square rounded-full border bg-white p-2">
+                </div>
+            </div>
+            
+       </section>
+
+    <button type="button" btn-close class="absolute top-2 right-2 material-symbols-outlined text-sm  aspect-square rounded-full py-1 px-2 items-center   hover:bg-purple-300 transition">close</button>
+    </div>
+</body>
+
+</html>
