@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification cards - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!--  https://icodethis.com/submissions/17462 -->
+  <body
+    class="bg-white flex flex-col gap-4 justify-center items-center min-h-screen px-4">
+    <svg
+      viewBox="0 0 480 480"
+      class="absolute inset-0 m-auto w-full md:w-2/4 -translate-x-20 translate-y-20 -z-10">
+      <path
+        fill="rgba(235, 156, 255, 0.23)"
+        d="M407.5,323.5Q336,407,248,392.5Q160,378,119.5,309Q79,240,102.5,141Q126,42,242,39Q358,36,418.5,138Q479,240,407.5,323.5Z" />
+    </svg>
+    <svg
+      i
+      viewBox="0 0 480 480"
+      class="absolute inset-0 m-auto w-full md:w-2/4 -z-10">
+      <path
+        fill="rgba(235, 156, 255, 0.23)"
+        d="M365.5,290Q320,340,258.5,383.5Q197,427,146.5,368Q96,309,92,238Q88,167,147.5,131.5Q207,96,287.5,88Q368,80,389.5,160Q411,240,365.5,290Z" />
+    </svg>
+
+    <div
+      class="group w-full bg-white text-[#181028] py-4 px-2 md:px-6 shadow-lg rounded-xl max-w-md md:max-w-lg flex gap-4 items-center relative overflow-hidden isolate transition">
+      <button
+        type="button"
+        btn-close
+        class="absolute top-2 right-2 material-symbols-outlined text-sm bg-gray-100 aspect-square rounded-full py-1 px-2 items-center hover:bg-purple-300 transition">
+        close
+      </button>
+      <div
+        class="absolute -z-10 rounded-full bg-green-100 w-[160px] aspect-square -left-[80px] opacity-80 transition-all duration-700 group-hover:scale-[8]"></div>
+
+      <div
+        class="material-symbols-outlined isolate bg-green-500 p-2 w-10 min-w-10 aspect-square flex justify-center items-center text-white font-bold rounded-full relative overflow-hidden before:absolute before:top-[-25%] before:w-full before:h-full before:bg-green-400 before:opacity-80 before:rounded-full before:left-[-25%] before:-z-10">
+        check
+      </div>
+      <div class="space-y-2">
+        <p class="font-bold">Than your for subscribing!</p>
+        <p class="text-sm">
+          You will receive an email to confirm your subscription
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="group w-full bg-white text-[#181028] py-4 px-2 md:px-6 shadow-lg rounded-xl max-w-md md:max-w-lg flex gap-4 items-center relative overflow-hidden isolate transition">
+      <button
+        type="button"
+        btn-close
+        class="absolute top-2 right-2 material-symbols-outlined text-sm bg-gray-100 aspect-square rounded-full py-1 px-2 items-center hover:bg-purple-300 transition">
+        close
+      </button>
+      <div
+        class="absolute -z-10 rounded-full bg-red-100 w-[160px] aspect-square -left-[80px] opacity-80 transition-all duration-700 group-hover:scale-[8]"></div>
+
+      <div
+        class="material-symbols-outlined isolate bg-red-500 p-2 w-10 min-w-10 aspect-square flex justify-center items-center text-white font-bold rounded-full relative overflow-hidden before:absolute before:top-[-25%] before:w-full before:h-full before:bg-red-400 before:opacity-80 before:rounded-full before:left-[-25%] before:-z-10">
+        close
+      </div>
+      <div class="space-y-2">
+        <p class="font-bold">Opps, an error ocurred!</p>
+        <p class="text-sm">Sorry for the inconvinience. Please try again.</p>
+      </div>
+    </div>
+  </body>
+</html>
