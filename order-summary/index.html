@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/18032. -->
+<body class="bg-purple-100 bg-gradient-to-r from-[#F8764D]  to-[#FDBE5C] flex justify-center items-center min-h-screen px-4">
+    <div class="relative text-[#181028] shadow-md rounded-md max-w-md md:max-w-lg w-full overflow-hidden">
+        <header class="bg-[#FB5039] h-20 relative">
+            <img src="https://upload.wikimedia.org/wikipedia/sco/d/d2/Pizza_Hut_logo.svg" class="rounded-full absolute inset-0 m-auto border border-4 border-white translate-y-10 w-20 h-20 bg-white">
+        </header>
+        <main class=" bg-white p-6 pt-10 [&_p]:text-center  space-y-6">
+            <div>
+                <p><span user-name class="font-bold"><!-- username --></span>, here is your order from</p>
+                <p class="font-bold text-lg">Pizza Hut</p>
+            </div>
+
+            <table id="items" class=" text-sm w-full [&_td]:py-1 [&_td]:px-2 [&_tr:nth-child(odd)]:bg-gray-50">
+                <!-- order items loaded here -->
+            </table>
+
+            <div class="
+                flex 
+                justify-between 
+                w-full
+                [&_button]:flex
+                [&_button]:gap-2
+                [&_button]:items-center
+                [&_button]:text-sm
+                [&_button]:rounded
+                [&_button]:py-1
+                [&_button]:px-4
+                [&_button]:bg-[#FDBE5C]
+                [&_button]:transition
+                [&_button:hover]:bg-[#FB5039]
+                [&_button:hover]:text-white
+            ">
+                <button type="button" btn-add="food"><span class="material-symbols-outlined">local_pizza</span><span class="hidden md:block">Add a pizza</span></button>
+                <button type="button" btn-add="drinks"><span class="material-symbols-outlined">wine_bar</span><span class="hidden md:block">Add a beverage</span></button>
+            </div>
+
+            <section class="bg-gray-100 py-2 px-4 rounded text-sm">
+                <ul class="space-y-2 [&_li]:flex [&_li]:justify-between">
+                    <li>
+                        <p>Subtotal</p>
+                        <p summary-total  class="font-bold"><!--total order --></p>
+                    </li>
+                    <li>
+                        <p>Shipping</p>
+                        <p class="font-bold">$2.99</p>
+                    </li>
+                    <li>
+                        <p >Total (IVA inc)</p>
+                        <p summary-total-acc class="font-bold"><!-- total inc iva --></p>
+                    </li>
+            </section>
+            <button id="btn-checkout" type="button" class="w-full rounded py-2  bg-[#FB5039] hover:bg-[#FDBE5C] text-white hover:text-black  transition">Checkout</button>
+
+            <div id="menu" class=" absolute top-3 inset-x-0.5 mx-auto rounded-md overflow-hidden shadow-xl w-[95%] p-4 bg-orange-100 h-fit transition -translate-y-64">
+                <button type="button" id="btn-close-menu" class="absolute top-0 right-0 w-6 aspect-square flex items-center justify-center material-symbols-outlined  hover:scale-125 transition text-sm rounded-bl-md bg-[#FDBE5C]">close</button>
+                <p class="font-bold" menu-type></p>
+                <ul id="menu-list" class="
+                    text-sm 
+                    [&_li]:border-b 
+                    [&_li]:border-[#F8E5CB]
+                    [&_li]:flex 
+                    [&_li]:gap-4 
+                    [&_li:hover]:bg-[#F8E5CB] 
+                    [&_li]:py-1 
+                    [&_li]:px-2
+                ">
+                   <!-- menu items will load here -->
+                </ul>
+            </div>
+
+            <div id="checkout-msg" class="absolute top-4 inset-x-0.5 mx-auto rounded-md overflow-hidden shadow-xl w-[95%] p-8 bg-orange-100 h-fit transition  text-center text-lg -translate-y-64">
+                <button type="button" id="btn-close-msg" class="absolute top-0 right-0 w-6 aspect-square flex items-center justify-center material-symbols-outlined  hover:scale-125 transition text-sm rounded-bl-md bg-[#FDBE5C]">close</button>
+                <div data-msg class="space-y-4"> <!-- checkout message will load here --></div>
+            </div>
+            
+        </main>
+
+    </div>
+
+    <!-- template order items -->
+    <template id="tpl-item">
+        <tr>
+            <td item-desc class="items-center w-[50%]">_name_</td>
+            <td class="items-center w-[20%]">
+                <div class="flex gap-1 items-center">
+                    <button type="button" data-action="less" class="material-symbols-outlined rounded hover:bg-[#FDBE5C] text-sm px-1">remove</button>
+                    <input type="tel" item-quantity name="" value="1" class="border border-gray-300 rounded w-8 text-center">
+                    <button type="button" data-action="add" class="material-symbols-outlined hover:bg-[#FDBE5C] text-sm px-1">add</button>
+                </div>
+            </td>
+            <td item-price class="font-bold text-right items-center w-[20%]">_price_</td>
+            <td class="text-right w-[10%]">
+                <button data-action="remove" class="material-symbols-outlined text-sm px-1 rounded hover:bg-[#FDBE5C]">delete</button>
+            </td>
+        </tr>
+    </template>
+
+    <!-- template menu items -->
+    <template id="tpl-menu">
+        <li>
+            <span item-name>Coke</span>
+            <span item-price class="ml-auto">$1.99</span>
+            <button class="material-symbols-outlined rounded hover:bg-[#FB5039] hover:text-white">add</button>
+        </li>
+    </template>
+</body>
+
+</html>
