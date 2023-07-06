@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repositories Share - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <!-- https://icodethis.com/submissions/18237 -->
+  <body
+    class="bg-white flex justify-center items-center min-h-screen px-4 relative before:w-[160px] before:h-full before:bg-orange-200 before:absolute before:inset-0 before:mx-auto before:-z-10 before:grid before:place-items-center after:-z-10 after:-rotate-90 after:absolute after:text-4xl after:text-[#7669EB] after:content-['github.com/cbolson']">
+    <div
+      id="popup"
+      class="transition bg-white text-[#181028] shadow-lg max-w-md relative">
+      <button
+        type="button"
+        id="btn-close"
+        class="group absolute top-0 right-0 bg-[#7669EB] w-12 h-12 text-white hover:bg-[#695ED6] transition flex justify-center items-center">
+        <span class="material-symbols-outlined group-hover:scale-125 transition"
+          >close</span
+        >
+      </button>
+
+      <main class="py-4 px-2 sm:p-6 space-y-6">
+        <h1>Repositorios</h1>
+
+        <section class="relative">
+          <input
+            type="search"
+            placeholder="Find a Repositorio"
+            class="rounded border py-2 px-6 pl-10 w-full focus:outline-[#7669EB]" />
+          <span
+            class="material-symbols-outlined absolute left-2 top-2 text-slate-500"
+            >search</span
+          >
+        </section>
+
+        <ul
+          id="results"
+          class="space-y-4 [&_a]:flex [&_a]:gap-2 [&_a]:py-1 [&_a]:px-2 [&_a]:transition [&_a]:rounded [&_a]:items-center [&_a:hover]:bg-[#7669EB] [&_a:hover]:text-white">
+          <li>
+            <a
+              href="https://github.com/cbolson/icodethis-challenges"
+              target="_blank">
+              <span class="material-symbols-outlined">lock</span>
+              /cbolson/icodethis-challenges
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://github.com/cbolson/sandbox-JavaScript"
+              target="_blank">
+              <span class="material-symbols-outlined">lock</span>
+              /cbolson/sandbox-JavaScript
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/cbolson/sandbox-css" target="_blank">
+              <span class="material-symbols-outlined">lock</span>
+              /cbolson/sandbox-css
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/cbolson/linked-avatars" target="_blank">
+              <span class="material-symbols-outlined">lock</span>
+              /cbolson/iinked-avatars
+            </a>
+          </li>
+        </ul>
+        <button
+          class="text-sm text-[#7669EB] underline hover:text-[#695ED6] ml-8"
+          title="sorry, nothing to see here">
+          Show more
+        </button>
+      </main>
+
+      <footer class="bg-[#7669EB] p-8 text-center text-white text-sm">
+        Create an organisation
+      </footer>
+    </div>
+  </body>
+</html>
