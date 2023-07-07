@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Device Status - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/18416 -->
+  <body
+    class="bg-slate-800 flex justify-center items-center min-h-screen text-center text-white px-4">
+    <div class="bg-[#131621] py-8 px-8 space-y-8 rounded-xl w-96">
+      <h3 class="opacity-50">Last 7 days</h3>
+
+      <canvas width="200" height="200" class="mx-auto"></canvas>
+
+      <section id="key" class="flex justify-between gap-4 flex-col sm:flex-row">
+        <!-- key loaded here -->
+      </section>
+    </div>
+
+    <!-- template menu items -->
+    <template id="tpl-key">
+      <div
+        class="group flex sm:flex-col gap-4 sm:gap-0 sm:justify-center items-center opacity-50 hover:opacity-100 transition">
+        <p
+          class="flex gap-2 items-center text-sm relative before:block before:rounded-full before:w-2 before:h-2">
+          <span key-label><!--device--></span>
+        </p>
+        <p key-percent class="text-lg group-hover:scale-125 transition">
+          <!--percentage-->
+        </p>
+      </div>
+    </template>
+  </body>
+</html>
