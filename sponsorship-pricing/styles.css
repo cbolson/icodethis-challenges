@@ -1,0 +1,5 @@
+.sold-out button:not(:hover) {
+  background-color: transparent;
+  color: #000;
+  outline: 1px solid #ddd;
+}
