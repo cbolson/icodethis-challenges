@@ -18,23 +18,37 @@
                 <ul class="flex flex-col sm:flex-row sm:items-center sm:gap-2
                     [&_li.active_a]:border-b-[#3FE6D4] 
                     [&_li.active_a]:text-[#3FE6D4] 
-                    [&_a]:px-2 
-                    [&_a]:py-2 
+                    [&_li.active_button]:border-b-[#3FE6D4] 
+                    [&_li.active_button]:text-[#3FE6D4] 
+                    [&_li]:flex 
+                    [&_li]:items-center 
+                    [&_li]:gap-2
+                    [&_a]:px-2
+                    [&_button]:px-2  
+                    [&_a]:py-2  
+                    [&_button]:py-2  
                     [&_a]:border-l-4
+                    [&_button]:border-l-4
                     sm:[&_a]:border-l-0
                     sm:[&_a]:border-b-4
+                    sm:[&_button]:border-l-0
+                    sm:[&_button]:border-b-4
                     [&_a]:border-gray-900 
-                    [&_a]:flex 
-                    [&_a]:items-center 
-                    [&_a]:gap-2
+                    [&_button]:border-gray-900 
                     [&_a:hover]:text-[#A34BAD]
                     [&_a:hover]:border-b-[#A34BAD]
+                    [&_button:hover]:text-[#A34BAD]
+                    [&_button:hover]:border-b-[#A34BAD]
                 ">
                     <li><a href="#">Home</a></li>
                     <li class="active"><a href="#">Apps</a></li>
                     <li><a href="#">Account</a></li>
-                    <li class="relative"><a href="#">Cateogires<button id="btn-cat" class="material-symbols-outlined transition-transform duration-500">expand_more</button></a>
-                        <ul id="cat-list" class="absolute z-10 translate-y-[-500px] transition w-fit  bg-[#A34BAD] ">
+                    <li class="relative">
+                        <button id="btn-cat" class="flex gap-1 items-center transition-transform duration-500">
+                            Cateogires
+                            <span class="material-symbols-outlined transition-transform duration-500">expand_more</span>
+                        </button>
+                        <ul id="cat-list" class="absolute z-10 top-10 translate-y-[-500px] transition w-full  bg-[#A34BAD] [&_button]:!border-0">
                             <!-- categories loaaded here -->
                         </ul>
                     </li>
@@ -110,9 +124,10 @@
 
     <template id="tpl-cat">
         <li >
-            <button type="button" value="" class="w-full text-left py-2 px-4 hover:bg-[#3FE6D4] hover:text-black">_text</button>
+            <button type="button" value="" class="w-full text-left py-2 px-4 hover:bg-[#3FE6D4] !text-white hover:!text-black">_text</button>
         </li>
     </template>
    
 </body>
+
 </html>

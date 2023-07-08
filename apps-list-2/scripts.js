@@ -163,6 +163,10 @@ function renderApps(selectedCat = null) {
 renderApps();
 
 // categories
+
+let catIsVisible = false;
+const btnCat = document.querySelector("#btn-cat");
+
 const catList = document.querySelector("#cat-list");
 const tplCat = document.querySelector("#tpl-cat");
 
@@ -175,28 +179,27 @@ categories.forEach(({ id, title }) => {
   // add button event
   btn.addEventListener("click", () => {
     renderApps(id);
-
+    btnCat.closest("li").classList.remove("active");
     catList.style.transform = "translate(0, -500px)";
     catIsVisible = false;
-    btnCat.style.transform = "rotate(0)";
+    btnCat.querySelector("span").style.transform = "rotate(0)";
   });
 
   catList.append(item);
 });
 
-let catIsVisible = false;
-const btnCat = document.querySelector("#btn-cat");
-
 btnCat.addEventListener("click", () => {
   // show cat list
   if (!catIsVisible) {
+    btnCat.closest("li").classList.add("active");
     catList.style.transform = "translate(0)";
     catIsVisible = true;
-    btnCat.style.transform = "rotate(180deg)";
+    btnCat.querySelector("span").style.transform = "rotate(180deg)";
   } else {
+    btnCat.closest("li").classList.remove("active");
     catList.style.transform = "translate(0, -500px)";
     catIsVisible = false;
-    btnCat.style.transform = "rotate(0)";
+    btnCat.querySelector("span").style.transform = "rotate(0)";
   }
 });
 
