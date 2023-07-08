@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title>Apps List 2 - icodethis </title>
+<script src="https://cdn.tailwindcss.com"></script>
+    </script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/18519 -->
+<body class="bg-[#222222] text-white space-y-6 ">
+
+    <header class="bg-gray-900 text-gray-300 flex items-center justify-between pt-4 sm:pt-24 z-20">
+            <nav class="px-6 w-full max-w-6xl mx-auto">
+                <ul class="flex flex-col sm:flex-row sm:items-center sm:gap-2
+                    [&_li.active_a]:border-b-[#3FE6D4] 
+                    [&_li.active_a]:text-[#3FE6D4] 
+                    [&_a]:px-2 
+                    [&_a]:py-2 
+                    [&_a]:border-l-4
+                    sm:[&_a]:border-l-0
+                    sm:[&_a]:border-b-4
+                    [&_a]:border-gray-900 
+                    [&_a]:flex 
+                    [&_a]:items-center 
+                    [&_a]:gap-2
+                    [&_a:hover]:text-[#A34BAD]
+                    [&_a:hover]:border-b-[#A34BAD]
+                ">
+                    <li><a href="#">Home</a></li>
+                    <li class="active"><a href="#">Apps</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li class="relative"><a href="#">Cateogires<button id="btn-cat" class="material-symbols-outlined transition-transform duration-500">expand_more</button></a>
+                        <ul id="cat-list" class="absolute z-10 translate-y-[-500px] transition w-fit  bg-[#A34BAD] ">
+                            <!-- categories loaaded here -->
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!--
+                <div id="search" class="flex items-center gap-2 text-xl relative overflow-hidden transition-all w-[40px]
+            ">
+                <input type="text" class="py-1 px-4 pl-12 bg-gray-700 focus:outline-none">
+                <button type="button" id="toggle-search" class="absolute left-2 top-1 material-symbols-outlined">search</button>
+            </div>
+            -->
+
+    </header>
+
+    <main class="py-8 px-6 max-w-6xl mx-auto">
+        <h1 class="text-xl">Recommended for you</h1>
+        <p class="text-sm">Based on your installs</p>
+        
+        <section id="apps" class="
+        mt-12
+        grid
+        grid-cols-[repeat(auto-fit,minmax(300px,1fr))] 
+        gap-8
+        [&_article]:flex
+        [&_article]:gap-4
+        [&_article]:p-4
+        [&_article]:shadow-[0_0_10px_3px_rgba(0,0,0,0.3)]
+        [&_article:hover]:shadow-[0_0_10px_5px_rgba(58,227,203,0.88)]
+        [&_article]:rounded-md
+        [&_article]:transition-all
+        [&_article:hover]:bg-[#2F3030]
+        [&_img]:w-24
+        [&_img]:h-24
+        [&_img]:rounded-md
+        [&_div]:text-xs
+        [&_div]:flex
+        [&_div]:flex-col
+        [&_div]:gap-1
+        [&_p]:whitespace-nowrap
+        [&_p.title]:text-[#A34BAD]
+        [&_p.title]:font-bold
+        [&_.star]:text-black
+        [&_.star.active]:text-yellow-500
+        [&_.star]:opacity-70
+        [&_.star]:text-[20px]
+        [&_button]:mt-auto
+        [&_button]:uppercase
+        [&_button]:bg-black
+        [&_button]:py-1
+        [&_button]:px-3
+        [&_button]:rounded-md
+        [&_button]:border-b-2
+        [&_button]:transition
+        [&_button]:border-[#3FE6D4]
+        [&_button:hover]:scale-105
+        ">
+            <!-- apps loaded here -->       
+        </section>
+    </main>
+    
+    <template id="tpl-app">
+        <article>
+            <img src="" alt="logo">
+            <div>
+                <p data-title class="title">_title_</p>
+                <p data-company>_subtitle</p>
+                <p data-rating> </p>
+                <button type="button" class="">Install App</button>
+            </div>
+        </article>
+    </template>
+
+    <template id="tpl-cat">
+        <li >
+            <button type="button" value="" class="w-full text-left py-2 px-4 hover:bg-[#3FE6D4] hover:text-black">_text</button>
+        </li>
+    </template>
+   
+</body>
+</html>
