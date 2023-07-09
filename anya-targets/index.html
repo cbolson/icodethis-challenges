@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anya Targets - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scrtips.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/18642 -->
+  <body
+    class="bg-[#C3D1DF] text-[#1B223B] flex justify-center items-center gap-8 min-h-screen [&_>_div]:overflow-hidden">
+    <div
+      class="overflow-hidden flex flex-row w-72 h-[500px] [&_>_div]:min-h-[500px] [&_>_div]:shadow-lg [&_>_div]:w-full [&_>_div]:relative [&_>_div]:flex [&_>_div]:flex-col [&_>_div]:rounded-xl [&_>_div]:overflow-hidden [&_>_div]:flex-0 [&_>_div]:shrink-0">
+      <div
+        id="panel-login"
+        class="oveflow-hidden bg-white py-8 px-8 text-center">
+        <div
+          id="accounts"
+          class="absolute top-0 w-[90%] inset-0 mx-auto rounded-b-xl shadow-lg transition z-10 h-fit overflow-hidden -translate-y-[200px] bg-red-50">
+          <button
+            type="button"
+            id="btn-close-accounts"
+            class="relative ml-auto w-6 aspect-square flex items-center justify-center material-symbols-outlined transition text-sm text-[#1B223B] hover:text-red-400">
+            close
+          </button>
+          <ul>
+            <!-- accounts loaded here -->
+          </ul>
+        </div>
+
+        <button
+          id="bt-account"
+          type="button"
+          class="uppercase text-sm absolute top-4 right-4 flex items-center gap-2 hover:text-red-500">
+          Change account<span class="material-symbols-outlined transition"
+            >expand_more</span
+          >
+        </button>
+
+        <img
+          player-img-login
+          src="https://thronesapi.com/assets/images/the-hound.jpg"
+          class="my-8 rounded-full w-24 aspect-square border-8 border-slate-200 hover:border-red-400 hover:animate-pulse transition mx-auto" />
+
+        <section class="mb-8">
+          <p class="">Welcome back</p>
+          <p player-name-login class="font-bold"></p>
+        </section>
+
+        <form class="space-y-2 flex-1">
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            class="w-full border py-2 px-4 rounded-sm"
+            required
+            minlength="4" />
+          <button
+            id="btn-login"
+            type="submit"
+            disabled
+            class="uppercase bg-[#1B223B] text-white py-2 px-6 w-fit rounded-sm text-sm hover:bg-red-400 disabled:bg-gray-400">
+            Log in
+          </button>
+        </form>
+
+        <a href="#" class="text-xs text-blue-500 hover:text-red-400"
+          >Unable to login?</a
+        >
+      </div>
+
+      <div id="panel-profile" class="bg-slate-100 space-y-6">
+        <header class="flex items-center gap-2 p-4 w-full bg-white">
+          <img
+            player-img
+            src=""
+            class="rounded-full w-12 aspect-square border-4 border-slate-200 hover:border-red-400 hover:animate-pulse transition" />
+          <div>
+            <p player-name class="font-bold"><!-- player name--></p>
+            <p player-family class="text-sm"></p>
+          </div>
+          <button
+            id="btn-logout"
+            type="button"
+            class="material-symbols-outlined ml-auto hover:text-red-400">
+            logout
+          </button>
+        </header>
+
+        <section class="p-8 space-y-4">
+          <button
+            id="btn-targets-list"
+            class="w-full flex justify-between items-center bg-white rounded-md p-4 hover:bg-red-100">
+            <p class="font-bold">Targets</p>
+            <div class="w-[40px] aspect-square relative">
+              <svg
+                viewBox="0 0 36 36"
+                class="circular-chart stroke-blue-500 fill-none stroke-2">
+                <path
+                  class="circle-bg stroke-gray-200"
+                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path
+                  id="circle-completed"
+                  class="circle"
+                  stroke-dasharray="40, 100"
+                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+              <p
+                targets-done
+                class="absolute grid place-items-center inset-0 m-auto text-[.7rem]">
+                <!-- num targets done -->
+              </p>
+            </div>
+          </button>
+
+          <!--
+            <button type="button" class="flex items-center gap-2 text-xs text-blue-500 hover:text-red-400"><span class="material-symbols-outlined">add</span> Add New List</button>
+            -->
+        </section>
+      </div>
+
+      <div id="panel-targets" class="bg-slate-100">
+        <header
+          class="flex items-center justify-between gap-1 font-bold pt-4 pb-0 px-6 -full">
+          <button
+            id="btn-profile"
+            class="flex items-center gap-2 hover:text-red-400">
+            <span class="material-symbols-outlined">west</span>Targets
+          </button>
+        </header>
+
+        <section class="space-y-2 flex-1 p-6 overflow-hidden">
+          <p class="text-xs ml-auto">Mark targets as done</p>
+          <ul
+            id="player-targets"
+            class="overflow-y-scroll h-[350px] space-y-1 [&_li]:bg-white [&_li]:p-2 [&_li]:rounded-md [&_label]:flex [&_label]:gap-2 [&_label]:items-center [&_img]:w-6 [&_img]:h-6 [&_img]:rounded-full [&_li.done]:text-gray-400 [&_li.done]:bg-transparent [&_li.done_label]:line-through [&_li:hover]:bg-red-100"></ul>
+        </section>
+        <button
+          id="btn-new-targets"
+          class="w-full flex justify-center mt-auto p-4 bg-[#1B223B] text-white hover:bg-red-400 hover:text-[#1B223B] flex items-center uppercase mx-auto">
+          <span class="material-symbols-outlined">add</span>Add New Target
+        </button>
+      </div>
+
+      <div id="panel-characters" class="bg-slate-100">
+        <header
+          class="flex items-center justify-between gap-1 font-bold pt-4 pb-0 px-6">
+          <button
+            id="btn-targets"
+            class="flex items-center gap-2 hover:text-red-400">
+            <span class="material-symbols-outlined">west</span>Add New Target
+          </button>
+        </header>
+
+        <section class="space-y-2 flex-1 p-6 overflow-hidden">
+          <ul
+            id="list-characters"
+            class="overflow-y-scroll h-[350px] space-y-1 [&_li]:bg-white [&_li]:p-2 [&_li]:rounded-md [&_label]:flex [&_label]:gap-2 [&_label]:items-center [&_img]:w-6 [&_img]:h-6 [&_img]:rounded-full [&_li.done]:text-gray-400 [&_li.done]:bg-transparent [&_li.done_label]:line-through [&_li:hover]:bg-red-100"></ul>
+        </section>
+
+        <button
+          id="btn-targets-done"
+          class="w-full flex justify-center mt-auto p-4 bg-[#1B223B] text-white hover:bg-red-400 hover:text-[#1B223B] flex items-center uppercase mx-auto">
+          Done
+        </button>
+      </div>
+    </div>
+
+    <template id="tpl-character">
+      <li>
+        <label>
+          <img src="" />
+          <div class="flex-1">
+            <div data-target-name></div>
+            <div data-target-family class="text-xs">saddas</div>
+          </div>
+          <input data-state id="player-1" type="checkbox" class="" />
+        </label>
+      </li>
+    </template>
+
+    <template id="tpl-accounts">
+      <li class="">
+        <button
+          type="button"
+          class="w-full flex items-center gap-2 py-2 px-2 bg-red-50 hover:bg-red-400 hover:text-white">
+          <img src="" class="w-6 h-6 rounded-full" />
+          <p account-name class="font-bold">pepe</p>
+        </button>
+      </li>
+    </template>
+  </body>
+</html>
