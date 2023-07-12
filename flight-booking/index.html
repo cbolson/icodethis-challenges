@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - icodethis </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scrips.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/19113 -->
+<body class="bg-slate-100 flex justify-center items-center min-h-screen">
+    
+    <div class="bg-white text-[#181028] p-2 sm:p-4 md:p-8 space-y-6 shadow-lg rounded w-[600px] [&_a]:text-[#7A7CCB] [&_a:hover]:text-[#5B5F9C]">
+
+       <header>
+           <ul class="
+            pt-4
+            flex gap-8
+            [&_label]:border-b-4
+            [&_label]:border-white
+            [&_label]:cursor-pointer
+            [&_label]:pb-2
+            [&_label]:flex
+            [&_label]:items-center
+            [&_label]:gap-2
+            [&_label]:whitespace-nowrap
+            [&_label_.check]:text-gray-400
+            [&_input]:sr-only
+            [&_input:checked~label]:border-[#7A7CCB]
+            [&_input:checked~label]:font-semibold
+            ">
+               <li>
+                    <input type="radio" id="tab-1" tab-select="1" name="tab" checked>
+                    <label for="tab-1" >Flights</lable>
+                </li>
+               <li>
+                    <input type="radio" id="tab-2"  tab-select="2" name="tab" >
+                    <label for="tab-2" >Hotels</lable>
+                </li>
+               <li>
+                    <input type="radio" id="tab-3" tab-select="3" name="tab" >
+                    <label for="tab-3" >Cars</lable>
+                </li>
+            </ul>
+        </header>
+
+        <section tab-panel="1" class="bg-[#FAFAFA] px-4 sm:py-8 sm:px-12 space-y-2 md:space-y-6 relative
+            [&_input]:w-full
+            [&_input]:h-[3rem]
+            [&_input]:border-b
+            [&_input]:border-[#7A7CCB]
+            [&_input]:py-2
+            [&_input]:bg-transparent
+            [&_label]:text-sm
+            [&_input:focus]:outline-none
+
+            [&_select]:w-full
+            [&_select]:h-[3rem]
+            [&_select]:border-b
+            [&_select]:border-[#7A7CCB]
+            [&_select]:py-2
+            [&_select]:bg-transparent
+            [&_select]:text-sm
+            [&_select:focus]:outline-none
+        ">
+                <div class="relative">
+                    <label for="">Origin</label>
+                    <input type="text"  search-airport="origin" placeholder="eg. London">
+                </div>
+
+                <div>
+                    <label for="">Destination</label>
+                    <input type="text" search-airport="destination" placeholder="eg. Madrid">
+                </div>
+
+                <div class="flex flex-col gap-2 sm:flex-row sm:gap-4">
+                    <div>
+                        <label for="date-departure">Departure</label>
+                        <input type="date" id="date-departure" name="date-out" value="03-07-2023" onfocus="this.showPicker?.()">
+                    </div>
+
+                    <div>
+                        <label for="date-return">Return</label>
+                        <input type="date" id="date-return" name="date-return" value="03-07-2023" onfocus="this.showPicker?.()">
+                    </div>
+
+                    <div>
+                        <label for="num-passengers">Passengers</label>
+                        <select id="num-passengers">
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full rounded py-6 bg-[#7A7CCB] hover:bg-[#5B5F9C] hover:shadow-xl text-white uppercase">search</button>
+<p class="text-sm"><a href="#">Flexible on dates?</a></p>
+
+<!-- arrow -->
+<div class="absolute hidden sm:block top-4 left-4
+    border-l
+    border-dashed
+    border-[#7A7CCB]
+    w-px
+    h-[100px]
+    before:w-2
+    before:h-3
+    before:bg-[#7A7CCB]
+    before:absolute
+    before:-translate-x-1/2
+    before:[clip-path:polygon(50%_0,100%_100%,0_100%)]
+
+    after:w-2
+    after:h-3
+    after:bg-[#7A7CCB]
+    after:absolute
+    after:-translate-x-1/2
+    after:bottom-0
+    after:[clip-path:polygon(0_0,100%_0,50%_100%)]
+">
+</div>
+        </section>
+
+        <section tab-panel="2" class="hidden bg-[#FAFAFA] py-32 grid place-items-center">
+            <h2 class="font-bold text-xl text-gray-200 sm:text-4xl">Hotel search goes here</h2>
+        </section>
+
+        <section tab-panel="3" class="hidden bg-[#FAFAFA] py-32 grid place-items-center">
+            <h2 class="font-bold text-xl text-gray-200 sm:text-4xl">Car Hire search goes here</h2>
+    </section>
+
+    </div>
+
+    <template id="tpl-airport">
+        <li class="border-b bg-white">
+            <button type="button" class="flex gap-2 hover:bg-[#888DEC] hover:text-white w-full py-2 px-4">
+                <span airport-code></span>
+                <span airport-name></span>
+            </button>
+        </li>
+    </template>
+
+</body>
+
+</html>
+
+
