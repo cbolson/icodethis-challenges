@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe Modal - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/19137 -->
+  <body
+    class="bg-[#EAECF5] flex justify-center items-center min-h-screen px-4 before:inset-0 before:m-auto before:absolute before:bg-red-100 before:rounded-full before:w-3/4 before:aspect-square before:bg-gradient-to-r before:from-purple-400 before:to-orange-300 before:animate-pulse">
+    <div
+      id="popup"
+      class="transition ease-in-out bg-white text-[#181028] p-8 space-y-6 md:max-w-2xl relative flex items-center gap-8">
+      <img
+        src="https://picsum.photos/id/112/300/500"
+        class="hidden sm:block flex-1 h-full" />
+      <form onsubmit="return false;">
+        <div class="space-y-6">
+          <h2 class="text-xl font-semibold">
+            Ideas and UI components in your inbox
+          </h2>
+          <p>
+            Sign up to receive ideas, free componentss and free resources plus
+            15% on all of our pro UI kits.
+          </p>
+
+          <input
+            type="email"
+            required
+            placeholder="Email address"
+            class="p-4 w-full rounded-md border" />
+
+          <button
+            type="submit"
+            class="w-full py-4 rounded-md text-white bg-gradient-to-r from-blue-300 to-blue-500 hover:scale-105 transition">
+            Subscribe
+          </button>
+          <p class="text-xs text-center">No spams included</p>
+        </div>
+      </form>
+
+      <button
+        type="button"
+        id="btn-close"
+        class="group absolute rounded-full top-0 right-0 shadow -translate-x-2 sm:translate-x-2/4 -translate-y-full bg-white w-12 h-12 hover:bg-blue-500 hover:text-white transition flex justify-center items-center">
+        <span class="material-symbols-outlined group-hover:scale-125 transition"
+          >close</span
+        >
+      </button>
+    </div>
+  </body>
+</html>
