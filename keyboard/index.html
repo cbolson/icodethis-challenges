@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/19263 -->
+<body class="bg-gradient-to-tr from-blue-900 to-blue-500 flex justify-center items-center min-h-screen">
+    <div class="bg-gradient-to-tr from-blue-800 to-blue-900 text-[#181028] p-4 shadow-lg rounded-md w-96 ">
+
+        <div id="keyboard" class="
+            font-extralight
+            grid
+            gap-y-2
+            [&>div>div]:w-full
+            
+            [&>div>div]:grid
+            [&>div>div]:gap-x-1
+            [&>div>div]:gap-y-2
+            [&>div>div]:grid-cols-[repeat(60,1fr)]
+                        
+            [&_.span-2]:col-span-2
+            [&_.span-3]:col-span-3
+            [&_.span-4]:col-span-4
+            [&_.span-5]:col-span-5
+            [&_.span-6]:col-span-6
+            [&_.span-7]:col-span-7
+            [&_.span-8]:col-span-8
+            [&_.span-9]:col-span-9
+            [&_.span-10]:col-span-10
+            [&_.span-11]:col-span-11
+            [&_.span-12]:col-span-12
+            [&_.spacebar]:col-[25_/_span_24]
+            [&_.spacebar]:text-sm
+
+            [&_button]:col-span-6
+            [&_button]:font-extralight
+            [&_button]:text-white
+            [&_button]:bg-[#1B1F6B70]
+            
+            [&_button]:rounded-md
+            [&_button]:h-10
+            [&_button]:text-xl
+            [&_button]:grid
+            [&_button]:place-items-center
+            [&_button:hover]:bg-orange-500
+            [&_button.active]:bg-[#1B1F6B]
+        ">
+            <div id="keyboard-normal">
+                
+                <div>
+
+                    <button type="button">q</button>
+                    <button type="button">w</button>
+                    <button type="button">e</button>
+                    <button type="button">r</button>
+                    <button type="button">t</button>
+                    <button type="button">y</button>
+                    <button type="button">u</button>
+                    <button type="button">i</button>
+                    <button type="button">o</button>
+                    <button type="button">p</button>
+                    
+                    <div class="span-3"></div>
+                    <button type="button">a</button>
+                    <button type="button">s</button>
+                    <button type="button">d</button>
+                    <button type="button">f</button>
+                    <button type="button">g</button>
+                    <button type="button">h</button>
+                    <button type="button">j</button>
+                    <button type="button">k</button>
+                    <button type="button">l</button>
+                    <div class="span-3"></div>
+                
+                
+                    <button id="btn-shift-en" class="material-symbols-outlined span-9 shift">shift</button>
+                    <button type="button">z</button>
+                    <button type="button">x</button>
+                    <button type="button">c</button>
+                    <button type="button">v</button>
+                    <button type="button">b</button>
+                    <button type="button">n</button>
+                    <button type="button">m</button>
+                    <button type="button" class="material-symbols-outlined span-9 backspace">backspace</button>
+                
+
+                </div>
+            </div>
+
+            <div id="keyboard-es" class="hidden">
+            
+                <div>
+            
+                    <button type="button">q</button>
+                    <button type="button">w</button>
+                    <button type="button">e</button>
+                    <button type="button">r</button>
+                    <button type="button">t</button>
+                    <button type="button">y</button>
+                    <button type="button">u</button>
+                    <button type="button">i</button>
+                    <button type="button">o</button>
+                    <button type="button">p</button>
+            
+                    
+                    <button type="button" >a</button>
+                    <button type="button">s</button>
+                    <button type="button">d</button>
+                    <button type="button">f</button>
+                    <button type="button">g</button>
+                    <button type="button">h</button>
+                    <button type="button">j</button>
+                    <button type="button">k</button>
+                    <button type="button">l</button>
+                    <button type="button" >ñ</button>
+                    
+            
+            
+                    <button id="btn-shift-es" class="material-symbols-outlined span-9 shift">shift</button>
+                    <button type="button">z</button>
+                    <button type="button">x</button>
+                    <button type="button">c</button>
+                    <button type="button">v</button>
+                    <button type="button">b</button>
+                    <button type="button">n</button>
+                    <button type="button">m</button>
+                    <button type="button" class="material-symbols-outlined span-9 backspace">backspace</button>
+            
+            
+                </div>
+            </div>
+
+
+
+            <div id="keyboard-numeric" class="hidden">
+                <div>
+
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">4</button>
+                    <button type="button">5</button>
+                    <button type="button">6</button>
+                    <button type="button">7</button>
+                    <button type="button">8</button>
+                    <button type="button">9</button>
+                    <button type="button">0</button>
+                
+                    <div class="span-2"></div>
+                    <button type="button" class="span-7">$</button>
+                    <button type="button" class="span-7">!</button>
+                    <button type="button" class="span-7">-</button>
+                    <button type="button" class="span-7">&</button>
+                    <button type="button" class="span-7">=</button>
+                    <button type="button" class="span-7">#</button>
+                    <button type="button" class="span-7">[</button>
+                    <button type="button" class="span-7">]</button>
+    
+                    <div class="span-2"></div>
+                
+                
+                    <button type="button" id="btn-numeric-alt" class="span-10 shift !text-xs">#+=</button>
+                    <button type="button" class="span-10">,</button>
+                    <button type="button" class="span-10">_</button>
+                    <button type="button" class="span-10">-</button>
+                    <button type="button" class="span-10">+</button>
+                    <button type="button" class="material-symbols-outlined span-10 backspace">backspace</button>
+                
+                    
+                </div>
+            </div>
+
+            <div id="keyboard-numeric-alt" class="hidden">
+                <div>
+            
+                    <button type="button">`</button>
+                    <button type="button">|</button>
+                    <button type="button">{</button>
+                    <button type="button">}</button>
+                    <button type="button">?</button>
+                    <button type="button">%</button>
+                    <button type="button">^</button>
+                    <button type="button">*</button>
+                    <button type="button">/</button>
+                    <button type="button">'</button>
+            
+                    <div class="span-3"></div>
+                    <button type="button" class="span-6">$</button>
+                    <button type="button" class="span-6">!</button>
+                    <button type="button" class="span-6">~</button>
+                    <button type="button" class="span-6">~</button>
+                    <button type="button" class="span-6">&</button>
+                    <button type="button" class="span-6">=</button>
+                    <button type="button" class="span-6">#</button>
+                    <button type="button" class="span-6">[</button>
+                    <button type="button" class="span-6">]</button>
+            
+                    <div class="span-3"></div>
+            
+            
+                    <button type="button" id="btn-numeric-base" class="span-10 shift !text-xs">#+=</button>
+                    <button type="button" class="span-10">.</button>
+                    <button type="button" class="span-10">_</button>
+                    <button type="button" class="span-10">-</button>
+                    <button type="button" class="span-10">+</button>
+                    <button type="button" class="material-symbols-outlined span-10 backspace">backspace</button>
+            
+            
+                </div>
+            </div>
+
+
+            <div id="keyboard-base">
+                <div>
+                    <button type="button" id="btn-numeric" class="material-symbols-outlined span-8 numbers">123</button>
+                    <button type="button"  id="btn-lang" class="material-symbols-outlined span-8">language</button>
+                    <button type="button" class="material-symbols-outlined span-8">mic</button>
+                    <button type="button" class="spacebar">space</button>
+                    <button type="button" class="material-symbols-outlined span-12">search</button>
+            </div>
+        </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
