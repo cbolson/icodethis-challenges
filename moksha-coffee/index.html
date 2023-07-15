@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moksha Coffee - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/19392 -->
+<body class="bg-[#1C1C1C] text-white flex justify-center items-center min-h-screen">
+    <div class="bg-zinc-800  md:w-[1000px]">
+
+        <header class="py-4 sm:py-0 sm:h-16">
+            <ul class="flex flex-col sm:flex-row items-center sm:justify-center gap-2 sm:gap-6
+                [&_.logo_a]:py-4
+                sm:[&_.logo_a]:py-0
+                [&_.logo]:bg-white
+                [&_.logo]:-order-1
+                sm:[&_.logo]:order-none
+                sm:[&_.logo]:px-2
+                [&_a]:opacity-70
+                [&_a:hover]:opacity-100
+                sm:[&_li]:pt-8
+                sm:[&_li]:pb-4
+                [&_a]:block
+                [&_a]:transition
+                [&_.spacer]:hidden
+                sm:[&_.spacer]:block
+                [&_span]:w-3
+                [&_span]:h-3
+                [&_span]:rounded-full
+                [&_span]:bg-[#1C1C1C]
+                [&_span]:block
+            ">
+                <li><a href="#">Our Story</a></li>
+                <li class="spacer"><span></span></li>
+                <li><a href="#">Food</a></li>
+                <li class="logo"><a href="#" class="logo !opacity-100"><img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/logos/moksha.png"></a></li>
+                <li><a href="#">Coffee</a></li>
+                <li class="spacer"><span></span></li>
+                <li><a href="#">Find us</a></li>
+
+        </header>
+
+        <section class="p-16 h-fit text-center space-y-8 relative font-['Courier_Prime']" >
+        <div class="absolute inset-0 w-full h-full bg-cover mix-blend-overlay" style="background-image: url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/coffee-shop.webp)"></div>
+                <h1 class="text-3xl  tracking-wider uppercase font-bold">Our Coffee</h1>
+                <p class="filter sm:w-3/4 mx-auto  tracking-wider">When it comes to the important stuff - the cofee - we are committed to sourcing and serving one of the highest quality and we believe is nothing short of the best coffee possible.</p>
+          <button type="button" class="border border-white border-2 p-4 sm:px-12 filter backdrop-blur-[2px] hover:backdrop-blur-[5px] hover:scale-105 transition">Download our menu</button>      
+        </section>
+
+        <section class="p-4 sm:p-12 flex gap-4 items-center relative overflow-x-scroll  snap-mandatory overscroll-x-contain
+        [&_button]:text-4xl 
+        [&_button]:pb-2
+        [&_button]:text-black
+        [&_button:hover]:text-white
+        [&_button]:transition
+        ">
+
+            <button type="button" slide-nav="prev" class="material-symbols-outlined">arrow_back_ios</button>
+            <div id="slideshow" class="flex gap-2 w-fit pb-4 overflow-y-auto
+            [&_img]:aspect-video
+            [&_img]:w-48
+            [&_img]:flex-1
+            [&_img]:shrink-0
+            [&_img]:snap-start
+            [&_img]:opacity-50
+            [&_img:hover]:opacity-100
+            [&_img]:transition
+            ">   <!-- images loaded here -->
+            </div>
+            
+            <button type="button" slide-nav="next" class="material-symbols-outlined">arrow_forward_ios</button>
+                
+        </section>
+    </div>
+</body>
+
+</html>
