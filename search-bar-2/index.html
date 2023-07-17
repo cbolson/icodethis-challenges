@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar 2 - icodethis</title>
+    <html>
+      <!-- https://icodethis.com/submissions/19832 -->
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+      </head>
+
+      <body
+        class="bg-gray-100 text-black flex flex-col justify-center items-center min-h-screen px-4">
+        <div class="relative">
+          <div class="flex w-fit items-center shadow-md text-xl rounded border">
+            <div class="p-2 flex items-center">
+              <button
+                tyoe="button"
+                id="btn-checklist"
+                class="material-symbols-outlined p-2 transition hover:text-blue-500">
+                expand_more
+              </button>
+              <input
+                type="search"
+                placeholder="Search"
+                class="bg-white border-blue-400 w-full p-2 border focus:border-blue-400" />
+            </div>
+            <button
+              type="button"
+              class="material-symbols-outlined bg-gradient-to-r from-blue-400 hover:from-blue-500 hover:to-blue-800 to-blue-500 text-white w-16 h-16 text-xl sm:text-4xl">
+              search
+            </button>
+          </div>
+          <div
+            id="checklist"
+            class="absolute top-full left-0 transition border shadow-md text-xl rounded h-0 overflow-hidden">
+            <ul
+              class="p-6 space-y-6 [&_li]:flex [&_li]:gap-2 [&_li]:text-blue-500 [&_li:hover]:text-gray-500">
+              <li>
+                <input type="checkbox" id="check-1" />
+                <label for="check-1">Articles</label>
+              </li>
+              <li>
+                <input type="checkbox" id="check-2" />
+                <label for="check-2">Products</label>
+              </li>
+              <li>
+                <input type="checkbox" id="check-4" />
+                <label for="check-3">Services</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </body>
+    </html>
+  </head>
+</html>
