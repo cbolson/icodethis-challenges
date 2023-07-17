@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Method</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/19569 -->
+  <body
+    class="bg-[#82DEF5] text-[#0B387A] font-primary flex justify-center items-center min-h-screen px-4 [&_a]:text-[#0B387A] [&_a:hover]:text-orange-500">
+    <div
+      class="bg-white p-6 sm:p-16 shadow-lg rounded-sm max-w-sm sm:max-w-2xl">
+      <header
+        class="mb-8 flex gap-2 text-xs w-full justify-between relative sm:before:absolute sm:before:h-px sm:before:w-full sm:before:bg-gray-300 sm:before:top-[40%] [&_div]:bg-white [&_div]:z-10 [&_div]:flex [&_div]:flex-col [&_div]:justify-center [&_div]:items-center [&_div]:gap-2 [&_div]:text-gray-400 [&_div.completed]:text-blue-500 [&_div.current]:text-green-500 [&_span:first-of-type]:text-4xl [&_span:last-of-type]:hidden sm:[&_span:last-of-type]:block">
+        <div class="completed">
+          <span class="material-symbols-outlined">shopping_cart_checkout</span
+          ><span>Shopping Cart</span>
+        </div>
+        <div class="completed">
+          <span class="material-symbols-outlined">pin_drop</span
+          ><span>Delivery Address</span>
+        </div>
+        <div id="stage-marker-payment" class="current">
+          <span class="material-symbols-outlined">payments</span
+          ><span>Payment Method</span>
+        </div>
+        <div id="stage-marker-summary">
+          <span class="material-symbols-outlined">list_alt</span
+          ><span>Preview Order</span>
+        </div>
+      </header>
+
+      <div
+        class="grid gap-8 overflow-hidden grid-cols-[300px_300px] sm:grid-cols-[500px_500px] w-[300px] sm:w-[500px]">
+        <div id="stage-payment">
+          <p class="uppercase text-gray-400 mb-4">Payment method</p>
+
+          <div
+            class="grid sm:grid-cols-[1fr_fr] gap-4 w-full min-w-min overflow-hidden">
+            <section
+              class="flex flex-row sm:flex-col gap-4 [&_div]:flex-1 [&_label]:border [&_label]:rounded [&_label]:bg-white [&_label]:h-12 sm:[&_label]:h-16 [&_label]:border [&_label]:border-4 [&_label]:border-white [&_label]:shadow-lg [&_label]:py-2 [&_label]:px-2 [&_img]:w-20 [&_label]:grid [&_label]:place-items-center [&_label]:whitespace-nowrap [&_label_.check]:text-gray-400 [&_input]:sr-only [&_input:checked~label]:border-blue-400 [&_input:checked~label_.check]:text-green-400 [&_input:valid]:border-green-500">
+              <div>
+                <input
+                  type="radio"
+                  payment-type="card"
+                  id="card"
+                  name="payment-type"
+                  checked />
+                <label for="card"
+                  ><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1920px-Visa_2021.svg.png"
+                    class="!w-[70px]"
+                /></label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  payment-type="paypal"
+                  id="paypal"
+                  name="payment-type" />
+                <label for="paypal"
+                  ><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/1920px-PayPal.svg.png"
+                /></label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  payment-type="bitcoin"
+                  id="bitcoin"
+                  name="payment-type" />
+                <label for="bitcoin"
+                  ><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg"
+                /></label>
+              </div>
+            </section>
+
+            <section
+              id="payment-panels"
+              class="relative bg-gray-100 [&>div]:h-[240px] sm:[&>div]:h-[260px] [&>div]:p-4 [&>div]:space-y-2 [&>div]:w-full [&>div]:shrink-0 [&_input]:rounded [&_input]:p-2 sm:[&_input]:py-3 sm:[&_input]:px-4 [&_input]:mt-1 [&_input]:w-full [&_label]:font-light [&_label]:text-xs [&_input~.check]:text-gray-300 [&_input:valid~.check]:text-green-500">
+              <div payment-panel="card">
+                <div>
+                  <label for="credit-card" class="block">Card Number</label>
+                  <div class="flex items-center gap-1">
+                    <input
+                      type="tel"
+                      id="credit-card"
+                      onkeypress="return onlyNumberKey(event)"
+                      placeholder="0000 0000 0000 0000"
+                      minlength="19"
+                      maxlength="19"
+                      required />
+                    <span class="check material-symbols-outlined">check</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-row gap-2">
+                  <div class="w-full">
+                    <label for="" class="block">Expiration Date</label>
+
+                    <div class="flex items-center gap-1">
+                      <input
+                        type="date"
+                        required
+                        onfocus="this.showPicker?.()" />
+                      <span class="check material-symbols-outlined">check</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="cvc" class="block">CVC</label>
+
+                    <div class="flex items-center gap-1">
+                      <input
+                        type="tel"
+                        id="cvc"
+                        onkeypress="return onlyNumberKey(event)"
+                        maxlength="3"
+                        minlength="3"
+                        class="!w-12 text-center"
+                        required />
+                      <span class="check material-symbols-outlined">check</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="cname" class="block">Card Holder Name</label>
+                  <div class="flex items-center gap-1">
+                    <input type="text" id="name" required />
+                    <span class="check material-symbols-outlined">check</span>
+                  </div>
+                </div>
+              </div>
+
+              <div payment-panel="paypal" class="hidden">
+                <img
+                  src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png"
+                  border="0"
+                  alt="PayPal Logo"
+                  class="w-36 mx-auto" />
+                <div>
+                  <label for="cname">Paypal email</label>
+                  <div class="flex items-center gap-1">
+                    <input type="email" id="paypal" required />
+                    <span class="check material-symbols-outlined">check</span>
+                  </div>
+                </div>
+              </div>
+
+              <div payment-panel="bitcoin" class="hidden">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Bitcoin_logo.svg"
+                  class="w-36 mx-auto" />
+                <div>
+                  <label for="cname" class="block">Wallet ID</label>
+                  <div class="flex items-center gap-1">
+                    <input type="text" id="wallet" required />
+                    <span class="check material-symbols-outlined">check</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="sm:col-start-2">
+              <button
+                id="btn-confirn"
+                type="button"
+                class="w-full rounded py-4 px-12 transition bg-blue-400 text-white hover:bg-blue-700 transition">
+                Confirnm Payment
+              </button>
+            </section>
+          </div>
+        </div>
+
+        <div id="stage-summary" class="">
+          <p class="uppercase text-gray-400 mb-4">Order Summary</p>
+          <p>This is a summary of your order (to do......</p>
+        </div>
+      </div>
+      <p class="text-xs text-red-400 text-center mt-8">UNFINISHED</p>
+    </div>
+  </body>
+</html>
