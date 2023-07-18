@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styles Guide - icodethis</title>
+<html>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/20020 -->
+<body class="bg-gray-50 flex justify-center items-center min-h-screen font-primary">
+    <div class="
+    bg-white 
+    text-[#181028] 
+    text-xs
+    md:px-20 
+    w-full
+    md:w-10/12 
+    grid 
+    md:grid-cols-2 
+    py-8
+    md:py-0
+    md:[&>div]:py-20
+    md:[&>div]:border-l
+    [&>div>h2~h2]:mt-12
+    [&>div>h2]:bg-gray-200
+    [&>div>h2]:text-base
+    [&>div>h2]:text-sm
+    [&>div>h2]:w-fit
+    [&>div>h2]:py-1
+    [&>div>h2]:pl-12
+    [&>div>h2]:pr-4
+    [&>div>h2]:text-gray-400
+    [&>div>h2]:rounded-r-full
+    md:[&_section]:w-3/4
+    [&_section]:p-6
+    sm:[&_section]:px-16
+    md:[&_section]:px-6
+    [&_section]:border-red-400
+    [&_h3]:italic
+    [&_h3]:opacity-50
+    ">
+
+        <div class="">
+            <h2>BUTTONS</h2>
+
+            <section class="grid grid-cols-2 gap-4 text-center
+                [&_button]:rounded
+                [&_button]:py-3
+                [&_button]:rounded
+            ">
+                <h3>Default</h3>
+                <h3>Hovered</h3>
+                <button class="bg-[#242E46] text-white">Primary Button</button>
+                <button class="bg-[#242E46] text-white">Primary Button</button>
+                <button class="bg-[#E9EAED]">Secondary Button</button>
+                <button class="bg-[#E9EAED]">Secondary Button</button>
+            </section>
+
+            <h2>INPUTS</h2>
+
+            <section class="
+            [&>label]:mt-4
+            [&>label]:mb-1
+            [&>label]:block
+            [&>label]:font-bold
+            [&>label]:text-[#242E46]
+            [&_input]:border
+            [&_input]:p-3
+            [&_input]:w-full
+            [&_input]:rounded
+            [&_input]:text-[#767E96]
+            [&_input:focus]:border-[#738BFD]
+            [&_input:focus]:ring-0
+            [&_input:focus]:outline-none
+            [&>div]:relative
+            [&>div:after]:content-[attr(data-desc)]
+            [&>div:after]:opacity-50
+            [&>div:after]:absolute
+            [&>div:after]:hidden
+            md:[&>div:after]:block
+            [&>div:after]:left-full
+            [&>div:after]:top-2.5
+            [&>div:after]:pl-2
+            [&>div:after]:text-xs
+            [&>div:after]:italic
+            [&>div:after]:w-24
+            ">
+              
+                    <label for="">Full Name</label>
+                    <div data-desc="default"><input type="text" placeholder="eg. Linda Owen" ></div>
+
+                    <label for="">Your Name</label>
+                    <div data-desc="filled"><input type="text" placeholder="your name" value="Antony Webb"></div>
+
+                    <label for="">Password</label>
+                    <div data-desc="Focused with error message">
+                        <input type="password" placeholder="6+ charaters" >
+                    </div>
+                    <div class="text-xs text-[#F55623] ">Your password myst be at least <span class="font-bold">6 charaters</span> long.</div>
+
+                    <label for="">Email Address</label>
+                    <div  data-desc="inactive"><input type="email" placeholder="" disabled></div>
+               
+            </section>
+
+            <h2>CARDS</h2>
+           
+            <section class="grid grid-cols-2 gap-4 text-center">
+                <h3>Default Card Background</h3>
+                <h3>Hovered Card Background</h3>
+                <div class="h-24 shadow-md"></div>
+                <div class="h-24 shadow-2xl"></div>
+            </section>
+            
+        </div>
+
+        <div>
+
+            <h2>COLORS</h2>
+            
+            <section class="grid grid-cols-3 xl:grid-cols-6 gap-2 !w-full
+            [&_button]:w-full
+            [&_button]:aspect-square
+            [&_button]:flex
+            [&_button]:flex-col
+            [&_button]:items-center
+            [&_button]:justify-center
+            [&_button]:text-[.6rem]
+            ">
+                <button type="button" class="bg-[#242E4C] text-white" copy-code="#242E4C">#242E4C<span copy-msg></span></button>
+                <button type="button" class="bg-[#738BFD] text-white" copy-code="#738BFD">#738BFD<span copy-msg></span></button>
+                <button type="button" class="bg-[#F55623] text-white" copy-code="#F55623">#F55623<span copy-msg></span></button>
+                <button type="button" class="bg-[#767E96] text-white" copy-code="#767E96">#767E96<span copy-msg></span></button>
+                <button type="button" class="bg-[#E9EAED]" copy-code="#E9EAED">#E9EAED<span copy-msg></span></button>
+                <button type="button" class="bg-[#F3F4F6]" copy-code="#F3F4F6<">#F3F4F6<span copy-msg></span></button>
+            </section>
+
+
+            <h2>FONTS - Montserrat</h2>
+
+                <section class="!w-full space-y-2">
+                    <p class="text-2xl font-bold text-[#1E1A50]">Page Title | 28px Bold #1E1A50</p>
+                    <p class="text-lg font-bold text-[#1E1A50]">Secondary Title| 26px Bold #1E1A50</p>
+                    <p class="text-sm text-[#1E1A50]">Tertiary Title | 14px Bold #1E1A50</p>
+                    <p class="text-sm text-[#738BFD]">Link | 14px Medium #738BFD</p>
+                    <p class="text-sm text-[#767E96]">Input Placeholder | 14px Medium #767E96</p>
+                    <p class="text-sm text-[#1A2960]">Basic Paragraph | 14px Medium #1A2960</p>
+                    <p class="text-sm text-[#767E96]">Board Summary Label | 14px Medium #767E96</p>
+                    <p class="text-sm text-[#F55623]">Alert Message | 14px Medium #F55623</p>
+                </section>
+         
+            <h2>ICONS</h2>
+
+            <section class="!w-full flex flex-wrap gap-4 text-[#242E4C]">
+                <span class="material-symbols-outlined text-3xl font-bold">expand_more</span>
+                <span class="material-symbols-outlined text-3xl font-bold">calculate</span>
+                <span class="material-symbols-outlined text-3xl font-bold">ink_eraser</span>
+                <span class="material-symbols-outlined text-3xl font-bold">more_vert</span>
+                <span class="material-symbols-outlined text-3xl font-bold">edit</span>
+                <span class="material-symbols-outlined text-3xl font-bold">search</span>
+                <span class="material-symbols-outlined text-3xl font-bold">menu</span>
+                <span class="material-symbols-outlined text-3xl font-bold">apps</span>
+                <span class="material-symbols-outlined text-3xl font-bold">add</span>
+
+                <span class="material-symbols-outlined text-3xl font-bold !text-[#E9EAED]">account_circle</span>
+                <span class="material-symbols-outlined text-3xl font-bold !text-[#E9EAED]">imagesmode</span>
+            </section>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>
