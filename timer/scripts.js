@@ -1,4 +1,5 @@
 const modeButtons = document.querySelectorAll("[mode-btn]");
+const modePanels = document.querySelectorAll("[mode-panel");
 
 let activeMode = "alarm";
 
@@ -11,10 +12,16 @@ modeButtons.forEach((btn) => {
 });
 function setActivePanel(mode) {
   const modePanel = document.querySelector(`[mode-panel=${mode}]`);
-  modePanel.scrollIntoView({ behavior: "smooth", inline: "start" });
+  // modePanel.scrollIntoView({ behavior: "smooth", inline: "start" });
   modeButtons.forEach((b) => {
     b.classList.remove("active");
+    modePanels.forEach((panel) => {
+      //panel.classList.add("hidden");
+      panel.style.transform = "scale(0)";
+    });
   });
+  modePanel.classList.remove("hidden");
+  modePanel.style.transform = "scale(1)";
   document.querySelector(`[mode-btn=${mode}]`).classList.add("active");
 }
 // set inital active panel
@@ -302,7 +309,9 @@ function lapStopwatch() {
     s
   )}:${formatNum(ms)}`;
   const newLap = tplLap.content.cloneNode(true).querySelector("li");
-  newLap.querySelector("[lap-num]").innerText = `Lap: ${lapCounter}`;
+  newLap.querySelector(
+    "[lap-num]"
+  ).innerHTML = `# <strong>${lapCounter}</strong>`;
   newLap.querySelector("[lap-time]").innerText = currentTime;
   laps.prepend(newLap);
   ++lapCounter;
