@@ -1,6 +1,6 @@
 const modeButtons = document.querySelectorAll("[mode-btn]");
 
-let activeMode = "alarm";
+let activeMode = "timer";
 
 // toggle panels
 modeButtons.forEach((btn) => {
@@ -133,7 +133,7 @@ timerMin.addEventListener("change", () => {
 timerSec.addEventListener("change", () => {
   timerCounterS.innerText = timerSec.value;
 });
-
+let timeEnd;
 timerBtnStart.addEventListener("click", () => {
   //console.log(timerState);
   if (timerState == "counting") {
@@ -146,29 +146,35 @@ timerBtnStart.addEventListener("click", () => {
     timerBtnStart.innerText = "pause";
     timerState = "counting";
   } else {
-    clearInterval(timerInterval);
-    timerInterval = null; //clean timerInterval
-
-    timerState = "counting";
-    timerBtnStart.innerText = "pause";
     const h = timerHour.value;
     const m = timerMin.value;
     const s = timerSec.value;
 
-    deadline = convertToMillieconds(h, m, s);
-    console.log(deadline);
-    displayTimer(toTimeString(deadline));
-    timerInterval = setInterval(myTimer, 1000);
+    deadline = convertToSeconds(h, m, s);
+    if (deadline > 0) {
+      clearInterval(timerInterval);
+      timerInterval = null; //clean timerInterval
 
-    playAudioAuto();
+      timerState = "counting";
+      timerBtnStart.innerText = "pause";
+
+      timeEnd = deadline;
+      // console.log(deadline);
+
+      displayTimer(toTimeString(deadline));
+      timerInterval = setInterval(myTimer, 1000);
+
+      playAudioAuto();
+    }
   }
 });
-
 function displayTimer(newTime) {
   const p = newTime.split(":");
   timerCounterH.innerText = p[0];
   timerCounterM.innerText = p[1];
   timerCounterS.innerText = p[2];
+
+  setTimerCircle(convertToSeconds(p[0], p[1], p[2]));
 }
 
 timerBtnReset.addEventListener("click", () => {
@@ -184,6 +190,13 @@ function resetTimer() {
   displayTimer("00:00:00");
   timerBtnStart.innerText = "play_arrow";
   timerState = "stop";
+}
+
+function setTimerCircle(t) {
+  const percentDone = (t / timeEnd) * 100;
+  document
+    .querySelector("#circle-completed")
+    .setAttribute("stroke-dasharray", `${percentDone}, 100`);
 }
 
 // stopwatch
@@ -286,7 +299,7 @@ function lapStopwatch() {
   ++lapCounter;
 }
 
-function convertToMillieconds(hours, minutes, seconds) {
+function convertToSeconds(hours, minutes, seconds) {
   return Number(hours) * 60 * 60 + Number(minutes) * 60 + Number(seconds);
 }
 

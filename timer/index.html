@@ -14,9 +14,9 @@
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+          <link rel="stylesheet" href="styles.css">
         <script src="scripts.js" defer></script>
       </head>
-
       <body
         class="bg-[#1A7498] flex justify-center items-center min-h-screen px-4">
         <div
@@ -72,9 +72,28 @@
               </div>
 
               <div mode-panel="timer">
-                <section>
+                <section class="flex flex-col justify-between">
+                  <div class="relative h-full  [&_span]:text-4xl [&_span]:w-12">
+                        <svg id="timer-circle" viewBox="0 0 36 36" class="circle absolute h-full w-full  stroke-[#1689AF] fill-none stroke-1" linecap="round">
+                            <path class="circle-bg stroke-white" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path id="circle-completed" class="circle stroke-[#1689AF]" stroke-dasharray="0, 100" linecap="round" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="absolute h-full w-full flex items-center justify-center grid-cols-5">
+                            <span id="timer-h">00</span>
+                            <span class="!w-2">:</span>
+                            <span id="timer-m">00</span>
+                            <span class="!w-2">:</span>
+                            <span id="timer-s">00</span>
+                        </div>
+                   
+                  </div>
+
                   <div
-                    class="flex gap-2 items-center [&_span]:text-xs [&_span]:opacity-70 justify-center">
+                    class="mb-4 flex gap-2 items-center [&_span]:text-xs [&_span]:opacity-70 justify-center">
                     <select
                       time-type="hour"
                       time-default="0"
@@ -90,17 +109,6 @@
                       time-default="0"
                       id="timer-sec"></select>
                     <span class="hidden sm:block">sec</span>
-                  </div>
-                  <div
-                    class="grid place-items-center h-full [&_span]: text-center">
-                    <div
-                      class="flex items-center gap-[0.25rem] justify-center w-52 h-52 aspect-sqaure rounded-full border border-white border-8 [&_span]:text-4xl [&_span]:w-12">
-                      <span id="timer-h">00</span>
-                      <span class="!w-2">:</span>
-                      <span id="timer-m">00</span>
-                      <span class="!w-2">:</span>
-                      <span id="timer-s">00</span>
-                    </div>
                   </div>
                 </section>
                 <footer>
@@ -122,6 +130,8 @@
               <div mode-panel="stopwatch">
                 <section>
                   <div class="justify-center flex items-center gap-4">
+                    
+                   
                     <div
                       class="flex items-center gap-1 justify-center w-52 h-52 aspect-sqaure rounded-full border border-white border-8 [&_span]:text-xl [&_span]:w-6 [&_span]:text-center">
                       <span id="stopwatch-hours">00</span>
