@@ -1,6 +1,6 @@
 const modeButtons = document.querySelectorAll("[mode-btn]");
 
-let activeMode = "timer";
+let activeMode = "alarm";
 
 // toggle panels
 modeButtons.forEach((btn) => {
@@ -140,10 +140,12 @@ timerBtnStart.addEventListener("click", () => {
     clearInterval(timerInterval);
     timerState = "pause";
     timerBtnStart.innerText = "play_arrow";
+    timerBtnStart.style.transform = "rotate(0)";
     return;
   } else if (timerState == "pause") {
     timerInterval = setInterval(myTimer, 1000);
-    timerBtnStart.innerText = "pause";
+    timerBtnStart.innerText = "equal";
+    timerBtnStart.style.transform = "rotate(90deg)";
     timerState = "counting";
   } else {
     const h = timerHour.value;
@@ -156,7 +158,8 @@ timerBtnStart.addEventListener("click", () => {
       timerInterval = null; //clean timerInterval
 
       timerState = "counting";
-      timerBtnStart.innerText = "pause";
+      timerBtnStart.innerText = "equal";
+      timerBtnStart.style.transform = "rotate(90deg)";
 
       timeEnd = deadline;
       // console.log(deadline);
@@ -189,6 +192,7 @@ function resetTimer() {
   timerSec.value = "00";
   displayTimer("00:00:00");
   timerBtnStart.innerText = "play_arrow";
+  timerBtnStart.style.transform = "rotate(0)";
   timerState = "stop";
 }
 
@@ -219,11 +223,14 @@ stopBtnStart.addEventListener("click", () => {
   // console.log("start stopwatch");
   if (stopwatchStarted) {
     stopBtnStart.innerText = "play_arrow";
+    stopBtnStart.style.transform = "rotate(0)";
     stopwatchStarted = false;
 
     pauseStopwatch();
   } else {
-    stopBtnStart.innerText = "pause";
+    stopBtnStart.innerText = "equal";
+
+    stopBtnStart.style.transform = "rotate(90deg)";
     stopwatchStarted = true;
 
     startStopwatch();
@@ -236,6 +243,8 @@ stopBtnLap.addEventListener("click", () => {
 });
 stopBtnReset.addEventListener("click", () => {
   //console.log("resesst stopwatch");
+  //  stopBtnReset.classList.add("animate-spin");
+  // stopBtnReset.style.transform = "rotate(360deg)";
   resetStopwatch();
 });
 
