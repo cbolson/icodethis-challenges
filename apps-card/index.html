@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps Card - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/20412 -->
+<body class="bg-gradient-to-br from-[#6C55A1] to-[#2E3A69] flex justify-center items-center min-h-screen">
+    <div class="relative bg-white text-[#181028] p-2 sm:p-6 transition  shadow-lg rounded-md max-w-md md:max-w-lg overflow-hidden">
+        
+        <h1 class=" pb-2 font-bold">Apps</h1>
+        
+        <div id="apps-list" class="border-b border-t border-[#6C55A150] mb-4 grid grid-cols-3 gap-4 py-4  overflow-x-scroll h-[300px] ">
+        </div>
+        
+        <button id="btn-add" class="w-full py-3 bg-[#5466FE] hover:bg-[#3338C1] transition text-white uppercase text-sm rounded-md">Add more apps</button>
+        
+        <div id="more-apps" class="absolute inset-0 translate-y-full  transition pt-8 p-6 w-full h-full rounded-md  bg-[#5466FE] text-white ">
+            
+            <div id="more-apps-list" class="grid grid-cols-3 gap-4 overflow-x-scroll h-full"></div>
+            <button type="button" id="btn-close" class="absolute top-2 right-2 text-white material-symbols-outlined hover:scale-125  transition ">close</button>
+    </div>
+    
+
+    <template id="template-app">
+        <button  type="button" class="group grid gap-1 place-items-center aspect-sqaure bg-white rounded-md transition hover:shadow-md p-2 ">
+            <img class="w-16 h-16 aspect-square group-hover:scale-90"/>
+            <p class="text-[.7rem] text-black"></p>
+        </button>
+    </template>
+</body>
+
+</html>
