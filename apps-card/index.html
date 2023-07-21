@@ -11,12 +11,13 @@
         <script src="scripts.js" defer></script>
 </head>
 <!-- https://icodethis.com/submissions/20412 -->
+
 <body class="bg-gradient-to-br from-[#6C55A1] to-[#2E3A69] flex justify-center items-center min-h-screen">
     <div class="relative bg-white text-[#181028] p-2 sm:p-6 transition  shadow-lg rounded-md max-w-md md:max-w-lg overflow-hidden">
         
         <h1 class=" pb-2 font-bold">Apps</h1>
         
-        <div id="apps-list" class="border-b border-t border-[#6C55A150] mb-4 grid grid-cols-3 gap-4 py-4  overflow-x-scroll h-[300px] ">
+        <div id="apps-list" class="border-b border-t border-[#6C55A150] mb-4 grid grid-cols-3 gap-4 py-4   overflow-x-scroll h-[300px] ">
         </div>
         
         <button id="btn-add" class="w-full py-3 bg-[#5466FE] hover:bg-[#3338C1] transition text-white uppercase text-sm rounded-md">Add more apps</button>
@@ -29,8 +30,8 @@
     
 
     <template id="template-app">
-        <button  type="button" class="group grid gap-1 place-items-center aspect-sqaure bg-white rounded-md transition hover:shadow-md p-2 ">
-            <img class="w-16 h-16 aspect-square group-hover:scale-90"/>
+        <button  type="button" class="group flex flex-col gap-1 items-center aspect-sqaure bg-white rounded-md transition hover:shadow-md p-2 ">
+            <img class="w-12 h-12aspect-square group-hover:scale-90 rounded-md"/>
             <p class="text-[.7rem] text-black"></p>
         </button>
     </template>
