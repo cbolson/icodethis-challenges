@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/20587 -->
+<body class="bg-[#1C1C37] text-white/70 flex justify-center items-center min-h-screen">
+    <div id="popup" class="bg-[#29284E] relative shadow-lg rounded-md w-96 max-w-md md:max-w-lg transition">
+        <header class="bg-[#1F1F3E] py-6 px-4 captitalize">
+            <p>Edit your account</p>
+        
+        </header>
+        <form>
+        <main class="flex flex-col gap-6 p-8 relative overflow-hidden
+            [&_label]:uppercase
+            [&_label]:block
+            [&_label]:text-thin
+            [&_input]:placeholder:text-white/50
+           [&_input]:placeholder:italic
+            [&_input]:border
+            [&_input]:border-[#30305D]
+            [&_input]:py-3
+            [&_input]:px-4
+            [&_input]:text-xs
+            [&_input]:w-full
+            [&_input]:bg-transparent
+            [&_input]:rounded
+            [&_input]:text-white/70
+            [&_input:focus]:bg-[#222148]
+            [&_input:focus]:border-[#4A47A3]
+            [&_input:focus]:ring-0
+            [&_input:focus]:outline-none
+
+            [&_label]:text-xs
+            [&_label]:mb-2
+            [&_label]:opacity-70
+            [&_select]:border
+            [&_select]:border-[#30305D]
+            [&_select]:py-2
+            [&_select]:px-2
+            [&_select]:w-full
+            [&_select]:bg-transparent
+            [&_select]:rounded
+            [&_select]:text-white/70
+
+        ">
+            <div>
+                <label for="">Name</label>
+                <input type="text" placeholder="your name" value="John Atkins" required>
+            </div>
+            <div>
+                <label for="">Email</label>
+                <input type="email" placeholder="your email" value="johnatkins@nomail.come" required>
+            </div>
+
+            <div>
+                <label for="">Date of birth</label>
+                <div class="flex gap-2">
+                    <select id="select-month" intial="3"></select>
+                    <select id="select-day"></select>
+                    <select id="select-year"></select>
+                </div>
+            </div>
+            <div id="msg" class="absolute inset-0 bg-[#EC5C50] p-8 grid place-items-center  text-center text-2xl transition duration-300 translate-y-full ">THANKS!<br>Your details have been saved.</div>
+        </main>
+        <footer class="bg-[#1F1F3E] py-6 px-12 flex gap-4 items-center justify-center
+            [&_button]:py-2
+            [&_button]:w-full
+            [&_button]:rounded
+            [&_button]:transition
+            [&_button:hover]:scale-110
+            [&_button:disabled]:opacity-30
+        ">
+            <button type="reset" class="bg-[#29284E]"">Cancel</button>
+            <button type="submit" class="bg-[#EC5C50]">Save</button>
+        </footer>
+        </form>
+
+
+    <button type="button" id="btn-close" class="absolute top-2 right-4  w-6 h-6 text-base text-gray-500 grid place-items-center   material-symbols-outlined hover:scale-150 hover:text-[#EC5C50] transition">close</button>
+    </div>
+</body>
+
+</html>
