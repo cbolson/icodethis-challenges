@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner - icodethis</title>
+<html>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!--https://icodethis.com/submissions/21014 -->
+<body class="relative bg-black flex justify-center items-center min-h-screen
+before:bg-[url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bird-box-barcelona.webp')]
+before:inset-0
+before:w-full
+before:h-full
+before:absolute
+before:opacity-20
+before:bg-cover
+before:bg-center
+before:-z-10
+">
+    <div id="popup" class="group transition bg-black relative overflow-hidden group  text-white p-8 px-12  w-5/6 max-w-[1200px] grid gap-4 md:grid-cols-2 lg:grid-cols-3 place-items-center sm:bg-[url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bird-box-barcelona-2.webp')] bg-contain bg-no-repeat bg-[-50px] top-0">
+        <div class="sm:col-start-2 text-center font-thin uppercase tracking-widest" >
+            New Season of 
+            <h1 class="text-4xl lg:text-6xl font-semibold whitespace-nowrap ">BIRD BOX</h1>
+            <h2 class="text-2xl ">Barcelona</h2>
+        </div>
+        <button class="sm:col-start-2 lg:col-start-3 lg:ml-auto bg-red-700 hover:bg-red-600 group-hover:scale-110 transition rounded-md text-white w-fit whitespace-nowrap py-2 px-2 md:px-6 h-fit uppercase text-sm">Watch on NETFLIX</button>
+        <button type="button" id="btn-close" class="absolute top-2 right-4  w-6 h-6 text-base text-gray-500 grid place-items-center   material-symbols-outlined hover:scale-150 hover:text-[#EC5C50] transition">close</button>
+    </div>
+</body>
+</html>
