@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events App - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <!-- https://icodethis.com/submissions/21076 -->
+  <body class="bg-purple-50 flex justify-center items-center min-h-screen">
+    <div
+      class="bg-white text-[#181028] shadow-lg rounded-xl overflow-hidden w-96">
+      <header
+        class="bg-gradient-to-br from-[#37B9ED] to-[#1EC4AE] py2 px-4 pb-2 space-y-2">
+        <div class="grid grid-cols-3 gap-1 items-center text-xs">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-base"
+              >signal_cellular_alt</span
+            >
+            <label>Sketch</label>
+            <span class="material-symbols-outlined text-base">wifi</span>
+          </div>
+
+          <label class="mx-auto">12:37 pm</label>
+
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined ml-auto text-base"
+              >bluetooth</span
+            >
+            <label>80%</label>
+            <span class="material-symbols-outlined rotate-180 text-base"
+              >battery_horiz_075</span
+            >
+          </div>
+        </div>
+        <div
+          class="flex justify-between items-center [&_button]:transition [&_button]:text-white [&_button:hover]:text-black">
+          <button
+            class="material-symbols-outlined"
+            title="nothing here today, sorry">
+            menu
+          </button>
+          <div class="group flex items-center gap-2 isolate">
+            <input
+              type="text"
+              class="rounded-full w-52 p-1 pl-2 pr-8 translate-x-[320px] group-hover:translate-x-[40px] transition focus:ring-0 focus:outline-none -z-10" />
+            <button class="material-symbols-outlined group-hover:text-black">
+              search
+            </button>
+          </div>
+        </div>
+        <h1 class="text-center text-white">Event Higlights</h1>
+        <div
+          class="w-full flex gap-4 overflow-x-auto p-2 pb-4 [&>div]:rounded-md [&>div]:isolate [&>div]:overflow-hidden [&>div]:w-32 [&>div]:shrink-0 [&>div]:aspect-square [&>div]:relative [&>div]:transition [&>div]:text-xs [&>div]:text-white [&>div>img]:absolute [&>div>img]:inset-0 [&>div>img]:w-full [&>div>img]:h-full [&>div>img]:object-cover [&>div>img]:-z-10 [&>div>div]:opacity-0 [&>div>div]:transition [&>div>div]:absolute [&>div>div]:flex [&>div>div]:flex-col [&>div>div]:justify-end [&>div>div]:inset-0 [&>div>div]:bg-black/70 [&>div>div]:p-4 [&>div>div:hover]:opacity-100">
+          <div>
+            <img src="https://source.unsplash.com/iQ6zvGT_Z7E/200x200" />
+            <div>
+              <p>12 Jul - 21 Jul</p>
+              <h3>Rainforest World Music Festival</h3>
+            </div>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/_X2UAmIcpko/200x200" />
+            <div>
+              <p>18 Jul - 25 Jul</p>
+              <h3>Kuala Lumpur Fashion Week</h3>
+            </div>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/cQfxh8Qi7Kc/200x200" />
+            <div>
+              <p>21 Jul - 30 Aug</p>
+              <h3>Malasia Coffee Fest</h3>
+            </div>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/W-QmmfxU1gQ/200x200" />
+            <div>
+              <p>12 Jul - 3 Sept</p>
+              <h3>World Street Photography</h3>
+            </div>
+          </div>
+          <div>
+            <img src="https://source.unsplash.com/CGblV7cadMg/200x200" />
+            <div>
+              <p>15 Aug - 21 Aug</p>
+              <h3>Steet Party Week</h3>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main
+        class="p-6 space-y-6 h-96 overflow-y-auto my-4 [&>div>div]:mb-2 [&>div>div]:flex [&>div>div]:justify-between [&>div>div]:items-center [&>div>div]:overflow-hidden [&_h2]:font-bold [&_h2]:capitalize [&_span]:opacity-70 [&_span]:text-xs [&_span]:whitespace-nowrap [&_img]:rounded-md [&_img]:w-full [&_img]:aspect-video [&_img]:scale-125 [&_img]:transition [&_img:hover]:scale-100 [&_img:hover]:duration-500">
+        <div>
+          <div>
+            <h2>World Puppeet Carnival in Kuching</h2>
+            <span>16 Aug - 21 Aug</span>
+          </div>
+          <div class="rounded-md w-full aspect-video bg-red-100">
+            <img src="https://source.unsplash.com/BbOXC95sxlE/600x300" />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h2>33 Sabah Annual Art</h2>
+            <span class="opacity-70">23 Aug - 1 Sept</span>
+          </div>
+          <div class="rounded-md w-full aspect-video bg-red-100">
+            <img src="https://source.unsplash.com/kJQ6cDyodAM/600x300" />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h2>World through many eyes</h2>
+            <span class="opacity-70">25 Aug - 3 Sept</span>
+          </div>
+          <div class="rounded-md w-full aspect-video bg-red-100">
+            <img src="https://source.unsplash.com/lq-3u9EqNb4/600x300" />
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
