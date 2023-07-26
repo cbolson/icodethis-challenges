@@ -1,256 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inputs - icodethis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="scripts.js" defer></script>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-</head>
-<!-- https://icodethis.com/submissions/21167 -->
-<body class="bg-purple-50 transition dark:bg-[#00144E] dark:text-white flex justify-center items-center min-h-screen">
-    <main class="flex flex-col sm:flex-row gap-12
-        [&_section]:relative
-        [&_section]:transition
-        [&_section]:isolate
-        [&_section]:z-0
-        [&_section]:overflow-hidden
-        [&_section]:bg-white
-        [&_section]:text-[#181028]
-        [&_section]:p-4
-        [&_section]:rounded-xl
-        [&_section]:w-48
-        [&_section]:shadow-xl
-        [&_section>h2]:font-bold
-        [&_section>h2]:px-2
-        [&_section>h2]:mb-2
-        [&_section>h2]:transition-all
-        [&_label]:text-xs
-        [&_label]:flex
-        [&_label]:items-center
-        [&_label]:gap-2
-        [&_label]:relative
-        [&_label]:rounded-md
-        [&_label]:p-2
-        [&_labe]:transition
-        [&_label:hover]:bg-pink-50
-        [&_input]:sr-only
-        dark:[&_section]:bg-pink-200
-        dark:[&_label:hover]:bg-pink-300
-    ">
-
-       <div>
+    <style>
+      input[type="radio"]:checked + .radio_check_button::before {
+        transform: scale(1);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <!-- https://icodethis.com/submissions/21167 -->
+  <body
+    class="bg-purple-50 transition dark:bg-[#00144E] dark:text-white flex justify-center items-center min-h-screen">
+    <main
+      class="flex flex-col sm:flex-row gap-12 [&_section]:relative [&_section]:transition [&_section]:isolate [&_section]:z-0 [&_section]:overflow-hidden [&_section]:bg-white [&_section]:text-[#181028] [&_section]:p-4 [&_section]:rounded-xl [&_section]:w-48 [&_section]:shadow-xl [&_section>h2]:font-bold [&_section>h2]:px-2 [&_section>h2]:mb-2 [&_section>h2]:transition-all [&_label]:text-xs [&_label]:flex [&_label]:items-center [&_label]:gap-2 [&_label]:relative [&_label]:rounded-md [&_label]:p-2 [&_labe]:transition [&_label:hover]:bg-pink-50 [&_input]:sr-only dark:[&_section]:bg-pink-200 dark:[&_label:hover]:bg-pink-300">
+      <div>
         <section>
-        <h2 data-lang="Dias">Days</h2>
-        <form>
-            <div class="flex flex-col 
-                [&>label>span]:w-6 
-                [&>label>span]:h-6
-                [&>label>span]:font-bold
-                [&>label>span]:text-base
-                [&>label>span]:bg-white
-                [&>label>span]:grid
-                [&>label>span]:transition
-                [&>label>span]:place-items-center
-                [&>label>span]:border
-                [&>label>span]:text-transparent
-                [&>label>span]:border-gray-400
-                dark:[&>label>span]:border-gray-700
-                [&>label>span]:rounded
-                [&_input:checked~span]:bg-pink-500
-                [&_input:checked~span]:border-pink-500
-                [&_input:checked~span]:text-white
-            ">
-            <label for="check-1">
-                <input type="checkbox" id="check-1">
+          <h2 data-lang="Dias">Days</h2>
+          <form>
+            <div
+              class="flex flex-col [&>label>span]:w-6 [&>label>span]:h-6 [&>label>span]:font-bold [&>label>span]:text-base [&>label>span]:bg-white [&>label>span]:grid [&>label>span]:transition [&>label>span]:place-items-center [&>label>span]:border [&>label>span]:text-transparent [&>label>span]:border-gray-400 dark:[&>label>span]:border-gray-700 [&>label>span]:rounded [&_input:checked~span]:bg-pink-500 [&_input:checked~span]:border-pink-500 [&_input:checked~span]:text-white">
+              <label for="check-1">
+                <input type="checkbox" id="check-1" />
                 <span class="material-symbols-outlined">check</span>
                 <p data-lang="Lunes">Monday</p>
-            </label>
+              </label>
 
-                <label for="check-2">
-                    <input type="checkbox" id="check-2" checked>
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Martes">Tuesday</p>
-                </label>
-                
-                <label for="check-3">
-                    <input type="checkbox" id="check-3" checked>
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Miercoles">Wednesday</p>
-                </label>
+              <label for="check-2">
+                <input type="checkbox" id="check-2" checked />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Martes">Tuesday</p>
+              </label>
 
-                <label for="check-4">
-                    <input type="checkbox" id="check-4" >
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Jueves">Thursday</p>
-                </label>
-                
-                <label for="check-5">
-                    <input type="checkbox" id="check-5">
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Viernes">Friday</p>
-                </label>
-                
-                <label for="check-6">
-                    <input type="checkbox" id="check-6">
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Sabado">Saturday</p>
-                </label>
-                
-                <label for="check-7">
-                    <input type="checkbox" id="check-7">
-                    <span class="material-symbols-outlined">check</span>
-                    <p data-lang="Domingo">Sunday</p>
-                </label>
+              <label for="check-3">
+                <input type="checkbox" id="check-3" checked />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Miercoles">Wednesday</p>
+              </label>
 
+              <label for="check-4">
+                <input type="checkbox" id="check-4" />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Jueves">Thursday</p>
+              </label>
+
+              <label for="check-5">
+                <input type="checkbox" id="check-5" />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Viernes">Friday</p>
+              </label>
+
+              <label for="check-6">
+                <input type="checkbox" id="check-6" />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Sabado">Saturday</p>
+              </label>
+
+              <label for="check-7">
+                <input type="checkbox" id="check-7" />
+                <span class="material-symbols-outlined">check</span>
+                <p data-lang="Domingo">Sunday</p>
+              </label>
             </div>
-            <button type="reset" class="w-full mt-4 py-1 bg-black text-sm text-white rounded-md transition hover:bg-pink-500" data-lang="Quitar filtros">Remove all filters</button>
-            </form>
+            <button
+              type="reset"
+              class="w-full mt-4 py-1 bg-black text-sm text-white rounded-md transition hover:bg-pink-500"
+              data-lang="Quitar filtros">
+              Remove all filters
+            </button>
+          </form>
         </section>
-        </div>
+      </div>
 
-    <div>
-        <section class="!shadow-[-20px_-20px_#FFEBF8]
-        [&_.switch]:ml-auto
-        [&_.switch]:rounded-full
-        [&_.switch]:border
-        [&_.switch]:border-gray-500
-        [&_.switch]:flex
-        [&_.switch]:gap-2
-        [&_.switch]:p-[0.15rem]
-        [&_.switch]:justify-between
-        [&_.switch]:border-black
-        [&_.switch]:w-fit
-        [&_.switch]:bg-white
-        [&_.switch]:overflow-hidden
-        [&_.switch_span]:text-base
-        [&_.switch_span]:flex-1
-        [&_.switch_span]:w-6
-        [&_.switch_span]:h-6
-        [&_.switch_span]:aspect-square
-        [&_.switch_span]:grid
-        [&_.switch_span]:place-items-center
-        [&_.switch_span]:rounded-full
-        ">
-            <h2 data-lang="Configuración">Settings</h2>
+      <div>
+        <section
+          class="!shadow-[-20px_-20px_#FFEBF8] [&_.switch]:ml-auto [&_.switch]:rounded-full [&_.switch]:border [&_.switch]:border-gray-500 [&_.switch]:flex [&_.switch]:gap-2 [&_.switch]:p-[0.15rem] [&_.switch]:justify-between [&_.switch]:border-black [&_.switch]:w-fit [&_.switch]:bg-white [&_.switch]:overflow-hidden [&_.switch_span]:text-base [&_.switch_span]:flex-1 [&_.switch_span]:w-6 [&_.switch_span]:h-6 [&_.switch_span]:aspect-square [&_.switch_span]:grid [&_.switch_span]:place-items-center [&_.switch_span]:rounded-full">
+          <h2 data-lang="Configuración">Settings</h2>
 
-            <label for="check-sorting"><p data-lang="Ordenar">Sorting</p>
-                <input type="checkbox" toggle="sorting" id="check-sorting">
-                <div class="switch">
-                    <span class="material-symbols-outlined bg-pink-500 text-white">sort</span>
-                    <span class="material-symbols-outlined rotate-180">sort</span>
-                </div>
-            </label> 
-
-            <label for="toggle-theme">
-                <p data-lang="Tema">Theme</p>
-                <input type="checkbox" toggle="theme" id="toggle-theme">
-                <div class="switch">
-                    <span class="material-symbols-outlined bg-pink-500 text-white">light_mode</span>
-                    <span class="material-symbols-outlined">dark_mode</span>
-                </div>
-
-            </label>
-            <div class="p-2 hidden">
-                <label for="theme-light">
-                    <input type="checkbox" id="theme-light" checked>
-                    <span class="material-symbols-outlined">check</span>
-                    Light
-                </label>
-
-                <label for="theme-dark">
-                        <input type="checkbox" id="theme-dark" >
-                        <span class="material-symbols-outlined">check</span>
-                        Dark
-                    </label>
+          <label for="check-sorting"
+            ><p data-lang="Ordenar">Sorting</p>
+            <input type="checkbox" toggle="sorting" id="check-sorting" />
+            <div class="switch">
+              <span class="material-symbols-outlined bg-pink-500 text-white"
+                >sort</span
+              >
+              <span class="material-symbols-outlined rotate-180">sort</span>
             </div>
+          </label>
 
-            <label>
-                <p data-lang="Elegir Idioma">Choose Language</p>
-                <button toggle-slide="languages" class="material-symbols-outlined text-pink-500 ml-auto">arrow_drop_down</button>
-            </label>
-            <div id="languages" class="
-            h-0S
-            hidden
-            overflow-hidden
-            [&_span]:w-6
-            [&_span]:h-6
-            [&_span]:border
-            [&_span]:border-pink-500
-            [&_span]:rounded-full
-            [&_span]:relative
-            [&_span]:bg-white
-            before:[&_span]:absolute
-            before:[&_span]:rounded-full
-            before:[&_span]:bg-pink-500
-            before:[&_span]:scale-0
-            before:[&_span]:inset-0.5
-            before:[&_span]:m-auto
-            before:[&_span]:transition
-            before:[&_input:checked_span]:scale-1
-            ">
-                <label for="lang-en">
-                    <input type="radio" id="lang-en" data-lang value="en" name="user-lang" checked>
-                    <span class="radio_check_button "></span>
-                        <p data-lang="Inglés">English</p>
-                </label>
-                
-                <label for="lang-es">
-                    <input type="radio" id="lang-es" data-lang value="es" name="user-lang">
-                    <span class="radio_check_button"></span>
-                    <p data-lang="Español">Spansih</p>
-                </label>
+          <label for="toggle-theme">
+            <p data-lang="Tema">Theme</p>
+            <input type="checkbox" toggle="theme" id="toggle-theme" />
+            <div class="switch">
+              <span class="material-symbols-outlined bg-pink-500 text-white"
+                >light_mode</span
+              >
+              <span class="material-symbols-outlined">dark_mode</span>
             </div>
+          </label>
+          <div class="p-2 hidden">
+            <label for="theme-light">
+              <input type="checkbox" id="theme-light" checked />
+              <span class="material-symbols-outlined">check</span>
+              Light
+            </label>
 
+            <label for="theme-dark">
+              <input type="checkbox" id="theme-dark" />
+              <span class="material-symbols-outlined">check</span>
+              Dark
+            </label>
+          </div>
+
+          <label>
+            <p data-lang="Elegir Idioma">Choose Language</p>
+            <button
+              toggle-slide="languages"
+              class="material-symbols-outlined text-pink-500 ml-auto">
+              arrow_drop_down
+            </button>
+          </label>
+          <div
+            id="languages"
+            class="h-0S hidden overflow-hidden [&_span]:w-6 [&_span]:h-6 [&_span]:border [&_span]:border-pink-500 [&_span]:rounded-full [&_span]:relative [&_span]:bg-white before:[&_span]:absolute before:[&_span]:rounded-full before:[&_span]:bg-pink-500 before:[&_span]:scale-0 before:[&_span]:inset-0.5 before:[&_span]:m-auto before:[&_span]:transition before:[&_input:checked_span]:scale-1">
+            <label for="lang-en">
+              <input
+                type="radio"
+                id="lang-en"
+                data-lang
+                value="en"
+                name="user-lang"
+                checked />
+              <span class="radio_check_button"></span>
+              <p data-lang="Inglés">English</p>
+            </label>
+
+            <label for="lang-es">
+              <input
+                type="radio"
+                id="lang-es"
+                data-lang
+                value="es"
+                name="user-lang" />
+              <span class="radio_check_button"></span>
+              <p data-lang="Español">Spansih</p>
+            </label>
+          </div>
         </section>
-    </div>
+      </div>
 
-    <div class="space-y-1">
-        <select id="select-type" class="rounded-md p-2 w-full border border-black bg-white text-black z-10">
-            <option value="" data-lang="Todos">All Types</option>
-            <option value="services" data-lang="Servicios">Services</option>
-            <option value="products" data-lang="Productos">Products</option>
-            <option value="marketing" data-lang="Marketing">Marketing</option>
+      <div class="space-y-1">
+        <select
+          id="select-type"
+          class="rounded-md p-2 w-full border border-black bg-white text-black z-10">
+          <option value="" data-lang="Todos">All Types</option>
+          <option value="services" data-lang="Servicios">Services</option>
+          <option value="products" data-lang="Productos">Products</option>
+          <option value="marketing" data-lang="Marketing">Marketing</option>
         </select>
-    
-        <section>
-            
-            <form>
-                <div id="list-types" class="flex flex-col
-                [&_input]:sr-only
-            [&>label>span]:w-6 
-            [&>label>span]:h-6
-            [&>label>span]:font-bold
-            [&>label>span]:text-base
-                [&>label>span]:bg-white
-            [&>label>span]:grid
-            [&>label>span]:transition
-            [&>label>span]:place-items-center
-            [&>label>span]:border
-            [&>label>span]:text-transparent
-            [&>label>span]:border-gray-400
-            [&>label>span]:rounded
-            [&_input:checked~span]:bg-pink-500
-            [&_input:checked~span]:border-pink-500
-            [&_input:checked~span]:text-white
-                ">
-                                    
-                </div>
 
-            </form>
+        <section>
+          <form>
+            <div
+              id="list-types"
+              class="flex flex-col [&_input]:sr-only [&>label>span]:w-6 [&>label>span]:h-6 [&>label>span]:font-bold [&>label>span]:text-base [&>label>span]:bg-white [&>label>span]:grid [&>label>span]:transition [&>label>span]:place-items-center [&>label>span]:border [&>label>span]:text-transparent [&>label>span]:border-gray-400 [&>label>span]:rounded [&_input:checked~span]:bg-pink-500 [&_input:checked~span]:border-pink-500 [&_input:checked~span]:text-white"></div>
+          </form>
         </section>
-</div>
+      </div>
     </main>
 
     <template id="tpl-item">
-        <label>
-            <input type="checkbox" />
-            <span class="material-symbols-outlined">check</span>
-            <p item-desc></p>
-        </label>
+      <label>
+        <input type="checkbox" />
+        <span class="material-symbols-outlined">check</span>
+        <p item-desc></p>
+      </label>
     </template>
-</body>
-
+  </body>
 </html>
