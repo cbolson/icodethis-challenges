@@ -53,13 +53,14 @@
           <span class="material-symbols-outlined">filter_list</span>
           <span>Filters</span>
         </button>
+
         <div id="filters-list-applied" class="flex gap-1 overflow-x-scroll">
           <!-- applied filters load here -->
         </div>
 
         <div
           id="filters-list"
-          class="hiddenS absolute top-full flex flex-row gap-1 z-10 !border-0 !bg-transparent w-full overflow-x-scroll !p-0 !pt-1 !pb-3 [&_p]:text-black">
+          class="hiddenS absolute top-full flex flex-row gap-1 w-full overflow-x-scroll pt-1 pb-3">
           <!-- fiñters loaded here -->
         </div>
       </section>
@@ -67,29 +68,38 @@
       <section
         id="layout"
         class="py-4 px-4 sm:px-8 h-[300px] overflow-y-scroll sm:[.gridded&>div]:grid-cols-2 md:[.gridded&>div]:grid-cols-3 lg:[.gridded&>div]:grid-cols-4 [.gridded&>div>article]:flex-col">
-        <div
-          id="meals-list"
-          class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 [&>article]:rounded-md [&>article]:border [&>article]:border-blue-200 [&>article]:p-4 [&>article]:flex [&>article]:gap-4 [&>article]:items-center [&>article]:relative [&>article:hover]:shadow-xl [&_img]:w-16 [&_img]:h-16 [&_img]:aspect-square [&_img]:object-cover [&_img]:transition [&_img]:rounded-full [&_h3]:font-bold [&>article>div>div]:flex [&>article>div>div]:items-center [&>article>div>div]:gap-1 [&>article>div>div]:text-sm [&>article>button]:absolute [&>article>button]:top-0 [&>article>button]:right-1 [&>article>button]:text-base [&>article>button:hover]:text-red-300 [&>article:hover_img]:scale-125"></div>
+        <div id="meals-list" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          <!--meals loaded here -->
+        </div>
       </section>
     </div>
 
+    <!-- template - meals -->
     <template id="tpl-meal">
-      <article>
-        <img src="" />
-
+      <article
+        class="relative group rounded-md border border-blue-200 p-4 flex gap-4 items-center hover:shadow-xl">
+        <img
+          src=""
+          class="w-16 h-16 object-cover transition rounded-full group-hover:scale-125" />
         <div>
-          <h3>Avocado sandwich with boiled egg</h3>
-          <div>
+          <h3 class="font-bold leading-4">Avocado sandwich with boiled egg</h3>
+          <div class="flex gap-1 text-sm items-center">
             <span class="material-symbols-outlined text-base">schedule</span>
             <p meal-time></p>
           </div>
+          <ul
+            class="flex flex-wrap gap-[0.2rem] text-xs [&>li]:rounded-full [&>li]:w-fit [&>li]:px-2 [&>li]:bg-gray-200"></ul>
         </div>
-        <button bookmark type="button" class="material-symbols-outlined">
+        <button
+          bookmark
+          type="button"
+          class="material-symbols-outlined absolute top-0 right-1 text-base text-red-300 hover:scale-125">
           bookmark
         </button>
       </article>
     </template>
 
+    <!-- template - filter options -->
     <template id="tpl-item">
       <label
         class="whitespace-nowrap text-xs bg-gray-200 flex items-center gap-2 relative rounded-md py-1 px-4 transition border hover:bg-pink-50 w-fit">
@@ -98,6 +108,7 @@
       </label>
     </template>
 
+    <!-- template - filters applied -->
     <template id="tpl-filter">
       <div
         class="py-1 px-4 rounded-md border bg-white text-black flex gap-2 items-center bg-blue-400 text-white whitespace-nowrap">
