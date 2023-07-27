@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Results - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/21308 -->
+  <body class="bg-[#F7FBFF] flex justify-center items-center min-h-screen p-4">
+    <div
+      class="bg-white text-[#181028] py-4 sm:py-8 shadow-lg rounded-xl sm:w-9/12 overflow-hidden h-[500px]">
+      <header class="flex flex-row justify-between mb-6 px-4 sm:px-8">
+        <div>
+          <h2 class="text-xl">
+            Results for <span class="font-bold">"Avocado"</span>
+          </h2>
+          <p class="text-xs">
+            <span num-results class="font-bold">3</span> results found
+          </p>
+        </div>
+        <div class="flex gap-2 items-center">
+          <span class="text-xs hidden sm:block">Choose display</span>
+          <div
+            class="flex rounded-md border overflow-hidden [&>button]:p-1 [&>button]:transition [&>button]:bg-gray-200 [&>button:hover]:bg-red-300 [&>button.active]:bg-blue-500 [&>button.active]:text-white">
+            <button
+              type="button"
+              toggle-layout="list"
+              class="material-symbols-outlined active">
+              clear_all
+            </button>
+            <button
+              type="button"
+              toggle-layout="gridded"
+              class="material-symbols-outlined">
+              apps
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <section class="flex gap-1 text-sm relative mb-10 px-4 sm:px-8">
+        <button
+          id="btn-filters"
+          type="button"
+          class="py-1 px-4 rounded-md border bg-white text-black flex gap-2 items-center hover:bg-red-300 hover:text-white transition">
+          <span class="material-symbols-outlined">filter_list</span>
+          <span>Filters</span>
+        </button>
+        <div id="filters-list-applied" class="flex gap-1 overflow-x-scroll">
+          <!-- applied filters load here -->
+        </div>
+
+        <div
+          id="filters-list"
+          class="hiddenS absolute top-full flex flex-row gap-1 z-10 !border-0 !bg-transparent w-full overflow-x-scroll !p-0 !pt-1 !pb-3 [&_p]:text-black">
+          <!-- fiñters loaded here -->
+        </div>
+      </section>
+
+      <section
+        id="layout"
+        class="py-4 px-4 sm:px-8 h-[300px] overflow-y-scroll sm:[.gridded&>div]:grid-cols-2 md:[.gridded&>div]:grid-cols-3 lg:[.gridded&>div]:grid-cols-4 [.gridded&>div>article]:flex-col">
+        <div
+          id="meals-list"
+          class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 [&>article]:rounded-md [&>article]:border [&>article]:border-blue-200 [&>article]:p-4 [&>article]:flex [&>article]:gap-4 [&>article]:items-center [&>article]:relative [&>article:hover]:shadow-xl [&_img]:w-16 [&_img]:h-16 [&_img]:aspect-square [&_img]:object-cover [&_img]:transition [&_img]:rounded-full [&_h3]:font-bold [&>article>div>div]:flex [&>article>div>div]:items-center [&>article>div>div]:gap-1 [&>article>div>div]:text-sm [&>article>button]:absolute [&>article>button]:top-0 [&>article>button]:right-1 [&>article>button]:text-base [&>article>button:hover]:text-red-300 [&>article:hover_img]:scale-125"></div>
+      </section>
+    </div>
+
+    <template id="tpl-meal">
+      <article>
+        <img src="" />
+
+        <div>
+          <h3>Avocado sandwich with boiled egg</h3>
+          <div>
+            <span class="material-symbols-outlined text-base">schedule</span>
+            <p meal-time></p>
+          </div>
+        </div>
+        <button bookmark type="button" class="material-symbols-outlined">
+          bookmark
+        </button>
+      </article>
+    </template>
+
+    <template id="tpl-item">
+      <label
+        class="whitespace-nowrap text-xs bg-gray-200 flex items-center gap-2 relative rounded-md py-1 px-4 transition border hover:bg-pink-50 w-fit">
+        <input type="checkbox" class="sr-only" />
+        <p item-desc></p>
+      </label>
+    </template>
+
+    <template id="tpl-filter">
+      <div
+        class="py-1 px-4 rounded-md border bg-white text-black flex gap-2 items-center bg-blue-400 text-white whitespace-nowrap">
+        <p item-desc></p>
+        <button type="button" class="material-symbols-outlined text-base">
+          cancel
+        </button>
+      </div>
+    </template>
+  </body>
+</html>
