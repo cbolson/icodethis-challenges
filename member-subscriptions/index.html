@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Subscriptions - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/21476 -->
+  <body
+    class="bg-purple-50 flex justify-center items-center min-h-screen p-4 scroll-smooth">
+    <div
+      class="bg-white text-[#181028] p-8 space-y-4 shadow-xl rounded-xl max-w-xl relative before:inset-[-20px_25px_-20px_25px] before:bg-blue-900 before:absolute before:-z-10 before:rounded-xl text-center">
+      <h1 class="font-bold">Subscriptions</h1>
+      <p class="text-sm sm:px-8">
+        Support these creators by purchasing their monthly subscriptions and get
+        access to monthly content
+      </p>
+
+      <div
+        class="flex gap-1 sm:gap-4 justify-center [&>div]:flex [&>div]:items-center [&>div]:gap-1 [&>div]:bg-purple-50 [&>div]:text-xs [&>div]:px-2 [&>div]:rounded-full [&>div]:py-1 [&>div]:whitespace-nowrap [&_span]:text-xs [&_span]:hidden sm:[&_span]:block">
+        <div>
+          <span class="material-symbols-outlined rotate-45 text-xs"
+            >attach_file</span
+          >
+          Source files
+        </div>
+        <div>
+          <span class="material-symbols-outlined rotate-45 text-xs">cast</span>
+          Live Streams
+        </div>
+        <div>
+          <span class="material-symbols-outlined rotate-45 text-xs">event</span>
+          Meetup
+        </div>
+      </div>
+
+      <section class="w-full grid grid-cols-[40px_1fr_40px] place-items-center">
+        <button data-slide="prev" class="material-symbols-outlined">
+          navigate_before
+        </button>
+
+        <div
+          id="slider"
+          class="pb-4 overflow-hidden w-full transition duration-300 scroll-smooth">
+          <div
+            class="grid grid-flow-col auto-cols-auto gap-4 w-fit [&>div]:text-center [&>div]:w-32 [&>div]:rounded-xl [&>div]:flex [&>div]:flex-col [&>div]:gap-1 [&>div]:justify-center [&>div]:border-2 [&>div]:p-2 [&>div]:transition [&>div]:border-white [&>div:hover]:border-purple-50 [&_img]:w-12 [&_img]:h-12 [&_img]:rounded-full [&_img]:mx-auto [&_button]:transition-all [&_button]:bg-purple-50 [&_button]:text-black [&>div:hover>button]:text-white [&>div:hover>button]:bg-black [&_button:hover]:scale-105 [&_button:hover]:text-white [&_button]:rounded-full [&_button]:py-1 [&_button]:px-2 [&_button]:text-xs [&_p]:text-xs [&_h2]:font-bold [&_h2]:text-sm [&_h2]:whitespace-nowrap">
+            <div class="card">
+              <img src="https://i.pravatar.cc/150?img=32" />
+              <h2>Ludwig Lagos</h2>
+              <p>Illustrator</p>
+              <button>View Content</button>
+            </div>
+
+            <div>
+              <img src="https://i.pravatar.cc/150?img=23" />
+              <h2>Nina Valentine</h2>
+              <p>Development</p>
+              <button>View Content</button>
+            </div>
+
+            <div>
+              <img src="https://i.pravatar.cc/150?img=49" />
+              <h2>Karolina Lagos</h2>
+              <p>Social Media</p>
+              <button>View Content</button>
+            </div>
+
+            <div>
+              <img src="https://i.pravatar.cc/150?img=14" />
+              <h2>Raynundo Loy</h2>
+              <p>Marketing</p>
+              <button>View Content</button>
+            </div>
+
+            <div>
+              <img src="https://i.pravatar.cc/150?img=9" />
+              <h2>Maria Roca</h2>
+              <p>Video Content</p>
+              <button>View Content</button>
+            </div>
+            <div>
+              <img src="https://i.pravatar.cc/150?img=53" />
+              <h2>David Lopez</h2>
+              <p>Front-end</p>
+              <button>View Content</button>
+            </div>
+            <div>
+              <img src="https://i.pravatar.cc/150?img=17" />
+              <h2>Jesmond</h2>
+              <p>Writer</p>
+              <button>View Content</button>
+            </div>
+          </div>
+        </div>
+        <button data-slide="next" class="material-symbols-outlined">
+          navigate_next
+        </button>
+      </section>
+    </div>
+  </body>
+</html>
