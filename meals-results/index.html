@@ -13,9 +13,10 @@
     <script src="scripts.js" defer></script>
   </head>
   <!-- https://icodethis.com/submissions/21308 -->
-  <body class="bg-[#F7FBFF] flex justify-center items-center min-h-screen p-4">
+  <body
+    class="bg-gradient-to-br from-blue-500 to-blue-900 flex justify-center items-center min-h-screen p-4">
     <div
-      class="bg-white text-[#181028] py-4 sm:py-8 shadow-lg rounded-xl sm:w-9/12 overflow-hidden h-[500px]">
+      class="bg-white text-[#181028] py-4 sm:py-8 shadow-lg rounded-xl w-full max-w-3xl overflow-hidden h-[500px]">
       <header class="flex flex-row justify-between mb-6 px-4 sm:px-8">
         <div>
           <h2 class="text-xl">
@@ -28,17 +29,17 @@
         <div class="flex gap-2 items-center">
           <span class="text-xs hidden sm:block">Choose display</span>
           <div
-            class="flex rounded-md border overflow-hidden [&>button]:p-1 [&>button]:transition [&>button]:bg-gray-200 [&>button:hover]:bg-red-300 [&>button.active]:bg-blue-500 [&>button.active]:text-white">
+            class="flex rounded-md border overflow-hidden [&>button]:p-1 [&>button]:transition [&>button]:bg-gray-200 [&>button:hover]:bg-red-400 [&>button.active]:bg-blue-500 [&>button.active]:text-white">
             <button
               type="button"
               toggle-layout="list"
-              class="material-symbols-outlined active">
+              class="material-symbols-outlined">
               clear_all
             </button>
             <button
               type="button"
               toggle-layout="gridded"
-              class="material-symbols-outlined">
+              class="material-symbols-outlined active">
               apps
             </button>
           </div>
@@ -49,7 +50,7 @@
         <button
           id="btn-filters"
           type="button"
-          class="py-1 px-4 rounded-md border bg-white text-black flex gap-2 items-center hover:bg-red-300 hover:text-white transition">
+          class="py-1 px-4 rounded-md border bg-white text-black flex gap-2 items-center hover:bg-red-400 hover:text-white transition">
           <span class="material-symbols-outlined">filter_list</span>
           <span>Filters</span>
         </button>
@@ -67,7 +68,7 @@
 
       <section
         id="layout"
-        class="py-4 px-4 sm:px-8 h-[300px] overflow-y-scroll sm:[.gridded&>div]:grid-cols-2 md:[.gridded&>div]:grid-cols-3 lg:[.gridded&>div]:grid-cols-4 [.gridded&>div>article]:flex-col">
+        class="py-4 px-4 sm:px-8 h-[300px] overflow-y-scroll gridded sm:[.gridded&>div]:grid-cols-2 md:[.gridded&>div]:grid-cols-3 lg:[.gridded&>div]:grid-cols-4 [.gridded&>div>article]:flex-col [.gridded&>div>article]:p-0 [.gridded&>div>article>div]:p-4 [.gridded&>div>article>div]:py-2 [.gridded&>div>article>img]:rounded-md [.gridded&>div>article>img]:w-full [.gridded&>div>article>img]:h-fullj [.gridded&>div>article>img]:aspect-video">
         <div id="meals-list" class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
           <!--meals loaded here -->
         </div>
@@ -77,23 +78,24 @@
     <!-- template - meals -->
     <template id="tpl-meal">
       <article
-        class="relative group rounded-md border border-blue-200 p-4 flex gap-4 items-center hover:shadow-xl">
+        class="relative group rounded-md border border-blue-200 p-4 flex gap-2 items-center hover:shadow-xl hover:z-10">
         <img
           src=""
-          class="w-16 h-16 object-cover transition rounded-full group-hover:scale-125" />
-        <div>
+          class="w-16 aspect-square object-cover transition rounded-full group-hover:opacity-100 opacity-90" />
+        <div class="space-y-2 w-full">
           <h3 class="font-bold leading-4">Avocado sandwich with boiled egg</h3>
           <div class="flex gap-1 text-sm items-center">
             <span class="material-symbols-outlined text-base">schedule</span>
             <p meal-time></p>
           </div>
+
           <ul
-            class="flex flex-wrap gap-[0.2rem] text-xs [&>li]:rounded-full [&>li]:w-fit [&>li]:px-2 [&>li]:bg-gray-200"></ul>
+            class="flex flex-wrap gap-[0.2rem] text-xs [&>li]:rounded-md [&>li]:w-fit [&>li]:py-[0.25rem] [&>li]:px-3 [&>li]:bg-gray-200"></ul>
         </div>
         <button
           bookmark
           type="button"
-          class="material-symbols-outlined absolute top-0 right-1 text-base text-red-300 hover:scale-125">
+          class="material-symbols-outlined material-fill-1 absolute -top-2 right-2 text-x2l text-blue-400 hover:scale-150 transition">
           bookmark
         </button>
       </article>

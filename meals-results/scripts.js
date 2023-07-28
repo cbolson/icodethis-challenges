@@ -174,18 +174,25 @@ function renderMeals() {
       if (meal.bookmark) {
         // remove
         meal.bookmark = false;
-        btn.classList.remove("material-fill-1");
+        // btn.classList.remove('material-fill-1');
         btn.classList.remove("text-red-600");
       } else {
         // add
         meal.bookmark = true;
-        btn.classList.add("material-fill-1");
+        //btn.classList.add('material-fill-1');
         btn.classList.add("text-red-600");
       }
     });
     mealsList.append(item);
     count++;
   });
+  if (count === 0) {
+    const msg = "We don't have any meals that match your filters";
+    const el = document.createElement("div");
+    el.classList.add("rounded-xl", "bg-red-100", "p-6", "mx-auto", "w-fit");
+    el.innerText = msg;
+    mealsList.append(el);
+  }
   resultsCounter.innerText = count;
 }
 
