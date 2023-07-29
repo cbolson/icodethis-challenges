@@ -1,0 +1,17 @@
+.animate-social {
+  --duration: 1800ms;
+  scale: 0;
+  animation: scale-it var(--duration) ease-in infinite;
+}
+.animate-social:nth-child(2) {
+  animation-delay: calc(var(--duration) / 2);
+}
+@keyframes scale-it {
+  0%,
+  100% {
+    scale: 0;
+  }
+  50% {
+    scale: 1;
+  }
+}

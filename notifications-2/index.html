@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications 2 - icodethis</title>
+  </head>
+  <html>
+    <!-- https://icodethis.com/submissions/21563 -->
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="stylesheet" href="styles.css" />
+      <script>
+        // this is not working and I can't work out why????
+        tailwind.config = {
+          theme: {
+            extend: {
+              keyframes: {
+                sideways: {
+                  "0%, 100%": { left: "0", top: "0" },
+                  "50%": { left: "100px", top: "0" },
+                },
+              },
+              animation: {
+                sideways: "sideways 1s linear infinite",
+              },
+            },
+          },
+        };
+      </script>
+    </head>
+
+    <body
+      class="bg-[#E8E9E8] text-black flex justify-center items-center min-h-screen">
+      <div
+        class="font-poppins grid grid-cols-5 auto-rows-auto gap-8 auto-cols-auto w-[600px] [&>*]:shadow-xl">
+        <!-- call -->
+        <div
+          class="group row-start-1 col-start-1 col-span-2 row-span-2 p-6 bg-white rounded-xl text-center space-y-2">
+          <p class="opacity-50 uppercase text-sm">Incomming call</p>
+          <img
+            src="https://i.pravatar.cc/150?img=43"
+            class="w-20 h-20 mx-auto rounded-full border-4 border-gray-800 group-hover:animate-pulse" />
+          <h2 class="font-semibold">Jessie Burke</h2>
+          <div
+            class="pt-4 flex justify-between gap-4 [&>button]:rounded-full [&>button]:py-1 [&>button]:px-4 [&>button]:w-full [&>button]:font-bold [&>button]:text-white [&>button:hover]:scale-110 [&>button]:transition">
+            <button class="bg-[#B4062E] material-symbols-outlined">
+              call_end
+            </button>
+            <button class="bg-[#1E9666] material-symbols-outlined">call</button>
+          </div>
+        </div>
+
+        <!-- comment -->
+        <div
+          class="group row-start-1 col-span-3 bg-slate-800 text-white text-sm py-1 p-2 rounded-full flex gap-4 items-center">
+          <img
+            src="https://i.pravatar.cc/150?img=17"
+            class="w-20 h-20 mx-auto rounded-full border-4 border-gray-800 animate-sideways" />
+          <div>
+            <p class="">
+              <span class="font-semibold">Günter</span> commented on your post.
+            </p>
+            <p class="opacity-70 uppercase text-xs">2 hours ago</p>
+          </div>
+          <button
+            class="material-symbols-outlined transition-all group-hover:text-[#1E9666] group-hover:scale-[200%] group-hover:font-bold">
+            chevron_right
+          </button>
+        </div>
+
+        <!-- push notifications -->
+        <div
+          class="group row-start-2 col-start-3 col-span-2 row-span-2 p-6 bg-white rounded-xl text-center space-y-2">
+          <div
+            data-count="2"
+            class="relative w-fit mx-auto p-0 after:content-[attr(data-count)] after:bg-[#B4062E] after:rounded-full after:w-7 after:h-7 after:grid after:place-items-center after:absolute after:text-xs after:text-white after:top-1 after:left-1 group-hover:after:animate-ping">
+            <svg
+              class="text-gray-300 w-20 -scale-x-100"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"></path>
+              <path d="M12 11l0 .01"></path>
+              <path d="M8 11l0 .01"></path>
+              <path d="M16 11l0 .01"></path>
+            </svg>
+          </div>
+          <p class="text-sm">Do you want to allow push notifications?</p>
+
+          <div
+            class="pt-4 flex justify-between gap-4 [&>button]:rounded-full [&>button]:py-1 [&>button]:px-4 [&>button]:w-full [&>button]:font-bold [&>button:hover]:scale-110 [&>button]:transition [&>button]:border">
+            <button class="text-slate-800 border-gray-300">NO</button>
+            <button class="text-white bg-slate-800 border-gray-800">YES</button>
+          </div>
+        </div>
+
+        <!-- twitter -->
+        <div
+          data-count="7"
+          class="group relative row-start-3 col-start-2 p-6 bg-slate-800 text-white rounded-xl grid place-items-center after:content-[attr(data-count)] after:bg-blue-400 after:rounded-full after:w-7 after:h-7 after:grid after:place-items-center after:absolute after:text-xs after:-top-2 after:-right-2">
+          <button type="button" class="relative">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/social/twitter-x-white.png"
+              class="w-12 h-12 animate-social absolute m-auto" />
+            <svg
+              class="w-12 h-12 animate-social"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M14.058 3.41c-1.807 .767 -2.995 2.453 -3.056 4.38l-.002 .182l-.243 -.023c-2.392 -.269 -4.498 -1.512 -5.944 -3.531a1 1 0 0 0 -1.685 .092l-.097 .186l-.049 .099c-.719 1.485 -1.19 3.29 -1.017 5.203l.03 .273c.283 2.263 1.5 4.215 3.779 5.679l.173 .107l-.081 .043c-1.315 .663 -2.518 .952 -3.827 .9c-1.056 -.04 -1.446 1.372 -.518 1.878c3.598 1.961 7.461 2.566 10.792 1.6c4.06 -1.18 7.152 -4.223 8.335 -8.433l.127 -.495c.238 -.993 .372 -2.006 .401 -3.024l.003 -.332l.393 -.779l.44 -.862l.214 -.434l.118 -.247c.265 -.565 .456 -1.033 .574 -1.43l.014 -.056l.008 -.018c.22 -.593 -.166 -1.358 -.941 -1.358l-.122 .007a.997 .997 0 0 0 -.231 .057l-.086 .038a7.46 7.46 0 0 1 -.88 .36l-.356 .115l-.271 .08l-.772 .214c-1.336 -1.118 -3.144 -1.254 -5.012 -.554l-.211 .084z"
+                stroke-width="0"
+                fill="currentColor"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </body>
+  </html>
+</html>
