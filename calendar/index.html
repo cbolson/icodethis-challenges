@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - icodethis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+       <link rel="stylesheet" href="style.css">
+        <script src="scripts.js" defer></script>
+</head>
+<body class="bg-gradient-to-tr from-[#5D344A] to-[#2B363E] flex justify-center items-center   min-h-screen">
+<!-- https://icodethis.com/submissions/21577 -->
+<div class="flex align-start flex-col sm:flex-row sm:gap-4 ">
+        <section id="calendar" class="w-72 sm:w-96  rounded-xl overflow-hidden font-thin ">
+            <header class="flex justify-between items-center p-2 bg-white/[.2] text-white
+            [&_button]:rounded-full
+            [&>button:hover]:bg-[#5D344A]
+            [&_button]:p-2
+            [&_button]:transition
+            ">
+                <button type="button" cal-nav="prev" class="material-symbols-outlined">chevron_left</button>
+                <h1 data-month class="capitalize"></h1>
+                <button type="button" cal-nav="next" class="material-symbols-outlined">chevron_right</button>
+            </header>
+            <main class="bg-white/[.1] p-2
+                [&>ul]:grid
+                [&>ul]:grid-cols-7
+                [&>ul>li]:grid
+                [&>ul>li]:place-items-center
+                [&>ul>li]:relative
+                [&>ul>li]:isolate
+                [&>ul>li]:transition
+                [&>ul>li]:aspect-square
+                [&>ul>li.inactive]:opacity-30
+                [&>ul>li:not(.inactive)]:cursor-pointer
+                before:[&>ul>li]:absolute 
+                before:[&>ul>li]:transition
+                before:[&>ul>li]:rounded-full
+                before:[&>ul>li]:bg-transparent
+                before:[&>ul>li]:inset-2
+                before:[&>ul>li]:-z-10
+                before:[&>ul>li.today]:bg-cyan-400
+                [&>ul>li.today]:text-black
+            ">
+                <ul data-weekdays class="weedays text-blue-400 font-semibold ">   
+                    <!-- weekday titles loaded here -->
+                </ul>
+                <ul data-dates class="grid-rows-6 text-white text-sm 
+                before:[&>li:not(.inactive):hover]:bg-red-500
+                before:[&>li:not(.inactive):hover]:animate-pulse
+                ">
+                    <!-- dates loaded here -->
+                </ul>
+
+            </main>
+        </section>
+
+        <section class="flex flex-row sm:flex-col items-center gap-4 pl-4 sm:pl-0 pt-2 overflow-hidden
+             [&_button]:rounded-full
+                [&_button]:grid
+                [&_button]:place-items-center
+                [&_button]:aspect-square
+        ">
+            <button id="btn-lang" class="material-symbols-outlined text-blue-400 hover:text-red-500">language</button>
+            <div id="list-lang" class="flex flex-row sm:flex-col gap-2 -translate-x-[300px] duration-500 transition ease-in-out
+               [&_button]:w-8
+                [&_button]:h-8
+                [&_button]:text-sm  
+                [&_button]:bg-gray-200 
+                hover:[&_button]:bg-red-500 
+                hover:[&_button]:text-white 
+                hover:[&_button]:animate-pulse
+                [&>button.active]:bg-blue-400 
+                [&>button.active]:text-white 
+                 ">
+        <button lang-choose="es" class="active ">es</button>
+        <button lang-choose="en"> en</button>
+        <button lang-choose="fr"> fr</button>
+        <button lang-choose="de"> de</button>
+        <button lang-choose="it"> it</button>
+        </div>
+        </section>
+</div>
+
+</body>
+
+</html>

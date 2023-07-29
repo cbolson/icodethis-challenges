@@ -1,0 +1,9 @@
+.weedays {
+  @supports (background-clip: text) {
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background: linear-gradient(to right, blie, purple);
+  }
+  /*background-image: url(https://media.giphy.com/media/xULW8Fw2ZhznUptrYA/giphy.gif);*/
+}
