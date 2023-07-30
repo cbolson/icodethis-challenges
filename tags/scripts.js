@@ -97,6 +97,7 @@ const inputCat = document.querySelector("#cat-input");
 const inputCatDesc = inputCat.querySelector("p");
 
 const inputCatArrow = inputCat.querySelector("span");
+let catListVisible = false;
 
 let myCat;
 if (localStorage.getItem("myCat")) {
@@ -145,13 +146,23 @@ inputCat.addEventListener("click", () => {
     "border-slate-300"
   ); /* I am taking advantage of Tawilind css order by having 2 bg colors on this element and toggleing off the first one */
   inputCatArrow.classList.add("rotate-180");
-  renderList();
+  if (catListVisible) {
+    closeCatList();
+  } else {
+    renderList();
+    catListVisible = true;
+  }
 });
 // close list on click outside - this also includes selection an option
 document.addEventListener("click", function handleClickOutsideBox(event) {
   if (!inputCat.contains(event.target)) {
-    listCat.style.maxHeight = "0";
-    inputCat.classList.add("border-slate-300");
-    inputCatArrow.classList.remove("rotate-180");
+    closeCatList();
   }
 });
+
+function closeCatList() {
+  listCat.style.maxHeight = "0";
+  inputCat.classList.add("border-slate-300");
+  inputCatArrow.classList.remove("rotate-180");
+  catListVisible = false;
+}
