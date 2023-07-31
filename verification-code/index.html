@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Code - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script></head>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</html>
+<!-- https://icodethis.com/submissions/21800 -->
+<body class="bg-slate-100 flex justify-center items-center  min-h-screen
+    [&>*]:absolute
+    [&>*]:overflow-hidden
+    [&>*]:p-8
+    [&>section]:space-y-4
+    [&>*]:shadow-lg
+    [&>*]:rounded-xl
+    [&>*]:w-72
+    [&>*]:transition-all
+    [&>*]:duration-500
+    [&>section]:shadow-[#35469C]
+    [&>section]:bg-gradient-to-br
+    [&>section]:from-[#303E82]
+    [&>section]:to-[#1D2449]
+    [&>section]:text-white
+    [&_p]:text-xs
+    [&_p]:opacity-30
+    [&_h2]:font-bold
+    [&_form]:space-y-4
+    [&_input]:bg-transparent
+    [&_input]:border
+    [&_input]:border-[#151A35] 
+    [&_input]:rounded-md
+    [&_input]:font-bold
+    [&_input]:text-xl
+    [&_input]:py-2
+    [&_input:focus]:ring-0
+    [&_input:focus]:outline-none
+    invalid:[&_input]:bg-[#151A35]
+    invalid:[&_input]:text-red-500
+    invalid:[&_input]:placeholder-[#3D4CB9]
+    [&_button]:rounded-md
+">
+    
+    <section id="panel-tel" class="scale-1">
+    
+        <h2>Introduce your mobile number</h2>
+        <p>Please enter your mobile number to receive your activation code</p>
+
+        <form id="form-tel">
+        <div class="flex gap-4  justify-center
+            [&>input]:w-full
+            [&>input]:px-4
+            ">
+            <input value="" placeholder="your number" required minlength="9" maxlength="9" pattern="[0-9]+" onkeypress="return onlyNumberKey(event)">
+            
+        </div>
+        <button type="submit" class="py-3 w-full rounded-sm bg-gradient-to-br from-[#768CFD] to-[#9154FF] text-sm hover:scale-105 transition">Send Code</button>
+        </form>
+    </section>
+
+
+
+
+    <section  id="panel-code" class="scale-0">
+        <button id="btn-back" type="button" class="material-symbols-outlined absolute top-2 left-2">chevron_left</button>
+
+        <h2>Confirmation</h2>
+        <p>Please enter the code we sent to the nuumber <span data-tel>******78</span></p>
+
+        <div class="flex gap-4 justify-center
+        [&>input]:w-12
+        [&>input]:aspect-square
+        [&>input]:text-center
+        ">
+            <input code-insert="1" placeholder="&mdash;" required maxlength="1" pattern="[0-9]+">
+            <input code-insert="2" placeholder="&mdash;" required maxlength="1" pattern="[0-9]+">
+            <input code-insert="3" placeholder="&mdash;" required maxlength="1" pattern="[0-9]+">
+            <input code-insert="4" placeholder="&mdash;" required maxlength="1"  pattern="[0-9]+">
+       </div>
+       <button id="btn-resend-code" type="button" class="uppercase text-xs text-[#5A69E2]">Resend code</button>
+       <button id="btn-confirm" type="submit" class="py-3 w-full rounded-sm bg-gradient-to-br from-[#768CFD] to-[#9154FF] text-sm  hover:scale-105 transition">Confirm</button>
+
+       <div id="msg" class="absolute inset-4 bg-gradient-to-br from-[#768CFD] to-[#9154FF] grid place-content-center text-center rounded-md p-12  transition translate-y-[120%]" >
+            <span class="text-xl text-white"></span>
+            <button id="btn-close-msg" type="button" class="material-symbols-outlined absolute top-2 right-2 text-white/0-6 hover:text-white transition">close</button>
+        </div>
+    </section>
+
+
+    <div id="code-alert" class="!py-2 px-6 bg-[#F2F4FF] space-y-2 text-center  -translate-y-[1000px] ">
+        <h2>Verification Code</h2>
+        <p>Enter this verification code to sign in.</p>
+        <div  class="bg-white rounded-md flex gap-8 justify-center items-center text-center text-2xl p-2 font-bold">
+            <div data-code>1</div>
+            <div data-code>2</div>
+            <div data-code>3</div>
+            <div data-code>4</div>
+
+        </div>
+      <button id="btn-copy-code" class="text-sm text-[#5A69E2]">copy code</button>
+        <button id="btn-close-alert" type="button" class="material-symbols-outlined absolute top-2 right-2 text-[#5A69E2] hover:text-[#1D2449] transition">close</button>
+    </div>
+</body>
+
+</html>
