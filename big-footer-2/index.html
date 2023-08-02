@@ -29,6 +29,8 @@
             [&>div]:space-y-4
             [&_h3]:text-[#F10076]
             [&_h3]:px-4
+            [&_h3]:mt-4
+            sm:[&_h3]:mt-0
             [&_ul]:space-y-4
             [&_a]:py-2
             [&_a]:px-4
@@ -73,20 +75,20 @@
 
                 <div>
                     <h3>Follow Us</h3>
-                    <div class="grid grid-cols-3 gap-2 flex-wrap
-                        [&>a]:flex
-                        [&>a]:!p-2
-                        [&>a]:w-12 
-                        [&>a]:h-12
+                    <div class="flex gap-2
                         [&>a]:rounded-full 
-                        
-                        [&_svg]:w-full
-                        [&_svg]:h-full
                         [&_svg]:text-slate-500
                         [&_svg:hover]:text-slate-600
+                        [&>a]:w-12
+                        [&>a]:h-12
+                        [&>a]:grid
+                        [&>a]:place-contents-center
+                        before:[&>a:hover]:!w-[60px]
+                        [&_svg]:w-8
+                        [&_svg]:h-8
+    
                     ">
-                        
-                        
+                          
                         <a href="#">
                             <svg 
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -100,7 +102,7 @@
                         </a>
 
                         <a href="#">
-                            <svg class="w-8"
+                        <svg 
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -110,7 +112,7 @@
                             </svg>
                         </a>
                         <a href="#">
-                            <svg  g class="w-8"
+                            <svg 
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -119,9 +121,9 @@
                                 <path d="M16.5 7.5l0 .01"></path>
                             </svg>
                         </a>
-
-                        <a href="#" class="col-span-3 gap-2 !w-full items-center">
-                            <svg class="!w-8 !h-8" enable-background="new 0 0 2447.6 2452.5" viewBox="0 0 2447.6 2452.5">
+</div>
+                        <a href="#" class="col-span-2 sm:cols-span-3 gap-2 w-24 h-16 grid grid-cols-2 gap-2 items-center before:hover:!w-[200px]">
+                            <svg  enable-background="new 0 0 2447.6 2452.5" viewBox="0 0 2447.6 2452.5">
                                 <g clip-rule="evenodd" fill-rule="evenodd">
                                     <path
                                         d="m897.4 0c-135.3.1-244.8 109.9-244.7 245.2-.1 135.3 109.5 245.1 244.8 245.2h244.8v-245.1c.1-135.3-109.5-245.1-244.9-245.3.1 0 .1 0 0 0m0 654h-652.6c-135.3.1-244.9 109.9-244.8 245.2-.2 135.3 109.4 245.1 244.7 245.3h652.7c135.3-.1 244.9-109.9 244.8-245.2.1-135.4-109.5-245.2-244.8-245.3z"
@@ -139,12 +141,12 @@
                             </svg>
                             <span class="font-bold text-xs">Join our Slack channel</span>
                         </a>
-                    </div>
+                    
             </div>
 
         </section>
 
-        <section class="w-full border border-slate-200 text-slate-400 rounded-md p-12 grid place-items-center">
+        <section class="w-full border border-slate-200 text-slate-400 rounded-md py-8 px-12 grid place-items-center bg-[#FBFBFF]">
             <div class="w-8 h-7 border-2 border-slate-200 rounded-md text-center">Ad</div>
         </section>
 
