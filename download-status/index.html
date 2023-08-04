@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download status - icodethis</title>
+<html>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<!-- https://icodethis.com/submissions/23937 -->
+<body class="bg-[#F4F7FF] flex justify-center items-center min-h-screen">
+    <div class="relative bg-white text-[#181028] p-6 space-y-6 shadow-lg rounded-xl w-96">
+        <div class="rounded-md p-4 bg-[#F4F7FF] border space-y-2">
+            <p>Cloud storage</p>
+            <div class="rounded-full border bg-white py-1 px-2 h-4">
+                <div class="w-20 h-full bg-black rounded-full"></div>
+            </div>
+            <p class="text-xs">256 megabytes of 1TB used</p>
+        </div>
+        
+        <section class="space-y-0 text-sm
+            [&>div]:flex
+            [&>div]:gap-2
+            [&>div]:py-4
+            [&>div]:px-2
+            [&>div+div]:border-t-2
+            [&>div]:border-[#8692C230]
+            [&>div]:items-center
+            [&>div]:transition
+            [&>div:hover]:shadow-lg
+            [&>div>.icon]:rounded-full
+            [&>div>.icon]:text-white
+            [&>div.completed>.icon]:bg-[#5A9C17]
+            [&>div.updating>.icon]:bg-[#F4F7FF]
+            [&>div.updating>.icon]:text-gray-500
+            [&>div.pending>.icon]:bg-[#F4F7FF]
+            [&>div.pending>.icon]:text-gray-500
+            [&>div>.icon]:grid
+            [&>div>.icon]:place-items-center
+            [&>div>.icon]:w-8
+            [&>div>.icon]:h-8
+            [&_h4]:font-bold
+            [&_p]:text-xs
+            [&_button]:ml-auto
+            [&_button]:transition
+            [&>div>button:hover]:text-rose-400
+            [&>div>button:hover]:animate-spin
+            [&>div.updating_button]:hidden
+            [&>div.pending_button]:hidden
+        ">
+            <div class="completed">
+                <div class="icon">
+                    <span class="material-symbols-outlined">done</span>
+                </div>
+                <div>
+                    <h4>File syncing</h4>
+                    <p>Up to date</p>
+                </div>
+                <button type="button" class="material-symbols-outlined">settings</button>
+            </div>
+
+            <div class="updating">
+                <div class="icon">
+                    <span class="material-symbols-outlined animate-spin">progress_activity</span>
+                </div>
+                <div>
+                    <h4>Updating cloud</h4>
+                    <p>13%</p>
+                </div>
+                <button type="button" class="material-symbols-outlined">settings</button>
+            </div>
+
+            <div class="pending">
+                <div class="icon">
+                    <span class="material-symbols-outlined animate-pulse">pending</span>
+                </div>
+                <div>
+                    <h4>Updating Soutions</h4>
+                    <p>Waiting....</p>
+                </div>
+                <button type="button" class="material-symbols-outlined ">settings</button>
+            </div>
+            
+            <button type="button" class="relative border border-[#8692C2] rounded-md mt-8 py-2 px-8 !mt-6 isolate overflow-hidden before:absolute before:-inset-6 before:bg-rose-300 before:rounded-full before:-z-10 before:w-0 hover:before:w-[140%] before:transition-all before:duration-700">Go to downloads</button>
+            <button class="absolute -top-16 right-0 bg-white border-4 border-blue-200 rounded-lg p-2 transition hover:bg-rose-200  material-symbols-outlined">cloud_download</button>
+        </div>
+    </div>
+</body>
+</html>
