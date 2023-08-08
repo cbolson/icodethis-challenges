@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editable Components</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/24187 -->
+  <body
+    class="bg-slate-100 flex flex-col gap-12 justify-center items-center min-h-screen p-24">
+    <main class="overflow-hidden w-full max-w-4xl">
+      <section
+        class="relative bg-white text-[#181028] p-8 sm:p-20 shadow-xl flex flex-col sm:flex-row justify-between gap-4 sm:gap-8 z-10 [&>div]:space-y-1 [&>div]:text-center [&_h3]:text-xs [&_h3]:uppercase [&_p]:font-bold [&_p]:text-sm [&_p]:whitespace-nowrap">
+        <div>
+          <span class="material-symbols-outlined">home</span>
+          <h3>Type of dwelling</h3>
+          <p class="strong" id="display-property-type">Detached</p>
+        </div>
+
+        <div>
+          <span class="material-symbols-outlined">crop</span>
+          <h3>Living Area</h3>
+          <p><span id="display-property-size">147</span> m<sup>2</sup></p>
+        </div>
+
+        <div>
+          <span class="material-symbols-outlined">attach_money</span>
+          <h3>Considers to sell within</h3>
+          <p id="display-property-time">1 year</p>
+        </div>
+
+        <button
+          id="btn-edit"
+          type="button"
+          class="absolute -bottom-6 right-8 w-12 h-12 transition hover:scale-125 grid place-contents-center rounded-full bg-teal-500 text-white material-symbols-outlined grid place-items-center shadow-xl">
+          edit
+        </button>
+      </section>
+
+      <form>
+        <section
+          id="panel-edit"
+          class="transition duration-500 -translate-y-[1000px] relative bg-black text-slate-400 space-y-6 p-8 py-8 0 text-center shadow-lg mx-4 mb-12">
+          <div>
+            <h2 class="text-slate-300">Edit</h2>
+            <p class="text-xs">
+              Enter details and let other users know when you are considering
+              selling the property
+            </p>
+          </div>
+          <div
+            class="flex justify-between flex-col sm:flex-row gap-4 sm:gap-8 [&>div]:space-y-1 [&>div]:text-center [&_h3]:text-xs [&_h3]:uppercase [&_select]:bg-white [&_select]:rounded-sm [&_select]:py-2 [&_select]:px-4 [&_select]:w-32 sm:[&_select]:w-40 [&_input]:bg-white [&_input]:rounded-sm [&_input]:py-2 [&_input]:px-4 [&_input]:w-32 sm:[&_input]:w-40">
+            <!--[&_input:focus]:outline-none
+    [&_input:focus]:ring-0
+    [&_input:focus]:border-0
+    -->
+            <div>
+              <span class="material-symbols-outlined hidden">home</span>
+              <h3>Type of dwelling</h3>
+              <select id="select-property-type">
+                <option>Studio</option>
+                <option>Flat</option>
+                <option>Terraced</option>
+                <option>Semi-detacthed</option>
+                <option selected>Detached</option>
+                <option>Villa</option>
+              </select>
+            </div>
+
+            <div>
+              <span class="material-symbols-outlined hidden">crop</span>
+              <h3>
+                Living Area <span class="lowercase">m<sup>2</sup></span>
+              </h3>
+              <input
+                type="tel"
+                id="select-property-size"
+                value="147"
+                maxlength="6"
+                pattern="[0-9]+"
+                onkeypress="return onlyNumberKey(event)" />
+            </div>
+
+            <div>
+              <span class="material-symbols-outlined hidden">attach_money</span>
+              <h3>Sell within</h3>
+              <select id="select-property-time">
+                <option>1 month</option>
+                <option>3 months</option>
+                <option>6 months</option>
+                <option selected>1 year</option>
+                <option>as soon as possible</option>
+              </select>
+            </div>
+          </div>
+
+          <div
+            class="flex justify-center gap-4 [&_button]:rounded-md [&_button]:border [&_button]:border-slate-400 [&_button]:py-2 [&_button]:px-2 [&_button]:w-full sm:[&_button]:w-40 [&_button]:text-sm [&_button]:transition [&_button:hover]:bg-slate-300 [&_button:hover]:text-slate-800">
+            <button type="button" id="btn-cancel">Cancel</button>
+            <button type="submit" id="btn-save" class="bg-teal-400 text-white">
+              Save
+            </button>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
