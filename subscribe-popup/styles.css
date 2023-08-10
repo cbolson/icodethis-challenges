@@ -1,0 +1,18 @@
+#wrapper::before {
+    animation: my-pulse 11s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    border:1px dashed red;
+}
+#wrapper::after {
+    /* diffent duration and delay start */
+    animation: my-pulse 9s cubic-bezier(0.4, 0, 0.6, 1) 3000ms infinite;
+}
+
+
+@keyframes my-pulse {
+  0%, 100% {
+    opacity: .5;
+  }
+  50% {
+    opacity: .3;
+    scale: .5
+  }

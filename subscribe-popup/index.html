@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Popup - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/26246 -->
+<body class="bg-[#EDEEF7] dark:bg-[#110E26] text-[#2D2865] dark:text-white/90 flex justify-center items-center min-h-screen p-4 oveflow-hidden">
+
+    <!-- add bg blobs as pseudo elements so as to avoid adding extra markup to the page -->
+    <div id="wrapper" class="relative rounded-2xl 
+        before:absolute
+        before:w-72
+        before:aspect-square
+        before:rounded-full
+        before:bg-gradient-to-r
+        before:from-purple-200
+        before:to-blue-200
+        before:blur-xl 
+        before:-right-24
+        before:top-12
+        before:-z-10
+        before:opacity-50
+        after:absolute
+        after:w-72
+        after:aspect-square
+        after:rounded-full
+        after:bg-gradient-to-r
+        after:from-red-200
+        after:to-orange-200
+        after:blur-xl
+        after:-left-24
+        after:-bottom-8
+        after:-z-10
+        after:opacity-50
+    ">
+
+        <form id="popup" class="bg-white dark:bg-[#2D2865]  backdrop-filter backdrop-blur-md bg-opacity-70 py-10 sm:py-12 px-8 sm:px-20 shadow-lg rounded-2xl max-w-md md:max-w-lg text-center relative transition duration-500 z-10 overflow-hidden">
+
+            <div class="sm:px-12 mb-8 space-y-2">
+                <h1 class="text-2xl font-bold">Enjoyed the read?</h1>
+                <p class="opacity-70">Join our monthly newsletter for helpful tips on design and more.</p>
+            </div>
+
+            
+            <div class="space-y-4 mb-8">
+                <input type="email" id="email" class="text-[#2D2865] border border-slate-300 p-4 rounded-md focus:ring-0 focus:outline-none focus:border-color-[#2D2865] dark:focus:border-pink-500 w-full" placeholder="Your email address" required>
+                <div class="flex items-start gap-2 [&>input:checked+label>span]:text-white [&>input:checked+label>span]:bg-[#2D2865] dark:[&>input:checked+label>span]:bg-pink-500">
+                    <input type="checkbox" id="terms" class="sr-only">
+                   
+                    <label for="terms" class="group flex gap-4 text-xs text-left cursor-pointer">
+                        <span class="material-symbols-outlined border border-slate-300 text-xl w-7 h-7 text-transparent rounded-md ">check</span>
+                            <p class="group-hover:underline sm:w-60">I agree to recveive this newsletter and subscribe at any time</p>
+                        </label>
+                </div>
+            </div>
+
+            <button type="submit" id="btn-submit" class="bg-[#2D2865] dark:bg-pink-500 text-white rounded-md py-4 px-6 uppercase w-full shadow-[0px_20px_0px_-10px_#2D286520] hover:shadow-[0px_25px_0px_-10px_#2D286510] hover:scale-110 transition disabled:bg-blue-300 dark:disabled:bg-pink-300" disabled>subscribe</button>
+                
+            
+            <div class="absolute top-2 left-0 px-2 w-full flex items-center justify-between  gap-3
+                [&>button]:w-8
+                [&>button]:h-8
+                [&>button]:border
+                [&>button]:border-gray-300
+                dark:[&>button]:border-white/40
+                [&>button]:rounded-full
+                [&>button]:text-xl
+                [&>button]:text-gray-500
+                [&>button]:grid
+                [&>button]:place-items-center
+                [&>button]:transition
+                [&>button:hover]:scale-125
+                [&>button:hover]:hover:bg-[#2D2865]
+                [&>button:hover]:text-white
+                dark:[&>button:hover]:bg-pink-500
+            ">
+                <!-- toggle theme -->
+                <button type="button" id="btn-mode" aria-label="button" class="material-symbols-outlined"">
+                    <span class="material-symbols-outlined  hidden dark:block" title="Light mode">light_mode</span>
+                    <span class="material-symbols-outlined  block dark:hidden " title="Dark mode">dark_mode</span>        
+                </button>
+
+                <!-- close popup -->     
+                <button type="button" id="btn-close" class="material-symbols-outlined ">close</button>
+            </div>
+
+<div id="msg"
+    class="absolute inset-0 bg-[#2D2865] dark:bg-pink-500 text-white  p-12 grid place-items-center  text-center text-2xl transition duration-300 translate-y-full z-20">
+    THANKS!<br>You will soon recveive your first newsletter.</div>
+</div>
+        </form>
+       
+    <!-- do you know what this is from? -->
+    <blockquote class="absolute -z-10 inset-0 m-auto grid place-items-center opacity-70">"You can go, but be back soon."</blockquote>
+</body>
+
+</html>
