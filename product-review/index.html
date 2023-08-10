@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review - icodethis</title>
+<html>
+<!-- https://icodethis.com/submissions/26004 -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+
+<body class="bg-[#f6f4ff] flex justify-center items-center min-h-screen p-6 ">
+    <form>
+    <div class="relative group ">
+        <main id="popup" class="relative transition bg-white text-[#181028] p-8 space-y-6 shadow-lg rounded-xl max-w-md md:max-w-lg">
+        <section>
+            <h1 class="text-xl font-semibold">Overall rating</h1>
+            <div class="flex gap-1 [&>label]:text-orange-400 [&>input]:sr-only my-2 [&>label:hover]:scale-125 [&>label]:transition [&>label]:cursor-pointer">
+                <input type="radio" data-stars id="star-1" name="rating" value="1" >
+                <label for="star-1"  class="material-symbols-outlined material-fill-1">star</label>
+                <input type="radio" data-stars id="star-2" name="rating" value="2">
+                <label for="star-2"  class="material-symbols-outlined material-fill-1">star</label>
+                <input type="radio" data-stars id="star-3" name="rating" value="3" checked>
+                <label for="star-3"  class="material-symbols-outlined material-fill-1">star</label>
+                <input type="radio" data-stars id="star-4" name="rating" value="4" >
+                <label for="star-4"  class="material-symbols-outlined">star</label>
+                <input type="radio" data-stars id="star-5" name="rating" value="5" >
+                <label for="star-5" class="material-symbols-outlined">star</label>
+            </div>
+            <p class="text-sm">Click to vote</p>
+        </section>
+
+        <section class="space-y-4
+            [&>div>label]:block
+            [&>div_label]:font-semibold
+            [&>div_label]:mb-2
+            [&_input]:border
+            [&_input]:rounded-sm
+            [&_input]:py-2
+            [&_input]:px-4
+            [&_input]:w-full
+            [&_input:focus]:ring-0
+            [&_input:focus]:outline-none
+            [&_input:focus]:border-black
+            [&_input:focus]:bg-slate-50
+            [&_textarea]:border
+            [&_textarea]:rounded-sm
+            [&_textarea]:py-2
+            [&_textarea]:px-4
+            [&_textarea]:w-full
+            [&_textarea]:h-20
+            [&_textarea:focus]:ring-0
+            [&_textarea:focus]:outline-none
+            [&_textarea:focus]:border-black
+            [&_textarea:focus]:bg-slate-50
+            
+        ">
+            <div>
+                <label>Review title</label>
+                <input type="text" placeholder="Example: Easyy to use" required>
+            </div>
+
+            <div>
+                <label>Would you recommend this product to a friend</label>
+                <div class="flex items-center gap-4
+                    [&>label]:flex
+                    [&>label]:items-center
+                    [&>label]:gap-1 
+                    [&>label]:cursor-pointer
+                    [&>label]:relative 
+                    before:[&>label]:block
+                    before:[&>label]:bg-white
+                    before:[&>label]:border
+                    before:[&>label]:border-gray-300
+                    before:[&>label]:p-2
+                    before:[&>label]:rounded-full
+                    before:[&>label]:w-2
+                    before:[&>label]:h-2
+                    [&>input:checked+label:before]:bg-black
+                ">
+                    <input type="radio" id="recommend-yes" name="recommend" class="sr-only" checked>
+                    <label for="recommend-yes">Yes</label>
+
+
+                    <input type="radio" id="recommend-no" name="recommend" class="sr-only" >
+                    <label for="recommend-no">No</label>
+                </div>
+            </div>
+
+            <div>
+                <label>Product review</label>
+                <textarea placeholder="Example: Since I bought this a month ago it has been used a lot. What I like best/what is worst about the product is..."  required></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2">
+                <div>
+                    <label>Nickname</label>
+                    <input type="text" placeholder="Example: bob27" required>
+                </div>
+                <div>
+                    <label>Email address <span class="text-xs">(will not be published)</span></label>
+                    <input type="email" placeholder="Example: your@email.com" required>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="
+            [&>label]:flex
+            [&>label]:items-center
+            [&>label]:gap-2
+            [&>label]:relative 
+            before:[&>label]:block
+            before:[&>label]:bg-white
+            before:[&>label]:border
+            before:[&>label]:border-gray-300
+            before:[&>label]:p-2
+            before:[&>label]:rounded-full
+            before:[&>label]:w-2
+            before:[&>label]:h-2
+            [&>input:checked+label:before]:bg-black
+        ">
+            <input type="checkbox" id="terms" class="sr-only">
+            <label for="terms">I accept the <a href="#" class="underline hover:text-pink-500"> terms and conditions</a></label>
+        </div>
+
+        <p class="text-xs">You will be able to reveive emails in connection with this review (eg. if others comment on your review). All emails contain the option unsubscribe. We can use the text and star rating from your review in other marketing</p>
+
+ 
+
+        <button type="submit" class="bg-black text-white py-2 px-4 relative rounded-md hover:bg-pink-500 transition
+        ">Submit your review</button>
+
+
+    <button type="button" id="btn-close" class="absolute -top-2 right-4  w-8 h-8 bg-gray-200 rounded-full text-xl text-gray-500 grid place-items-center material-symbols-outlined hover:scale-150 hover:bg-pink-500 hover:text-white transition">close</button>
+    
+        </main>
+        <div class="absolute -z-10  inset-[15%_-20%_15%_-20%] bg-rose-100 rounded-xl flex items-center justify-center  flex-col text-pink-500 font-bold group-hover:inset-[5%_-5%_5%_-5%] transition-all duration-500">
+            <span class="material-symbols-outlined text-4xl">
+            favorite
+            </span>
+            icodethis.com
+        </div>
+    </div>
+    </form>
+</body>
+
+</html>
