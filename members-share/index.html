@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Share - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/25635 -->
+<body class="bg-[#26284B] flex justify-center items-center min-h-screen p-6" >
+    <div class="bg-[#3B3D73] text-white/70 p-8 space-y-6 shadow-lg rounded-xl w-full max-w-md md:max-w-lg relative">
+        
+        <heaeder class="flex justify-between place-items-center">
+            <button type="button" class="material-symbols-outlined bg-white text-[#26284B] rounded-full p-2 transition hover:bg-[#26284B] hover:text-white cursor-pointer">undo</button>
+            <button type="button" class="flex items-center gap-2 text-xs group hover:text-white cursor-pointer ">
+                 <label class="hidden sm:block">Settings</label>
+                <span class="material-symbols-outlined group-hover:animate-spin">
+            settings
+            </span>
+            </button>
+        </heaeder>
+
+        <h2 class="sm:w-2/5 md:1/4 text-xl">Share with people and groups</h2>
+        
+        <section class="
+            [&_button]:rounded-full
+            [&_button]:border
+            [&_button]:border-purple-50/30
+            [&_button]:bg-[#3B3D73]
+            [&_button]:pr-3
+            [&_button]:flex
+            [&_button]:items-center
+            [&_button]:gap-3
+            [&_button]:text-sm
+            [&_button]:whitespace-nowrap
+            [&_img]:rounded-full
+            [&_img]:w-8
+            [&_img]:h-8
+            [&_img]:object-cover
+        ">
+            <div class="border border-purple-50/30 rounded-2xl   min-h-[52px] py-2 px-3 pr-8 bg-[#26284B] relative  z-20">
+                <div id="friends-list" class="flex flex-wrap items-center gap-2">
+                    <!-- friends loaded here -->
+                </div>
+        
+                <button  type="button" id="btn-add-friend" class="material-symbols-outlined absolute right-2 top-3 transition hover:scale-125 !border-none !bg-transparent !text-xl">add</button>
+            </div>
+            <div id="friends-add" class="bg-[#26284B] absolute inset-[auto_2rem] flex flex-wrap items-center gap-2 rounded-b-xl  mx-4  p-3 transition h-0 max-h-72 -translate-y-8 border border-white/30 border-t-0 z-10">
+                <!-- friends list add loaded here -->
+            </div>
+
+        </section>
+
+        <div class="flex items-center gap-2 [&>input:checked~span]:text-white [&>input:checked~span]:bg-[#26284B]"">
+            <input type="checkbox" id="notify" class="sr-only">
+            <span class="w-5 h-5 aspect-square border  border-white/30 rounded-sm material-symbols-outlined text-sm font-bold text-transparent transition-all">check</span>
+            <label for="notify" class="cursor-pointer">Notify People</label>
+        </div>
+
+        <footer class="flex flex-col gap-2 sm:flex-row items-center justify-between">
+            <a href="#" class="text-sm text-[#5D65FE] hover:text-white transition">Send feeback</a>
+            <div class="flex gap-4
+            [&>button]:py-3
+            [&>button]:px-6
+            [&>button]:rounded-sm
+            [&>button]:text-white
+            [&>button]:relative
+           
+            [&>button]:isolate
+            [&>button]:transition
+            [&>button]:duration-500
+            [&>button]:overflow-hidden
+            [&>button:hover]:text-[#5D65FE]
+
+            before:[&>button]:absolute 
+            before:[&>button]:-inset-6 
+            before:[&>button]:bg-white
+            before:[&>button]:rounded-full 
+            before:[&>button]:-z-10 
+            before:[&>button]:w-0 
+            hover:before:[&>button]:w-[140%]
+            before:[&>button]:transition-all 
+            before:[&>button]:duration-500
+            "">
+                <button type="button" class="bg-[#26284B]">Cancel</button>
+                <button type="button" class="bg-[#5D65FE]">Send</button>
+            </div>
+        </footer>
+
+    </div>
+
+    <template id="tpl-friend">
+        <button type="button">
+            <img src="https://i.pravatar.cc/120?img=13">
+            <span>Gordon Smith</span>
+        </button>
+    </template>
+</body>
+
+</html>
