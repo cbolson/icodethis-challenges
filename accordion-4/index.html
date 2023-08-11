@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion 4 - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <!-- https://icodethis.com/submissions/26570 -->
+  <body class="bg-[#E8ECF8] flex justify-center min-h-screen p-4 sm:mt-12">
+    <div
+      class="bg-white text-slate-600 p-6 sm:p-20 space-y-6 shadow-2xl shadow-[#7B7F8A] rounded-xl max-w-4xl h-fit">
+      <h1 class="font-semibold text-2xl tracking-wide">The Accordion</h1>
+      <p>
+        The accordion is a graphical control element comprising of a vertically
+        stacked list of items, such as labels or thumbnails. Each item can be
+        "expanded" or "collapsed" to reveal the conte associated with that item.
+      </p>
+
+      <div
+        class="space-y-2 [&>article]:p-2 sm:[&>article]:py-6 [&>article]:overflow-hidden [&>article]:border-b [&_label:hover]:text-red-400 [&_label]:rounded-md [&_label]:outline-offset-4 [&_label]:outline-white [&_label]:outline [&_label]:outline-1 [&_label]:flex [&_label]:items-center [&_label]:gap-4 sm:[&_label]:w-96 [&_label]:cursor-pointer [&_label]:tansition [&_label]:font-semibold [&_label:before]:shrink-0 [&_label:before]:content-['+'] [&_label:before]:relative [&_label:before]:rounded-full [&_label:before]:w-8 [&_label:before]:h-8 [&_label:before]:text-lg [&_label:before]:bg-black [&_label:before]:text-white [&_label:before]:font-light [&_label:before]:grid [&_label:before]:place-items-center [&_label:hover:before]:bg-red-400 [&_input]:sr-only [&_input:checked~div]:max-h-96 [&_input:checked~label:before]:content-['-'] [&_input:focus~label]:outline-red-300 [&_input:focus~label]:ring-0 [&_div]:max-h-0 [&_div]:pl-12 [&_div]:overflow-hidden [&_div]:transition-all [&_div]:duration-700 [&_div]:text-sm [&_div]:ease-in-out [&_div>h3]:font-semibold first:[&_div>*]:mt-4 [&_p]:my-3 [&_p]:leading-4 [&_p]:text-sm">
+        <article>
+          <input type="checkbox" id="item-1" name="item" />
+          <label for="item-1">What and how it should be used?</label>
+          <div>
+            <p>
+              An accordion is a UI that allows you to show multiple information
+              panels in an orderly fashion without filling the screen with texts
+              and other content.
+            </p>
+            <p>
+              Accordions should be used <strong>sparingly</strong> - if the user
+              can't see everything they might not realize that there is more
+              information hidden away, hence the importance of a clear icon to
+              indicate that there is more content.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <input type="checkbox" id="item-2" name="item" checked />
+          <label for="item-2"> What is an accordion?</label>
+          <div>
+            <h3>Show/Hide operation</h3>
+            <p>
+              An accirdion always contains the category title, an expanded and a
+              collpased state, an icon indicating the expansion and the spacing
+              between them.
+            </p>
+            <h3>Tabbed interface</h3>
+            <p>
+              A list if items where exactly one item is expaned into a panel
+            </p>
+            <button
+              class="rounded-full py-2 px-6 bg-gray-100 hover:bg-red-400 hover:text-white transition">
+              Read more
+            </button>
+          </div>
+        </article>
+
+        <article>
+          <input type="checkbox" id="item-3" name="item" />
+          <label for="item-3"
+            >What if the user clicks on a collapsed card while another card is
+            open?</label
+          >
+          <div>
+            <p>
+              This will create a situation where the code will have to decide
+              whether or not to open both and complicated the UI with ever
+              exppanding content or if it should close the previsuly opened
+              panel and open the new one making it impossible to see both at the
+              same time
+            </p>
+            <p>
+              Only the developer can decide what is best - in this demo I choose
+              to leave them open until the user specifically closes them
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <input type="checkbox" id="item-4" name="item" />
+          <label for="item-4"
+            >How to choose an icon to indicate expansion?</label
+          >
+          <div>
+            <p>
+              It is important to select an icon that clearly indicates that
+              there is more content available and then, when the panel is open,
+              the icon should indicate that it can be closed.
+            </p>
+            <p>
+              FOr this demo I actually used pseudo elements to avoid extra
+              mark-up
+            </p>
+            <p>If in doubt, ask <strong>Florin</strong></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
