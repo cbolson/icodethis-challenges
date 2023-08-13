@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Card - icodethis</title>
+<html>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/27077 -->
+<body style="--bg-img:url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bird-box-barcelona.webp')" class="text-white bg-yellow-900 flex flex-col items-center min-h-screen gap-8 p-4
+    before:inset-0
+    before:w-full
+    before:h-full
+    before:absolute
+    before:opacity-10
+    before:bg-cover
+    before:bg-center
+    before:-z-10
+    [&>div]:transition
+    [&>div]:p-4
+    sm:[&>div]:p-8
+    [&>div]:w-full
+    [&>div]:max-w-2xl
+    [&>div]:bg-black
+    [&>div]:backdrop-filter
+    [&>div]:backdrop-blur-md
+    [&>div]:bg-opacity-30
+">
+    
+    <div id="searchbox" class="text-yellow-900 z-10">
+        <div class="grid grid-cols-[20px_1fr] place-items-center gap-2 bg-white  py-4 px-4 text-xl border border-white focus-within:border-black/60 relative">
+            <span id="search-spinner" class="material-symbols-outlined" class="absolute">search</span>
+            <input type="text" id="search" placeholder="what book are you looking for today?" class="border-none bg-transoarent focus:outline-none focus:ring-0 w-full">            
+            <div id="search-list-books" class="absolute top-16 left-0 flex flex-col bg-white w-full z-[20] ">
+                <!-- list of books loaded here -->
+            </div>
+        </div>
+     </div>
+
+    <div id="book-details" class="opacity-0 z-[-1] !pt-12  z-[5]">
+
+        <section class="grid sm:grid-cols-[150px_1fr] gap-4 mb-8">
+            <div class="text-center space-y-2">
+                <img details-img src="" class="w-32 h-40 bg-red-100 mx-auto">
+                <div details-rating class="flex justify-center [&>span]:text-lg [&>span]:text-yellow-400 ">
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <h1 details-title class="text-4xl text-yellow-400 line-clamp-1"><!--title--></h1>
+                    <p>Author <span details-author class="font-bold"><!--author--></span></p>
+                </div>
+                <p details-summary class="text-xs line-clamp-3"><!--summary --></p>
+                <a href="#" class="block w-fit rounded-full border border-orange-600 text-orange-500 bg-yelllow-900 uppercase py-1 px-4 text-xs hover:bg-orange-600 hover:text-yellow-900 transition">Continue reading</a>
+        </section>
+
+        <section class="grid sm:grid-cols-[150px_1fr] text-xs
+        [&>div]:border-white/50 
+        [&>div]:border-b
+        ">
+            <div  class="py-2 px-4 sm:text-right text-yellow-400 sm:border-r-2">Originally published</div>
+            <div details-published class="py-2 px-4"></div>
+
+            <div class="py-2 px-4 sm:text-right text-yellow-400 sm:border-r-2">Page count</div>
+            <div details-pages class="py-2 px-4"></div>
+
+            <div class="py-2 px-4 sm:text-right text-yellow-400 sm:border-r-2 !border-b-0">Characters</div>
+            <div details-characters class="py-2 px-4 !border-b-0"><!-- list of characteers --></div>
+        </section>
+
+        <div class="absolute top-2 right-3 flex items-center justify-between  gap-2
+            [&>button]:w-8
+            [&>button]:h-8
+            [&>button]:rounded-full
+            [&>button]:text-xl
+            [&>button]:text-white
+            [&>button]:grid
+            [&>button]:place-items-center
+            [&>button]:transition
+            [&>button:hover]:scale-110
+            [&>button:hover]:hover:bg-yellow-300
+            [&>button:hover]:text-yellow-900
+        ">
+             <button type="button" id="btn-share" class="material-symbols-outlined ">share</button>
+             <button type="button" id="btn-close" class="material-symbols-outlined ">close</button>
+    </div>
+</div>
+
+    <template id="tpl-list-book">
+        <button type="button" class="text-sm text-left px-4 py-1 hover:bg-gray-100 border-b flex gap-3">
+            <img book-cover src="" class="w-8 aspect-square object-cover border">
+            <div>
+                <p book-title class="font-bold"></p>
+                <p book-author class="text-xs opacity-60"></p>
+            </div>
+    </template>
+</body>
+</html>
