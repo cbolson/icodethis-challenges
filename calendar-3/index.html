@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar 3 - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/27348 -->
+  <body
+    class="bg-gradient-to-t from-yellow-800 to-white flex justify-center mt-12 items-start lg:items-center min-h-screen scroll-smooth">
+    <div
+      class="flex align-start flex-col sm:flex-row sm:gap-4 relative isolate">
+      <section
+        id="calendar"
+        class="w-72 sm:w-96 bg-[#2A3231] text-[#BEBEBE] pt-12 pb-6 px-4 relative">
+        <header
+          class="flex justify-between items-center p-2 sm:px-12 [&>button:hover]:opacity-100 [&_button]:transition">
+          <button type="button" cal-year="prev" class="opacity-70">2022</button>
+          <h1 data-month class="capitalize text-2xl font-bold"></h1>
+          <button type="button" cal-year="next" class="opacity-70">2024</button>
+        </header>
+
+        <main
+          class="px-2 sm:px-8 [&>ul]:grid [&>ul]:grid-cols-7 [&>ul>li]:rounded-full [&>ul>li]:grid [&>ul>li]:place-items-center [&>ul>li]:relative [&>ul>li]:isolate [&>ul>li]:transition [&>ul>li]:aspect-square [&>ul>li.inactive]:opacity-30 [&>ul>li:not(.inactive)]:cursor-pointer before:[&>ul>li]:absolute before:[&>ul>li]:transition before:[&>ul>li]:rounded-full before:[&>ul>li]:bg-transparent before:[&>ul>li]:outline before:[&>ul>li]:outline-1 before:[&>ul>li]:outline-transparent before:[&>ul>li]:outline-offset-2 before:[&>ul>li]:inset-2 before:[&>ul>li]:-z-10 before:[&>ul>li.today]:bg-green-300 before:[&>ul>li.today]:outline-green-300 [&>ul>li.today]:text-black before:[&>ul>li.event]:bg-[#FDB06C] before:[&>ul>li.event]:outline-[#FDB06C] [&>ul>li.event]:text-black">
+          <ul data-weekdays class="weedays text-[#FDB06C]/50">
+            <!-- weekday titles  -->
+          </ul>
+          <ul
+            data-dates
+            class="grid-rows-6 text-white text-sm before:[&>li:not(.inactive):hover]:bg-[#E55B50] before:[&>li:not(.inactive):hover]:animate-pulse">
+            <!-- dates -->
+          </ul>
+        </main>
+
+        <footer
+          class="flex justify-between items-center p-2 [&_button:hover]:text-white [&_button:hover]:scale-125 [&_button]:p-2 [&_button]:transition [&_button]:uppercase">
+          <button
+            type="button"
+            cal-nav="prev"
+            class="material-symbols-outlined">
+            chevron_left
+          </button>
+          <div
+            id="footer-months"
+            class="text-lg flex gap-1 items-center overflow-hidden w-full scroll-smooth">
+            <!-- months -->
+          </div>
+          <button
+            type="button"
+            cal-nav="next"
+            class="material-symbols-outlined">
+            chevron_right
+          </button>
+        </footer>
+
+        <div
+          id="panel-new-event"
+          class="absolute w-full inset-0 bg-[#E55B50] text-white p-4 sm:p-12 scale-0 text-2xl transition duration-300 z-30 space-y-2">
+          <h2 data-lang="events-btn-add" clas="text-center">Add Event</h2>
+          <form id="form-new-event" class="w-full space-y-4">
+            <!--<label class="text-base text-white font-bold animate-pulse w-full whitespace-wrap" data-lang="events-date-inst">Click on a date in the calendar</label>-->
+            <div class="flex items-center gap-2 text-[#FFF9B8]">
+              <input
+                type="date"
+                id="event-date"
+                class="bg-transparent text-[#2A3231]"
+                readonly />
+            </div>
+            <input type="time" id="event-time" class="py-2 px-4 text-[#2A3231]
+            border focus:ring-0 focus:outline-none focus:border-[#2A3231]"">
+
+            <div
+              id="list-event-types"
+              class="flex items-center justify-between flex-wrap w-full [&>input]:sr-only [&>label]:cursor-pointer [&>label]:text-[#2A3231] [&>label]:bg-white [&>label]:border [&>label]:w-8 [&>label]:h-8 lg:[&>label]:w-12 lg:[&>label]:h-12 [&>label>span]:text-2xl [&>label]:grid [&>label]:place-items-center [&>label]:rounded-sm [&>label]:transition [&>label:hover]:bg-[#FFF9B8] [&>label:hover]:scale-125 [&>input:checked+label]:bg-[#2A3231] [&>input:checked+label]:text-[#FFF9B8]">
+              <!-- list event types -->
+            </div>
+            <input
+              type="text"
+              id="event-desc"
+              required
+              placeholder="eg. meeting"
+              autocomplete="off"
+              class="w-full py-2 px-4 text-[#2A3231] border focus:ring-0 focus:outline-none focus:border-[#2A3231]" />
+            <button
+              type="submit"
+              id="btn-save-event"
+              class="py-2 px-4 w-full bg-[#2A3231] text-white transition hover:bg-[#FFF9B8] hover:text-[#2A3231] uppercase text-lg"
+              data-lang="events-btn-save">
+              save event
+            </button>
+          </form>
+
+          <button
+            type="button"
+            id="btn-close-add-event"
+            class="material-symbols-outlined absolute top-2 right-2">
+            close
+          </button>
+        </div>
+      </section>
+
+      <div
+        class="absolute top-2 right-4 flex items-center justify-center gap-2">
+        <button
+          id="btn-lang"
+          class="material-symbols-outlined text-[#FDB06C] opacity-70 hover:opacity-100 transition">
+          language
+        </button>
+        <button
+          id="btn-events"
+          class="material-symbols-outlined text-[#FDB06C] opacity-70 hover:opacity-100 transition">
+          list
+        </button>
+      </div>
+
+      <!-- lang select -->
+      <div
+        id="list-lang"
+        class="absolute right-0 top-0 flex-row gap-2 duration-500 transition ease-in-out -z-10 [&_button]:w-8 [&_button]:h-8 [&_button]:transition [&_button]:text-sm [&_button]:bg-[#FDB06C] [&_button]:text-black hover:[&_button]:bg-[#2A3231] hover:[&_button]:text-[#BEBEBE] hover:[&_button]:animate-pulse [&>button.active]:bg-[#2A3231] [&>button.active]:text-[#BEBEBE]">
+        <button type="button" lang-choose="en" class="active">en</button>
+        <button type="button" lang-choose="es">es</button>
+        <button type="button" lang-choose="fr">fr</button>
+        <button type="button" lang-choose="de">de</button>
+        <button type="button" lang-choose="it">it</button>
+      </div>
+
+      <!-- panel events -->
+      <section
+        id="panel-events"
+        class="absolute transition w-full h-full m-auto -z-10 overflow-hidden bg-[#E55B50] flex flex-col">
+        <header class="bg-[#FDB06C] p-3 md:p-6 text-center">
+          <h1 data-lang="events-title" class="uppercase text-xl">
+            Events of the month
+          </h1>
+        </header>
+        <div id="list-events" class=""></div>
+
+        <!--
+                <button id="btn-add-event" class="mt-4 bg-[#2A3231] py-2 px-6 flex items-center gap-2 uppercase text-white mx-auto transition hover:bg-[#FDB06C] hover:text-[#2A3231]">
+                    <span class="material-symbols-outlined">add</span>
+                    <span data-lang="events-btn-add">Add event
+                </button>
+                -->
+      </section>
+    </div>
+
+    <template id="tpl-event-type">
+      <input type="radio" id="" name="event-type" required />
+      <label for="" class="material-symbols-outlined"></label>
+    </template>
+
+    <template id="tpl-event">
+      <article
+        class="flex items-center gap-4 w-full border-b border-[#CE4848] py-2 px-4 transition hover:bg-[#E95F55]">
+        <span
+          event-icon
+          class="material-symbols-outlined text-[#FFF9B8]"></span>
+        <div>
+          <h3 event-title class="text-lg text-[#FFF9B8] uppercase"></h3>
+          <p event-date class="text-xs opacity-70"></p>
+        </div>
+        <div
+          class="flex gap-2 ml-auto [&>button:hover]:scale-125 [&>button]:transition">
+          <button
+            type="button"
+            event-edit
+            class="material-symbols-outlined text-base">
+            edit
+          </button>
+          <button
+            type="button"
+            event-delete
+            class="material-symbols-outlined text-base">
+            delete
+          </button>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>
