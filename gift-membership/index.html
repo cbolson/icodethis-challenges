@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gift Membership - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <!-- https://icodethis.com/submissions/29028 -->
+  <body class="">
+    <input class="group peer sr-only" id="theme" type="checkbox" />
+    <label
+      for="theme"
+      class="absolute top-4 left-4 grid place-items-center cursor-pointer rounded-full py-4 px-6 transition z-10 mix-blend-difference bg-orange-600 text-black [&>span]:transition-all [&>span]:absolute [&>span]:duration-200 [&>span]:delay-500 [&>#light]:opacity-0 peer-checked:[&>span]:delay-0 peer-checked:[&>#dark]:opacity-0 peer-checked:[&>#light]:opacity-100 peer-checked:[&>#light]:text-white hover:bg-blue-500 active:scale-95">
+      <span id="dark" class="material-symbols-outlined">dark_mode</span>
+      <span id="light" class="material-symbols-outlined">light_mode</span>
+    </label>
+
+    <!-- main wrapper to replace body styles, required for theme toggle -->
+    <div
+      class="group overflow-hidden bg-slate-100 relative flex justify-center items-center min-h-screen p-8 antialiased text-slate-700 peer-checked:text-white peer-checked:[&_article]:bg-slate-500 peer-checked:[&_article]:text-white peer-checked:[&_article]:delay-500 peer-checked:[&_h1]:delay-300 before:absolute before:inset-0 before:bg-slate-800 before:transition before:duration-700 before:ease-out peer-checked:before:ease-in before:-translate-y-full peer-checked:before:-translate-y-2/4 after:absolute after:inset-0 -py-12 after:bg-slate-800 after:transition after:duration-700 after:ease-out peer-checked:after:ease-in after:translate-y-full peer-checked:after:translate-y-2/4">
+      <!-- alternative method - scale from center -->
+      <!--
+        before:absolute
+        before:w-full
+        before:h-full
+        before:m-auto
+        before:aspect-square
+        before:bg-slate-800
+        before:transition
+        before:duration-300
+        before:ease-in-out
+        before:scale-0
+        peer-checked:before:scale-100 
+        -->
+
+      <div class="max-w-3xl space-y-12 z-10">
+        <section class="text-center space-y-8">
+          <svg
+            width="100px"
+            height="100px"
+            viewBox="0 0 24 24"
+            class="mx-auto group-hover:animate-bounce">
+            <g transform="translate(0 -1028.4)">
+              <path
+                d="m1 1037.4v3 2 7c0 1.1 0.8954 2 2 2h9 9c1.105 0 2-0.9 2-2v-7-2-3h-22z"
+                fill="#f39c12" />
+              <path
+                d="m1 1036.4v3 2 7c0 1.1 0.8954 2 2 2h9 9c1.105 0 2-0.9 2-2v-7-2-3h-22z"
+                fill="#f1c40f" />
+              <path
+                d="m2 1034.4c-1.1046 0-2 0.9-2 2v2h24v-2c0-1.1-0.895-2-2-2h-2-7-2-7-2z"
+                fill="#f1c40f" />
+              <rect height="18" width="6" y="1033.4" x="9" fill="#e74c3c" />
+              <path
+                d="m7.8848 1029.4c-0.9986-0.1-1.9733 0.4-2.5079 1.2-0.7776 1.2-0.3129 2.7 1.034 3.4 0.4331 0.3 0.897 0.4 1.3639 0.4h0.231 3.3002 1.386 3.299 0.231c0.467 0 0.942-0.1 1.375-0.4 1.347-0.7 1.801-2.2 1.023-3.4-0.777-1.2-2.492-1.6-3.839-0.9-0.433 0.2-0.773 0.5-1.011 0.9h-0.022c-0.032 0.1-0.06 0.1-0.088 0.2l-1.661 2.5-1.661-2.5c-0.028-0.1-0.056-0.1-0.088-0.2h-0.022c-0.2386-0.4-0.5681-0.7-1.0013-0.9-0.4209-0.2-0.888-0.3-1.3419-0.3zm-0.165 1.2c0.2705 0 0.5504 0.1 0.803 0.2 0.0847 0 0.1609 0.1 0.2309 0.1 0.0493 0.1 0.0902 0.1 0.132 0.2h0.033c0.0225 0 0.046 0.1 0.066 0.1h0.033 0.011c0.016 0.1 0.041 0.1 0.055 0.1l1.1663 1.8h-2.3322-0.132-0.055-0.11-0.055c-0.064 0-0.1241 0-0.187-0.1-0.0894 0-0.1792 0-0.264-0.1-0.1683 0-0.3187-0.2-0.429-0.3-0.3307-0.4-0.3796-0.9-0.088-1.4 0.243-0.3 0.6711-0.6 1.122-0.6zm8.5682 0c0.451 0 0.879 0.3 1.122 0.6 0.292 0.5 0.232 1-0.099 1.4-0.11 0.1-0.249 0.3-0.418 0.3-0.084 0.1-0.174 0.1-0.264 0.1-0.062 0.1-0.134 0.1-0.198 0.1h-0.055-0.11-0.055-0.132-2.331l1.165-1.8c0.014 0 0.039 0 0.055-0.1h0.011c0.003 0-0.002 0 0 0h0.033c0.02 0 0.044-0.1 0.066-0.1h0.033c0.042-0.1 0.094-0.1 0.143-0.2 0.071 0 0.147-0.1 0.231-0.1 0.253-0.1 0.533-0.2 0.803-0.2z"
+                fill="#c0392b" />
+              <rect height="3" width="22" y="1038.4" x="1" fill="#f39c12" />
+              <rect height="3" width="6" y="1038.4" x="9" fill="#c0392b" />
+              <rect height="1" width="6" y="1050.4" x="9" fill="#c0392b" />
+              <rect
+                transform="translate(0 1028.4)"
+                height="1"
+                width="8"
+                y="10"
+                x="1"
+                fill="#e67e22" />
+              <rect height="1" width="8" y="1038.4" x="15" fill="#e67e22" />
+            </g>
+          </svg>
+          <h1 class="text-2xl font-medium transition duration-500 delay-100">
+            Select a gift membership
+          </h1>
+        </section>
+
+        <section
+          class="space-y-8 [&>article]:flex [&>article]:flex-col sm:[&>article]:flex-row [&>article]:relative [&>article]:bg-white [&>article]:p-8 [&>article]:shadow-xl [&>article]:rounded-xl [&>article]:flex [&>article]:items-center [&>article]:gap-6 [&>article]:justify-between [&>article]:overflow-hidden [&>article]:transition-all [&>article]:duration-300 [&>article]:delay-0 [&>article]:overflow-hidden before:[&>article.popular]:absolute before:[&>article.popular]:top-0 before:[&>article.popular]:left-0 before:[&>article.popular]:bg-blue-400 before:[&>article.popular]:text-white before:[&>article.popular]:py-1 before:[&>article.popular]:px-12 before:[&>article.popular]:content-['Most_Popular'] before:[&>article.popular]:rounded-br-md before:[&>article.popular]:animate-pulse [&>article>div]:space-y-2 [&_h2]:pt-4 [&_h2]:font-medium [&_p]:font-light last:[&>article>div]:bg-blue-50/70 last:[&>article>div]:rounded-md last:[&>article>div]:p-4 last:[&>article>div]:px-6 last:[&>article>div]:flex-col last:[&>article>div]:flex last:[&>article>div]:gap-2 last:[&>article>div]:text-slate-600 last:[&>article>div]:font-medium [&_label]:flex [&_label]:items-center [&_label]:gap-2 [&_label]:tansition [&_label]:cursor-pointer [&_label]:relative [&_label>span]:text-xs [&_label>span]:whitespace-nowrap before:[&_label]:block before:[&_label]:bg-white before:[&_label]:border before:[&_label]:border-white before:[&_label]:rounded-full before:[&_label]:w-7 before:[&_label]:h-7 before:[&_label]:aspect-square before:[&_label]:grid before:[&_label]:place-items-center before:[&_label]:tansition before:[&_label:hover]:bg-yellow-400 [&_input]:sr-only [&_input:checked+label:before]:content-['\2713'] [&_input:checked+label:before]:bg-red-400 [&_input:checked+label:before]:text-white [&_input:checked+label:before]:border-red-400">
+          <article>
+            <div>
+              <h2>U.S. Discovery</h2>
+              <p>
+                Your friends or familiy members can explore their American roots
+                with access to billions of records from all 50 states.
+              </p>
+            </div>
+            <div>
+              <input type="radio" id="option-1" name="option" />
+              <label for="option-1">$99<span>/ 6 nmonths</span></label>
+
+              <input type="radio" id="option-2" name="option" />
+              <label for="option-2">$189<span>/ 12 nmonths</span></label>
+            </div>
+          </article>
+
+          <article class="popular">
+            <div>
+              <h2>World Explorer</h2>
+              <p>
+                Recipients will be able to search for U.S. and international
+                famliy with access to bulliones of recors from 80+ countries.
+              </p>
+            </div>
+            <div>
+              <input type="radio" id="option-3" name="option" checked />
+              <label for="option-3">$149<span>/ 6 nmonths</span></label>
+              <input type="radio" id="option-4" name="option" />
+              <label for="option-4">$299<span>/ 12 nmonths</span></label>
+            </div>
+          </article>
+        </section>
+
+        <footer class="text-center space-y-8">
+          <p class="sm:w-4/6 mx-auto text-xs transition duration-300 delay-100">
+            Keep in mind that this is a one-time, non-renwing membership and you
+            will only be billed for the cost of the membership you select above.
+          </p>
+
+          <button
+            type="button"
+            class="bg-red-400 text-white font-normal rounded-lg py-4 px-16 text-sm transition hover:bg-yellow-400 hover:text-slate-800">
+            Order Now
+          </button>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
