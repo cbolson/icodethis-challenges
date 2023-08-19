@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radio App - icodethis</title>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="scripts.js" defer></script>
+      </head>
+      <!-- https://icodethis.com/submissions/29612 -->
+      <body class="text-white flex justify-center items-center min-h-screen">
+        <div
+          class="bg-gradient-to-tr from-[#241749] to-[#3E1D89] shadow-2xl w-72 sm:w-96 overflow-hidden">
+          <header
+            class="p-4 flex items-center justify-between border-b border-[#26154E] [&>button]:text-[#6D51B2] [&>button]:transition [&>button:hover]:text-white [&>button:hover]:scale-110">
+            <button
+              type="button"
+              id="btn-menu"
+              class="material-symbols-outlined">
+              menu
+            </button>
+            <p>FM RADIO</p>
+            <button
+              type="button"
+              id="btn-power"
+              class="material-symbols-outlined">
+              power_settings_new
+            </button>
+          </header>
+
+          <section class="p-8 text-center space-y-6">
+            <h1 id="station-name">Mojjo Radio</h1>
+            <div
+              class="flex items-center justify-between px-8 [&>button]:text-[#170F2F] [&>button]:text-4xl [&>button]:tranistion-all [&>button:hover]:text-white [&>button:hover]:scale-110 [&>button]:">
+              <button
+                type="button"
+                data-nav="prev"
+                class="material-symbols-outlined">
+                arrow_back_ios
+              </button>
+
+              <div
+                id="station-icon"
+                class="rounded-full border border-white/30 bg-[#35275A] w-32 aspect-square grid place-items-center text-2xl sm:text-4xl overflow-hidden [&>img]:w-full [&>img]:h-full [&>img]:object-cover [&>span]:text-4xl [&>img]:"></div>
+
+              <button
+                type="button"
+                data-nav="next"
+                class="material-symbols-outlined">
+                arrow_forward_ios
+              </button>
+            </div>
+
+            <!--
+                <div>
+                <h2 id="station-name" >Love Mode (5:26)</h2>
+                <h3 id="station-broadcaster" class="uppercase text-sm">Joakin Karud</h3>
+            </div>
+            -->
+          </section>
+          <div class="flex gap-2 items-center p-6">
+            <button
+              id="btn-mute"
+              class="material-symbols-outlined"
+              aria-label="Mute/unmute">
+              volume_mute
+            </button>
+            <input
+              type="range"
+              name="volume"
+              class="transparent h-[2px] w-full cursor-pointer appearance-none border-transparent bg-white/30"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.2"
+              aria-label="Volume" />
+          </div>
+
+          <section class="bg-[#140E27] p-4 sm:p-6 mb-4 space-y-6">
+            <div class="border-white/50 border-b-2 sm:pb-4 mb-4 relative">
+              <div
+                id="dial-bars"
+                class="text-[#311868] flex items-center justify-center gap-2 before:absolute before:-bottom-1.5 before:w-3 before:h-3 before:bg-white before:rounded-full before:left-[120px] before:z-10 after:absolute after:-bottom-4 after:w-px after:h-8 sm:after:h-16 after:bg-red-500 after:left-[125px] [&>span]:bg-white [&>span]:h-3 [&>span]:w-px [&>*:nth-child(5n)]:h-6">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div
+              id="dial-values"
+              class="flex gap-4 justify-center overflow-hidden">
+              <span>87</span>
+              <span>88</span>
+              <span>89</span>
+              <span>90</span>
+              <span>91</span>
+              <span>92</span>
+              <span>93</span>
+              <span>94</span>
+              <span>95</span>
+            </div>
+          </section>
+
+          <section class="bg-[#140E27] p-6 pr-0 space-y-3">
+            <h2 class="">Stations</h2>
+            <div
+              id="stations-list"
+              class="grid gap-3 grid-flow-col auto-cols-max overflow-x-scroll pb-8 [&>button]:flex [&>button]:flex-col [&>button]:justify-center [&>button]:items-center [&>button]:transition [&>button:hover]:scale-95 [&>button]:w-32 [&>button]:bg-[#2C1C5A] [&>button>h3]:text-2xl [&>button>h3]:text-white [&>button]:border [&>button]:border-transparent"></div>
+          </section>
+        </div>
+
+        <template id="tpl-station">
+          <button type="button">
+            <img src="" class="w-full aspect-video object-cover" />
+            <p class="text-xs p-2"></p>
+          </button>
+        </template>
+      </body>
+    </html>
+  </head>
+</html>
