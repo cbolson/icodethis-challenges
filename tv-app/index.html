@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV app - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/30214-->
+<body class="bg-primary sm:py-12 sm:px-8 min-h-screen">
+    <div
+        class="bg-gradient-to-b from-[#00070B] to-transparent text-gray-500 w-full max-w-6xl mx-auto  grid sm:grid-cols-[180px_1fr] relative overflow-hidden">
+        <input class="group peer sr-only" id="nav" type="checkbox"/>
+        <label for="nav" class="absolute top-8 right-8 grid place-items-center cursor-pointer transition z-10  text-white sm:hidden 
+            [&>span]:transition-all
+            [&>span]:absolute
+            [&>span]:duration-200
+            [&>#show]:scale-0 
+            peer-checked:[&>#hide]:scale-0 
+            peer-checked:[&>#show]:scale-100
+            peer-checked:[&>#show]:text-white
+            hover:bg-blue-500 
+            active:scale-95
+        ">
+            <span id="hide" class="material-symbols-outlined">menu</span>
+            <span id="show" class="material-symbols-outlined">close</span>
+        </label>
+
+        <div class="pt-12 sm:pt-6 overflow-x-scroll sm:overflow-hidden 
+            p-4
+            sm:w-fit
+            sm:px-0
+            [&>ul]:flex
+            [&>ul]:gap-1
+            [&>ul]:flex-row
+            sm:[&>ul]:flex-col
+            sm:[&>ul]:gap-0
+            [&_button]:relative
+            [&_button]:py-2
+            [&_button]:px-4
+            [&_button]:isolate
+            [&_button]:rounded-md
+            [&_button]:text-left
+            [&_button]:transition-all
+            [&_button:hover]:bg-primary
+            sm:[&_button:hover]:bg-transparent
+            [&_button:hover]:text-white
+            [&_button:hover]:text-secondary
+            sm:[&_button]:rounded-r-full
+            sm:[&_button]:py-4
+            sm:[&_button]:px-8
+            sm:[&_button]:-space-y-2
+            [&_h2]:uppercase
+            [&_h2]:p-0
+            sm:[&_h2]:text-2xl
+            [&_p]:text-xs
+            [&_p]:whitespace-nowrap
+            [&_button.current]:bg-primary
+            [&_button.current>h2]:text-secondary
+            sm:before:[&_button]:bg-primary
+            sm:before:[&_button]:inset-0
+            sm:before:[&_button]:absolute
+            sm:before:[&_button]:rounded-r-full
+            sm:before:[&_button]:-z-10
+            sm:before:[&_button]:-translate-x-full
+            sm:before:[&_button]:transition-all
+            sm:before:[&_button:hover]:translate-x-0
+        ">
+            <ul id="list-channels">
+                <!-- channels loaded here -->
+            </ul>
+        </div>
+
+        <main class="py-4 sm:py-8 p-8 space-y-8 overflow-hidden 
+            peer-checked:[&_nav]:translate-y-0 
+            peer-checked:[&_nav]:duration-500
+        ">
+            <header class="w-full flex items-center justify-between ">
+
+                <nav class="absolute top-0 left-0 w-full bg-[#00070B] border-b border-white/50 p-4 pt-8 pb-4 -translate-y-full  transition flex flex-row sm:flex-col duration-75 text-sm 
+                    sm:py-0
+                    sm:gap-2
+                    sm:justify-center
+                    sm:items-center
+                    sm:border-0
+                    sm:-translate-y-0
+                    sm:relative
+                    sm:bg-transparent
+                    md:text-base
+                    [&>ul]:flex
+                    [&>ul]:flex-col
+                    sm:[&>ul]:flex-row
+                    [&_button]:py-0.5
+                    [&_button]:px-4
+                    [&_button]:uppercase
+                    [&_button]:transition-all
+                    [&_button.current]:text-secondary
+                    [&_button:hover]:bg-primary
+                    [&_button:hover]:text-white
+                    sm:[&_button]:rounded-full
+                    sm:[&_button.current]:bg-primary
+                ">
+                    <ul>
+                        <li><button type="button" class="rounded-full current">Now</button></li>
+                        <li><button type="button" class="rounded-full">Comming up</button></li>
+                        <li><button type="button" class="rounded-full">Tonight</button></li>
+                        <li><button type="button" class="rounded-full">Today</button></li>
+                    </ul>
+
+                    <ul class="text-sm">
+                        <li><button type="button" class="rounded-full text-secondary">Poplular</button></li>
+                        <li><button type="button" class="rounded-full">New</button></li>
+                        <li><button type="button" class="rounded-full">Highest rated</button></li>
+                    </ul>
+                </nav>
+
+            </header>
+
+            <section id="list-movies" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> 
+                <!-- movies loaded here -->
+            </section>
+            
+        </main>
+
+        <footer class="sm:col-span-2 p-8 space-y-4">
+            <h2 class="text-secondary text-xl uppercase">Featured</h2>
+            <div id="list-featured" class="grid  sm:grid-cols-3 md:grid-cols-4 gap-4">
+                <!-- featured movies loaded here -->
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- template movie card -->
+    <template id="tpl-movie">
+        <article class="space-y-2 group relative after:inset-0">
+            <div class="overflow-hidden w-full aspect-video relative">
+                <img src="" class="aspect-video object-cover w-full  transition duration-300">
+                <div class="absolute inset-0 bg-black transition-all duration-500 delay-100 opacity-0 group-hover:opacity-70 grid place-items-center">
+                    <button class="material-symbols-outlined  text-white/70 text-[6rem]">play_arrow</button></div>
+            </div>
+            <h3 class="text-white/70 group-hover:text-white  uppercase"></h3>
+            <h4 class="flex justify-between text-xs">
+                <p data-epsisode></p>
+                <p data-remaining></p>
+            </h4>
+            <div data-progress class="flex items-center relative after:my-auto after:absolute after:inset-0 after:w-full after:h-px  after:bg-secondary after:-z-10 before:h-2 before:bg-secondary before:rounded-sm before:transition-all before:duration-500
+            "></div>
+        </article>
+    </template>
+    
+
+    <!-- template - channel buttons -->
+    <template id="tpl-channel">
+        <li>
+            <button type="button"">
+               <h2></h2>
+               <p></p>
+            </button>
+        </li>
+    </template>
+</body>
+
+</html>
