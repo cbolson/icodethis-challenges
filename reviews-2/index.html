@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews 2 - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/29992 -->
+  <body class="bg-[#ECF1F5] flex justify-center my-12 min-h-screen px-4">
+    <div
+      class="bg-gray-100 text-[#181028] drop-shadow-[0_0_25px_rgba(21_165_160/0.5)] rounded-xl overflow-hidden w-full max-w-sm h-fit sm:h-[600px] relative isolate">
+      <div class="relative bg-gradient-to-t from-[#4CC7B3] to-[#15A5A0]">
+        <header
+          class="relative b flex items-center justify-between text-white p-4 py-4 [&>button]:transition [&>button:hover]:text-green-900 z-20 [&>button>span]:transition [&>button]:grid [&>button]:place-items-center">
+          <button type="button" class="material-symbols-outlined">
+            arrow_back_ios_new
+          </button>
+          <h1>Reviews</h1>
+          <button type="button" id="btn-add">
+            <span class="material-symbols-outlined">add_circle</span>
+          </button>
+        </header>
+
+        <div
+          id="panel-all"
+          class="h-0 text-white transition-all duration-500 z-10 overflow-hidden">
+          <div class="border-t border-white w-full h-full p-4 py-2">
+            <div
+              class="flex gap-1 [&>label]:text-white [&>input]:sr-only my-2 [&>label:hover]:scale-125 [&>label]:transition [&>label]:cursor-pointer">
+              <input
+                type="radio"
+                data-stars
+                id="star-1"
+                name="rating"
+                value="1" />
+              <label
+                for="star-1"
+                class="material-symbols-outlined material-fill-1"
+                >star</label
+              >
+              <input
+                type="radio"
+                data-stars
+                id="star-2"
+                name="rating"
+                value="2" />
+              <label
+                for="star-2"
+                class="material-symbols-outlined material-fill-1"
+                >star</label
+              >
+              <input
+                type="radio"
+                data-stars
+                id="star-3"
+                name="rating"
+                value="3"
+                checked />
+              <label
+                for="star-3"
+                class="material-symbols-outlined material-fill-1"
+                >star</label
+              >
+              <input
+                type="radio"
+                data-stars
+                id="star-4"
+                name="rating"
+                value="4" />
+              <label for="star-4" class="material-symbols-outlined">star</label>
+              <input
+                type="radio"
+                data-stars
+                id="star-5"
+                name="rating"
+                value="5" />
+              <label for="star-5" class="material-symbols-outlined">star</label>
+            </div>
+
+            <section
+              class="space-y-2 [&_input]:border [&_input]:rounded-sm [&_input]:py-2 [&_input]:px-4 [&_input]:w-full [&_input:focus]:ring-0 [&_input:focus]:outline-none [&_input:focus]:border-black [&_input:focus]:bg-slate-50 [&_textarea]:border [&_textarea]:rounded-sm [&_textarea]:py-2 [&_textarea]:px-4 [&_textarea]:w-full [&_textarea]:h-20 [&_textarea]:resize-none [&_textarea:focus]:ring-0 [&_textarea:focus]:outline-none [&_textarea:focus]:border-black [&_textarea:focus]:bg-slate-50">
+              <input type="text" placeholder="your name" required />
+              <textarea placeholder="your review..." required></textarea>
+              <button
+                type="submit"
+                class="bg-black text-white py-2 px-4 relative rounded-md hover:bg-[#15A5A0] transition"
+                disabled>
+                Submit your review
+              </button>
+              <p class="text-xs">Sorry, not working at the moment</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <section
+        class="m-4 px-4 py-2 bg-white flex flex-col sm:flex-row items-center gap-4">
+        <div class="text-center w-40">
+          <span
+            class="material-symbols-outlined material-fill-1 text-6xl text-yellow-400 relative grid place-items-center before:content-[attr(data-avg)] before:absolute before:text-[.65rem] before:tfont-bold before:text-white before:-tracking-[5px]"
+            data-avg="4.5"
+            >star</span
+          >
+          <p class="text-sm">Average Rating</p>
+          <p class="text-xs opacity-50">
+            Based on
+            <span id="total-votes" class="font-semibold"></span> ratings
+          </p>
+        </div>
+
+        <div
+          id="list-votes"
+          class="w-full grid grid-cols-[1fr_2fr_1fr] gap-2 sm:gap-1 gap-y-2 text-xs">
+          <!-- current votes breakdown loaded here-->
+        </div>
+      </section>
+
+      <section
+        class="bg-white p-4 overflow-y-auto h-96 [&>article]:p-4 [&>article]:py-2 [&>article+article]:border-t [&>article]:flex [&>article]:gap-4 [&>article]:transition [&>article:hover]:bg-[rgba(58,183,161,0.05)] [&_img]:w-8 [&_img]:h-8 sm:[&_img]:w-12 sm:[&_img]:h-12 [&_img]:rounded-2xl [&_img]:object-cover [&_img]:transition-all [&>article:hover_img]:shadow-xl [&_h2]:font-semibold [&_span]:flex [&_span]:items-center [&_span]:gap-2 [&_span]:w-2 [&_span]:text-yellow-400 [&_p]:text-xs [&_p]:opacity-70">
+        <article>
+          <img src="https://i.pravatar.cc/150?img=24" />
+
+          <div>
+            <h2>Barbara Hines</h2>
+            <span>
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined">star</span>
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores
+              vel iusto possimus accusamus perferendis facere eos vitae
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://i.pravatar.cc/150?img=11" />
+          <div>
+            <h2>Troy L Kyles</h2>
+            <span>
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined">star</span>
+            </span>
+            <p>
+              Consectetur adipisicing elit. Dolores vel iusto possimus accusamus
+              perferendis facere eos vitae
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <img src="https://i.pravatar.cc/150?img=1" />
+          <div>
+            <h2>Nancy Shepardson Hines</h2>
+            <span>
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+              <span class="material-symbols-outlined material-fill-1"
+                >star</span
+              >
+            </span>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Reiciendis quasi, cum ab fugiat explicabo eveniet earum officia
+              rerum beatae sequi quidem delectus ea impedit repellat numquam rem
+              asperiores aperiam expedita? facere eos vitae
+            </p>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <template id="tpl-votes">
+      <label votes-stars class="text-right"></label>
+      <div class="bg-gray-100 border p-0.5 h-4 w-full">
+        <div
+          votes-bar
+          class="bar w-0 h-full bg-yellow-400 transition-all duration-1000 ease-out delat-300"></div>
+      </div>
+      <p votes-count></p>
+    </template>
+  </body>
+</html>
