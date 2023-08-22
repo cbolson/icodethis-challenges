@@ -1,0 +1,131 @@
+/*
+animated background bobs from https: //codepen.io/shrinathprabhu/pen/dyvOWma
+*/
+.blob-c {
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    filter: blur(20px);
+    z-index:-1;
+    /*   background: rgba(255,255,255,0.1) */
+}
+
+.shape-blob {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 60px;
+    width: 80px;
+    border-radius: 40% 50% 30% 40%;
+    animation: transform 18s ease-in-out infinite both alternate,
+        movement_one 12s ease-in-out infinite both;
+    opacity: .7;
+    position: absolute;
+    left: 75%;
+    top: 40%;
+}
+
+.shape-blob.one {
+    background: linear-gradient(45deg,#f2be5e, #be2dd1);
+    height: 150px;
+    width: 200px;
+    left: 10px;
+    top:auto;
+    bottom: 10px;
+    transform: rotate(-180deg);
+    animation: transform 13s ease-in-out infinite both alternate, movement_two 20s ease-in-out infinite both;
+}
+
+.shape-blob.six {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 70px;
+    width: 100px;
+    left: 160px;
+    top: 200px;
+    transform: rotate(-180deg);
+    animation: transform 15s ease-in-out infinite both alternate, movement_two 5s ease-in-out infinite both;
+}
+
+.shape-blob.four {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 100px;
+    width: 80px;
+    left: 350px;
+    top: 60px;
+    transform: rotate(-180deg);
+    animation: transform 17s ease-in-out infinite both alternate, movement_two 13s ease-in-out infinite both;
+}
+
+.shape-blob.five {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 100px;
+    width: 80px;
+    left: 480px;
+    bottom: 30px;
+    transform: rotate(-180deg);
+    animation: transform 12s ease-in-out infinite both alternate, movement_two 18s ease-in-out infinite both;
+}
+
+.shape-blob.two {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 90px;
+    width: 150px;
+    right: 100px;
+    top: 50%;
+    transform: rotate(-180deg);
+    animation: transform 10s ease-in-out infinite both alternate, movement_two 10s ease-in-out infinite both;
+}
+
+.shape-blob.three {
+    background: linear-gradient(45deg, #f2be5e, #be2dd1);
+    height: 50px;
+    width: 50px;
+    left: 800px;
+    top: 230px;
+    transform: rotate(-180deg);
+    animation: transform 17s ease-in-out infinite both alternate, movement_two 23s ease-in-out infinite both;
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%;
+    }
+}
+
+
+@keyframes movement_one {
+    0%,
+    100% {
+        transform: none;
+    }
+    50% {
+        transform: translate(50%, 20%) rotateY(10deg) scale(1);
+    }
+}
+
+@keyframes movement_two {
+    0%,
+    500% {
+        transform: none;
+    }
+    50% {
+        transform: translate(50%, 20%) rotate(-200deg) scale(1.3);
+    }
+}
