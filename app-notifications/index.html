@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Notifications - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/31136 -->
+  <body class="bg-[#201438] flex justify-center items-center min-h-screen">
+    <div
+      class="bg-[#2D1E4E] text-white py-12 relative w-full grid place-items-center">
+      <div
+        class="max-w-sm w-full drop-shadow-[0_0_25px_rgba(32_20_56/0.9)] bg-[#2B1D45] relative">
+        <header
+          class="p-6 bg-[#2E204A] text-white/70 border-b border-[#25193D] uppercase">
+          <p>Notifications</p>
+        </header>
+
+        <main
+          class="h-72 overflow-y-scroll my-4 [&>article]:p-4 [&>article]:px-6 [&>article]:flex [&>article]:items-start [&>article]:gap-4 [&>article]:text-sm [&>article]:transition [&>article:hover]:bg-[#241940] [&_img]:w-12 [&_img]:h-12 [&_img]:rounded-full [&>article>div]:w-full [&>article>div]:space-y-2 [&>article>div>div]:flex [&>article>div>div]:justify-between [&>article>div>div]:w-full [&>article>div>div>span]:bg-blue-400 [&>article>div>div>span]:rounded-full [&>article>div>div>span]:px-2 [&>article>div>div>span]:opacity-100 [&>article>div>div>span]:uppercase [&>article>div>div>span]:text-xs [&>article>div>div>span]:grid [&>article>div>div>span]:place-items-center [&_p]:opacity-50 [&_a]:text-red-500 [&_a:hover]:underline [&_span]:opacity-50 [&_em]:italic [&_em]:block [&_em]:text-red-500">
+          <article>
+            <img src="https://i.pravatar.cc/150?img=65" />
+            <div>
+              <div>
+                <h3>William Phillips</h3>
+                <span>new</span>
+              </div>
+              <p>
+                Uploaded 4 new pictures into album <a href="#">Landscapes</a>
+              </p>
+              <span>Just now</span>
+            </div>
+          </article>
+
+          <article>
+            <img src="https://i.pravatar.cc/150?img=37" />
+            <div>
+              <div>
+                <h3>Shane Willis</h3>
+                <span>new</span>
+              </div>
+              <p>Rated your page <a href="#">Ilidesign</a></p>
+              <span>2 mins ago</span>
+            </div>
+          </article>
+
+          <article>
+            <img src="https://i.pravatar.cc/150?img=10" />
+            <div>
+              <div>
+                <h3>Harriet Waters</h3>
+              </div>
+              <p>Commented on your post <a href="#">Breakfast</a></p>
+              <em>"Looks Delicious"</em>
+              <span>yesterday</span>
+            </div>
+          </article>
+
+          <article>
+            <img src="https://i.pravatar.cc/150?img=10" />
+            <div>
+              <div>
+                <h3>Harriet Waters</h3>
+              </div>
+              <p>
+                Uploaded a new picture into the album <a href="#">Trips 2024</a>
+              </p>
+              <span>yesterday</span>
+            </div>
+          </article>
+        </main>
+
+        <button
+          type="button"
+          class="p-6 bg-[#2E204A] border-t border-[#25193D] text-red-500 w-full uppercase relative delay-200 isolate overflow-hidden hover:text-white hover:delay-0 before:absolute before:inset-0 before:bg-red-500 before:-z-10 before:transition before:ease-in before:duration-500 before:-translate-x-full hover:before:-translate-x-1/4 hover:before:ease-out after:absolute after:inset-0 after:bg-red-500 after:-z-10 after:transition after:ease-in after:duration-500 after:translate-x-full hover:after:translate-x-1/4 hover:after:ease-out">
+          View All
+        </button>
+
+        <button
+          type="button"
+          class="absolute -top-16 bg-[#2E204A] right-0 border border-red-500/50 rounded-full grid place-items-center w-12 h-12">
+          <svg
+            class="w-4 animate-ping"
+            viewBox="0 0 512 512"
+            xml:space="preserve"
+            fill="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  style="fill: #f6e96f"
+                  d="M453.481,402.747c-28.353-17.478-41.329-72.613-41.329-90.987v-77.245 c0-84.141-60.354-154.138-140.122-169.171c2.114-2.739,3.914-5.743,5.283-8.997c2.064-4.853,3.197-10.223,3.197-15.786 c0.007-8.359-2.559-16.23-6.932-22.682c-4.373-6.474-10.539-11.592-17.829-14.682C250.89,1.133,245.52,0,239.957,0 c-8.352,0-16.223,2.566-22.682,6.939c-6.467,4.366-11.592,10.539-14.682,17.829c-2.058,4.861-3.19,10.223-3.19,15.793 c-0.007,8.344,2.566,16.223,6.932,22.682c0.487,0.717,1.004,1.42,1.542,2.101c-79.76,15.04-140.115,85.037-140.115,169.171v77.245 c0,18.374-12.976,73.509-41.332,90.987C-62.877,457.789,90.723,512,239.957,512S542.791,457.789,453.481,402.747z M227.34,32.067 c1.649-2.438,3.986-4.38,6.703-5.52c1.813-0.767,3.785-1.197,5.914-1.197c3.19,0.007,6.058,0.954,8.495,2.595 c2.438,1.642,4.38,3.986,5.528,6.703c0.76,1.807,1.183,3.778,1.183,5.915c-0.007,3.19-0.946,6.05-2.588,8.487 c-1.642,2.438-3.986,4.38-6.696,5.528c-1.814,0.76-3.786,1.19-5.922,1.19c-3.19-0.007-6.05-0.946-8.495-2.588 c-2.43-1.649-4.373-3.993-5.52-6.71c-0.76-1.807-1.19-3.771-1.19-5.907C224.759,37.364,225.698,34.504,227.34,32.067z"></path>
+                <path
+                  style="fill: #ebd75c"
+                  d="M476.393,444.247c0,37.414-106.55,67.753-237.999,67.753c-131.44,0-237.988-30.339-237.988-67.753 c0-37.414,106.548-67.753,237.988-67.753C369.843,376.494,476.393,406.833,476.393,444.247z"></path>
+                <path
+                  style="fill: #f6d85d"
+                  d="M254.166,35.084c4.373,11.19-4.854,19.858-14.209,20.367V512c24.016,0,48.046-1.362,71.904-4.043 c26.159-2.939,52.211-7.406,77.696-14.073c20.267-5.327,40.59-11.914,59.043-21.972c11.47-6.237,24.754-14.782,29.708-27.543 c4.559-11.75-1.771-22.832-10.309-30.812c-6.933-6.481-15.65-10.523-22.475-17.047c-8.129-7.778-14.043-17.693-18.718-27.829 c-8.115-17.542-14.66-38.168-14.66-57.645v-72.95c0-38.26-10.882-75.194-33.83-106.092 c-25.629-34.532-63.975-58.713-106.264-66.671C292.24,39.156,272.977-0.014,239.957,0v25.665 c5.456-0.294,10.969,2.193,13.836,8.559l0.086,0.201c0.036,0.071,0.072,0.143,0.101,0.229c0.036,0.101,0.093,0.186,0.122,0.287 C254.144,35.035,254.166,35.084,254.166,35.084z"></path>
+                <g>
+                  <path
+                    style="fill: #ad8a43"
+                    d="M195.396,397.599c-99.816,4.667-174.91,24.905-174.91,49.193 c0,27.658,97.472,50.082,217.908,50.204V396.588C223.684,396.603,209.296,396.94,195.396,397.599z"></path>
+                  <path
+                    style="fill: #9d7a3b"
+                    d="M288.031,397.829c-15.657-0.824-31.915-1.248-48.633-1.248c-0.33,0-0.667,0.007-1.004,0.007 v100.408c0.337,0,0.674,0.007,1.004,0.007c120.91,0,218.923-22.474,218.923-50.21C458.321,422.891,385.535,402.89,288.031,397.829 z"></path>
+                </g>
+                <path
+                  style="fill: #edc953"
+                  d="M295.337,424.841c0,29.657-24.044,53.702-53.688,53.702c-29.643,0-53.68-24.044-53.68-53.702 c0-9.943,2.71-19.263,7.427-27.242c14.223-0.674,28.941-1.018,44.002-1.018c16.718,0,32.977,0.424,48.633,1.248 C292.684,405.757,295.337,414.998,295.337,424.841z"></path>
+                <circle
+                  style="fill: #ffffff"
+                  cx="222.329"
+                  cy="448.799"
+                  r="11.047"></circle>
+                <g>
+                  <path
+                    style="fill: #ffffff"
+                    d="M114.499,218.615c0.007-25.005,7.947-48.11,21.474-67.058 c13.52-18.933,32.625-33.657,54.834-41.715c5.262-1.914,7.979-7.721,6.072-12.99c-1.915-5.262-7.729-7.972-12.99-6.058 c-26.145,9.484-48.54,26.747-64.423,48.984c-15.882,22.224-25.256,49.494-25.248,78.836c0,5.592,4.541,10.13,10.136,10.13 C109.957,228.744,114.499,224.206,114.499,218.615L114.499,218.615z"></path>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
