@@ -205,7 +205,9 @@ document.querySelector("[date-weekday]").innerText = days[lang][date.getDay()];
       currYear === new Date().getFullYear()
         ? "today"
         : "";
-    dateEl += `<li class="${isToday}" data-date="">${i}</li>`;
+    let specialDay = i == 12 && currMonth == 11 ? " special" : "";
+
+    dateEl += `<li class="${isToday} ${specialDay}" data-date="">${i}</li>`;
   }
 
   // add days to complete week A
