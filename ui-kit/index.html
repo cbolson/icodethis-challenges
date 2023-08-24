@@ -1,266 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UI Kit - icodethis</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <link rel="stylesheet" href="styles.css">
-        <script src="scripts.js" defer></script>
-</head>
-<!-- https://icodethis.com/submissions/31527 -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/31527 -->
 
-<body class="bg-primary text-primary flex flex-col gap-8 justify-center items-center min-h-screen p-4">
-    
-    <div class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4
-        [&>*]:bg-gray-100
-        [&>*]:rounded-md
-        [&>*]:shadow-xl
-    ">
+  <body
+    class="bg-primary text-primary flex flex-col gap-8 justify-center items-center min-h-screen p-4">
+    <div
+      class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 [&>*]:bg-gray-100 [&>*]:rounded-md [&>*]:shadow-xl">
+      <header
+        class="sm:col-span-2 md:col-span-3 flex items-center relative pl-4 h-12 isolate z-10">
+        <input class="peer sr-only" id="display" type="checkbox" />
+        <label
+          for="display"
+          class="grid place-items-center w-12 h-12 cursor-pointer transition-all sm:hidden">
+          <span class="material-symbols-outlined">menu</span>
+        </label>
 
-        <header class="sm:col-span-2 md:col-span-3 flex items-center  relative pl-4 h-12 isolate z-10">
-            
-            <input class="peer sr-only" id="display" type="checkbox"/>
-            <label for="display" class="grid place-items-center w-12 h-12 cursor-pointer transition-all sm:hidden">
-                <span class="material-symbols-outlined">menu</span>
-            </label>
+        <ul
+          class="absolute md:static rounded-md left-0 top-0 flex flex-col sm:flex-row sm:gap-5 transition-all -translate-y-72 sm:!translate-y-0 w-full overflow-hidden peer-checked:translate-y-12 bg-secondary text-primary sm:bg-transparent sm:text-primary items-start [&_a]:py-2 [&_a]:border-l-4 [&_a]:pl-6 sm:[&_a]:pl-0 sm:[&_a]:pt-4 sm:[&_a]:pb-2 sm:[&_a]:border-l-0 sm:[&_a]:border-b-4 [&_a]:border-transparent [&_a]:w-fit [&_a]:transition-all [&_a]:uppercase [&_a]:block [&_a]:text-sm [&_a:hover]:text-white [&_a:hover]:border-primary sm:[&_a:hover]:border-secondary sm:[&_a:hover]:text-secondary">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
 
-           
-            <ul class="absolute md:static rounded-md left-0 top-0 flex  flex-col sm:flex-row sm:gap-5 transition-all -translate-y-72 sm:!translate-y-0 w-full  overflow-hidden
-            peer-checked:translate-y-12 
-                bg-secondary
-                text-primary
-                
-                sm:bg-transparent
-                sm:text-primary
-                items-start
-                [&_a]:py-2
-                [&_a]:border-l-4
-                [&_a]:pl-6
-                sm:[&_a]:pl-0
-                sm:[&_a]:pt-4
-                sm:[&_a]:pb-2
-                sm:[&_a]:border-l-0
-                sm:[&_a]:border-b-4
-                [&_a]:border-transparent
-                [&_a]:w-fit 
-                [&_a]:transition-all
-                [&_a]:uppercase
-                [&_a]:block
-                [&_a]:text-sm
-                [&_a:hover]:text-white
-                [&_a:hover]:border-primary
-                sm:[&_a:hover]:border-secondary
-                sm:[&_a:hover]:text-secondary
-            ">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <div
+          class="bg-white h-full py-2 px-4 flex items-center gap-2 w-60 ml-auto rounded-r-md">
+          <button
+            type="button"
+            class="material-symbols-outlined hover:text-secondary">
+            search
+          </button>
+          <input
+            type="text"
+            placeholder="search"
+            class="p-2 focus:outline-none focus:ring-0 focus:bg-gray-200 w-full" />
+        </div>
+      </header>
 
-            <div class="bg-white h-full py-2 px-4 flex items-center gap-2 w-60 ml-auto rounded-r-md ">
-                <button type="button" class="material-symbols-outlined hover:text-secondary">search</button>
-                <input type="text"  placeholder="search" class="p-2 focus:outline-none focus:ring-0 focus:bg-gray-200 w-full">
-            </div>
-
-
-        </header>
-
-        <section class="sm:col-span-2 grid sm:grid-cols-2 overflow-hidden">
-           
-            <div class="relative hidden sm:block">
-                <div class="overflow-hidden w-full h-full">
-                    <img src="https://picsum.photos/id/634/300/400" class="w-full h-full object-cover scale-150 transition duration-[7s]  hover:translate-x-6 hover:scale-125">
-                </div>
-                <div class="absolute bottom-0 p-8 text-white text-center">
-                    <h2 class="font-semibold">A walk on the wildside</h2>
-                    <p class="opacity-70 text-sm">Discover the beauty of the wilderness</p>
-                </div>
-            </div>
-
-            <div class="p-6 relative">
-                <h2 class="uppercase font-semibold text-center mb-6">Signin</h2>
-                <form class="
-                [&_div]:flex
-                [&_div]:items-center
-                [&_div]:gap-1
-                    [&_div]:px-2
-                    [&_div]:p-0
-                    [&_div]:mb-2
-                    [&_div]:rounded-md
-                    [&_div.field]:border
-                    [&>div.field]:border-transparent
-                    [&_div.field:focus-within]:border-secondary
-                    [&_input]:p-2
-                    [&_input:focus]:outline-none
-                [&_input:focus]:ring-0
-                ">
-
-                    <div class="field bg-white ">
-                        <label for="email" class="material-symbols-outlined text-secondary">email</label>
-                        <input id="email" type="email" placeholder="Email" required>
-                    </div>
-
-                    <div class="field bg-white">
-                        <label for="password" class="material-symbols-outlined text-secondary">lock</label>
-                        <input id="password" type="password" placeholder="Password" required>
-                    </div>
-                    
-                    <div>
-                        <input type="checkbox" id="remember">
-                        <label for="remember" class="opacity-70 text-sm">Remember Me</label>
-                    </div>
-
-                    <button type="submit" class="mt-2 bg-secondary rounded-md text-white w-full py-2 transition hover:scale-105">Sign In</button>
-                </form>
-                <div class="flex items-center justify-between text-xs mt-2 [&_a:hover]:underline ">
-                    <a href="#">Create Account</a>
-                    <a href="#">Forgotten password?</a>
-                </div>
-
-                <p class="opacity-50 my-6 text-sm text-center">or connect with</p>
-
-                <div class="flex flex-col gap-2 ">
-                    <button type="button" class="bg-[#4267B2] rounded-md text-white w-full py-2 transition hover:scale-105">Facebook</button>
-
-                    <button type="button" class="bg-red-600 rounded-md text-white w-full py-2 transition hover:scale-105">Gmail</button>
-                </div>
-            
-
-            <div id="msg"
-    class="!mb-0 !rounded-none absolute inset-0 bg-secondary text-white  p-16 grid place-items-center  text-center text-2xl transition duration-300 translate-y-[110%] z-20">
-    If this were real, you would now be signed in.</div>
-
-            </div>
-        </section>
-<!--159 -->
-        <section class="overflow-hidden">
-            <header class="relative flex flex-col py-4 justify-center items-center h-40 text-white isolate 
-                [&_button]:rounded-full
-                [&>button:hover]:bg-[#5D344A]
-                [&_button]:p-2
-                [&_button]:transition
-            ">
-
-                
-                <div date-today class="text-6xl font-bold">24</div>
-                <p date-weekday class="text-xl">_Thursday</p>
-                
-                <div class="mt-auto flex gap-2 justify-between w-full px-4 items-center">
-                    <button type="button" cal-nav="prev" class="material-symbols-outlined">chevron_left</button>
-                    <h2 data-month class="capitalize"></h2>
-                    <button type="button" cal-nav="next" class="material-symbols-outlined">chevron_right</button>
-                </div>
-
-                <img src="https://picsum.photos/id/876/300/400" class="absolute w-full h-full object-cover -z-10">
-            </header>
-
-            <main class="p-2
-                [&>ul]:grid
-                [&>ul]:grid-cols-7
-                [&>ul>li]:flex
-                [&>ul>li]:items-center
-                [&>ul>li]:justify-center
-                [&>ul>li]:relative
-                [&>ul>li]:isolate
-                [&>ul>li]:transition
-                [&>ul>li]:aspect-square
-                [&>ul>li.inactive]:opacity-40
-
-                before:[&>ul>li]:absolute 
-                before:[&>ul>li]:transition
-                before:[&>ul>li]:rounded-md
-                before:[&>ul>li]:bg-transparent
-                before:[&>ul>li]:inset-2
-                before:[&>ul>li]:-z-10
-                
-            ">
-                <ul data-weekdays class="weedays">
-                    <!-- weekday titles loaded here -->
-                </ul>
-                <ul data-dates class="grid-rows-6 text-sm 
-                    [&>li.today]:text-white
-                    [&>li:hover]:text-white
-                    before:[&>li.today]:bg-secondary
-                    before:[&>li:hover]:bg-primary
-                    before:[&>li:hover]:animate-pulse
-                 ">
-                    <!-- dates loaded here -->
-                </ul>
-            
-            </main>
-        </section>
-
-        <section class="p-8 flex flex-col gap-6
-            [&_h3]:font-semibold
-            [&_p]:text-xs 
-            [&_p]:opacity-50
-            [&_p]:
-        ">
-            
-            <div class="flex items-center gap-4">
-                <img src="https://i.pravatar.cc/100?img=14" class="rounded-full w-20 h-20 object-fit" />
-                <div>
-                    <h3>Raynundo Loy</h3>
-                    <p>UK, London</p>
-                </div>
-                       
-            </div>
-            <div class="grid grid-cols-3 text-center">
-                <div>
-                    <h3>1487</h3>
-                    <p class="o">Followers</p>
-                </div>
-
-                <div>
-                    <h3>9753</h3>
-                    <p >Following</p>
-                </div>
-
-                <div>
-                    <h3>547</h3>
-                    <p>Photos</p>
-                </div>
-            </div>
-            <div class="text-center my-auto">
-                <button type="button" class="bg-secondary text-white rounded-md py-2 px-8 transition hover:scale-110 hover:shadow-xl">Follow</button>
+      <section class="sm:col-span-2 grid sm:grid-cols-2 overflow-hidden">
+        <div class="relative hidden sm:block">
+          <div class="overflow-hidden w-full h-full">
+            <img
+              src="https://picsum.photos/id/634/300/400"
+              class="w-full h-full object-cover scale-150 transition duration-[7s] hover:translate-x-6 hover:scale-125" />
+          </div>
+          <div class="absolute bottom-0 p-8 text-white text-center">
+            <h2 class="font-semibold">A walk on the wildside</h2>
+            <p class="opacity-70 text-sm">
+              Discover the beauty of the wilderness
+            </p>
+          </div>
         </div>
 
-        </section>
-
-        <section class="sm:col-span-2 h-72 text-center py-6">
-            <h2 class="font-semibold">Gallery</h2>
-            <p>#lovemtag</p>
-            <div class="py-6 overflow-x-auto grid grid-flow-col auto-cols-max 
-            [&_img]:w-40
-            [&_img]:rounded-md
-            [&_img]:aspect-[4/3]
-            [&_img]:object-cover
-            [&_img]:cursor-pointer
-            [&_img]:transition
-            [&_img]:duration-300
-            [&_img:hover]:scale-110
-            [&_img:hover]:z-10
-            [&_img:hover]:drop-shadow-[0_0_8px_rgba(8_56_44/0.5)] 
-
-            " >
-                <img src="https://picsum.photos/id/287/200/150">
-                <img src="https://picsum.photos/id/62/200/150">
-                <img src="https://picsum.photos/id/702/200/150">
-                <img src="https://picsum.photos/id/121/200/150">
-                
-                <img src="https://picsum.photos/id/569/200/150">
-                <img src="https://picsum.photos/id/235/200/150">
-                <img src="https://picsum.photos/id/151/200/150">
+        <div class="p-6 relative">
+          <h2 class="uppercase font-semibold text-center mb-6">Signin</h2>
+          <form
+            class="[&_div]:flex [&_div]:items-center [&_div]:gap-1 [&_div]:px-2 [&_div]:p-0 [&_div]:mb-2 [&_div]:rounded-md [&_div.field]:border [&>div.field]:border-transparent [&_div.field:focus-within]:border-secondary [&_input]:p-2 [&_input:focus]:outline-none [&_input:focus]:ring-0">
+            <div class="field bg-white">
+              <label
+                for="email"
+                class="material-symbols-outlined text-secondary"
+                >email</label
+              >
+              <input id="email" type="email" placeholder="Email" required />
             </div>
 
-        </section>
-    </div>
-</body>
+            <div class="field bg-white">
+              <label
+                for="password"
+                class="material-symbols-outlined text-secondary"
+                >lock</label
+              >
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                required />
+            </div>
 
+            <div>
+              <input type="checkbox" id="remember" />
+              <label for="remember" class="opacity-70 text-sm"
+                >Remember Me</label
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="mt-2 bg-secondary rounded-md text-white w-full py-2 transition hover:scale-105">
+              Sign In
+            </button>
+          </form>
+          <div
+            class="flex items-center justify-between text-xs mt-2 [&_a:hover]:underline">
+            <a href="#">Create Account</a>
+            <a href="#">Forgotten password?</a>
+          </div>
+
+          <p class="opacity-50 my-6 text-sm text-center">or connect with</p>
+
+          <div class="flex flex-col gap-2">
+            <button
+              type="button"
+              class="bg-[#4267B2] rounded-md text-white w-full py-2 transition hover:scale-105">
+              Facebook
+            </button>
+
+            <button
+              type="button"
+              class="bg-red-600 rounded-md text-white w-full py-2 transition hover:scale-105">
+              Gmail
+            </button>
+          </div>
+
+          <div
+            id="msg"
+            class="!mb-0 !rounded-none absolute inset-0 bg-secondary text-white p-16 grid place-items-center text-center text-2xl transition duration-300 translate-y-[110%] z-20">
+            If this were real, you would now be signed in.
+          </div>
+        </div>
+      </section>
+      <!--159 -->
+      <section class="overflow-hidden">
+        <header
+          class="relative flex flex-col py-4 justify-center items-center h-40 text-white isolate [&_button]:rounded-full [&>button:hover]:bg-[#5D344A] [&_button]:p-2 [&_button]:transition">
+          <div date-today class="text-6xl font-bold">24</div>
+          <p date-weekday class="text-xl">_Thursday</p>
+
+          <div
+            class="mt-auto flex gap-2 justify-between w-full px-4 items-center">
+            <button
+              type="button"
+              cal-nav="prev"
+              class="material-symbols-outlined">
+              chevron_left
+            </button>
+            <h2 data-month class="capitalize"></h2>
+            <button
+              type="button"
+              cal-nav="next"
+              class="material-symbols-outlined">
+              chevron_right
+            </button>
+          </div>
+
+          <img
+            src="https://picsum.photos/id/876/300/400"
+            class="absolute w-full h-full object-cover -z-10" />
+        </header>
+
+        <main
+          class="p-2 [&>ul]:grid [&>ul]:grid-cols-7 [&>ul>li]:flex [&>ul>li]:items-center [&>ul>li]:justify-center [&>ul>li]:relative [&>ul>li]:isolate [&>ul>li]:transition [&>ul>li]:aspect-square [&>ul>li.inactive]:opacity-40 before:[&>ul>li]:absolute before:[&>ul>li]:transition before:[&>ul>li]:rounded-md before:[&>ul>li]:bg-transparent before:[&>ul>li]:inset-2 before:[&>ul>li]:-z-10">
+          <ul data-weekdays class="weedays">
+            <!-- weekday titles loaded here -->
+          </ul>
+          <ul
+            data-dates
+            class="grid-rows-6 text-sm [&>li.today]:text-white [&>li:hover]:text-white before:[&>li.today]:bg-secondary before:[&>li:hover]:bg-primary before:[&>li:hover]:animate-pulse">
+            <!-- dates loaded here -->
+          </ul>
+        </main>
+      </section>
+
+      <section
+        class="p-8 flex flex-col gap-6 relative overflow-hidden [&_h3]:font-semibold [&_p]:text-xs [&_p]:opacity-50 [&_p]:">
+        <div class="flex items-center gap-4">
+          <img
+            src="https://i.pravatar.cc/100?img=14"
+            class="rounded-full w-20 h-20 object-fit" />
+          <div>
+            <h3>Raynundo Loy</h3>
+            <p>UK, London</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 text-center">
+          <div>
+            <h3>1487</h3>
+            <p class="o">Followers</p>
+          </div>
+
+          <div>
+            <h3>9753</h3>
+            <p>Following</p>
+          </div>
+
+          <div>
+            <h3>547</h3>
+            <p>Photos</p>
+          </div>
+        </div>
+        <div class="text-center my-auto">
+          <button
+            type="button"
+            id="btn-follow"
+            class="bg-secondary text-white rounded-md py-2 px-8 transition hover:scale-110 hover:shadow-xl">
+            Follow
+          </button>
+        </div>
+        <div
+          id="msg-2"
+          class="!mb-0 !rounded-none absolute inset-0 bg-secondary text-white p-16 grid place-items-center text-center text-2xl transition duration-300 translate-y-[110%] z-20">
+          Thanks, you are now following Raymundo
+        </div>
+      </section>
+
+      <section class="sm:col-span-2 h-72 text-center py-6">
+        <h2 class="font-semibold">Gallery</h2>
+        <p>#lovemtag</p>
+        <div
+          class="py-6 overflow-x-auto grid grid-flow-col auto-cols-max [&_img]:w-40 [&_img]:rounded-md [&_img]:aspect-[4/3] [&_img]:object-cover [&_img]:cursor-pointer [&_img]:transition [&_img]:duration-300 [&_img:hover]:scale-110 [&_img:hover]:z-10 [&_img:hover]:drop-shadow-[0_0_8px_rgba(8_56_44/0.5)]">
+          <img src="https://picsum.photos/id/287/200/150" />
+          <img src="https://picsum.photos/id/62/200/150" />
+          <img src="https://picsum.photos/id/702/200/150" />
+          <img src="https://picsum.photos/id/121/200/150" />
+
+          <img src="https://picsum.photos/id/569/200/150" />
+          <img src="https://picsum.photos/id/235/200/150" />
+          <img src="https://picsum.photos/id/151/200/150" />
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
