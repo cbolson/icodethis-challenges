@@ -12,6 +12,7 @@
         <script src="scripts.js" defer></script>
 </head>
 <!-- https://icodethis.com/submissions/31527 -->
+
 <body class="bg-primary text-primary flex flex-col gap-8 justify-center items-center min-h-screen p-4">
     
     <div class="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4
@@ -73,7 +74,9 @@
         <section class="sm:col-span-2 grid sm:grid-cols-2 overflow-hidden">
            
             <div class="relative hidden sm:block">
-                <img src="https://picsum.photos/id/634/300/400" class="w-full h-full object-cover">
+                <div class="overflow-hidden w-full h-full">
+                    <img src="https://picsum.photos/id/634/300/400" class="w-full h-full object-cover scale-150 transition duration-[7s]  hover:translate-x-6 hover:scale-125">
+                </div>
                 <div class="absolute bottom-0 p-8 text-white text-center">
                     <h2 class="font-semibold">A walk on the wildside</h2>
                     <p class="opacity-70 text-sm">Discover the beauty of the wilderness</p>
@@ -240,9 +243,10 @@
             [&_img]:object-cover
             [&_img]:cursor-pointer
             [&_img]:transition
+            [&_img]:duration-300
             [&_img:hover]:scale-110
             [&_img:hover]:z-10
-            [&_img:hover]:shadow-2xl
+            [&_img:hover]:drop-shadow-[0_0_8px_rgba(8_56_44/0.5)] 
 
             " >
                 <img src="https://picsum.photos/id/287/200/150">
