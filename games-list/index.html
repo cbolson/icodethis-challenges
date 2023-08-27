@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games list - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/32369 -->
+<body class="bg-gray-100 text-gray-500  min-h-screen 
+    [&_.inner]:w-full
+    [&_.inner]:max-w-4xl
+    [&_.inner]:mx-auto
+    [&_.inner]:px-4
+    ">
+   <header class="bg-white border-b pt-6 h-20 sm:h-auto sm:pt-12">
+
+        <div class="inner flex items-end justify-between">
+            <nav>
+                <input class="peer sr-only" id="display" type="checkbox"/>
+                <label for="display" class="relative grid place-items-center w-12 h-12 -translate-x-4  ml-0 cursor-pointer transition-all sm:hidden
+                    [&>span]:transition
+                    [&>span]:absolute
+                    [&>span]:duration-300
+                    [&>span]:ease-in-out
+                    [&>span]:delay-100-no
+                    [&>.close]:-translate-y-40
+                    peer-checked:[&>.open]:-translate-y-40
+                    peer-checked:[&>.close]:translate-y-0
+                    z-10
+                ">
+                    <span class="material-symbols-outlined open">menu</span>
+                    <span class="material-symbols-outlined close">menu_open</span>
+                </label>
+
+                <ul class="absolute sm:static left-0 top-20 ease-in-out flex  transition-all w-full overflow-hidden bg-white
+                    peer-checked:translate-x-0
+                    flex-col
+                    z-10
+                    -translate-x-full
+                    
+                    [&_a]:py-1
+                    [&_a]:border-l-4
+                    [&_a]:pl-4
+    
+                    sm:flex-row
+                    sm:gap-6
+                    sm:!translate-x-0
+                    sm:[&_a]:pl-0
+                    sm:[&_a]:py-2
+                    sm:[&_a]:border-l-0
+                    sm:[&_a]:border-b-4
+                    
+                    [&_a]:border-transparent
+                    [&_a]:w-fit 
+                    [&_a]:transition-all
+                    [&_a]:block
+                    [&_a:hover]:text-[#a146bd]
+                    [&_a:hover]:border-[#a146bd]
+                    [&_a.current]:text-[#a146bd]
+                    [&_a.current]:border-gray-200
+                ">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Apps</a></li>
+                    <li><a href="#" class="current">Games</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Movies & TV</a></li>
+                </ul>
+            </nav>
+
+            <div class="group h-full py-2 px-4 flex items-center gap-2 w-40 focus-within:bg-gray-50 [&>button]:text-primary">
+                <button type="button" class="material-symbols-outlined transition hover:animate-pulse"  >search</button>
+                <input type="text"  placeholder="search" class="p-2  bg-transparent focus:outline-none focus:ring-0  w-full focus-within:placeholder:text-white">
+            </div>
+
+        </div>
+    </header>
+
+    <main class="inner space-y-6 py-8
+        [&>section]:space-y-2
+        [&>section]:
+        [&_h2]:text-base
+        sm:[&_h2]:text-xl
+        [&_h2]:flex
+        [&_h2]:items-center
+        [&_h2]:justify-between
+        [&_h2>button]:text-xs
+        [&_h2>button]:text-[#a146bd]
+        [&_h2>button]:captilize
+        [&_h2>button:hover]:text-blue-700
+        [&_h2>button]:
+        [&_h2>button]:
+
+      
+        [&>section>div]:grid
+        [&>section>div]:auto-cols-auto
+        [&>section>div]:grid-flow-col
+        [&>section>div]:rounded-md
+        [&>section>div]:gap-3
+        [&>section>div]:pt-2
+        [&>section>div]:pb-4
+        [&>section>div]:overflow-x-scroll
+        [&>section>div]:w-full
+        [&>section>div>a]:w-64
+
+        
+        [&>section_a]:bg-white
+        [&>section_a]:border
+        [&>section_a:hover]:drop-shadow-[0_0_5px_rgba(161_70_189/0.3)]_NO
+        [&>section_div]:
+    ">
+            
+            <section  class="[&_ing]:aspect-video">
+                <h2>
+                    New Games
+                    <button type="button">Load more</button>
+                </h2>
+                
+                    <div id="games-list-new" >
+                        <!-- load new games -->
+                        <div class="grid place-items-center bg-pink-100 aspect-video"></div>
+                        <div class="grid place-items-center bg-pink-100 aspect-videoh"></div>
+                        <div class="grid place-items-center bg-pink-100 aspect-video"></div>
+                    </div>
+               
+            </section>
+
+            <section  class="[&_ing]:aspect-square">
+                <h2>
+                    Reccomended for You
+                    <button type="button">Load more</button>
+                </h2>
+                <div id="games-list-recommended" class="[&_a]:!w-36 [&_a]:!aspect-square">
+                    <!-- load recommended games -->
+                    
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>    
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>    
+                    <div class="grid place-items-center bg-pink-100 aspect-square"></div>    
+                </div>
+            </section>
+
+            <section class="[&_ing]:aspect-video">
+                <h2>
+                    Trending Now
+                    <button type="button">Load more</button>
+                </h2>
+                <div id="games-list-trending">
+                    <!-- load trending games -->
+                    <div class="grid place-items-center bg-pink-100 aspect-video"></div>
+                    <div class="grid place-items-center bg-pink-100 aspect-videoh"></div>
+                    <div class="grid place-items-center bg-pink-100 aspect-video"></div>
+                </div>
+            </section>
+            <p class="text-xs">Data via <a href="https://www.freetogame.com" target="_blank">FreeToGame.com</a> API.</p>
+            <p class="text-xs text-red-500">Due to issues with the API I have opted to copy the data into a local object</p>
+    </main> 
+
+
+    <!-- template - games items -->
+    <template id="tpl-game">
+        <a href="" target="_blank" class="card group space-y-2 pb-4 hover:!text-[#a146bd]">
+            <div game-img class="img transition scale-0 [&>img]:object-fit [&>img]:w-full &>img]:relative
+            ">
+            <!-- img loaded here -->
+            </div>
+            <div class="p-2">
+                
+                <div class="flex items-center justify-between opacity-70 text-xs">
+                    <span game-cat><!-- category --></span>
+                    <span class="">free</span>
+                </div>
+                <h3 class="text-sm">
+                    <!-- game name -->
+                </h3>
+            </div>
+        </a>
+    </template>
+</body>
+
+</html>
