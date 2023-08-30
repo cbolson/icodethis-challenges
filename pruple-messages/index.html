@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Messages - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+   <link rel="stylesheet" href="styles.css">
+   <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/33256 -->
+<body class="bg-purple-200 text-white flex justify-center items-center min-h-screen">
+    
+    <div class="bg-[#683DB4] shadow-xl  w-full max-w-sm h-[600px] flex flex-col relative overflow-hidden">
+        <header class="bg-[#592FA9] flex justify-between text-white/70">
+            <div class="group flex items center w-full border-r border-[#592FA9] focus-within:bg-[#7542CE] ">
+                <button type="button" id="search-icon" class="material-symbols-outlined p-3 sm:p-6 group-hover:animate-ping">
+                search
+                </button>
+                <input type="text" id="user-search" class="bg-transparent  w-full focus-within:outline-none focus-within:ring-0" placeholder="search for user">
+            </div>
+            
+            <div class="bg-[#7542CE] grid place-items-center p-3 sm:p-6">
+                <svg class="" width="32" height="32"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z"></path>
+                    <path d="M10 16h6"></path>
+                    <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                    <path d="M4 8h3"></path>
+                    <path d="M4 12h3"></path>
+                    <path d="M4 16h3"></path>
+                </svg>
+            </div>
+        </header>
+        <main id="list-contacts" class="h-full overflow-y-auto ">
+            <!-- contacts loaded here -->
+        </main>
+       
+   
+
+
+    <div id="messages-wrapper" class=" absolute -z-10S bottom-0 left-0  transition ease-in-out duration-300 bg-purple-50 w-full h-[520px] text-slate-700 flex flex-col justify-between translate-y-full  ">
+        <header class=" flex justify-between border-b border-puple-500 text-purple-900">
+            <h1 class=" text-lg p-2 px-6"></h1>
+            <button type="button" id="btn-close" class="material-symbols-outlined transition 
+            relative isolate px-3
+        before:inset-0
+        before:absolute
+        before:bg-[#4C2194]
+        before:origin-center
+        before:transition
+        before:scale-x-0
+        before:-z-10
+        hover:before:scale-x-110
+        hover:text-white
+            ">close</button>
+        </header>
+
+        <div id="list-messages" class="h-full p-6 space-y-4 h-[400px] overflow-y-auto">
+            <!-- user messages loaded here -->
+        </div>
+        <form>
+
+            <footer class="bg-white flex gap-2 justify-between focus-within:bg-purple-100">
+            
+                    <input type="text" id="new-msg" class="w-full p-4 bg-transparent focus-within:border-0 focus-within:outline-none focus-within:ring-0 " placeholder="Type your message here" title="Not working yet..... come back later" required>
+                    <button type="submit" id=""" class="material-symbols-outlined -rotate-45 text-purple-700 transition 
+            relative isolate px-6
+        before:inset-0
+        before:absolute
+        before:bg-[#4C2194]
+        before:origin-center
+        before:transition
+        before:scale-x-0
+        before:-z-10
+        before:rotate-45
+          hover:before:scale-x-110
+        hover:text-white">send</button>
+            
+            </footer>
+        </form>
+    </div>
+
+     </div>
+
+    <template id="tpl-contact">
+        <button type="button" data-user="" class="group text-left w-full flex items-center gap-4 p-4 sm:p-6 transition text-white/70 relative isolate
+        before:inset-0
+        before:absolute
+        before:bg-[#4C2194]
+        before:origin-center
+        before:transition
+        before:scale-x-0
+        before:-z-10
+        hover:before:scale-x-100
+        hover:text-white
+      
+        ">
+            <img src="" class="w-12 h-12 aspect-square object-cover rounded-full border-4 border-purple-300 group-hover:border-white transition" alt="">
+            <div class="w-full">
+                <h2 class="w-full flex flex-col sm:flex-row gap-2 sm:items-center capitalize font-semibold">
+                    <span msg-user>Name</span>
+                    <!--<span class="bg-red-500 rounded-full w-6 h-6 grid place-items-center text-xs">3</span>-->
+                    <time msg-time class="sm:ml-auto font-light opacity-70 text-xs">12:20</time>
+                </h2>
+                <p class="text-sm line-clamp-1"></p>
+            </div>
+        </button>
+    </template>
+
+    <template id="tpl-message">
+        <article class="flex  gap-2">
+            <img src="" class="w-12 h-12 aspect-square object-cover rounded-full border-4 border-white group-hover:border-white transition shadow-lg" alt="">
+            <div msg-text class="bg-white rounded-md   text-sm p-2 px-3 shadow-lg relative isolate
+        before:absolute
+        before:w-4
+        before:h-4
+        before:bg-white
+        before:rotate-45
+        before:-left-1
+        before:top-4
+        before:-z-10
+        ">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, incidunt, explicabo fugit doloribus asperiores sed
+                repellendus voluptatem amet perferendis reiciendis velit illum voluptatum
+        
+            </div>
+        </article>
+    </template>
+
+    <template id="tpl-date">
+        <div class="text-center opacity-70 text-xs relative text-purple-600">
+        </div>
+    </template>
+</body>
+
+</html>

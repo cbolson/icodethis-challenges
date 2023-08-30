@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile mMove Ad - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/32602 -->
+<body class="bg-[#081633] flex justify-center items-center min-h-screen overflow-hidden">
+    
+     <div id="slider" class="relative w-full max-w-sm transition-all duration-700 z-10 origin-right">
+
+        <input class="peer sr-only" id="theme" type="checkbox" />
+        <label for="theme" class="absolute top-5 right-4 grid place-items-center cursor-pointer rounded-sm py-4 px-6 transition  z-10 hover:scale-125 hover:text-blue-400 delay-500
+            [&>span]:transition-all
+            [&>span]:absolute
+            [&>span]:duration-700
+            [&>#light]:scale-0 
+            peer-checked:[&>#dark]:scale-0 
+            peer-checked:[&>#light]:scale-100
+            peer-checked:[&>#light]:text-white
+        ">
+            <span id="dark" class="material-symbols-outlined">dark_mode</span>
+            <span id="light" class="material-symbols-outlined">light_mode</span>
+        </label>
+
+    <!-- bg-gradient-to-t from-[#A5D3EF] to-[#EAF9FF]  -->
+        <div class="transition-all duration-300 bg-[#EAF9FF] text-slate-700 duration-700 relative isolate  delay-50
+        peer-checked:text-slate-300 
+        peer-checked:bg-opacity-0
+        peer-checked:[&_h1]:text-slate-200  
+        before:absolute
+        before:bg-[#091126]
+        before:inset-0
+        before:-z-10
+        before:scale-y-0
+        before:transition
+        before:duration-700
+        before:-translate-y-20
+        peer-checked:before:scale-100
+        peer-checked:before:translate-y-0
+        ">
+    <!--  peer-checked:[&_button]:bg-red-500 -->
+            <header class="p-2 sm:p-4 py-2">
+                <div class="flex justify-between border-b border-blue-200 p-4 text-xl font-thin 
+                [&>button:hover]:scale-125
+                [&>button]:cursor-pointer
+                [&>button:hover]:text-blue-400
+                [&_*]:transition
+                [&_*]:delay-50
+                [&_*]:duration-700
+                ">
+                    <button type="button" id="btn-back" class="material-symbols-outlined">
+                    arrow_back_ios
+                    </button>
+                    In Theaters
+                    <span class="material-symbols-outlined opacity-0">
+                    menu
+                    </span>
+                </div>
+            </header>
+            <main class="space-y-6 pt-6">
+                <h1 class="px-4 sm:px-6 text-[#0E74C8] flex justify-between !delay-200">
+                    Demolition Man
+                    <div class="rounded-full w-8 h-8  bg-blue-200 text-black text-xs grid place-items-center">6.7</div>
+                </h1>
+
+                <!-- video -->
+                <div class="relative isolate
+                    before:bg-[#5C83D1]
+                    before:inset-[10%_-20%_10%_-20%]
+                    before:mx-auto
+                    before:absolute
+                    before:-z-10
+                    before:blur-xl
+                    before:rounded-2xl
+                    before:opacity-50
+                ">
+                    <div class="w-full px-4 sm:px-6 mx-auto  h-[11.8rem]">
+                    <div class="youtube" style="width:100%;height:100%;" id="0B5v6QZ5R3g" src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/demolition-man.webp">
+                    </div>
+                    </div>
+                    <script type="text/javascript" src="https://codegena.com/assets/js/youtube-embed.js"></script>
+
+                </div>
+                
+                <section class="pb-12 px-4 sm:px-6 [&>p]:font-light [&>p]:text-sm [&>p]:mb-2">
+                    <p>1h 55min</p>
+                    <p>A police officer is brought out of suspended animation in prison to pursue an old ultra-violent nemesis who is loose in a non-violent future society.</p>
+
+                    <button type="button" class="group bg-[#0E74C8] text-white py-4 rounded-sm w-full mt-12 flex items-center justify-center gap-4 hover:shadow-xl transition 
+                    [&>span]:animate-ping
+                    [&>span]:opacity-0
+                    [&>span]:transition
+                    ">
+                        <span class="material-symbols-outlined group-hover:opacity-100">attach_money</span>
+                        Buy Ticket
+                        <span class="material-symbols-outlined group-hover:opacity-100">attach_money</span>
+                        </button>
+                </section>
+                
+            </main>
+        </div>
+    </div>
+    <div class="absolute -z-10 text-white w-80 opacity-70 text-center text-2xl -translate-y-16">Florin wanted somethig to happen when we click on the "back" icon so this is for you!</div>
+</body>
+</html>
