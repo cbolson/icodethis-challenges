@@ -441,6 +441,23 @@ Awesome stuff though 😄`,
     ts: "Aug 30, 2023",
     msg: `@Kamil, thanks! Yes, it seemed like a decent enough way to get around the responsive issue.`,
   },
+  {
+    id: 60,
+    parent_id: 0,
+    user_id: 3,
+    ts: "Aug 30, 2023",
+    msg: `Level was too high today, but you nailed it again, once more!  Such great devs on your contact list! 😀`,
+  },
+  {
+    id: 61,
+    parent_id: 60,
+    user_id: 1,
+    ts: "Aug 30, 2023",
+    msg: `Thanks, @Peter   
+I was hoping for a challenge like this to celebrate my 100th challenge.This is actually my 98th but close enough 😁
+At the same time, I wanted to give a bit back to the people how comment on my submissions and who inspire me to continue. 
+¡gracias por tus comentarios!`,
+  },
 ];
 messages.sort((a, b) => a.ts > b.ts);
 //console.log(messages);
@@ -468,6 +485,7 @@ const form = document.querySelector("form");
 const tplDate = document.querySelector("#tpl-date");
 const msgInput = document.querySelector("#new-msg");
 const meData = findUserById(1);
+const btnContacts = document.querySelector("#btn-contacts");
 
 const today = new Date();
 
@@ -507,6 +525,16 @@ function showContacts(arr, num = 0) {
 }
 // load contacts
 showContacts(users, 0);
+
+btnContacts.addEventListener("click", () => {
+  // clear search form
+  userSearch.value = "";
+  // load users
+  showContacts(users, 0);
+
+  // close messages
+  closeMessages();
+});
 
 document.querySelector("#search-icon").addEventListener("click", () => {
   userSearch.focus();

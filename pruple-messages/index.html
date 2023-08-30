@@ -11,19 +11,20 @@
    <script src="scripts.js" defer></script>
 </head>
 <!-- https://icodethis.com/submissions/33256 -->
+
 <body class="bg-purple-200 text-white flex justify-center items-center min-h-screen">
     
     <div class="bg-[#683DB4] shadow-xl  w-full max-w-sm h-[600px] flex flex-col relative overflow-hidden">
-        <header class="bg-[#592FA9] flex justify-between text-white/70">
-            <div class="group flex items center w-full border-r border-[#592FA9] focus-within:bg-[#7542CE] ">
+        <header class="bg-[#592FA9] flex justify-between text-white/70 border-b border-white/20">
+            <div class="group flex items center w-full border-r border-white/30 focus-within:bg-[#7542CE] ">
                 <button type="button" id="search-icon" class="material-symbols-outlined p-3 sm:p-6 group-hover:animate-ping">
                 search
                 </button>
                 <input type="text" id="user-search" class="bg-transparent  w-full focus-within:outline-none focus-within:ring-0" placeholder="search for user">
             </div>
             
-            <div class="bg-[#7542CE] grid place-items-center p-3 sm:p-6">
-                <svg class="" width="32" height="32"
+            <button type="button" id="btn-contacts" class="group bg-[#7542CE] grid place-items-center p-3 sm:p-6" title="Load all cnotacts">
+                <svg class="group-hover:animate-ping" width="32" height="32"
                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                     stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -34,7 +35,7 @@
                     <path d="M4 12h3"></path>
                     <path d="M4 16h3"></path>
                 </svg>
-            </div>
+            </button>
         </header>
         <main id="list-contacts" class="h-full overflow-y-auto ">
             <!-- contacts loaded here -->
@@ -88,12 +89,13 @@
      </div>
 
     <template id="tpl-contact">
-        <button type="button" data-user="" class="group text-left w-full flex items-center gap-4 p-4 sm:p-6 transition text-white/70 relative isolate
+        <button type="button" data-user="" class="group text-left w-full flex items-center gap-4 p-4 sm:p-6 transition text-white/70 relative isolate border-b border-white/10
         before:inset-0
         before:absolute
         before:bg-[#4C2194]
         before:origin-center
         before:transition
+        before:duration-300
         before:scale-x-0
         before:-z-10
         hover:before:scale-x-100
