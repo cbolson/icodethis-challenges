@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social UI kit - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/33977 -->
+<body class="bg-primary flex justify-center items-center min-h-screen p-4 sm:p-8
+before:absolute
+before:inset-0
+before:m-auto
+before:rounded-full
+before:bg-secondary
+before:w-3/4
+before:aspect-square
+before:[box-shadow:0_0_0_60px_#021125]
+">
+    <main class="relative text-white flex flex-col gap-8 w-full h-full max-w-4xl [&>*]:border [&>*]:border-secondary overflow-hidden">
+
+        <div class="grid [grid-template-areas:'stack'] !border-0 [&>*]:border [&>*]:border-secondary h-[500px] [&>*]:overflow-y-auto 
+            [&>section]:p-6
+            [&_p]:my-4
+            [&_h1]:text-xl
+            [&_h1]:mb-4
+            ">
+
+            <!-- gallery -->
+            <section data-panel="gallery" class="[grid-area:stack] transition-all duration-500  translate-y-[2000px] bg-primary"
+            >
+            <h1>GALLERY</h1>
+            <div class="grid [grid-template-columns:repeat(auto-fill,minmax(8rem,1fr))] gap-8
+                [&>div]:bg-blue-400
+                [&>div]:opacity-50
+                [&>div]:border
+                [&>div]:aspect-square
+                [&>div]:grid
+                [&>div]:place-items-center
+                [&>div]:
+            ">
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+                <div>img</div>
+            </div>
+            </section>
+
+            <!-- about -->
+            <section data-panel="about" class="[grid-area:stack] transition-all duration-500   bg-primary">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores, a aperiam aut nemo voluptas numquam quaerat tempora recusandae odit libero eveniet obcaecati voluptate veritatis, quibusdam hic quidem quis. Aspernatur.
+                Tempora ullam voluptates nobis aperiam quaerat qui, commodi corrupti veritatis, magni quod modi omnis architecto est perspiciatis optio dolore molestiae consequatur quam nihil maxime. Ad a ut eligendi omnis qui!</p>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores, a aperiam aut nemo voluptas numquam
+                    quaerat tempora recusandae odit libero eveniet obcaecati voluptate veritatis, quibusdam hic quidem quis. Aspernatur.
+                    Tempora ullam voluptates nobis aperiam quaerat qui, commodi corrupti veritatis, magni quod modi omnis architecto est
+                    perspiciatis optio dolore molestiae consequatur quam nihil maxime. Ad a ut eligendi omnis qui!</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolores, a aperiam aut nemo voluptas numquam
+                        quaerat tempora recusandae odit libero eveniet obcaecati voluptate veritatis, quibusdam hic quidem quis. Aspernatur.
+                        Tempora ullam voluptates nobis aperiam quaerat qui, commodi corrupti veritatis, magni quod modi omnis architecto est
+                        perspiciatis optio dolore molestiae consequatur quam nihil maxime. Ad a ut eligendi omnis qui!</p>
+            </section>
+
+            <!-- contact -->
+            <section data-panel="contact" class="[grid-area:stack] transition-all duration-500  translate-y-[2000px] bg-primary">
+                <h1>Contact</h1>
+                <p>contact from goes here but I have run out of time, sorry.
+            </section>
+
+
+            <!-- linkedin -->
+            <section data-panel="linkedin" class="[grid-area:stack] transition-all duration-500  translate-y-[2000px] bg-primary  w-24 aspect-square rounded-md grid place-items-center relative !overflow-auto
+                        before:absolute
+                        before:bg-orange-500
+                        before:text-[#0A1629]
+                        before:rounded-full
+                        before:border-4
+                        before:content-[attr(data-count)]
+                        before:border-secondary
+                        before:top-1
+                        before:right-1
+                        before:z-10
+                        before:w-8
+                        before:aspect-square
+                        before:grid
+                        before:place-items-center
+                        before:text-sm
+                        before:animate-pulse
+                    
+                    " data-count="6">
+                <svg class="w-12" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M9.429 8.969h3.714v1.85c.535-1.064 1.907-2.02 3.968-2.02c3.951 0 4.889 2.118 4.889 6.004V22h-4v-6.312c0-2.213-.535-3.461-1.897-3.461c-1.889 0-2.674 1.345-2.674 3.46V22h-4V8.969ZM2.57 21.83h4V8.799h-4V21.83ZM7.143 4.55a2.53 2.53 0 0 1-.753 1.802a2.573 2.573 0 0 1-1.82.748a2.59 2.59 0 0 1-1.818-.747A2.548 2.548 0 0 1 2 4.55c0-.677.27-1.325.753-1.803A2.583 2.583 0 0 1 4.571 2c.682 0 1.336.269 1.819.747c.482.478.753 1.126.753 1.803Z"
+                        clip-rule="evenodd" />
+                </svg>
+            </section>
+
+            <!-- comments -->
+            <section data-panel="messages" class="[grid-area:stack] transition-all duration-500 overflow-hidden translate-y-[2000px]
+            bg-primary-300 rounded-md p-4 sm:p-8 relative 
+                [&>article]:flex
+                [&>article]:flex-col
+                sm:[&>article]:flex-row
+                [&>article]:flex
+                [&>article]:gap-4
+                [&>article]:p-4
+                hover:[&>article]:bg-primary
+                [&>article]:transition
+                [&>article]:font-light
+                [&>article]:
+
+                [&_img]:rounded-full
+                [&_img]:w-20
+                [&_img]:h-20
+                [&_img]:object-fit
+                [&_img]:border-4
+                [&_img]:border-primary
+                [&_img]:
+
+                [&_h3]:flex
+                [&_h3]:flex-col
+                sm:[&_h3]:flex-row
+                [&_h3]:gap-2
+                sm:[&_h3]:items-center
+                [&_h3]:font-semibold
+                [&_h3>span]:text-sm
+                [&_h3>span]:text-secondary
+                [&_h3>span]:font-normal
+
+                [&_button.btn-reply]:text-orange-500
+                [&_button.btn-reply]:transition
+                hover:[&_button.btn-reply]:font-bold
+                [&_button.btn-reply]:
+
+                [&_button.btn-view]:font-semibold
+                [&_button.btn-view]:flex
+                [&_button.btn-view]:gap-1
+                [&_button.btn-view]:transition
+                hover:[&_button.btn-view]:text-orange-500
+                [&_button.btn-view]:items-center
+            ">
+                <h2 class="font-mediumbold text-xl">24 Comments</h2>
+                
+                <article>
+                    <img src="https://i.pravatar.cc/100?img=25" />
+                    <div>
+                        <h3>Frances P. Troia <span>2 hours ago</span></h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis quas, mollitia possimus provident hic tempore adipisci error magni porro dolorum dicta, dolor aliquam quis eius.
+                        </p>
+                        <button type="button" class="btn-reply">Reply</button>
+                        <button type="button" class="btn-view">
+                            View 3 replies 
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                        </div>
+                </article>
+
+                <article>
+                    <img src="https://i.pravatar.cc/100?img=33" />
+                    <div>
+                        <h3>David Guitierrez <span>4 hours ago</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, ut fuga. Voluptatibus architecto eum aliquam.
+                        </p>
+                        <button type="button" class="btn-reply">Reply</button>
+                    </div>
+                </article>
+
+
+                <article>
+                    <img src="https://i.pravatar.cc/100?img=1" />
+                    <div>
+                        <h3>Maria Delgado<span>yesterday</span></h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat rerum quibusdam sequi ducimus nulla, sapiente, commodi, velit illo cupiditate officiis deleniti sunt natus.
+                        </p>
+                        <button type="button" class="btn-reply">Reply</button>
+                        <button type="button" class="btn-view">
+                            View 2 replies
+                            <span class="material-symbols-outlined">expand_more</span>
+                        </button>
+                    </div>
+                </article>
+
+
+            </section>
+
+            <!-- profile -->
+            <section data-panel="profile" class="[grid-area:stack] transition-all duration-500  translate-y-[2000px] bg-primary-300 rounded-md p-4 sm:p-8 text-center w-72  z-10 relative space-y-6">
+                <img src="https://i.pravatar.cc/100?img=25" class="w-32 h-32 object-fit  rounded-full mx-auto"/>
+            
+                    <h2 class="text-2xl font-light">Frances P. Troia</h2>
+                    <p class="text-secondary">Photographer</p>
+
+                    <div class="flex items-center justify-between 
+                        [&_span]:font-bold
+                        [&_span]:text-xl
+                        [&_p]:text-sm
+                        [&_p]:text-secondary
+                    ">
+                            <div>
+                                <span>753</span>
+                                <p>Posts</p>
+                            </div>
+                            <div>
+                                <span>1447</span>
+                                <p>Following</p>
+                            </div>
+                            <div>
+                            <span>874</span>
+                                <p>Followers</p>
+                            </div>
+                    </div>
+                    <button type="button" class="py-2 px-6 bg-orange-400 rounded-md text-primary transition hover:bg-secondary hover:text-white">Follow</button>
+            
+            </section>
+        </div>
+
+        <!-- footer -->
+        <footer class="mt-auto bg-primary-300 text-secondary-300 rounded-md relative w-full p-4 sm:p-8 z-20 
+            [&_ul]:flex
+             [&_ul]:items-center
+            [&_ul]:flex-wrap
+            [&_ul]:w-full
+            [&_ul]:gap-8
+            
+            [&_ul]:items-center
+            [&_ul]:gap-6
+            [&_label]:hidden
+            sm:[&_label]:block
+
+            [&_button]:flex
+            [&_button]:items-center
+            [&_button]:gap-2
+            [&_button]:transition
+            [&_button]:border-b
+            [&_button]:border-primary-300
+            [&_button]:pb-2
+            [&_button:hover]:text-white
+            [&_button:hover]:border-orange-400
+            [&_button.current]:text-white
+            [&_button.current]:border-orange-400
+            focus-within:[&_button]:text-white
+            focus-within:[&_button]:border-orange-400
+        ">
+            
+                <ul>
+                    <li>
+                        <button type="button" data-toggle="gallery">
+                            <span class="material-symbols-outlined">photo_library</span>
+                            <label>Gallery</label>
+                            </button>
+                    </li>
+                    <li>
+                    <button type="button" data-toggle="about">
+                            <span class="material-symbols-outlined">edit_note</span>
+                            <label>About</label>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-toggle="contact">
+                            <span class="material-symbols-outlined">mail</span>
+                            <label>Contact</label>
+                        </button>
+                    </li>
+
+                    <li class="ml-auto">
+                        <button type="button" data-toggle="linkedin"  data-count="6" class="relative
+                            before:absolute
+                            before:bg-orange-500
+                            before:text-[#0A1629]
+                            before:rounded-full
+                            before:border-4
+                            before:content-[attr(data-count)]
+                            before:border-primary-300
+                            before:-top-0
+                            before:-right-2
+                            before:z-10
+                            before:w-6
+                            before:h-6
+                            before:grid
+                            before:place-items-center
+                            before:text-sm
+                            before:animate-pulse
+                            ">
+                            <svg class="w-8" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    d="M9.429 8.969h3.714v1.85c.535-1.064 1.907-2.02 3.968-2.02c3.951 0 4.889 2.118 4.889 6.004V22h-4v-6.312c0-2.213-.535-3.461-1.897-3.461c-1.889 0-2.674 1.345-2.674 3.46V22h-4V8.969ZM2.57 21.83h4V8.799h-4V21.83ZM7.143 4.55a2.53 2.53 0 0 1-.753 1.802a2.573 2.573 0 0 1-1.82.748a2.59 2.59 0 0 1-1.818-.747A2.548 2.548 0 0 1 2 4.55c0-.677.27-1.325.753-1.803A2.583 2.583 0 0 1 4.571 2c.682 0 1.336.269 1.819.747c.482.478.753 1.126.753 1.803Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </li>
+
+                    <li>
+                
+                        <button type="button"  data-toggle="messages" data-count="4" class="w-8 aspect-square grid place-items-center relative transition hover:text-white 
+                            before:absolute
+                            before:bg-orange-500
+                            before:text-[#0A1629]
+                            before:rounded-full
+                            before:border-4
+                            before:content-[attr(data-count)]
+                            before:border-primary-300
+                            before:-top-1
+                            before:-right-2
+                            before:z-10
+                            before:w-6
+                            before:h-6
+                            before:grid
+                            before:place-items-center
+                            before:text-sm
+                            before:animate-pulse
+                        ">
+                            <span class="material-symbols-outlined text-4xl">notifications</span>
+                        </button>
+                    </li>
+                <li>
+                    <button type="button" data-toggle="profile">
+                        <img src="https://i.pravatar.cc/100?img=5" class="rounded-full w- h-8 object-fit transition hover:border-orange-500" />
+                    </button>
+                </li>
+            </ul>
+        </footer>
+   
+      
+    </main>
+</body>
+
+</html>
