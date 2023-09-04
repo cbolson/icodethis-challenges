@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews 3 - icodethis</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <!--  -->
+  <body
+    class="bg-gray-200 text-white flex justify-center items-center min-h-screen px-4">
+    <div
+      class="bg-primary-400 p-6 sm:p-12 space-y-4 shadow-xl rounded-2xl w-full md:max-w-lg">
+      <header
+        class="flex items-center sm:justify-between flex-col sm:flex-row gap-4 sm:gap-12">
+        <h1 class="text-2xl sm:w-4/5">
+          What others thing about the product...
+        </h1>
+        <div
+          class="bg-white w-full sm:w-32 p-2 text-center space-y-2 rounded-xl text-primary-400">
+          <div class="flex items-center justify-center text-2xl fobt-bold">
+            <span
+              class="star material-symbols-outlined star-fill text-4xl text-yellow-500"
+              >star</span
+            >
+            <span rating-avg>4.8</span>
+          </div>
+          <p class="text-xs text-center">Average customer rating</p>
+        </div>
+      </header>
+
+      <section
+        class="bg-white text-primary-400 rounded-xl relative overflow-hidden">
+        <input
+          type="text"
+          id="search"
+          placeholder="Search reviews"
+          class="w-full bg-transparent focus:border-0 focus:outline-none focus:ring-0 focus:bg-blue-400 px-10 py-3 transition hover:bg-blue-50 focus-within:placeholder:text-white" />
+        <span class="material-symbols-outlined absolute left-2 top-3"
+          >search</span
+        >
+        <button
+          type="button"
+          id="btn-reset"
+          class="material-symbols-outlined absolute right-2 top-3 text-base transition hover:scale-150">
+          close
+        </button>
+      </section>
+
+      <main
+        class="grid [grid-template-areas:'stack'] overflow-hidden [&>section]:w-full [&>section]:duration-1000">
+        <section id="panel-rating" class="[grid-area:stack]">
+          <h2 class="my-4">
+            <span id="reviews-total" class="font-bold"></span> Reviews
+          </h2>
+          <div
+            id="list-bars"
+            class="w-full [&>div]:mb-4 [&>div]: [&>div]:flex [&>div]:gap-4 [&>div]:items-center [&>div]:text-sm [&>div>*]:borderS [&_.bar]:bg-white/60 [&_.bar]:border [&_.bar]:relative [&_.bar]:h-3 [&_.bar]:w-full [&_.bar]:rounded-2xl [&_.progress]:bg-yellow-500 [&_.progress]:absolute [&_.progress]:-top-px [&_.progress]:-left-px [&_.progress]:transition-all [&_.progress]:duration-700 [&_.progress]:h-3 [&_.progress]:relative [&_.progress]:rounded-2xl [&_.star]:text-yellow-500 [&_.star]:text-base [&_.total]:w-8 after:[&_.progress]:content-[attr(data-percent)] after:[&_.progress]:-right-[3.5rem] after:[&_.progress]:-top-[.4rem] after:[&_.progress]:absolute after:[&_.progress]:bg-primary after:[&_.progress]:rounded-full after:[&_.progress]:grid after:[&_.progress]:place-items-center after:[&_.progress]:w-12 after:[&_.progress]:py-1 after:[&_.progress]:text-xs after:[&_.progress]:text-white after:[&_.progress]:transition after:[&_.progress:hover]:scale-150"></div>
+        </section>
+
+        <section
+          id="panel-reviews"
+          class="[grid-area:stack] h-[250px] overflow-y-auto space-y-4 px-4 transition-all -translate-y-[1000px]">
+          <!-- reviews loaded here -->
+          <article class="flex items-center gap-4">
+            <div class="w-16">
+              <img
+                src="https://i.pravatar.cc/80"
+                class="rounded-full w-12 h-12 aspect-square object-fit" />
+              <div review-rating class="flex items-center gap-2">_rating</div>
+            </div>
+            <div>
+              <h3 class="font-semibold flex items-center justify-between">
+                PEpe
+                <time class="text-sm opacity-70 font-normal">_time</time>
+              </h3>
+              <p class="text-sm italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing.
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <button
+        type="button"
+        id="btn-add"
+        class="bg-primary text-white py-2 px-4 rounded-full transition hover:bg-white hover:text-primary">
+        Write a review
+      </button>
+    </div>
+
+    <!-- template - progress bar -->
+    <template id="tpl-bar">
+      <div class="flex items-center gap-4">
+        <div bar-rating class="flex gap-2 w-32 justify-end"></div>
+        <div class="bar">
+          <div bar-progress class="progress w-0" data-percent="23"></div>
+        </div>
+        <span bar-total class="total w-6">123</span>
+      </div>
+    </template>
+
+    <!--  template - review -->
+    <template id="tpl-review">
+      <article class="flex items-start gap-4 border-b border-white/30">
+        <div class="w-20">
+          <img
+            src="https://i.pravatar.cc/80"
+            class="rounded-full w-12 h-12 object-fit" />
+          <div
+            review-rating
+            class="flex items-center gap-1 text-yellow-500 [&>span]:text-xs">
+            _rating
+          </div>
+        </div>
+        <div>
+          <h3 class="font-semibold flex items-center justify-between">
+            <span review-name>PEpe</span>
+            <time class="text-sm opacity-70 font-normal">_time</time>
+          </h3>
+          <p class="text-sm italic py-4 opacity-80">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>

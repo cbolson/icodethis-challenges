@@ -1,0 +1,28 @@
+.star-fill {
+    font-variation-settings:
+        'FILL'1,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
+
+  /* width */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: #13133A;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      background: #3d3d79;
+      border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: #2121df
+  }
