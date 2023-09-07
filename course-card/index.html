@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Cards - icodethis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/35522 -->
+<body class="overflow-hidden">
+    <input class="peer sr-only" id="theme" type="checkbox" />
+    <label for="theme" class="absolute -top-2 -left-2 grid place-items-end cursor-pointer transition z-10  text-white hover:scale-150 bg-cyan-600 p-8 skew-y-3 border border-white/50
+            [&>span]:transition-all
+            [&>span]:absolute
+            [&>span]:bottom-3
+            [&>span]:right-3
+            [&>span]:duration-200
+            [&>#light]:scale-0 
+            peer-checked:[&>span]:delay-300
+            peer-checked:[&>#dark]:scale-0 
+            peer-checked:[&>#light]:scale-100
+            peer-checked:[&>#light]:text-white
+        ">
+            <span id="dark" class="material-symbols-outlined">dark_mode</span>
+            <span id="light" class="material-symbols-outlined">light_mode</span>
+        </label>
+    
+    <!-- main wrapper to replace body styles, required for theme toggle -->
+    <div class="overflow-hidden bg-gradient-to-r from-gray-300 to-gray-50 flex justify-center items-center min-h-screen px-4        
+            before:absolute
+            before:skew-y-3
+            before:w-full
+            before:h-full
+            before:scale-125
+            before:-top-0
+            before:-left-0
+            before:bg-gradient-to-r
+            before:from-cyan-800
+            before:to-cyan-300
+            before:transition-all
+            before:ease-out
+            before:-translate-y-[calc(100%+140px)]
+            before:duration-1000
+            after:absolute
+            after:skew-y-3
+            after:w-full
+            after:h-full
+            after:scale-125
+            after:-bottom-0
+            after:-right-0
+            after:bg-gradient-to-r
+            after:from-cyan-800
+            after:to-cyan-300
+            after:transition-all
+            after:ease-out
+            peer-checked:after:ease-in
+            after:translate-y-[calc(100%+140px)]
+            after:duration-1000
+            peer-checked:before:ease-in
+            peer-checked:before:translate-y-0
+            peer-checked:after:translate-y-0
+            peer-checked:[&_main:before]:bg-slate-200
+            peer-checked:[&_main:before]:delay-500
+            peer-checked:[&_.chart:before]:bg-slate-200
+            peer-checked:[&_.chart:before]:delay-500
+    ">
+        <div class="bg-pink-300 text-[#181028] text-lg shadow-lg  w-full max-w-md overflow-hidden z-10 isolate">
+
+            <header>
+                <img src="https://images.unsplash.com/photo-1507297230445-ff678f10b524?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="w-full object-cover">
+            </header>
+
+            <main class="relative w-full border z-10 pt-0 p-6 pb-16
+            before:absolute
+            before:-z-10
+            before:duration-300
+            before:transition
+            before:delay-100
+            before:bg-white
+            before:-inset-8
+            before:skew-y-3
+            before:origin-top-right
+            after:absolute
+            after:-z-[15]
+            after:bg-gradient-to-r
+            after:from-cyan-600
+            after:to-cyan-400
+            after:left-0
+            after:-top-4
+            after:h-6
+            after:w-[500px]
+            after:skew-y-6
+            after:origin-top-right
+            ">
+                <h1 class="uppercase text-xl sm:text-2xl text-cyan-600 font-bold tracking-wide leading-6 mt-6 sm:mt-0 sm:w-4/5">Building a successful e-busines</h1>
+
+                <p class="opacity-60 leading-6 mt-4">Learn how using computer and interet technology can facilitatee a business to successfully build an online e-business.</p>
+
+
+                <!-- pie chart -->
+                <div class="absolute -top-20 right-2 sm:right-6 w-24 h-24 rounded-full chart flex flex-col justify-center items-center text-cyan-600 text-xl isolate text-center uppercase
+                before:absolute
+                before:inset-3
+                before:bg-white
+                before:rounded-full
+                before:-z-10
+                before:transition
+                before:duration-300
+                before:delay-200
+                ">40%<span class="text-sm">booked</span></div>
+
+                <!-- countdown -->
+                <h2 class="uppercase text-cyan-600 text-center text-sm mt-6 mb-2">Time remaining</h2>
+                <div class=" w-full bg-white/[.05] rounded-xl"">
+                    <div data-color class=" w-full flex items-center justify-center gap-1 text-white [&>div]:flex
+                        [&>div]:borderS
+                        [&>div]:border-cyan-400S
+                        [&>div]:py-3
+                        [&>div]:px-2
+                        [&>div]:w-16
+                        [&>div]:relative
+        
+                        [&>div]:relative
+                        [&>div]:text-black
+                        [&>div]:transition
+                        [&>div]:delay-300
+                        [&>div]:grid
+                        [&>div]:grid-cols-2
+                        [&>div]:place-items-center
+                        [&>div]:text-xl
+                        sm:[&>div>span]:text-2xl
+                        [&>div]:font-semibold
+                        [&>div>span]:text-center
+                        [&_p]:text-xs
+                        [&_p]:text-center
+                        [&_p]:uppercase
+
+                        before:[&>div]:border
+                        before:[&>div]:border-cyan-400 
+                        before:[&>div]:absolute 
+                        before:[&>div]:inset-0
+                        before:[&>div]:skew-y-3
+
+                        after:[&>div]:content-[attr(data-desc)]
+                        after:[&>div]:absolute
+                        after:[&>div]:text-sm
+                        after:[&>div]:-bottom-5
+                        after:[&>div]:opacity-40
+                        after:[&>div]:w-full
+                        after:[&>div]:text-gray-800
+                        after:[&>div]:grid
+                        after:[&>div]:place-items-center
+                        after:[&>div]:capitalize
+                    ">
+                    <div id="days" data-desc="Days"></div>
+                    <div id="hours" data-desc="Hours"></div>
+                    <div id="minutes" data-desc="minutes">></div>
+                    <div id="seconds" data-desc="seconds">></div>
+                </div>
+                </div>
+
+            </main>
+
+
+            <button type="button" class=" group z-20 btn-act relative isolate text-2xl uppercase text-white mt-auto w-full pt-4 pb-8
+            bg-gradient-to-r from-cyan-600 to-cyan-400
+            before:absolute
+            before:-z-10
+            before:bg-cyan-600
+            before:bg-gradient-to-r
+            before:from-cyan-600
+            before:to-cyan-400
+            before:inset-0
+            before:skew-y-3
+            before:origin-top-right
+            before:transition-all
+            hover:before:skew-y-0
+            "><span class="block transition group-hover:scale-125">Take course</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
