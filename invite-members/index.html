@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members invite - icodethis</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/35140 -->
+<body class="bg-slate-100 flex justify-center mt-12 min-h-screen">
+  
+   <div class="bg-white rounded-md  shadow-xlw-full max-w-xl p-6">
+        <h1 class="font-bold text-xl">Invite Members</h1>
+        <p class="opacity-60 text-sm w-4/6">Enter the name or email of the pople you want to add to this group</pa>
+
+        <section class="bg-white text-primary-400 rounded-md relative overflow-hidden z-10 my-6">
+        
+            <input
+                type="text"
+                id="search"
+                autocomplete="off"
+                value="Peter"
+                 placeholder="Search reviews"
+                class="w-full bg-transparent border rounded-md focus:outline-none focus:ring-0 focus:bg-blue-300 px-10 py-3 transition hover:bg-blue-50
+                        focus-within:placeholder:text-white
+                    ">
+            <span class="material-symbols-outlined absolute left-2 top-3">search</span>
+            <button type="button" id="btn-reset" class="material-symbols-outlined absolute right-2 top-3 text-base transition hover:scale-150">close</button>
+        </section>
+
+        <section>
+            <h2 class="font-bold flex items-center justify-between">
+                Members
+                <button type="button" id="btn-all" class="text-blue-500 transition font-normal text-sm hover:text-blue-800 ">View all <span id="tot-users"></span> members</button>
+            </h2>
+            <div id="list-users" class="mt-6 grid [grid-template-columns:repeat(auto-fill,minmax(64px,1fr))]  gap-2 relative ">
+                <!-- users loaded here -->
+                <button type="button" class="relative group cursor-pointer">
+            <img src="https://img.freepik.com/premium-photo/little-chicken-animal-nft-art_796651-2409.jpg?w=826" class="w-16 h-16 object-cover rounded-full shadow-xl border-4 border-blue-500 scale-0 transition scale-100">
+            <p class="scale-0 absolute inset-[20px_-20px_20px_-20px] m-auto bg-blue-500/90 text-white text-xs  group-hover:scale-100 transition rounded-full grid place-items-center border border-white/30 z-10">Peter</p>
+        </button>
+            </div>
+        </section>
+    </div>
+
+    <template id="tpl-user">
+        <button type="button" class="relative group cursor-pointer">
+            <img src="https://i.pravatar.cc/100?img=14" class="w-16 h-16 object-cover rounded-full shadow-xl border-4 border-blue-500 scale-0 transition">
+            <p
+                class="scale-0 absolute inset-[20px_-20px_20px_-20px] m-auto bg-blue-500/90 text-white text-xs  group-hover:scale-100 transition rounded-full grid place-items-center border border-white/30 z-10">
+                David</p>
+        </button>
+    </template>
+</body>
+
+</html>
