@@ -1,0 +1,59 @@
+.number {
+  position: absolute;
+  inset: 2rem;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.bar {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1px;
+  background: #f4eed7;
+  transform-origin: center center;
+  z-index: 2;
+  border-radius: 1px;
+  height: calc(var(--r) * 2);
+  border-top: var(--border-top, 2px) solid var(--border-clr, white);
+  background: none;
+  transform: rotateZ(calc(3deg * var(--i)));
+}
+
+.bar.mins {
+  --border-top: 10px;
+  --border-clr: #666;
+}
+
+.bar.hours {
+  --border-top: 20px;
+  --border-clr: white;
+}
+
+.axis {
+  background: orange;
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  margin: auto auto 50% auto;
+  width: 3px;
+  height: 40%;
+  border-radius: 50% 50% 0 0;
+  rotate: var(--deg, 65deg);
+  transform-origin: bottom;
+}
+
+.outer {
+  /*
+    background: orange;
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+    margin: auto auto 50% auto;
+    width: 5px;
+    height: 50px;
+    transform-origin: bottom;
+    transform: rotateZ(calc(3deg * var(--i) * -10));
+    */
+}
