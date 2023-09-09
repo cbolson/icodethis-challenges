@@ -1,0 +1,302 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body class="bg-[#E8ECF8] flex justify-center  min-h-screen p-4 sm:mt-12 
+    before:bg-[url('https://images.unsplash.com/photo-1604543648342-6a500ad7b5c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3V0dGluZyUyMGJvYXJkJTIwaGVyYnN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60')]
+    before:inset-0
+    before:w-full
+    before:h-full
+    before:absolute
+    before:opacity-100
+    before:bg-cover
+    before:bg-center
+    before:-z-10
+">
+     
+    <main class="text-slate-600 rounded-xl max-w-3xl h-fit relative space-y-1
+        after:absolute
+        after:inset-2
+        after:bg-[#FC3A15]
+        after:opacity-90
+        after:-z-10
+
+        [&_summary]:flex
+        [&_summary]:items-center
+        [&_summary]:justify-between
+        [&_summary]:flex-row-reverse
+        [&_summary]:gap-3 
+        [&_summary]:cursor-pointer
+        [&_summary]:rounded-sm
+        [&_summary]:px-6 
+        [&_summary]:py-3
+        [&_summary]:outline-none
+        [&_summary]:transition-all 
+        [&_summary]:bg-white
+        [&_summary]:[clip-path:polygon(0%_0%,100%_0%,100%_100%,40px_100%,30px_100%,20px_100%,0_100%)]
+        [&_summary]:transition-all
+        [&_summary]:delay-300
+
+        [&_summary>h2]:uppercase
+        [&_summary>h2]:text-[#FC3A15]
+        [&_summary>h2]:w-full
+        [&_summary>h2]:text-2xl
+
+        [&_summary>h2>p]:text-xs
+        [&_summary>h2>p]:text-slate-700
+        [&_summary>h2>p]:m-0
+
+        [&_summary_div]:grid
+        [&_summary_div]:[grid-template-areas:'stack']
+        [&_summary_div]:bg-[#CFC4BE]
+        [&_summary_div]:rounded-full
+        [&_summary_div]:p-2
+        [&_summary_div]:text-black
+        [&_summary_div>span]:transition-all
+        [&_summary_div>span]:duration-500
+        
+        [&_summary_div>span]:[grid-area:stack]
+        last:[&_summary_div>span]:scale-0
+
+        [&_article]:grid
+        [&_article]:grid-rows-[0fr]
+        [&_article]:pl-6
+        [&_article]:transition-all
+        [&_article]:duration-500
+        
+        [&_article>div]:-translate-y-4
+        [&_article>div]:overflow-hidden
+        [&_article>div]:px-6
+        [&_article>div]:transition-all 
+        [&_article>div]:duration-500
+        [&_article>div]:text-white
+        [&_article>div]:uppercase
+        [&_article>div]:grid
+        [&_article>div]:gap-4
+        sm:[&_article>div]:grid-cols-2
+        [&_.item]:pb-2
+        [&_.item]:transition-all
+        [&_.item]:opacity-0
+        [&_.item]:relative
+        [&_.item>span]:text-[#A52B12]
+        [&_.item>span]:font-bold
+        after:[&_.item]:absolute
+        after:[&_.item]:bottom-0
+        after:[&_.item]:left-0
+        after:[&_.item]:h-px
+        after:[&_.item]:w-40
+        after:[&_.item]:bg-[#A52B12]
+        ">
+
+            <!--breakfast -->
+            <div>               
+                <details class="group peer">
+                    <summary class="group-open:[clip-path:polygon(0%_0%,100%_0%,100%_100%,40px_100%,30px_90%,20px_100%,0_100%)]">
+                        <div>
+                            <span class="material-symbols-outlined group-open:scale-0">add</span>
+                            <span class="material-symbols-outlined group-open:scale-100">remove</span>
+                        </div>
+                        <h2>
+                            BREAKFAST
+                            <p>7:00am. - 11:00am</p>
+                        </h2>
+                    </summary>
+                </details>
+                <article class="peer-open:grid-rows-[1fr] peer-open:[&>div]:translate-y-0 peer-open:[&>div]:py-6 peer-open:[&_.item]:opacity-100">
+                    <div>
+
+                        <div class="item">
+                            Buttermil fried chickedn
+                            <span>$12</span>
+                        </div>
+                        <div class="item">
+                            Veggie special fried chickedn
+                            <span>$11</span>
+                        </div>
+                        <div class="item">
+                            House smoked pork Hubcan
+                            <span>$15</span>
+                        </div>
+                        <div class="item">
+                            Classic pb&j
+                            <span>$12</span>
+                        </div>
+                        <div class="item">
+                            House smoked texas bbq
+                            <span>$11</span>
+                        </div>
+                        <div class="item">
+                            Han and grilled cheese
+                            <span>$8</span>
+                        </div>
+                        <div class="item">
+                            House smoked turkey
+                            <span>$11</span>
+                        </div>
+                        <div class="item">
+                            Quiche or frittata
+                            <span>$12</span>
+                        </div>
+                       
+                    </div>
+                </article>
+            </div>
+
+            <!-- lunch -->
+            <div>
+                <details class="group peer">
+                    <summary class="group-open:[clip-path:polygon(0%_0%,100%_0%,100%_100%,40px_100%,30px_90%,20px_100%,0_100%)]">
+                        <div>
+                            <span class="material-symbols-outlined group-open:scale-0">add</span>
+                            <span class="material-symbols-outlined group-open:scale-100">remove</span>
+                        </div>
+                        <h2>
+                            Lunch
+                            <p>11:00am. - 3.00pm</p>
+                        </h2>
+                    </summary>
+                </details>
+                <article
+                    class="peer-open:grid-rows-[1fr] peer-open:[&>div]:translate-y-0 peer-open:[&>div]:py-6 peer-open:[&_.item]:opacity-100">
+                    <div>
+                
+                        <div class="item">
+                            Grilled Chicken Salad
+                            <span>$15</span>
+                        </div>
+                        <div class="item">
+                            Quinoa and Veg Stir-Fry
+                            <span>$13</span>
+                        </div>
+                        <div class="item">
+                            Turkey and Avocado Wrap
+                            <span>$16</span>
+                        </div>
+                        <div class="item">
+                            Lentil Soup
+                            <span>$12</span>
+                        </div>
+                        <div class="item">
+                            Salmon and Asparagus
+                            <span>$17</span>
+                        </div>
+                        <div class="item">
+                            Chickpea and Veg Stir-Fry
+                            <span>$16</span>
+                        </div>
+                
+                    </div>
+                </article>
+            </div>
+
+            <!-- prepared -->     
+            <div>
+                <details class="group peer">
+                    <summary class="group-open:[clip-path:polygon(0%_0%,100%_0%,100%_100%,40px_100%,30px_90%,20px_100%,0_100%)]">
+                        <div>
+                            <span class="material-symbols-outlined group-open:scale-0">add</span>
+                            <span class="material-symbols-outlined group-open:scale-100">remove</span>
+                        </div>
+                        <h2>
+                            Prepared
+                            <p>11:00am. - closing</p>
+                        </h2>
+                    </summary>
+                </details>
+                <article
+                    class="peer-open:grid-rows-[1fr] peer-open:[&>div]:translate-y-0 peer-open:[&>div]:py-6 peer-open:[&_.item]:opacity-100">
+                    <div>
+                        <div class="item">
+                            Filled rolls - Turkey and Avocado
+                            <span>$7</span>
+                        </div>
+                        <div class="item">
+                            Filled rolls -Caprese
+                            <span>$7</span>
+                        </div>
+                        <div class="item">
+                            Baguette - Chicken Caesar
+                            <span>$5</span>
+                        </div>
+                        <div class="item">
+                           Baguette - Hummus and Veggie
+                            <span>$7</span>
+                        </div>
+                        <div class="item">
+                            Filled roll - Tuna Salad
+                            <span>$7</span>
+                        </div>
+                        <div class="item">
+                           2 fillings of your choice
+                            <span>$9</span>
+                        </div>
+                
+                    </div>
+                </article>
+            </div>
+
+            <!-- coffee and beverages -->
+            <div>
+                <details class="group peer">
+                    <summary class="group-open:[clip-path:polygon(0%_0%,100%_0%,100%_100%,40px_100%,30px_90%,20px_100%,0_100%)]">
+                        <div>
+                            <span class="material-symbols-outlined group-open:scale-0">add</span>
+                            <span class="material-symbols-outlined group-open:scale-100">remove</span>
+                        </div>
+                        <h2>
+                            Coffee & beverages
+                            <p>All day</p>
+                        </h2>
+                    </summary>
+                </details>
+                <article
+                    class="peer-open:grid-rows-[1fr] peer-open:[&>div]:translate-y-0 peer-open:[&>div]:py-6 peer-open:[&_.item]:opacity-100">
+                    <div>
+                
+                        <div class="item">
+                            Espresso
+                            <span>$2</span>
+                        </div>
+                        <div class="item">
+                            Cappuccino
+                            <span>$4</span>
+                        </div>
+                        <div class="item">
+                            Iced Coffee:
+                            <span>$3</span>
+                        </div>
+                        <div class="item">
+                            Green Tea
+                            <span>$3/span>
+                        </div>
+                        <div class="item">
+                            Lemon Water
+                            <span>$3</span>
+                        </div>
+                        <div class="item">
+                            Smoothie
+                            <span>$5</span>
+                        </div>
+                        <div class="item">
+                           Lemon water
+                            <span>$3/span>
+                        </div>
+                        <div class="item">
+                            Tap water
+                            <span>Free</span>
+                        </div>
+                
+                    </div>
+                </article>
+            </div>
+                
+    </main>
+</body>
+</html>
