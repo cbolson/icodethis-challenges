@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Countdown</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    
+</head>
+<!-- https://icodethis.com/submissions/36330 -->
+<body class="bg-gray-100 flex justify-center sm:items-center min-h-screen py-8 px-4
+before:bg-[url('https://images.unsplash.com/photo-1477516561410-f0b5dd8319e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2664&q=80')]
+    before:inset-0
+    before:m-auto
+    before:absolute
+    before:opacity-100
+    before:bg-cover
+    before:bg-center
+    before:-z-10
+
+after:bg-[url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/smoke-ani.webp')]
+    after:inset-0
+    after:m-auto
+    after:absolute
+    after:opacity-40
+    after:bg-cover
+    after:bg-center
+    after:-z-10
+">
+    <main class="text-white text-center space-y-4 shadow-lg  ">
+        <header class="h-32 sm:h-96">
+            <div class="relative sm:text-2xl font-thin tracking-widest font-libre flex gap-4 justify-center
+                before:inline-block 
+                before:content-['\2014'] 
+                before: 
+                after:inline-block 
+                after:content-['\2014'] 
+                ">
+                countdown to
+            </div>
+            <h1 class="text-4xl sm:text-[5rem] uppercase sm:mt-6 font-bold">Halloween</h1>
+        </header>
+
+        <!-- countdown -->
+        <div class="w-full  "">
+            <div data-color class="w-full grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-4 text-white font-thin text-[4rem] sm:text-[6rem] 
+                [&>div]:bg-black/30
+                [&>div]:rounded-md
+                [&>div]:w-32
+                [&>div]:h-32
+                [&>div]:
+
+                sm:[&>div]:w-48
+                sm:[&>div]:h-48
+                [&>div]:relative
+                [&>div]:transition
+                [&>div]:grid
+                [&>div]:grid-cols-2
+                [&>div]:grid-rows-[auto_1fr]
+                [&>div]:gap-2
+                [&>div]:gap-y-0
+
+                [&>div>span]:text-center
+                [&>div>span]:
+                first:[&>div>span]:text-right
+                last:[&>div>span]:text-left
+                
+                [&>div:after]:content-[attr(data-desc)]
+                [&>div:after]:w-full
+                [&>div:after]:text-xl
+                [&>div:after]:opacity-80
+                [&>div:after]:mx-auto
+                [&>div:after]:col-span-2
+                [&>div:after]:
+                [&>div:after]:lowercase
+               
+            ">
+            <div id="days" data-desc="Days"><span>2</span><span>0</span></div>
+            <div id="hours" data-desc="Hours"><span>2</span><span>3</span></div>
+            <div id="minutes" data-desc="minutes"><span>1</span><span>0</span></div>
+            <div id="seconds" data-desc="seconds"><span>3</span><span>1</span></div>
+        </div>
+        </div>
+    </main>
+
+   <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/halloween-14-min.png" class="ghost absolute bottom-0  sm:-right-40mm animate-pulse">
+
+
+</body>
+
+</html>
