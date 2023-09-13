@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<!-- https://icodethis.com/submissions/36726 -->
+<body class="bg-blue-50 flex justify-center flex-col min-h-screen  
+    [&>*]:w-full
+    [&>*]:max-w-6xl
+    [&>*]:mx-auto
+
+    before:bg-[url('https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80')]
+    before:-inset-[2rem]
+    before:m-auto
+    before:fixed
+    before:bg-cover
+    before:bg-center
+    before:-z-10
+    before:blur-md
+
+">
+    <div class=" bg-black/20 backdrop-brightness-150 p-1">
+        
+        <header class="bg-orange text-white p-4 pt-12 sm:py-6 sm:px-0        
+            [&_ul]:flex      
+            [&_ul]:font-thin
+            [&_a]:block
+            [&_a.current]:bg-[#FA6654]
+            hover:[&_a]:bg-[#FA6654]
+        ">
+            <input class="group peer sr-only" id="nav" type="checkbox"/>
+            <label for="nav" class="absolute top-8 right-8 grid place-items-center cursor-pointer transition z-10 text-white sm:hidden 
+                [&>span]:transition-all
+                [&>span]:absolute
+                [&>span]:duration-200
+                [&>#show]:scale-0 
+                peer-checked:[&>#hide]:scale-0 
+                peer-checked:[&>#show]:scale-100
+                peer-checked:[&>#show]:text-white
+                hover:bg-blue-500 
+                active:scale-95
+            ">
+                <span id="hide" class="material-symbols-outlined">menu</span>
+                <span id="show" class="material-symbols-outlined">close</span>
+            </label>
+
+
+            <nav class="uppercase absolute top-0 left-0 w-full bg-orange -translate-y-[1000px]  transition  duration-75 
+                sm:[&_li]:border-l
+                sm:first:[&_li]:border-0
+                sm:-translate-y-0
+                sm:relative
+                peer-checked:translate-y-0 
+                peer-checked:duration-500
+                [&_a]:px-8
+                [&_a]:py-2
+                sm:[&_a]:py-1
+            ">
+                <ul class="justify-end flex-col sm:flex-row">
+                    <li><a href="#" class="current">Leaderboard</a></li>
+                    <li><a href="#">Routes</a></li>
+                    <li><a href="#">Live</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </nav>
+
+            <nav class="text-sm 
+                [&_li]:border-l
+                first:[&_li]:border-0
+                [&_a]:px-3
+                sm:[&_a]:py-1
+                sm:[&_a]:px-6
+            ">
+                <ul class="flex-row justify-center sm:justify-start">
+                    <li><a href="#">Week</a></li>
+                    <li><a href="#">Month</a></li>
+                    <li><a href="#">Year</a></li>
+                    <li><a href="#" class="current">All time</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="mt-2 mb-1 
+            text-xl
+            text-white
+            [&_*]:border-white/30
+            [&>section]:grid 
+            sm:[&>section]:divide-x 
+            [&>section]:transition
+            [&>section]:py-2
+            [&>section]:border-b
+            last:[&>section]:border-b-0
+            sm:[&>section]:py-0
+            sm:[&>section]:grid-cols-[16%_28%_28%_28%]
+            even:[&>section]:bg-black/40
+            hover:[&>section]:bg-black/70
+
+            sm:[&>section>div]:border-rS
+            last:[&>section>div]:border-0
+            last:[&>section>div]:font-bold
+            [&>section>div]:py-2
+            sm:[&>section>div]:py-4
+            [&>section>div]:px-6
+            [&>section>div]:flex
+            [&>section>div]:justify-center
+            [&>section>div]:items-center
+            [&>section>div]:gap-4
+            [&>section>div]:text-4xl
+            
+            [&_.rank]:text-8xl
+            [&_.rank]:pt-2
+            [&_.rank]:leading-6
+          
+            [&>section_img]:w-20
+            [&>section_img]:h-20
+            [&>section_img]:object-cover
+            [&>section_.name]:uppercase
+            [&>section_.name]:!text-2xl
+
+            [&>section_.votes]:!flex-col
+            [&>section_.votes]:font-bold
+            [&>section_.votes]:!gap-0
+            [&>section_.votes>p]:text-sm
+            [&>section_.votes>p]:font-normal   
+        ">
+            <section class="!hidden sm:!grid !bg-[#19BFB3] [&>div]:!text-xl
+                [&>div]:relative
+                after:[&>div]:absolute
+                after:[&>div]:bg-[#19BFB3]
+                after:[&>div]:w-2
+                after:[&>div]:h-2/4
+                after:[&>div]:top-0
+                after:[&>div]:z-10
+                after:[&>div]:-right-1
+                after:last:[&>div]:w-0
+            ">
+                <div>Rank</div>
+                <div>Player</div>
+                <div>Votes</div>
+                <div>Earnings</div>
+            </section>
+
+            <section class="group">
+                <div >
+                   <p class="rank group-hover:text-orange"">1</p>
+                   <img src="https://i.pravatar.cc/100?img=3" alt="Paul j. VAnauken" />
+                </div>
+                <div class="name">Paul j. VAnauken</div>
+                <div class="votes">
+                    22.343
+                    <p>18.220 recommendations</p>
+                </div>
+                <div>$54.000</div>
+            </section>
+
+            <section class="group">
+                <div>
+                    <p class="rank group-hover:text-orange"">2</p>
+                    <img src="https://i.pravatar.cc/100?img=38" alt="Bonnie Rivera" />
+                </div>
+                <div class="name">Bonnie Rivera</div>
+                <div class="votes">
+                    21.804
+                    <p>16.490 recommendations</p>
+                </div>
+                <div>$42.000</div>
+            </section>
+
+            <section class="group">
+                <div>
+                    <p class="rank group-hover:text-orange"">3</p>
+                    <img src="https://i.pravatar.cc/100?img=8" alt="Thomas Patrick" />
+                </div>
+                <div class="name">Thomas Patrick</div>
+                <div class="votes">
+                    20.201
+                    <p>16.490 recommendations</p>
+                </div>
+                <div>$35.000</div>
+            </section>
+
+            <section class="group">
+                <div>
+                    <p class="rank group-hover:text-orange"">4</p>
+                    <img src="https://i.pravatar.cc/100?img=6" alt="James Hardin" />
+                </div>
+                <div class="name">James Hardin</div>
+                <div class="votes">
+                    18.654
+                    <p>16.490 recommendations</p>
+                </div>
+                <div>$14.000</div>
+            </section>
+
+            <section class="group">
+                <div>
+                    <p class="rank group-hover:text-orange">5</p>
+                    <img src="https://i.pravatar.cc/100?img=36" alt="Melba J. Walker" />
+                </div>
+                <div class="name">Melba J. Walker</div>
+                <div class="votes">
+                    15.403
+                    <p>16.490 recommendations</p>
+                </div>
+                <div>$9.000</div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="border-t-8 border-orange text-right  text-white py-4">
+        <button type="button" class="hover:underline">View All</button>
+    </footer>
+       
+</body>
+</html>
