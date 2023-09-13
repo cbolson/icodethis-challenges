@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Zoom - icodethis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/36549 -->
+<body class="bg-[#24BEBF] flex justify-center items-center min-h-screen px-4">
+ 
+
+    <div class="container mx-auto w-full aspect-square max-w-lg relative ">
+
+            <div class="absolute -bottom-24 left-4 sm:-bottom-0 sm:-left-12  translate-y-12 rounded-full overflow-hidden w-24 h-24 z-10 [box-shadow:0_0_10px_5px_rgba(15,50,61,0.35)]">
+               
+                <img id="img-main" src="https://images.unsplash.com/photo-1608234808654-2a8875faa7fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1951&q=80" alt="dashion" class="object-cover bg-center rounded-full w-full h-full shadow-2xl">
+            </div>
+
+            <div class="relative overflow-hidden w-full h-full  rounded-lg [box-shadow:0_0_20px_10px_rgba(15,50,61,0.35)]">
+                <div id="img-zoom" draggable="false"
+                    class="relative overflow-hidden  rounded-lg w-full h-full object-cover object-contain cursor-grab transition-all"
+                    style="background-image: url('https://images.unsplash.com/photo-1608234808654-2a8875faa7fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1951&q=80');background-repeat:no-repeat; ">
+                    
+                </div>
+
+                <button type="button" id="btn-reset" class="absolute -top-6 -right-6 rounded-full bg-white border w-16 h-16 text-gray-400 transition hover:scale-125">
+                    <span class="material-symbols-outlined absolute bottom-3 left-3">close</span>
+                </button>
+            </div>
+
+            <div class="absolute inset-[auto_0_-2rem_0] m-auto w-3/5 flex items-center gap-4 justify-between text-white">
+                    
+                <button type="button" btn-zoom="out" class="material-symbols-outlined text-sm transition hover:scale-125 hover:text-red-600">remove</button>
+                <input id="zoom-slider" type="range" min="1" max="4" value="1" step="0.1" class="w-full h-px bg-white rounded-sm appearance-none cursor-pointer  accent-red-500">  
+                <button type="button" btn-zoom="in" class="material-symbols-outlined text-sm transition hover:scale-125 hover:text-red-600">add</button>
+        </div>
+
+</body>
+
+</html>

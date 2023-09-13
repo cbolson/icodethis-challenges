@@ -1,0 +1,26 @@
+.lens {
+  position: absolute;
+  border: 2px solid orange;
+  width: 40px;
+  border-radius: 5px;
+  height: 40px;
+  background-color: #ffffff1c;
+  backdrop-filter: blur(1px);
+  transition: all 50ms ease-in-out;
+  //  opacity:0;
+}
+#zoom-slider::-moz-range-thumb {
+  height: 0.75em;
+  width: 0.75em;
+  outline: 0.25em solid #ffffff50;
+  background: white;
+  border-radius: 50%;
+  transition: all 50ms ease-in-out;
+}
+
+#zoom-slider::-moz-range-thumb:hover {
+  outline-width: 0.5rem;
+}
+#zoom-slider::-moz-range-thumb:active {
+  background-color: red;
+}
