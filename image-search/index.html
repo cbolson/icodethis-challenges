@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image search - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/36647 -->
+<body class="bg-black text-white flex flex-col justify-center  min-h-screen px-8">
+ 
+    <main class="mt-8 mx-auto w-full min-h-screen flex flex-col justify-between max-w-6xl relative ">
+
+        <!-- search box -->
+        <div class="flex bg-white text-slate-700 py-2 px-3 text-xl transition border-4 border-white focus-within:border-blue-400 relative rounded-md">
+            <input type="text" id="search" placeholder="Search for images eg. ocean waves" class="border-none bg-transoarent focus:outline-none focus:ring-0 w-full"> 
+            <button type="button" class="flex items-center gap-2 bg-blue-400 py-2 px-4 text-white rounded-md">
+                <span id="search-spinner" class="material-symbols-outlined">search</span>
+                Search
+            </button>
+        </div>
+
+        <!-- results -->
+        <div id="list-results" class=" grid [grid-template-columns:repeat(auto-fill,minmax(14rem,1fr))] gap-8 my-8">
+            <!-- list of items loaded here -->
+        </div>
+      
+        <footer class="my-4 border-t border-white/50 pt-4 flex items-center justify-between">
+            <a href="https://www.pexels.com">Photos provided by Pexels</a>
+            <p class="opacity-70 text-sm">
+                I only return the first 15 results. 
+                <br>Note - For free accounts, Pexals has a linit of 200 api calls per hour
+            </p>
+        </fotter>
+
+        <!-- template - items -->
+        <template id="tpl-item">
+            <a href="" title="" target="_blank">
+                <figure class="group relative overflow-hidden  rounded-md isolate transition
+                    before:absolute
+                    before:bottom-0
+                    before:left-0
+                    before:w-full
+                    before:bg-gradient-to-t
+                    before:from-black/70
+                    before:to-transparent
+                    before:h-2/4
+                    before:z-10
+                ">
+                    <img src="" alt="" class="w-full h-full aspect-square object-cover  scale-0 hover:scale-105 transition-all duration-300"/>
+                   
+                    <figcaption item-title  class="z-20 line-clamp-1 absolute bottom-10 left-0 px-4 opacity-0 translate-y-full transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    </figcaption>
+                    
+                    <p class="z-20 text-xs mt-2 absolute bottom-0 left-0 p-4 opacity-0  transition-all duration-300 delay-300 group-hover:opacity-70 ">Photo by <span item-photographer class="font-semibold"></span> </p>
+                </figure>
+            </a>
+        </template>
+    </main>
+</body>
+</html>
