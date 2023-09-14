@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile pad - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scritps.js" defer></script>
+    
+</head>
+<!-- https://icodethis.com/submissions/36982 -->
+
+<body class="bg-[#2AC186] flex justify-center items-center flex-col min-h-screen p-4">
+    
+    <main class="relative overflow-hidden bg-white text-gray-500  py-6 px-6 sm:px-12 w-full max-w-sm text-2xl sm:text-3xl rounded-sm drop-shadow-2xl blur-none will-change-blur">
+
+        <!-- current number and name -->
+        <section class="mb-6">
+            <div id="current-number" class="h-12 grid place-items-center overflow-hidden whitespace-nowrap"></div>
+            <div id="current-name" class="h-12 grid place-items-center opacity-70 text-xl"></div>
+        </section>
+
+        <!-- dialling pad -->
+        <section id="panel-pad" class="grid grid-cols-3 gap-4 sm:gap-8 transition-all duration-500
+            [&>button]:border
+            [&>button.last-row]:border-none
+            [&>button.last-row]:!border-none
+            [&>button.last-row]:!aspect-[5/4]
+            [&>button]:border-cyan-500
+            [&>button]:rounded-full
+            [&>button]:flex
+            [&>button]:items-center
+            [&>button]:justify-center
+            [&>button]:flex-col
+            [&>button]:aspect-square
+            [&>button]:transition
+            [&>button]:relative
+            [&>button]:delay-50
+            sm:[&>button]:leading-4
+
+            before:[&>button]:bg-cyan-500
+            before:[&>button]:inset-0
+            before:[&>button]:margin-auto
+            before:[&>button]:rounded-full
+            before:[&>button]:absolute
+            before:[&>button]:transition
+            before:[&>button]:scale-0
+            before:[&>button]:-z-10
+            hover:before:[&>button:not(disabled)]:scale-100
+            hover:[&>button:not(disabled)]:text-white
+            hover:[&>button:not(disabled)]:shadow-xl
+
+            after:[&>button]:content-[attr(data-alpha)]
+            after:[&>button]:absolute
+            after:[&>button]:text-sm
+            after:[&>button]:bottom-2
+            after:[&>button]:uppercase
+
+            [&>button.call]:bg-green-500
+
+            [&>button.call:disabled]:bg-green-300
+            hover:[&>button:.call:not(disabled)]:bg-green-700
+        ">
+
+            <button type="button" value="1">1</button>
+            <button type="button" value="2" data-alpha="abc">2</button>
+            <button type="button" value="3" data-alpha="def">3</button>
+            
+            <button type="button" value="4" data-alpha="ghi">4</button>
+            <button type="button" value="5" data-alpha="jkl">5</button>
+            <button type="button" value="6" data-alpha="mno">6</button>
+            
+            <button type="button" value="7" data-alpha="pqs">7</button>
+            <button type="button" value="8" data-alpha="tuv">8</button>
+            <button type="button" value="9" data-alpha="xyz">9</button>
+
+          
+            <button type="button" value="*">
+                <svg class="w-6 "
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 12l8 -4.5"></path>
+                    <path d="M12 12v9"></path>
+                    <path d="M12 12l-8 -4.5"></path>
+                    <path d="M12 12l8 4.5"></path>
+                    <path d="M12 3v9"></path>
+                    <path d="M12 12l-8 4.5"></path>
+                </svg>
+            </button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="#">#</button>
+            
+            
+            <button type="button" value="+" class="last-row text-4xl">+</button>
+
+            <!-- button call -->
+            <button type="button" id="btn-call"  value="call" class="last-row call " disabled>
+                <svg  class="text-white w-8 " 
+                viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                    d="M9 3a1 1 0 0 1 .877 .519l.051 .11l2 5a1 1 0 0 1 -.313 1.16l-.1 .068l-1.674 1.004l.063 .103a10 10 0 0 0 3.132 3.132l.102 .062l1.005 -1.672a1 1 0 0 1 1.113 -.453l.115 .039l5 2a1 1 0 0 1 .622 .807l.007 .121v4c0 1.657 -1.343 3 -3.06 2.998c-8.579 -.521 -15.418 -7.36 -15.94 -15.998a3 3 0 0 1 2.824 -2.995l.176 -.005h4z"
+                    stroke-width="0" fill="currentColor"></path>
+                </svg>
+            </button>
+            
+            <!-- button delete -->
+            <button type="button" value="delete" class="last-row">
+                <svg class=" w-12 " 
+                    viewBox="0 0 24 24"stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-11l-5 -5a1.5 1.5 0 0 1 0 -2l5 -5z"></path>
+                    <path d="M12 10l4 4m0 -4l-4 4"></path>
+                </svg>
+            </button>
+
+        </section>
+
+        <!-- button - recent calls -->
+        <div class="flex items-center justify-between mt-6 
+            [&>button]:flex
+            [&>button]:items-center
+            [&>button]:gap-1
+            [&>button]:text-base
+            [&>button]:text-cyan-500 
+            [&>button]:
+            [&>button]:
+            hover:[&>button]:text-cyan-700
+            [&>button]:transition-all
+        ">
+            
+            <!-- button contacts -->
+            <button type="button" value="contacts" class="  ">
+                <svg  width="24" height="24"
+                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z"></path>
+                    <path d="M10 16h6"></path>
+                    <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                    <path d="M4 8h3"></path>
+                    <path d="M4 12h3"></path>
+                    <path d="M4 16h3"></path>
+                </svg>
+                contacts
+            </button>
+            
+            <button type="button" id="btn-recents" value="recents" class="opacity-0">
+                <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                    <path d="M12 12l-3 2"></path>
+                    <path d="M12 7v5"></path>
+                </svg>
+                recents
+                </button>
+
+        </div>
+
+        <!-- contacts list -->
+        <section id="panel-contacts" class="z-10 absolute rounded-sm inset-0 m-auto p-3 sm:p-8 pt-12 sm:pt-12 flex flex-col translate-y-full transition duration-500 bg-cyan-500">
+            <!-- contacts - search -->
+            <div class="group relative rounded-sm bg-white border-b border-cyan-500 text-xl relative ">
+                    <span class="absolute left-3 top-3 text-cyan-500 material-symbols-outlined">search</span>
+                    <input type="text" id="search" placeholder="Search contacts" class="border border-white p-2 pl-10 bg-transoarent focus:outline-none focus:ring-0 focus:border-cyan-100 w-full">
+                </button>
+            </div>
+
+            <!-- contacts - list-->
+            <div id="contacts-list" class="bg-white h-full overflow-y-auto rounded-sm"> 
+            </div>
+
+            <!-- contacts - close -->
+            <button type="button" value="contacts-close" class="absolute top-4 right-4 text-white transition hover:scale-125 material-symbols-outlined">close</button>
+        </section>
+
+
+        <!-- recent calls list -->
+        <section id="panel-recents"
+            class="z-10 absolute rounded-sm inset-0 m-auto p-3 sm:p-8 pt-12 sm:pt-12 flex flex-col translate-y-full transition duration-500 bg-cyan-500">
+           <h2 class="text-white">Recent calls</h2>
+        
+            <!-- recents - list-->
+            <div id="recents-list" class="bg-white h-full overflow-y-auto rounded-sm">
+            </div>
+        
+            <!-- recents - close -->
+            <button type="button" value="recents-close" class="absolute top-4 right-4 text-white transition hover:scale-125 material-symbols-outlined">close</button>
+        </section>
+
+        <!--  calling -->
+        <section id="panel-calling" class="absolute z-10 inset-0 m-auto  bg-white rounded gap-2 shadow-[0_0_10px_10px_rgba(32,125,140,0.40)] w-60 h-fit p-8 text-center text-base transition-all scale-0 duration-500">
+            <span data-call-name class="font-bold"></span>
+           
+            
+            <div class="flex justify-center gap-2 mt-2
+                [&>button]:text-white
+                [&>button]:rounded-md
+                [&>button]:text-xl
+                [&>button]:transition
+                /[&>button]:animate-pulse
+                /hover:[&>button]:nimate-none
+                hover:[&>button]:scale-110
+                [&>button]:py-2
+                [&>button]:px-6
+                [&>button]:capitalize
+            ">
+
+                <button type="button" id="call-accept" value="call-answer" class="bg-green-600 hidden">accpet</button>
+                <button type="button" value="call-reject" class="bg-red-600">cancel</button>
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="hidden text-sm text-white text-center mt-4">
+    Sound Effect from <a
+        href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=94426">Pixabay</a>
+    </footer>
+
+    <!-- template - contact -->
+    <template id="tpl-contact">
+        <button type="button" class="w-full flex items-center gap-2 py-2 px-2 sm:px-4 text-base odd:bg-gray-50 hover:bg-cyan-50 cursor-pointer">
+            <span class="material-symbols-outlined text-xs text-green-500">call</span>
+            <p data-name class="font-bold whitespace-nowrap"></p>
+            <p data-number class="ml-auto text-xs sm:text-base "></p>
+        </button>
+    </template>
+</body>
+
+</html>
