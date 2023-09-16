@@ -1,0 +1,159 @@
+  /* scollbar width */
+  ::-webkit-scrollbar {
+      width: 10px;
+  }
+
+  /* scollbar - Track */
+  ::-webkit-scrollbar-track {
+      background: black
+  }
+
+  /* scollbar - Handle */
+  ::-webkit-scrollbar-thumb {
+      background: #06B6D4;
+      border-radius: 5px;
+  }
+
+  /* scollbar - Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+      background: rgb(48, 154, 196);
+  }
+
+
+
+
+input[type="range"] {
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 0;
+    /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: transparent;
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ */
+/*
+ input[type=range] {
+    width:100%;
+     background: transparent;
+ }
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: pink;
+    box-shadow: -100vw 0 0 100vw #06B6D4;
+}
+
+::-moz-range-track {
+    width:100%;
+    height: 1px;
+    background: black;
+}
+
+::-moz-range-thumb {
+    background: #06B6D4;
+    height: 12px;
+    width: 12px;
+    
+    border-radius: 50%;
+    box-shadow: -100vw 0 0 100vw #06B6D4;
+}
+
+::-ms-fill-lower {
+    background: green;
+}
+
+::-ms-thumb {
+    background: #06B6D4;
+    height: 12px;
+    width: 12px;
+}
+
+::-ms-ticks-after {
+    display: none;
+}
+
+::-ms-ticks-before {
+    display: none;
+}
+
+::-ms-track {
+    background: transparent;
+    color: transparent;
+    height: 1;
+    border: none;
+}
+
+::-ms-tooltip {
+    display: none;
+}
+*/
+
+
+input[type=range] {
+    /* fix for FF unable to apply focus style bug  */
+    
+    /*required for proper track sizing in FF*/
+    width: 100%;
+    background: transparent;
+    translate:0 24px;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background: #06B6D4;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #06B6D4;
+    outline: .25em solid #06B6D450;
+}
+/*
+nput[type=range]:focus::-ms-fill-lower {
+    background: red;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: green;
+}
+*/
+
+
+
+
+
+  progress[value] {
+
+  }
+
+  progress[value]::-webkit-progress-bar {
+      border-radius: 10em;
+      background: black
+  }
+
+  progress[value]::-webkit-progress-value {
+      border-radius: 10em;
+      background: yellow;
+  }
+
+  progress[value]::-moz-progress-bar {
+      border-radius: 10em;
+      background: #06B6D4
+  }
