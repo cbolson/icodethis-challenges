@@ -1,0 +1,32 @@
+
+/* this is NOT a good solution....*/
+.masonry:nth-child(4),
+.masonry:nth-child(5),
+
+.masonry:nth-child(10),
+.masonry:nth-child(11),
+
+.masonry:nth-child(16),
+.masonry:nth-child(17),
+
+.masonry:nth-child(22),
+.masonry:nth-child(23),
+
+.masonry:nth-child(28),
+.masonry:nth-child(29),
+
+.masonry:nth-child(34),
+.masonry:nth-child(35),
+
+.masonry:nth-child(40),
+.masonry:nth-child(41),
+
+.masonry:nth-child(46),
+.masonry:nth-child(47) {
+    grid-column: span 3;
+}
+
+.masonry:nth-child(6n) {
+    grid-column: span 6;
+
+}
