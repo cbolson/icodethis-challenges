@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing 3 - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+    <script src="scripts.js" defer></script>
+</head>
+<!--https://icodethis.com/submissions/37842-->
+<body class="bg-[#AAAB8F] flex justify-center items-center min-h-screen p-4">
+    <div class="w-72 sm:w-auto mx-auto  grid sm:grid-cols-[200px_250px_350px] gap-1  relative isolate
+        before:absolute
+        before:inset-[auto_2rem_-6rem_2rem]
+        before:bg-black
+        before:w-[90%]
+        before:h-1
+        before:blur-md
+        before:rounded-[50%]
+
+        [&>section]:text-gray-500
+        [&>section]:transition
+        [&>section]:delay-100
+        [&>section]:duration-300
+        NO-hover:[&>section]:text-white
+        [&>section]:flex
+        [&>section]:flex-col
+        [&>section]:bg-white
+        [&>section]:text-center
+        [&>section]:isolate
+        [&>section]:overflow-hidden
+        [&>section]:relative
+
+        before:[&>section]:absolute
+        before:[&>section]:transition-all
+        before:[&>section]:duration-700
+        before:[&>section]:ease-in-out
+        before:[&>section]:bg-[#585858]
+        before:[&>section]:inset-[-100px_0_-100px_0]
+        before:[&>section]:m-auto
+        before:[&>section]:-z-10
+        hover:before:[&>section]:translate-y-0
+
+        [&_h2]:uppercase
+        [&_h2]:text-2xl
+        [&_h2]:font-bold
+        [&_h2]:mb-6
+        [&_h2]:py-6
+        [&_h2]:transition
+        [&_h2]:duration-300
+        [&_h2]:delay-200
+        
+        [&_main]:p-8
+        [&_main]:flex
+        [&_main]:flex-col
+        [&_main]:space-y-8
+        [&_main]:h-full
+
+        [&_h3]:text-6xl
+        [&_h3]:font-bold
+        [&_h3]:relative
+        after:[&_h3]:content-['/m2']
+        after:[&_h3]:relative
+        after:[&_h3]:text-xs
+        after:[&_h3]:tracking-wider
+        after:[&_h3]:-left-2
+        after:[&_h3]:opacity-70
+        after:[&_h3]:
+    
+        [&_ul]:space-y-4
+        [&_ul]:h-full
+        
+        [&_li]:font-semibold
+        [&_li.not-included]:relative
+        after:[&_li.not-included]:absolute
+        after:[&_li.not-included]:w-full
+        after:[&_li.not-included]:h-1
+        after:[&_li.not-included]:bg-gray-500
+        after:[&_li.not-included]:bottom-4
+        after:[&_li.not-included]:left-0
+        after:[&_li.not-included]:origin-b-l
+        after:[&_li.not-included]:rotate-[-15deg]
+        after:[&_li.not-included]:rounded-full
+        after:[&_li.not-included]:transition
+        after:[&_li.not-included]:delay-100
+
+        [&_li>p]:font-light
+        [&_li>p]:opacity-80
+        [&_li>p]:capitalize
+        [&_li>p]:text-sm
+
+        [&_button]:mt-auto
+        [&_button]:font-semibold
+        [&_button]:py-2
+        [&_button]:px-4
+        [&_button]:relative
+        [&_button]:uppercase
+        [&_button]:whitespace-nowrap
+        [&_button]:w-fit
+        [&_button]:mx-auto
+        [&_button]:z-20
+        [&_button]:transition-all
+        [&_button]:duration-300
+        [&_button]:
+        [&_button]:text-gray-500
+
+        before:[&_button]:absolute
+        before:[&_button]:inset-0
+        before:[&_button]:isolate
+        before:[&_button]:-z-10
+        before:[&_button]:transition-all
+        before:[&_button]:duration-300
+        before:[&_button]:
+
+        hover:before:[&_button]:inset-[0_-200px]
+
+        [&_.light_h2]:text-light
+        before:[&_.light]:[-webkit-clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-10px))]
+        before:[&_.light]:[clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-10px))]
+        before:[&_.light]:-translate-y-[calc(100%-175px)]
+        hover:before:[&_.light]:bg-light
+    
+
+        [&_.startup_h2]:text-startup
+        before:[&_.startup]:[-webkit-clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-12px))]
+        before:[&_.startup]:[clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-12px))]
+        before:[&_.startup]:-translate-y-[calc(100%-187px)]
+        hover:before:[&_.startup]:bg-startup
+
+        [&_.big-boy_h2]:text-bigboy
+        before:[&_.big-boy]:[-webkit-clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-17px))]
+        before:[&_.big-boy]:[clip-path:polygon(0_0,100%_0,100%_100%,0_calc(100%-17px))]
+        before:[&_.big-boy]:-translate-y-[calc(100%-204px)]
+        hover:before:[&_.big-boy]:bg-bigboy
+    ">
+        <section class="light group ">
+            <h2 class="group-hover:text-gray-500">Light</h2>
+            <main>
+                <h3>$19</h3>
+                <ul>
+                    <li>100 <p>Max connections</p></li>
+                    <li>200,000 <p>Messages per day</p></li>
+                    <li class="not-included">Encryption <p>SSL Protection</p></li>
+                </ul>
+                <button type="button" class="before:bg-light group-hover:before:bg-[#585858] group-hover:text-light">Select plan</button>
+            </main>
+        </section>
+
+        <section class="startup group">
+            <h2 class="group-hover:text-gray-500">startup</h2>
+            <main>
+                <h3>$49</h3>
+                <ul>
+                    <li>500 <p>Max connections</p>
+                    </li>
+                    <li>1 million<p>Messages per day</p>
+                    </li>
+                    <li>Encryption <p>SSL Protection</p>
+                    </li>
+                </ul>
+                <button type="button" class="before:bg-startup group-hover:before:bg-[#585858] group-hover:text-startup">Select plan</button>
+            </main>
+        </section>
+
+        <section class="big-boy group">
+            <h2 class="group-hover:text-gray-500">big boy</h2>
+            <main>
+                <h3>$199</h3>
+                <ul>
+                    <li>5000<p>Max connections</p>
+                    </li>
+                    <li>10 million<p>Messages per day</p>
+                    </li>
+                    <li>Encryption <p>SSL Protection</p>
+                    </li>
+                </ul>
+                <button type="button" class="before:bg-bigboy group-hover:before:bg-[#585858] group-hover:text-bigboy">Select plan</button>
+            </maain>
+        </section>
+
+    </div>
+</body>
+</html>
