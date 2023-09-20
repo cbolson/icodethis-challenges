@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!--https://icodethis.com/submissions/37943-->
+  <body class="bg-slate-100 flex justify-center items-center min-h-screen">
+    <div
+      class="bg-white text-[#181028] p-6 sm:p-16 md:p-20 rounded-xl w-full max-w-4xl relative">
+      <main class="overflow-hidden relative">
+        <div
+          id="list-events"
+          class="grid sm:grid-cols-2 md:grid-cols-3 gap-2 [&>button]:text-left [&>button]:h-full [&>button]:w-full sm:[&>button]:aspect-square [&>button]:bg-gray-200 [&>button]:p-6 [&>button]:flex [&>button]:flex-col [&>button]:gap-2 [&>button]:justify-between [&>button]:transition-all [&>button]:duration-300 [&>button]:isolate [&>button]:relative hover:[&>button]:text-white before:[&>button]:absolute before:[&>button]:inset-full before:[&>button]:bg-[#29254B] before:[&>button]:-z-10 before:[&>button]:transition-all before:[&>button]:duration-300 hover:before:[&>button]:inset-0 odd:[&>button]:bg-[#42359B] odd:[&>button]:text-white [&_header]:text-sm [&_header>p]:text-2xl [&_header>p]:font-bold [&_p]:capitalize [&_footer]:flex [&_footer]:items-center [&_footer]:justify-between [&_footer]:text-xs">
+          <!-- list events loaded here -->
+        </div>
+
+        <div
+          id="panel-info"
+          class="absolute inset-0 m-auto bg-[#42359B] text-white p-6 sm:p-12 md:p-20 z-20 pt-12 transition-all duration-500 -translate-x-full grid">
+          <div id="event-data" class="space-y-6 sm:text-xl">
+            <h2 class="text-2xl sm:text-4xl"></h2>
+            <div class="flex gap-2">
+              <day></day>
+              <date></date>
+              <time></time>
+            </div>
+            <p class="font-thin"></p>
+          </div>
+
+          <button
+            type="button"
+            value="close"
+            class="absolute top-6 right-6 text-white transition hover:scale-125 material-symbols-outlined">
+            close
+          </button>
+        </div>
+      </main>
+
+      <button
+        type="button"
+        value="more"
+        class="mt-4 w-full py-12 text-white uppercase bg-[#29254B] relative isolate before:absolute before:inset-full before:bg-[#42359B] before:-z-10 before:transition-all before:duration-300 hover:before:inset-0">
+        Load more events
+      </button>
+    </div>
+
+    <template id="tpl-event">
+      <button type="button" class="box">
+        <header>
+          <span event-month></span>
+          <p event-day></p>
+        </header>
+        <p event-title></p>
+        <footer class="w-full">
+          <div>
+            <time event-time></time>
+            <p>Online</p>
+          </div>
+          <span class="ml-auto material-symbols-outlined">arrow_right_alt</span>
+        </footer>
+      </button>
+    </template>
+  </body>
+</html>
