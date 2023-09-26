@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Balance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/38756 -->
+<body class="bg-gray-100 text-lighter flex justify-center items-center min-h-screen px-4">
+
+    <div class="bg-white text-gray-400 shadow-[0_0_30px_20px_rgb(160,132,213,0.2)] rounded-lg w-80">
+       
+        <header class="group relative text-white isolate p-4 text-center ">
+            <nav class="flex items-center gap-2 justify-between text-xs 
+               [&>button]:whitespace-nowrap
+               [&>button]:transition
+               [&>button]:duration-300
+               [&>button]:relative 
+               before:[&>button]:absolute
+               before:[&>button]:inset-full
+               before:[&>button]:m-auto
+               before:[&>button]:bg-[#A17FD2]
+               before:[&>button]:rounded-full
+               before:[&>button]:-z-10
+               before:[&>button]:transition-all
+               before:[&>button]:duration-300
+               hover:before:[&>button]:inset-[-5px_-10px_-5px_-10px]
+               [&>button]:isolate
+               [&>button]:px-1
+               after:[&>button]:absolute
+               after:[&>button.]:top-0
+               after:[&>button]:w-1
+               after:[&>button]:h-1
+               after:[&>button]:transition
+               after:[&>button]:duration-300
+               after:[&>button]:rounded-full
+               after:[&>button]:bg-transparent
+               after:[&>button]:-translate-y-8
+               hover:after:[&>button]:bg-white
+               hover:after:[&>button]:translate-y-0
+               after:[&>button.active]:bg-lime-400
+               after:[&>button.active]:translate-y-0   
+            ">
+                <button type="button" class="material-symbols-outlined">menu</button>
+                <button type="button" class="active">Summary</button>
+                <button type="button">Activity</button>
+                <button type="button">Send request</button>
+            </nav>
+            
+            <section class="my-6">
+                <h1 class="uppercase">Your Balance</h1>
+                <p class="text-2xl font-bold">212,331 USD</p>
+            </section>
+
+            <section class="relaitve flex items-center justify-between px-6 sm:px-8 pt-4 sm:py-4 
+                [&>button]:transition
+                [&>button]:text-white
+                [&>button.active]:text-indigo-400
+                [&>button]:duration-50
+             ">
+                <button type="button" id="btn-pending" class="active" title="hover effect still to do...">Pending</button>
+                <button type="button" id="btn-completed" class="" title="hover effect still to do...">Completed</button>
+                
+            </section>
+
+            <!-- bg and waves -->
+            <svg id="waves" viewBox="0 0 320 320" class="absolute top-0 w-full left-0 -z-10 transition-all duration-300 ">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(129,184,227);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(159,121,210);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+
+                <path class="transiton-all duration-500" id="path" d="M 0 175 C 160 80 160 260 320 175 L 320 0 L 0 0 Z" fill="url(#grad1)" opacity="0.8"></path>
+            </svg>
+
+        </header>
+
+        <main id="list-results" class=" mt-8bg-white h-96 overflow-y-auto
+            [&>article]:text-sm 
+            [&>article]:transition
+            [&>article]:duration-300
+            hover:[&>article]:bg-indigo-50
+            [&>article]:p-4
+            [&_h3]:font-semibold
+            [&_h3]:text-gray-500
+            [&_p]:pb-2
+            [&_div]:border-2
+            [&>article>div]:border-indigo-300
+           
+            [&_div]:rounded-full
+            [&_div]:transition
+            [&_div]:duration-300
+            [&_div]:overflow-hidden
+            [&_div]:w-full
+            [&_div]:flex
+            [&_div]:items-center
+            [&_div]:justify-betweenS
+            [&_div]:gap-0
+            [&_div]:divide-x-2
+            [&_div]:divide-indigo-300
+            [&_button]:py-1
+            [&_button]:text-xs
+            sm:[&_button]:text-sm
+            [&_button]:
+            [&_button]:px-4
+            [&_button]:whitespace-nowrap
+            [&_button]:relative 
+            [&_button]:isolate
+            [&_button]:transition
+            [&_button]:duration-300
+            [&_button]:overflow-hidden
+            [&_button+button]:border-l-2S
+            [&_button]:border-indigo-300
+            hover:[&_button]:text-white
+            before:[&_button]:absolute
+            before:[&_button]:inset-full
+            before:[&_button]:m-auto
+            before:[&_button]:bg-[#A17FD2]
+            before:[&_button]:rounded-full
+            before:[&_button]:-z-10
+            before:[&_button]:transition-all
+            before:[&_button]:duration-300
+            hover:before:[&_button]:inset-[-5px_-10px_-5px_-10px]
+        ">
+            
+            <article class="group relative isolate">
+                <h3>Comapny Inc.</h3>
+                <p class="!pb-4">Payment request for 280.00 CAD sent</p>
+                <p class="text-xs">Comapny INC hasn't paid yet</p>
+                <div class="group-hover:border-indigo-500">
+                    <button type="button">Send a reminder</button>
+                    <button type="button">Edit amount</button>
+                    <button type="button">Cancel</button>
+                </div>
+                <svg viewBox="0 0 320 200" class="hidden absolute top-0 left-0 -z-10 [transform:scaleX(-1)] transition-all duration-500 NO-group-hover:[transform:scaleX(1)]">  
+                    <path d="M 0 175 C 160 260 160 80 320 175 0 L 320 0 L 0 0" fill="#DFD9ED" opacity="0.8"></path>
+                </svg>
+            </article>
+
+            <article class="group">
+                <h3>Comapny Inc.</h3>
+                <p class="!pb-4">Payment request for 280.00 CAD sent</p>
+                <p class="text-xs">Comapny INC hasn't paid yet</p>
+                <div class="group-hover:border-indigo-500">
+                    <button type="button">Send a reminder</button>
+                    <button type="button">Edit amount</button>
+                    <button type="button">Cancel</button>
+                </div>
+            </article>
+
+            <article class="group">
+                <h3>Comapny Inc.</h3>
+                <p class="!pb-4">Payment request for 280.00 CAD sent</p>
+                <pclass="text-xs">Comapny INC hasn't paid yet</p>
+                <div class="group-hover:border-indigo-500">
+                    <button type="button">Send a reminder</button>
+                    <button type="button">Edit amount</button>
+                    <button type="button">Cancel</button>
+                </div>
+            </article>
+
+        </main>
+        
+    </div>
+
+    <!-- template - items -->
+    <template id="tpl-item">
+        <article class="group relative isolate translate-y-[1000px]">
+                <h3>Comapny Inc.</h3>
+                <p data-desc class="!pb-4"></p>
+                <p data-status class="text-xs"></p>
+                <div data-buttons class="group-hover:border-indigo-500">
+                    <button type="button">Send a reminder</button>
+                    <button type="button">Edit</button>
+                    <button type="button">Cancel</button>
+                </div>
+                <svg viewBox="0 0 320 200" class="hidden absolute top-0 left-0 -z-10 [transform:scaleX(-1)] transition-all duration-500 NO-group-hover:[transform:scaleX(1)]">  
+                    <path d="M 0 175 C 160 260 160 80 320 175 0 L 320 0 L 0 0" fill="#DFD9ED" opacity="0.8"></path>
+                </svg>
+            </article>
+    </template>
+</body>
+
+</html>
