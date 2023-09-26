@@ -1,0 +1,39 @@
+.material-fill-1 {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+svg .circle {
+  stroke-linecap: round;
+  animation: progress 1s forwards 500ms;
+  animation-timing-function: cubic-bezier(0.48, 1.38, 0.68, -0.62);
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+  100% {
+    stroke-dasharray: 85 100;
+  }
+}
+
+/* scollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* scollbar - Track */
+::-webkit-scrollbar-track {
+  background: #06b6d4;
+}
+
+/* scollbar - Handle */
+::-webkit-scrollbar-thumb {
+  background: #046677;
+  border-radius: 5px;
+}
+
+/* scollbar - Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #16b9d6;
+}

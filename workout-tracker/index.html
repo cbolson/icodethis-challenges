@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Tracker - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/39026 -->
+<body class="bg-cyan-700 flex justify-center items-center min-h-screen">
+    
+    <main class="relative bg-white text-[#181028]  shadow-lg  w-full max-w-sm">
+        
+        <header class="bg-cyan-600 text-white p-4 text-center">
+            <h1 today-day class="uppercase">Monday</h1>
+            <p today-date>May 04, 2016 07:30</p>
+        </header>
+        
+        <!-- center panel - activy details will load into here -->
+        <div class="relative overflow-hidden ">
+
+            <!-- timer and summary of current activity - TO DO -->
+            <section class="p-6 z-10 relative isolate shadow-2xl shadow-black/40 
+                after:w-72
+                after:h-8
+                after:bg-red-100
+                after:-bottom-20
+                after:left-0
+                after:z-10
+            ">
+                <div class="relative h-32 [&_span]:text-4xl [&_span]:w-12">
+                    <svg id="timer-circle" viewBox="0 0 36 36"
+                        class="absolute h-full w-full  stroke-[#1689AF] fill-none stroke-1" linecap="round">
+                        
+                        <path class="circle-bg stroke-pink-600 " stroke-width="0.2" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        
+                        <path id="circle-completed" class="circle stroke-pink-700" stroke-width="2" stroke-dasharray="0, 100" linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+
+                    <div class="absolute h-full w-full grid place-content-center text-center text-2xl text-slate-500">
+                        <p summary-distance class="text-4xl">4.8</p>
+                        <p>km</p>
+                    </div>
+
+                </div>
+                <div class="grid sm:grid-cols-3 mt-2
+                    [&>div]:grid
+                    [&>div]:gap-2
+                    sm:[&>div]:gap-0
+                    sm:[&>div]:place-items-center
+                    [&>div]:text-slate-500
+                    [&>div]:grid-cols-2
+                    sm:[&>div]:grid-cols-1
+                    [&>div]:items-center
+                    first:[&>div>p]:font-thin
+                    first:[&>div>p]:text-right
+                    sm:last:[&>div>p]:text-2xl
+                    last:[&>div>p]:font-semibold
+                ">
+                    <div>
+                        <p>Activities</pa>
+                        <p summary-activities>5</p>
+                    </div>
+                    
+                    <div>
+                        <p>Time</pa>
+                        <p summary-time>23:40</p>
+                    </div>
+
+
+                    <div>
+                        <p>Calories</p>
+                        <p summary-calories>510</p>
+                    </div>
+
+                </div>
+
+                
+            </section>
+
+            <!-- activites list -->
+            <section class="bg-cyan-600 text-white 
+                [&_button]:grid
+                [&_button]:grid-cols-[20%_20%_30%_30%]
+                [&_button>*]:text-center
+                sm:[&_button>*]:text-left
+                [&_button]:py-3
+                sm:[&_button]:px-6
+                [&_button]:w-full
+                [&_button]:border-t 
+                [&_button]:border-white/20
+                [&_button]:transiton-all
+                [&_button]:duration-300
+                hover:[&_button]:scale-105S
+                hover:[&_button]:bg-cyan-700
+                [&_button>*]:whitespace-nowrap
+            ">
+                <h2 class="text-center font-thin text-xl pt-4 pb-2">Latest Activities</h2>
+                
+                <div id="list-activites" class="h-52 overflow-y-scroll">
+
+                <button type="button">
+                        <span class="material-symbols-outlined">directions_run</span>
+                        <p>11km</p>
+                        <p>1hr 20min</p>
+                        <p>478 calories</p>
+                </button>
+
+                <button type="button">
+                        <span class="material-symbols-outlined">directions_bike</span>
+                        <p>11km</p>
+                        <p>2hr 37min</p>
+                        <p>865 calories</p>
+                </button>
+
+                    <button type="button">
+                        <span class="material-symbols-outlined">directions_run</span>
+                        <p>8km</p>
+                        <p>55min</p>
+                        <p>322 calories</p>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- panel - activiy details -->
+            <div id="panel-activity" class="absolute inset-0 m-auto bg-cyan-600 text-white border-b border-cyan-600 z-10 transition duration-500 ease-in-out translate-y-full">
+                <div class=" bg-white shadow-2xl shadow-black/4">
+                    <img activity-map class="w-full aspect-video object-cover scale-0 transition-all duration-500" src="">
+                </div>
+                <div class="py-4 px-8 space-y-2">
+                    <h2 class="text-xl capitalize font-thin flex items-center gap-3">
+                        <span activity-icon class="material-symbols-outlined"></span>
+                        <span activity-title></span>
+                    </h2>
+                    <ul class="space-y-1 py-2 border-y  border-white/20
+                        [&>li]:flex
+                        [&>li]:items-center
+                        [&>li]:gap-2
+                        first:[&>li>span]:inline-block
+                        first:[&>li>span]:w-20
+                    ">
+                        <li><span>Date:</span><span activity-date class="font-semibold"></span></li>
+                        <li><span>Distance:</span><span activity-distance class="font-semibold"></span></li>
+                        <li><span>Time:</span><span activity-duration class="font-semibold"></span></li>
+                        <li><span>Calories:</span><span activity-calories class="font-semibold"></span></li>
+                    </ul>
+                    <p activity-notes class="my-4 opacity-80 h-20 pr-4 overflow-y-auto"></p>
+                </div>
+                <button type="button" id="btn-close-activity" class="material-symbols-outlined absolute bottom-0 right-0 bg-gradient-to-r from-pink-600 to-pink-700  text-white p-2 transition duration-300 translate-x-full hover:scale-110 ">close</button>
+            </div>
+        </div>
+
+        <!-- footer buttons -->
+        <footer class="bg-white flex items center justify-between py-6 px-6 sm:px-12 text-cyan-500
+            [&>button]:transition-all
+             [&>button]:duration-300
+            [&>button]:relative
+         ">
+            <button type="button" class="material-symbols-outlined text-cyan-500 material-fill-1 text-4xl hover:text-pink-600 ">home</button>
+                
+            <button type="button" id="btn-go" class="text-white rounded-full py-2 px-8 uppercase font-bold isolate overflow-hidden w-32 
+                before:bg-gradient-to-r 
+                before:from-pink-600 
+                before:to-pink-800 
+                before:absolute
+                before:inset-0
+                before:m-auto
+                before:-z-10
+                before:rounded-full
+                before:transition-all
+                before:duration-300
+                after:bg-gradient-to-r 
+                after:from-green-400 
+                after:to-green-600 
+                after:absolute
+                after:inset-0
+                after:m-auto
+                after:rounded-full
+                X-after:translate-x-full
+                after:transition-all
+                after:duration-200
+                after:ease-[cubic-bezier(0.48,1.38,0.68,-0.62)]
+                after:scale-0
+                after:z-[-5]
+                hover:before:scale-0
+                hover:after:scale-100
+            ">GO
+            </button>
+                
+            <button type="button"  class="material-symbols-outlined text-cyan-500 material-fill-1 text-4xl hover:text-pink-600 ">list</button>
+        </footer>
+   
+    </main>
+
+    <template id="tpl-activity">
+        <button type="button">
+            <span data-icon class="material-symbols-outlined"></span>
+            <p data-distance></p>
+            <p data-time></p>
+            <p data-calories></p>
+        </button>
+    </template>
+</body>
+
+</html>
