@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - icodethis</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/38438 -->
+<body class="bg-gradient-to-bl  from-blue-900 to-fuchsia-700 flex justify-center items-center min-h-screen px-4">
+    
+    <div id="wrapper" class="bg-fuchsia-50 text-black font-lighter shadow-lg rounded-md w-full  max-w-sm overflow-hidden relative">
+        
+        <header class="flex items-center justify-between text-white bg-gradient-to-l from-fuchsia-400 to-fuchsia-500  py-6 px-4  
+           [&>button]:transition
+            hover:[&>button]:scale-125
+        " title="Where do you want to go back to?">
+            <button type="button" class="material-symbols-outlined" disabled>navigate_before</button>
+            <h1 class="text-xl flex items-center justify-center gap-2 ">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                My Cart
+            </h1>
+            <button type="button" id="btn-reset" class="material-symbols-outlined" title="Reset cart">restart_alt</button>
+        </header>
+
+        <main class="">
+            <div id="products-list"  class="h-96 overflow-y-scroll">
+            </div>
+            <div class=" mt-4 pr-6 flex items-center justify-end">
+                Subtotal: <p id="subtotal" class="font-bold w-20 text-right "> </p>
+            </div>
+        </main>
+
+        <button type="button" id="btn-checkout" class="mt-4 w-full p-6 uppercase relative isolate text-white transition  hover:text-fuchsia-500 
+            before:absolute
+            before:content-['$']
+            before:text-white
+            before:grid
+            before:place-items-center
+            before:rounded-full
+            before:w-[150%]
+            before:aspect-square
+            before:bg-pink-200
+            before:left-[-25%]
+            before:top-0
+            before:-z-10
+            before:bg-gradient-to-l
+            before:from-fuchsia-400
+            before:to-fuchsia-500 
+            before:transition.all
+            before:duration-300
+            before:
+            hover:before:translate-y-32S
+            hover:before:w-10
+            hover:before:left-5
+            sm:hover:before:left-20
+            hover:before:top-4
+
+
+            after:absolute
+            after:h-1
+            after-rounded
+            after:bg-white
+            after:inset-[auto_35%_1rem_35%]
+            after:m-auto
+            after:transition-all
+            after:duration-300 
+            after:delay-50
+            hover:after:inset-[auto_50%_1rem_50%]
+        "><div class="transition duration-300">Checkout now</div></button>
+
+
+        <div id="panel-checkout" class="absolute inset-0 m-auto bg-gradient-to-l from-fuchsia-400 to-fuchsia-500 translate-y-full p-20 text-center grid place-items-center transition duration-500 ease-in-out text-white">
+                Not able to get this done today but thanks for looking.
+                <button type="button" id="btn-close" class="border border-white py-2 px-6 mx-auto text-white transition duration-300 hover:bg-white hover:text-fuchsia-500 rounded-md">Close</button>
+        </div>
+    </div>
+
+    <!-- template - product -->
+    <template id="tpl-product">
+        <article class="bg-white border-b p-6 py-4 flex items-center gap-4 text-sm sm:text-base transition-all duration-500 ease-out hover:bg-fuchsia-100">
+            <div data-img class="w-10 aspect-square sm:w-20 bg-gray-200 animate-pulse rounded-md ">
+                
+            </div>
+            <div class="w-full space-y-2">
+                <h2><div class="bg-gray-200 w-40 rounded-md animate-pulse h-5"></div></h2>
+                <div class="flex items-center gap-4 w-full ">
+                    <select class="py-1 px-2 text-black  block w-12 border border-slate-200 rounded-md bg-transparent text-sm focus:border-fuchsia-500 focus:ring-fuchsia-500">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                    <button type="button" data-edit class="material-symbols-outlined text-base transition hover:text-fuchsia-900  hover:scale-150" title="Sorry, no editing on this one today">edit</button>
+                    <button type="button" data-delete class="material-symbols-outlined text-base transition hover:text-fuchsia-900 hover:scale-150" title="But you can delete it if you want">close</button>
+                    <p data-price class="ml-auto text-right">
+                        <span class="bg-gray-200 rounded-sm animate-pulse h-2 w-12 block"></spn>
+                    </p>
+        
+                </div>
+            </div>
+        </article>
+    </template>
+</body>
+
+</html>
