@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/38852-->
+<body class="bg-blue-gray-900 flex justify-center items-center min-h-screen p-4 sm:mt-12 
+    before:inset-0
+    before:w-full
+    before:h-full
+    before:fixed
+    before:opacity-100
+    before:bg-cover
+    before:bg-center
+    before:-z-10
+">
+
+    <div class="bg-black/[.8] text-white w-full max-w-lg relative">
+
+        <header class="bg-black/[.2] p-4">
+            <h2 data-current-date class="text-center font-thin">Thursday</h2>
+            <!--<h1 data-current-location class="text-center font-mediumbold text-2xl ">London</h1>-->
+            <div class="text-xl w-40 mx-auto p-2 ">
+                <select id="list-cities"" class=" w-full text-white bg-transparent border-none focus-within:outline-2 focus-within:outline-red-500"></select>
+            </div>
+        </header>
+
+        <section class="grid sm:grid-cols-2 gap-4 place-items-center p-8">  
+            <div data-current-icon class="grid [&>span]:text-6xl sm:[&>span]:text-8xl [&>span]:mx-auto transition-all duration-300 "><span class="material-symbols-outlined"> clear_day</span></div>
+            <div data-current-temp class="text-6xl sm:text-8xl tracking-2  transition-all duration-300">20.0 &deg;</div>
+           
+        </section>
+                            
+        <section class="bg-black/[.2] px-4 sm:px-8 grid grid-cols-3 justify-center sn:text-lg
+            [&>div>span]:text-cyan-500
+            [&>div]:grid
+            [&>div]:place-items-center
+            [&>div]:w-full
+           
+            [&>div]:p-2
+        ">
+            <div>
+                <span class="material-symbols-outlined">thermometer_minus</span>
+                <div data-current-low class="transition-all duration-300">19<</div>
+            </div>
+            <div>
+                <span class="material-symbols-outlined">thermometer_add</span>
+                <div data-current-high class="transition-all duration-300">32</div>
+            </div>
+        
+            <div>
+                <span class="material-symbols-outlined">air</span>
+                <div data-current-wind class="transition-all duration-300">9<</div>
+            </div>
+
+        </section>
+            
+
+        <section id="list-days" class="grid grid-cols-3 sm:grid-cols-6 gap-1 p-3">
+        </section>
+       
+
+       
+       <div id="panel-info" class="absolute bg-cyan-500/[.8] top-0 left-0 w-full p-4 text-center opacity-0 transition-all duration-300 -translate-y-full">
+            With this challenge I celebrated my 100th (unofficial) streak.
+        </div>
+        <button type="button"  id="btn-info" class="material-symbols-outlined top-3 right-3 absolute text-cyan-500 transition-all hover:scale-125">info</button>
+    </div>
+
+     <template id="tpl-day">
+            <div class="flex flex-col items-center justify-center p-1 w-full bg-black/[.2] transition-all duration-300 scale-0">
+                <p date-day class="text-xl"></p>
+                <div date-icon class="text-cyan-500"></div>
+                <div class="text-xs flex items-center ">
+                    <span date-min></span>/<span date-max>&deg;</span>
+                </div>
+            </div>
+        </template>
+</body>
+
+</html>
