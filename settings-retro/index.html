@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings retro - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!--https://icodethis.com/submissions/38245-->
+  <body
+    class="bg-[#100F13] text-white flex justify-center items-center min-h-screen font-sans brightness-75">
+    <main
+      class="w-96 h-full max-h-[40rem] overflow-hidden relative [&_label]:text-secondary [&_label]:cursor-pointer [&_label]:transition [&_label]:whitespace-nowrap hover:[&_label]:text-white [&_.switch]:rounded-full [&_.switch]:w-12 [&_.switch]:h-6 [&_.switch]:cursor-pointer [&_.switch]:border-2 [&_.switch]:border-primary [&_.switch]:box-content hover:[&_.switch]:scale-110 [&_.switch]:relative before:[&_.switch]:absolute before:[&_.switch]:rounded-full before:[&_.switch]:w-4 before:[&_.switch]:h-4 before:[&_.switch]:top-1 before:[&_.switch]:left-1 before:[&_.switch]:bg-white/70 before:[&_.switch]:transition-all before:[&_.switch]:ease-in-out [&_.panel]:absolute [&_.panel]:inset-0 [&_.panel]:m-auto [&_.panel_.wrapper]:overflow-y-auto [&_.panel_.wrapper]: [&_.panel]:transition [&_.panel]:duration-500 [&_.panel]:px-8 [&_.panel]:py-8 [&_.panel_h2]:text-xl [&_.panel_h2]:mb-4 [&_.panel_h2]:flex [&_.panel_h2]:items-center [&_.panel_h2]:gap-4 [&_.panel_h2]:border-b [&_.panel_h2]:border-primary [&_.panel_h2]:pb-2 [&_.panel_h2>button]:text-primary [&_.panel_h2>button]:transition-all hover:[&_.panel_h2>hover:button]:scale-110 [&_.panel_h2>button]:font-bold [&_.panel]: [&_.btn-close]:absolute [&_.btn-close]:top-3 [&_.btn-close]:right-3 [&_.btn-close]:text-white [&_.btn-close]:transition [&_.btn-close]:scale-125 hover:[&_.btn-close]:">
+      <!-- nav / home -->
+      <div class="panel-home p-6">
+        <section
+          class="flex flex-col justify-between h-fit [&>div]:flex [&>div]:items-center [&>div]:justify-between [&>*]:py-3 [&>div]:px-6 [&>div]:bg-primary sm:[&>div]:pr-10 [&_.switch]:bg-[#252629] [&_button]:flex [&_button]:items-center [&_button]:justify-between [&_button]:bg-transparent [&_button]:w-full [&_button]:px-6 sm:[&_button]:px-10 [&_button]:transition hover:[&_button]:bg-transparent [&_button]:capitalize [&_button]:relative [&_button]:isolate [&_button]:overflow-hidden before:[&_button]:absolute before:[&_button]:inset-0 before:[&_button]:bg-primary before:[&_button]:-z-10 before:[&_button]:transition-all before:[&_button]:duration-300 before:[&_button]:ease-in-out before:[&_button]: hover:before:[&_button]:translate-x-full">
+          <h2 class="px-10 py-4 bg-primary">Settings</h2>
+          <div>
+            <label for="airplane">Airplane mode</label>
+            <input type="checkbox" id="airplane" class="peer sr-only" />
+            <label
+              for="airplane"
+              class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+          </div>
+
+          <div>
+            <label for="wifi">Wi-Fi</label>
+            <input type="checkbox" id="wifi" checked class="peer sr-only" />
+            <label
+              for="wifi"
+              class="switch peer-disabled:opacity-50 peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+          </div>
+
+          <div>
+            <label for="bluetooth">Bluetooth</label>
+            <input type="checkbox" id="bluetooth" class="peer sr-only" />
+            <label
+              for="bluetooth"
+              class="switch peer-disabled:opacity-50 peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+          </div>
+
+          <div>
+            <label for="alerts">Notifications</label>
+            <input type="checkbox" id="alerts" checked class="peer sr-only" />
+            <label
+              for="alerts"
+              class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+          </div>
+
+          <button type="button" btn-nav value="update">
+            Software Update<span class="material-symbols-outlined"
+              >navigate_next</span
+            >
+          </button>
+          <button type="button" btn-nav value="general">
+            General Settings<span class="material-symbols-outlined"
+              >navigate_next</span
+            >
+          </button>
+          <button type="button" btn-nav value="apps">
+            Apps<span class="material-symbols-outlined">navigate_next</span>
+          </button>
+          <button type="button" btn-nav value="storage">
+            Storage<span class="material-symbols-outlined">navigate_next</span>
+          </button>
+          <button type="button" btn-nav value="data">
+            Data Usage<span class="material-symbols-outlined"
+              >navigate_next</span
+            >
+          </button>
+          <button type="button" btn-nav value="security">
+            Security<span class="material-symbols-outlined">navigate_next</span>
+          </button>
+          <button type="button" btn-nav value="other">
+            Other Settings<span class="material-symbols-outlined"
+              >navigate_next</span
+            >
+          </button>
+        </section>
+      </div>
+
+      <!-- panel - GENERAL settings -->
+      <div id="panel-general" class="panel translate-x-full h-full">
+        <form onsubmit="return false" class="h-full">
+          <h2>
+            <button type="button" btn-close class="material-symbols-outlined">
+              navigate_before</button
+            >Gemeral Settings
+          </h2>
+          <div
+            class="wrapper overflow-y-auto [max-height:30rem] flex flex-col relative [&>h3]:my-2 [&>div]:py-2 sm:[&>div]:px-6 [&>div]:flex [&>div]: [&>div]:items-center [&>div]:justify-between [&>div]:gap-4 [&>div>button]:flex [&>div>button]:items-center [&>div>button]:gap-2 [&>div>button]:transition hover:[&>div>button]:text-white [&>div>button]:text-secondary [&>div>button>span]:transition-all [&>div>button>span]:block [&_.dialog]: [&_.dialog>div]:flex [&_.dialog>div]:flex-col [&_.dialog>div]:gap-2 [&_.dialog]:transition [&_.dialog]:duration-300 [&_.dialog]:shadow-[0_0_15px_3px_#00000070] [&_.dialog]:p-4 [&_.dialog]:absolute [&_.dialog]:left-24 [&_.dialog]:r X-[&_.dialog]:inset-0 X-[&_.dialog]:h-fit X-[&_.dialog]:w-fit X-[&_.dialog]:m-auto [&_.dialog]:bg-[#1C1E27] [&_.dialog]:z-20 [&_.dialog]:space-y-4 [&_.dialog]:text-sm [&_.dialog_button]:border-4 [&_.dialog_button]:border-primary [&_.dialog_button]:rounded-full [&_.dialog_button]:py-[0.25rem] [&_.dialog_button]:text-bold [&_.dialog_button]:text-primary [&_.dialog_button]:w-24 [&_.dialog_button]:mx-auto [&_.dialog_button]:bg-white/90 [&_.dialog_button]:transition-all [&_.dialog_button]:duration-300 hover:[&_.dialog_button]:bg-primary hover:[&_.dialog_button]:text-white">
+            <h3>Display & Brightness</h3>
+            <div class="flex">
+              <label for="brightness">Brightness</label>
+              <input
+                type="range"
+                id="brightness"
+                min="20"
+                max="100"
+                value="75"
+                step="5"
+                class="accent-primary disabled:opacity-50 w-full max-w-[150px]" />
+            </div>
+
+            <div>
+              <label for="auto-bright">Auto Brightness</label>
+              <input type="checkbox" id="auto-bright" class="peer sr-only" />
+              <label
+                for="auto-bright"
+                class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+            </div>
+
+            <div>
+              <label for="text-style">Text Style</label>
+
+              <select
+                id="text-style"
+                class="py-1 px-4 pr-9 block w-full max-w-[150px] border-2 border-primary rounded-full bg-transparent text-sm focus:border-blue-500 focus:ring-blue-500">
+                <option value="font-sans" selected>Sans Serif</option>
+                <option value="font-serif">Serif</option>
+                <option value="font-mono">Mono</option>
+              </select>
+            </div>
+
+            <div class="flex">
+              <label for="text-szie">Text Size</label>
+              <input
+                type="range"
+                id="text-szie"
+                min="10"
+                max="24"
+                value="16"
+                step="1"
+                class="accent-primary w-full max-w-[150px]" />
+            </div>
+
+            <div>
+              <label for="text-bold">Text Bold</label>
+              <input type="checkbox" id="text-bold" class="peer sr-only" />
+              <label
+                for="text-bold"
+                class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+            </div>
+
+            <h3 class="mt-8">Sounds & Tones</h3>
+
+            <!-- ringtones -->
+            <div class="group">
+              <button type="button" btn-toggle="ringtone">
+                Ringtone
+                <span
+                  type="button"
+                  class="material-symbols-outlined group-hover:pl-3"
+                  >navigate_next</span
+                >
+              </button>
+
+              <div class="dialog scale-0">
+                <div>
+                  List of ringtones
+                  <br />TO DO
+                  <button type="button" btn-save="">Save</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- volume -->
+            <div class="group">
+              <button type="button" btn-toggle="volume">
+                Volume
+                <span
+                  type="button"
+                  class="material-symbols-outlined group-hover:pl-3"
+                  >navigate_next</span
+                >
+              </button>
+
+              <div class="dialog scale-0">
+                <div class="flex flex-col !items-start">
+                  <label for="brightness">Ringtone</label>
+                  <input type="range" id="brightness" class="accent-primary" />
+                </div>
+
+                <div class="flex flex-col !items-start">
+                  <label for="range-5">Text Tone & Notifications</label>
+                  <input type="range" id="range-5" class="accent-primary" />
+                </div>
+
+                <div class="flex flex-col !items-start">
+                  <label for="range-6">Alarm</label>
+                  <input type="range" id="range-6" class="accent-primary" />
+                </div>
+
+                <button type="button" btn-save="volume">Save</button>
+              </div>
+            </div>
+            <!-- vibrate touch -->
+            <div class="group">
+              <label for="vibrate-touch">Vibrate on Touch</label>
+              <input type="checkbox" id="vibrate-touch" class="peer sr-only" />
+              <label
+                for="vibrate-touch"
+                class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+            </div>
+
+            <!-- virbate ring -->
+            <div class="group">
+              <label for="vibrate-ring">Vibrate when rings</label>
+              <input type="checkbox" id="vibrate-ring" class="peer sr-only" />
+              <label
+                for="vibrate-ring"
+                class="switch peer-checked:before:bg-checked peer-checked:before:translate-x-[1.5rem]"></label>
+            </div>
+
+            <!-- screen lock -- >
+                    <div class="group">
+                        <button type="button"  btn-toggle="lock" >
+                            Screen Lock Settings
+                            <span type="button" class="material-symbols-outlined group-hover:pl-3">navigate_next</span>
+                        </button>
+                        <div class="dialog scale-0">
+                            <div>
+                                what setttings could I add here??
+                                <br>TO DO
+                                <button type="button" btn-save="">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- dial pad tone -- >
+                    <div class="group">
+                        <button type="button"  btn-toggle="dial">
+                        Dial Pad Tone
+                        <span type="button" class="material-symbols-outlined group-hover:pl-3">navigate_next</span>
+                        </button>
+                        <div class="dialog scale-0">
+                            <div>
+                                List of dial pad tones
+                                <br>TO DO
+                                <button type="button" btn-save="">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+          </div>
+          <footer
+            class="flex items-center gap-2 sm:gap-4 mt-4 [&>button]:border-4 [&>button]:border-primary [&>button]:rounded-full [&>button]:py-[0.25rem] [&>button]:px-2 [&>button]: [&>button]: [&>button]:text-bold [&>button]:w-full [&>button]:bg-white/90 [&>button]:transition-all [&>button]:duration-300 hover:[&>button]:bg-primary hover:[&>button]:text-white [&>button]:">
+            <button type="button" class="text-primary">Save</button>
+            <button type="reset" id="btn-reset" class="text-secondary">
+              Reset <span class="hidden sm:inline">Defaults</span>
+            </button>
+          </footer>
+        </form>
+      </div>
+
+      <!-- panel - UPDATE -->
+      <div id="panel-update" class="panel translate-x-full">
+        <h2>
+          <button type="button" btn-close class="material-symbols-outlined">
+            navigate_before</button
+          >Software Update
+        </h2>
+        <p class="text-center mt-12">Software details and update options...</p>
+      </div>
+
+      <!-- panel - APPS -->
+      <div id="panel-apps" class="panel translate-x-full">
+        <h2>
+          <button type="button" btn-close class="material-symbols-outlined">
+            navigate_before
+          </button>
+          List of apps...
+        </h2>
+        <p class="text-center mt-12">Settings and data go here</p>
+      </div>
+
+      <!-- panel - STORAGE -->
+      <div id="panel-storage" class="panel translate-x-full">
+        <h2>
+          <button type="button" btn-close class="material-symbols-outlined">
+            navigate_before
+          </button>
+          Storage
+        </h2>
+        <p class="text-center mt-12">Details of storage use</p>
+      </div>
+
+      <!-- panel - DATA -->
+      <div id="panel-data" class="panel translate-x-full">
+        <h2>
+          <button
+            type="button"
+            btn-close
+            class="btn-close material-symbols-outlined">
+            navigate_before
+          </button>
+          Data Usage
+        </h2>
+        <p class="text-center mt-12">Settings and data go here</p>
+      </div>
+
+      <!-- panel - SECURITY -->
+      <div id="panel-security" class="panel translate-x-full">
+        <h2>
+          <button type="button" btn-close class="material-symbols-outlined">
+            navigate_before
+          </button>
+          Security
+        </h2>
+        Security settings and data go here
+      </div>
+
+      <!-- panel - OTTHER -->
+      <div id="panel-other" class="panel translate-x-full">
+        <h2>
+          <button type="button" btn-close class="material-symbols-outlined">
+            navigate_before</button
+          >Other Settings
+        </h2>
+        <p class="text-center mt-12">Random settings and data go here...</p>
+      </div>
+    </main>
+  </body>
+</html>
