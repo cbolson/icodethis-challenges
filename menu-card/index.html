@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu card - icodethis</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="stylesheet" href="styles.css">
+            <script src="scripts.js" defer></script>
+    </head>
+<!-- https://icodethis.com/submissions/39486 -->
+    <body class="bg-green-100  text-gray-800 flex justify-center items-center min-h-screen">
+        
+        <main class="bg-white w-96 flex flex-col justify-between h-[600px] rounded-md shadow-2xl shadow-black/50 relative isolate overflow-hidden         
+            before:transition-all 
+            before:duration-200
+            Sbefore:bg-[var(--bg)]
+            before:inset-0
+            before:m-auto
+            before:absolute
+            before:bg-cover
+            before:bg-center
+            before:-z-10
+        "
+        style="--bg-img:url('https://plus.unsplash.com/premium_photo-1672152726272-523db6b481c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U3RyYXdiZXJyeSUyMGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60')"
+        >
+           
+           <!--header - nothing working here today -->
+            <header class="p-4 flex items-center justify-between   bg-black/20 text-white transition duration-300">
+                <button type="button" class="material-symbols-outlined text-2xl transition duration-300 hover:scale-110">menu</buttom>
+                <button type="button" class="material-symbols-outlined text-2xl transition duration-300 hover:scale-110">search</buttom>
+            </header>
+
+           
+            <section class="pt-12 pb-6 ">
+                
+                <!-- slideshow -->
+                <div id="slider" class=" overflow-hidden  w-full relative 
+                    before:absolute
+                    before:inset-[10%_0_10%_0]
+                    before:translate-x-[-95%]
+                    before:bg-white
+                    before:rounded-xl
+                    before:opacity-70
+                    after:absolute
+                    after:inset-[10%_0_10%_0]
+                    after:translate-x-[95%]
+                    after:bg-white
+                    after:rounded-xl
+                    after:opacity-70
+                ">
+                    <div id="list-items" class="grid [grid-template-areas:'stack'] w-fit py-4 px-12 "></div>
+                </div>
+
+                <!-- slider nav --> 
+                <div id="list-dots" class="flex items-center justify-center gap-5 transition-all duration-300
+                    [&>button]:w-5
+                    [&>button]:h-5
+                    [&>button]:relative
+                    before:[&_button]:transition-all
+                    before:[&_button]:duration-300
+                    before:[&_button]:ease-in-out
+                    before:[&_button]:inset-1
+                    before:[&_button]:m-auto
+                    before:[&_button]:absolute
+                    before:[&_button]:bg-red-400
+                    before:[&_button]:rounded-full
+                    hover:before:[&>button]:inset-0
+                    hover:before:[&>button]:bg-red-500
+                    before:[&>button.active]:inset-0
+                    before:[&>button.active]:bg-red-600
+                ">
+                </div>
+
+            </section>
+
+            <!-- recepie details-->
+            <div id="panel-info" class="absolute inset-10 rounded-xl p-4 bg-white/90 m-auto text-sm transition-all duration-300 scale-0  
+            
+                before:absolute
+                before:-inset-2
+                before:bg-black/30
+                before:m-auto
+                before:rounded-2xl
+                before:-z-10
+                
+
+                after:absolute
+                after:inset-0
+                after:bg-white
+                after:m-auto
+                after:rounded-xl
+                after:-z-10
+            ">
+                <h2 data-title class="text-xl font-semibold p-3">Straberries</h2>
+
+                <section  class="h-[420px] overflow-y-auto flex flex-col gap-4 divide-y divide-black/7 px-3 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-2">
+                    <p data-desc></p>
+                    <p data-ingredients class="pt-3 "></p>
+                    <p data-instructions  class="pt-3"> </p>
+                </section>
+
+                <button type="button" id="btn-close-item" class="absolute top-4 right-4 material-symbols-outlined transition-all duration-300 hover:scale-110 ">close</button>
+            </div>
+        </main>
+        
+        <!-- card template -->
+        <template id="tpl-item">
+            <article class="[grid-area:stack] text-center bg-white/90 p-4 px-6 rounded-xl w-72 space-y-3 translate-x-96 relative isolate
+                before:absolute
+                before:inset-0
+                before:bg-black/30
+                before:m-auto
+                before:rounded-2xl
+                before:-z-10
+                before:transition-all
+                before:duration-300
+                hover:before:-inset-2
+
+                after:absolute
+                after:inset-0
+                after:bg-white
+                after:m-auto
+                after:rounded-xl
+                after:-z-10
+            ">
+                <div class="flex flex-col items-center justify-center gap-0">
+                    <div data-stars class="flex justify-center [&>span]:text-lg [&>span]:text-red-500 [&>span]:opacity-0-X transition duration-300  -mb-2"></div>
+                    <p data-average class="text-red-500 "></p>
+                    <p data-reviews class="text-xs opcaity-70 "></p>
+                </div>
+                <h2 data-title class="text-xl font-semibold">Card 1</h2>
+                <p data-desc class="opacity-70 text-sm">This is the content of Card 1.</p>
+                <button type="button" class="bg-red-500 text-white rounded-xl py-2 px-6 mx-auto transition duration-300 hover:bg-red-700
+                    
+                ">Read More</button>
+            </article>
+        </template>
+        
+    </body>
+</html>

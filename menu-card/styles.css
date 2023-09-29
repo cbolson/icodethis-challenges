@@ -1,0 +1,19 @@
+.material-fill-1 {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+main:before {
+  background-image: var(--bg-img);
+}
+
+.star:nth-child(1),
+.star:nth-child(5) {
+  translate: 0 5px;
+}
+.star:nth-child(3) {
+  translate: 0 -5px;
+}
+main::before {
+  background-color: white;
+  -webkit-mask: linear-gradient(to top, transparent, white 50%);
+  mask: linear-gradient(to top, transparent, white 50%);
+}
