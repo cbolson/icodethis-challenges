@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Movie Card - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/39632-->
+  <body
+    class="bg-white flex justify-center items-center min-h-screen px-4 before:bg-[url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlo-2.jpg')] before:inset-0 before:w-full before:h-full before:absolute before:opacity-20 before:bg-cover before:bg-center before:-z-10">
+    <main
+      class="bg-white text-[#181028] shadow-lg rounded-xl w-full max-w-md overflow-hidden isolate">
+      <header
+        class="px-6 pt-4 h-72 flex flex-col justify-between relative -z-10 before:bg-[url('https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlo-1.jpg')] before:inset-0 before:m-auto before:absolute before:bg-cover before:bg-center before:-z-10 before:[clip-path:polygon(0_0,_100%_0,100%_85%,_0_100%)] [&_button]:flex [&_button]:items-center [&_button]:text-white [&_button]:py-1 [&_button]:transition-all [&_button]:overflow-hidden [&_button]:relative [&>button]:isolate">
+        <div class="flex items-center justify-between text-white">
+          <button
+            type="button"
+            class="material-symbols-outlined text-4xl font-bold">
+            arrow_back
+          </button>
+          <button
+            type="button"
+            class="material-symbols-outlined text-4xl font-bold">
+            share
+          </button>
+        </div>
+
+        <div class="flex items-center justify-between text-white">
+          <div class="flex items-center gap-1 text-2xl font-bold">
+            <span
+              class="material-symbols-outlined material-fill-1 text-5xl text-yellow-500"
+              >star</span
+            >
+            6.8 <span class="font-thin">/ 10</span>
+          </div>
+
+          <button
+            type="button"
+            class="material-symbols-outlined bg-red-600/90 transition duration-300 hover:bg-red-600 w-16 flex items-center justify-center aspect-square rounded-full material-fill-1 text-4xl hover:text-6xl">
+            play_arrow
+          </button>
+        </div>
+      </header>
+
+      <!-- details -->
+      <section class="mt-6 px-6">
+        <h1 class="uppercase text-2xl font-bold tracking-wider text-[#12427E]">
+          The Good Dinosaur
+        </h1>
+
+        <p class="text-xs mb-2">
+          Animation, Advernture, comedy | 25 November 2015 (USA)
+        </p>
+
+        <p class="text-sm font-thin">
+          In a world where dionosaurs and humans live side-by-side, an
+          Apatosaurus nambed Arlo makes an unlikeely human friend.
+        </p>
+      </section>
+
+      <!--<h2 class="uppercase text-xl font-bold text-center mb-8">Actors</h2>-->
+
+      <!-- slideshow -->
+      <section
+        class="relative mt-16 mb-12 py-6 h-36 px-4 flex items-center justify-between">
+        <button
+          id="btn-prev"
+          class="material-symbols-outlined text-4xl transition-all duration-300 hover:scale-150 border border-white">
+          navigate_before
+        </button>
+
+        <div
+          id="slider"
+          class="mx-auto image-container w-24 aspect-square tranistiom-all duration-500 [transform-style:preserve-3d] [&_div]:w-24 [&_div]:text-sm [&_div]:aspect-square [&_div]:rounded-full [&_div]:absolute [&_div]:inset-0 [&_div]:m-auto [&_div]:transition-all [&_div]:duration-300 [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:rounded-full">
+          <div data-name="Jack McGraw - Young Arlow">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-jack-mcgraw.png"
+              alt="Jack McGraw" />
+          </div>
+          <div data-name="Raymond Ochoa - Arlow">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-raymon-ochoa.jpg"
+              alt="Raymond Ochoa " />
+          </div>
+          <div data-name="Jack Bright - Spot">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-jack-bright.png"
+              alt="Jack Bright" />
+          </div>
+          <div data-name="Anna Paquin  - Ramsey">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-anna-paquin.jpg"
+              alt="Anna Paquin" />
+          </div>
+          <div data-name="Sam Elliott - Butch">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-sam-elliot.png"
+              alt="Sam Elliott" />
+          </div>
+          <div data-name="David Boat - Bubbha">
+            <img
+              src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/movies/arlow-david-boat.png"
+              alt="David Boat" />
+          </div>
+        </div>
+        <svg
+          id="svg-path"
+          class="pointer-events-none absolute inset-0 m-auto w-72 h-72 -rotate-45 transition duration-500"
+          viewBox="0 0 300 300"
+          enable-background="new 0 0 300 300"
+          xml:space="preserve">
+          <defs>
+            <path
+              id="criclePath"
+              d=" M 150, 150 m -120, 0 a 120,120 0 0,1 240,0 a 120,120 0 0,1 -240,0 " />
+          </defs>
+          <use xlink:href="#criclePath" fill="none" />
+          <text fill="#000" dx="170">
+            <textPath id="text-place" xlink:href="#criclePath"></textPath>
+          </text>
+        </svg>
+
+        <button
+          id="btn-next"
+          class="material-symbols-outlined text-4xl transition-all duration-300 hover:scale-150">
+          navigate_next
+        </button>
+      </section>
+
+      <footer
+        class="flex flex-col sm:flex-row items-center justify-between pb-6 pt-8 px-4 sm:px-8 text-white relative isolate -z-20 uppercase text-sm before:w-[500%] before:aspect-video before:m-auto before:absolute before:bg-cyan-400 before:rotate-3 before:origin-top-left before:-z-10 before:-left-20 before:top-0 before:transform-gpu before:transition-all before:duration-700 hover:before:-rotate-6 hover:before:-top-[500px]">
+        <button type="button" class="group flex flex-col">
+          <span
+            class="material-symbols-outlined transition-all duration-300 group-hover:scale-150"
+            >collections_bookmark</span
+          >
+          <p>Add to watchlist</p>
+        </button>
+
+        <button type="button" class="group flex flex-col">
+          <span
+            class="material-symbols-outlined transition-all duration-300 group-hover:scale-150"
+            >groups</span
+          >
+          <p>See full cast and crew</p>
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>
