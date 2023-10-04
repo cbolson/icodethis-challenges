@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Movie App - icodethis challenge</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js" defer></script>
+    </head>
+
+    <!--https://icodethis.com/submissions/40497-->
+
+    <body class="bg-gradient-to-r from-[#596AC8] to-[#659CE1] flex justify-center items-center min-h-screen 
+        [&_*]:transition-all
+        [&_*]:duration-300
+        [&_*]:ease-in
+    ">
+        
+        <main class="bg-primary-900 text-[#181028]  shadow-lg rounded-lg overflow-hidden w-full max-w-sm relative">
+            
+            <header class="bg-primary-300 text-primary-400 p-4 text-center text-xl">Movies 2023</header>
+
+
+            <!-- search bar -->
+            <section class="p-6">
+                <input type="text" placeholder="search movies"  disabled class="p-2 px-4 w-full border border-primary-200 rounded-full bg-transparent focus:border-red-400 focus:outline-none focus:ring-0">
+            </section>
+
+
+            <!-- genres -->
+            <section id="list-genres" class="space-y-4 pl-6 pb-6 h-[500px] overflow-y-auto overflow-x-hidden">
+                
+            </section>
+
+            <!-- movie details -->
+            <div id="panel-details" class="absolute inset-0 m-auto bg-[#171726] translate-x-full
+                isolate overflow-hidden         
+                
+                before:inset-0
+                before:m-auto
+                before:absolute
+                before:bg-cover
+                before:bg-center
+                before:-z-10
+                before:opacity-50
+            ">
+                <header class=" text-primary-400 p-4 flex items-center justify-between">
+                    <button type="button" id="btn-back" class="material-symbols-outlined rounded-full border border-primary-200 w-7 h-7  hover:text-red-500 hover:border-red-500">navigate_before</button>
+                   
+                    <button type="button" class="material-symbols-outlined w-10 h-10 rounded-full bg-white/70 hover:bg-red-500 grid place-content-center text-black text-4xl material-fill-1 translate-y-8">play_arrow</button>
+                    <button type="button" id="btn-info" class="material-symbols-outlined rounded-full border border-primary-200 w-7 h-7 hover:text-red-500 hover:border-red-500">more_vert</button>
+                   
+                </header>
+
+                <div class="mt-12 p-6 h-[540px] flex flex-col justify-between">
+                    
+                    <div class=" mb-6 h-full bg-white rounded-lg overflow-y-auto flex flex-col ">
+                        <div class="p-6">
+                            <div class="flex gap-2">
+                                <img src="" class="w-24 aspect-[4/6] object-fit">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <div data-rate class="rounded-full w-10 h-10 bg-primary-200 text-white grid place-content-center text-xs">6.5</div>
+                                        <div>
+                                            <div data-stars class="flex items-center gap-1">stars</div>
+                                            <p data-votes class="text-xs">2300</p>
+                                        </div>
+                                    </div>
+                                    <h2 data-title class="mt-2 text-primary-200 text-xl">film title</h2>
+                                    <time  data-duration class="text-xs">3h 52min</time>
+                                </div>
+                            </div>
+                            <p data-details class="mt-4 text-xs opacity-70 leading-4 line-clamp-4"></p>
+                        </div>
+
+                        <h3 class="px-6 opacity-50">Cast</h3>
+                        <footer data-cast class="mt-auto bg-primary-100 px-4 pt-4 pb-6   grid auto-cols-min grid-flow-col gap-4 overflow-x-auto">
+                          
+                        </footer>
+
+                    </div>
+
+                    <button type="button" class="bg-primary-200 py-4 w-full text-white rounded-full hover:bg-red-500">Buy Movie</button>
+                </div>
+
+            </div>
+
+            <div id="panel-info" class="absolute inset-0 m-auto bg-white p-12 -translate-x-full z-20 space-y-2
+                [&>div]:grid
+                [&>div]:grid-cols-[100px_1fr]
+                [&>div]:border-b-1 
+                last:[&>div>p]:font-semibold
+                [&>div]:
+            ">
+                <div >
+                    <p>Title:</p>
+                    <p data-title>_movie_title</p>
+                </div>
+
+                <div >
+                    <p>Release:</p>
+                    <p data-release>_release_date</p>
+                </div>
+
+                <div >
+                    <p>Revenue:</p>
+                    <p data-revenue>_release_date</p>
+                </div>
+
+                <div >
+                    <p>Genre:</p>
+                    <p data-genre>_genres_</p>
+                </div>
+
+                <div >
+                    <p>Produced by:</p>
+                    <p data-companies>_release_date</p>
+                </div>
+
+                
+
+                
+                <p class="absolute bottom-6 left-6 text-xs text-center">Movie data provided by <a href="https://www.themoviedb.org" target="_blank">The Movie Database</a></p>
+                <button type="button" id="btn-info-close" class="absolute top-4 right-4 material-symbols-outlined  hover:text-red-500 hover:border-red-500">close</button>
+            </div>
+        </main>
+
+
+        <template id="tpl-genre">
+            <div class="">
+                <h2 class="flex items-center justify-between text-primary-400 pr-4">
+                    <span data-title class="uppercase">Action</span>
+                    <button type="button" class="flex items-center gap-1 text-xs hover:text-red-500 w-fit">
+                        See more
+                        <span class="material-symbols-outlined">navigate_next</span>
+                    </button>
+                </h2>
+                <div data-cards class="grid gap-4 auto-cols-min grid-flow-col overflow-x-auto pb-4"> </div>
+            </div>
+        </template>
+
+        <template id="tpl-movie">
+            <button  type="button" class="w-32 bg-primary-300 animate-pulse border border-transparent hover:border-primary-200 rounded-sm overflow-hidden  relative isolate
+                before:absolute
+                before:inset-px
+                before:m-auto
+                before:text-4xl
+                hover:before:content-['...']
+                before:text-white
+                before:grid
+                before:place-content-center
+                before:transition
+                before:duration-150
+                hover:before:bg-black/70
+            ">
+                <img src="" class="scale-0 w-full aspect-[4-6] object-fit" loading="lazy" width="126px" height="192px">
+                <footer class="p-2 flex items center justify-between bg-primary-500">
+                    <p data-title class="text-xs text-white  text-left line-clamp-1"></p>
+                    <span data-rating class="text-[0.6rem] px-1  bg-primary-900"></span>
+            </button>
+        </template>
+
+        <!-- template - cast -->
+        <template id="tpl-cast">
+            <div class="space-y-2 w-10 ">
+                <img data-img src="" class="rounded-full w-10 h-10 aspect-square object-cover mx-auto hover:scale-110 border" alt="">
+                <p class="text-[0.6rem] text-center leading-3"></p>
+            </div>
+        </template>
+    </body>
+</html>

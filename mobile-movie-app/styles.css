@@ -1,0 +1,39 @@
+/* scollbar width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* scollbar - Track */
+::-webkit-scrollbar-track {
+    background: #171726;
+}
+
+/* scollbar - Handle */
+::-webkit-scrollbar-thumb {
+    background: #5C96D0;
+    border-radius: 5px;
+}
+
+/* scollbar - Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4187ce
+}
+
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+}
+/*
+#panel-details:before {
+    background-color: white;
+     -webkit-mask: linear-gradient(to top, transparent, white 50%);
+    mask: linear-gradient(to top, transparent, white 50%)
+        
+}
+*/
+.material-fill-1 {
+    font-variation-settings:
+        'FILL'1,
+        'wght'400,
+        'GRAD'0,
+        'opsz'48
+}
