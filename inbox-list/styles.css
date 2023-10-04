@@ -1,0 +1,24 @@
+.material-fill-1 {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+/* scollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* scollbar - Track */
+::-webkit-scrollbar-track {
+  background: #0f152c;
+}
+
+/* scollbar - Handle */
+::-webkit-scrollbar-thumb {
+  background: #21306c;
+  border-radius: 5px;
+}
+
+/* scollbar - Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f152c;
+}
