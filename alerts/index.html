@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alerts - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!--https://icodethis.com/submissions/40592-->
+  <body
+    class="bg-gradient-to-br from-[#16ABBA] to-[#0D6A70] flex justify-center items-center min-h-screen overflow-hidden">
+    <main
+      class="w-full max-w-lg space-y-6 [&>div]:bg-white [&>div]:p-6 [&>div]:flex [&>div]:items-center [&>div]:gap-6 [&>div]:transition-all [&>div]:duration-300 [&>div]:ease-in-out hover:[&>div]:bg-slate-200 [&>div.ok]:text-green-500 [&>div.ko]:text-red-500 [&_span]:text-white [&_span]:w-8 [&_span]:h-8 [&_span]:grid [&_span]:place-content-center [&_span]:rounded-full [&_span]:relative [&_.ok>span]:bg-green-500 [&_.ko>span]:bg-red-500 [&_span]:isolate before:[&_span]:absolute before:[&_span]:-inset-2 before:[&_span]:m-auto before:[&_span]: before:[&_span]:rounded-full before:[&_span]:-z-10 before:[&_.ok>span]:border-green-500 before:[&_.ko>span]:border-red-500 before:[&_span]:border-4 before:[&_span]:border-dashed [&_button]:ml-auto [&_button]:text-slate-400 hover:[&_button]:scale-125">
+      <div class="ok group">
+        <span
+          class="material-symbols-outlined group-hover:before:animate-spin-slow"
+          >check</span
+        >
+        <p>Your object has been successfully created.</p>
+        <button
+          type="button"
+          btn-close
+          class="material-symbols-outlined group-hover:text-black">
+          close
+        </button>
+      </div>
+
+      <div class="ko group">
+        <span
+          class="material-symbols-outlined group-hover:before:animate-spin-slow"
+          >close</span
+        >
+        <p>Your object couldn't be created.</p>
+        <button
+          type="button"
+          btn-close
+          class="material-symbols-outlined group-hover:text-black">
+          close
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
