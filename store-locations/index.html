@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Locations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!--https://icodethis.com/submissions/41255 -->
+  <body
+    class="bg-[#1A1739] flex justify-center items-center min-h-screen overflow-hidden px-8 [&_*]:transition-all [&_*]:duration-300 [&_*]:ease-in">
+    <main
+      class="bg-[#0F0E1E]/80 text-[#b6b1f5] shadow-lg rounded-xl w-full max-w-sm relative">
+      <!-- shadow -->
+      <div
+        id="shadow"
+        class="absolute w-72 h-72 bg-gradient-to-br from-pink-500 to-purple-500 -z-10"
+        style="
+          border-radius: 0 2rem 0 2rem;
+          left: var(--left, -2rem);
+          top: var(--top, -2rem);
+        "></div>
+
+      <div
+        class="flex flex-col gap-8 p-8 backdrop-filter backdrop-blur-lg rounded-xl">
+        <h1>Closest stores</h1>
+
+        <div class="flex flex-col gap-1">
+          <label class="text-xs">Postal code</label>
+          <div class="flex items-center gap-2">
+            <input
+              type="text"
+              placeholder="45454"
+              class="w-24 p-1 px-2 border border-indigo-500 rounded-sm bg-transparent focus:outline-none focus:ring-0 hover:border-white" />
+
+            <button
+              type="button"
+              class="flex items-center gap-1 text-indigo-500 hover:text-white">
+              <span class="material-symbols-outlined">location_on</span>
+              Use my location
+            </button>
+          </div>
+        </div>
+
+        <section
+          class="space-y-6 hover:[&>article]:text-white [&>article]:space-y-1 [&_h2]:flex [&_h2]:items-center [&_h2]:justify-between [&_h2>span]:rounded-full [&_h2>span]:uppercase [&_h2>span]:text-[0.55rem] [&_h2>span]:p-1 [&_h2>span]:px-2 [&_h2>span]:text-white [&_h2>span.closed]:bg-red-400 [&_h2>span.open]:bg-green-400 [&_p]:text-sm [&_time]:flex [&_time]:items-center [&_time]:gap-2 [&_time]:text-sm [&_time>span]:text-base">
+          <article>
+            <h2>
+              POINT Bergen Secntrum
+              <span class="closed">Closed</span>
+            </h2>
+            <p>Stranagatern 56-57, 6007 Bergen</p>
+            <time>
+              <span class="material-symbols-outlined">schedule</span>
+              09:00 - 19:00
+            </time>
+          </article>
+
+          <article>
+            <h2>
+              POIVestkanten
+              <span class="open">Open</span>
+            </h2>
+            <p>Stranagatern 56-57, 6007 Bergen</p>
+            <time>
+              <span class="material-symbols-outlined">schedule</span>
+              13:00 - 17:30
+            </time>
+          </article>
+        </section>
+
+        <button
+          type="button"
+          class="py-2 w-full rounded-sm bg-indigo-500 text-white relative isolate overflow-hidden before:-inset-12 before:m-auto before:absolute before:-z-10 before:transition-all before:duration-500 before:bg-gradient-to-br before:from-indigo-500 before:to-purple-500 before:translate-x-12 before:translate-y-12 hover:before:-translate-x-12 hover:before:-translate-y-12">
+          View all
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
