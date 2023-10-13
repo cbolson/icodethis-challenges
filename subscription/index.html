@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <!--https://icodethis.com/submissions/41048-->
+    <body class="bg-gray-100 family-serif flex flex-col justify-center items-center min-h-screen text-center">
+
+        <main class="bg-gray-50 shadow-xl shadow-slate-40 p-6 sm:p-20 w-full max-w-4xl space-y-8  
+        [&_*]:transition-all
+        [&_*]:duration-300
+        [&_*]:ease-in">
+            
+            <header class="sm:px-40 space-y-4">
+                <h1 class="text-2xl">Get the most out of your mobile with the right subsciption</h1>
+                
+                <p class="text-sm">All devices come with free deliver or pick-up as standard. See information on available shipping options for your location</p>
+            </header>
+            
+            <div class=" grid sm:grid-cols-3 gap-8
+                [&>article]:flex
+                [&>article]:flex-col
+                [&>article]:gap-2
+                [&>article]:text-sm
+                [&>article]:text-left
+                [&>article]:relative
+                [&>article]:bg-white
+                [&>article]:p-8
+                [&>article]:shadow-lg
+                [&>article]:rounded-xl
+                [&>article]:isolate
+                before:[&>article]:inset-0
+                before:[&>article]:m-auto
+                before:[&>article]:rounded-xl
+                before:[&>article]:absolute
+                before:[&>article]:-z-10
+                before:[&>article]:transition
+                before:[&>article]:duration-300
+                hover:before:[&>article]:-translate-x-4
+                hover:before:[&>article]:-translate-y-4
+                after:[&>article]:inset-0
+                after:[&>article]:m-auto
+                after:[&>article]:bg-white
+                after:[&>article]:rounded-xl
+                after:[&>article]:absolute
+                after:[&>article]:-z-10
+                [&_svg]:w-8
+                [&_h2]:font-semibold
+                [&_p]:text-xs
+                [&_.price]:flex
+                [&_.price]:items-center
+                [&_.price]:gap-1
+                [&_.price>span]:text-xl
+                [&_.price>span]:font-bold
+                [&_.price>span]:
+                [&_button]:rounded-full
+                [&_button]:py-2
+                [&_button]:px-1
+                [&_button]:bg-gray-100
+                [&_button]:shadow-xl
+                [&_button]:mt-auto
+                [&_button]:whitespace-nowrap
+            ">
+                <article class="group before:bg-yellow-100">
+                    <svg role="img" viewBox="0 0 24 24"
+                        <title>T-Mobile</title>
+                        <path
+                            d="M6.722 15.84h-4.8v-4.8h4.791v4.8zM1.922 0v8.16H3.36v-.236c0-3.844 2.159-6.24 6.239-6.24h.237v17.279c0 2.396-.957 3.36-3.36 3.36h-.72V24h12.478v-1.676h-.72c-2.395 0-3.36-.957-3.36-3.361V1.676h.237c4.08 0 6.239 2.396 6.239 6.24v.236h1.439V0Zm15.356 15.84h4.8v-4.8h-4.791v4.8z" />
+                    </svg>
+                    <h2>T-Mobile 10GB</h2>
+                    <p>Up to 200Mbs/s</p>
+                    <div class="price"v><span>299.-</span>/month</div>
+                    <button type="button" class="group-hover:bg-yellow-100">Add subscription</button>
+                </article>
+
+                <article class="group before:bg-blue-100">
+                <svg role="img" viewBox="0 0 24 24"
+                    <title>Minutemailer</title>
+                    <path d="M17.187 19.181L24 4.755 0 12.386l9.196 1.963.043 4.896 2.759-2.617-2.147-2.076 7.336 4.63z" />
+                </svg>
+                    <h2>Minutemailer 15GB</h2>
+                    <p>Unlimited calls, SMS and MMS</p>
+                    <div class="price" v><span>339.-</span>/month</div>
+                    <button type="button" class="group-hover:bg-blue-100">Add subscription</button>
+                </article>
+              
+
+                <article  class="group before:bg-pink-100">
+                    <svg role="img" viewBox="0 0 24 24"
+                        <title>Moleculer</title>
+                        <path
+                            d="M15.442.718a2.58 2.58 0 0 0-2.579 2.579 2.58 2.58 0 0 0 1.368 2.275L12.809 8.27a3.505 3.505 0 0 0-1.077-.172 3.505 3.505 0 0 0-3.505 3.505 3.505 3.505 0 0 0 .085.745l-2.83 1.036a2.97 2.97 0 0 0-2.513-1.39A2.97 2.97 0 0 0 0 14.962a2.97 2.97 0 0 0 2.97 2.97 2.97 2.97 0 0 0 2.969-2.97 2.97 2.97 0 0 0-.072-.634l2.716-1.193a3.505 3.505 0 0 0 3.15 1.972 3.505 3.505 0 0 0 2.129-.724l2.276 2.167a4.305 4.305 0 0 0-.749 2.426 4.305 4.305 0 0 0 4.306 4.305A4.305 4.305 0 0 0 24 18.977a4.305 4.305 0 0 0-4.305-4.305 4.305 4.305 0 0 0-2.718.969l-2.424-1.964a3.505 3.505 0 0 0 .684-2.074 3.505 3.505 0 0 0-1.521-2.89l1.204-2.891a2.58 2.58 0 0 0 .522.054 2.58 2.58 0 0 0 2.58-2.58 2.58 2.58 0 0 0-2.58-2.578Z" />
+                    </svg>
+                    <h2>Moleculer 10GB</h2>
+                    <p>Up to 200Mbs/s</p>
+                    <div class="price" v><span>279.-</span>/month</div>
+                    <button type="button" class="group-hover:bg-pink-300">Add subscription</button>
+                </article>
+                
+            </div>
+
+            <button type="button" class="rounded-full p-3 bg-black text-white text-small mx-auto hover:bg-red-600">See all subscriptions</button>
+        </main>
+
+       
+    </body>
+</html>
