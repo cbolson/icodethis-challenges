@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Checks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <!--https://icodethis.com/submissions/40915-->
+  <body
+    class="bg-[#151939] text-[#9AA1D7] flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center items-center min-h-screen p-8 [&_*]:transition-all [&_*]:duration-300 [&_*]:ease-in-out">
+    <input class="peer/option1 sr-only" id="option-1" type="checkbox" />
+    <input class="peer/option2 sr-only" id="option-2" type="checkbox" />
+    <input class="peer/option3 sr-only" id="option-3" type="checkbox" checked />
+    <input class="peer/option4 sr-only" id="option-4" type="checkbox" />
+    <input class="peer/option5 sr-only" id="option-5" type="checkbox" checked />
+    <input class="peer/option6 sr-only" id="option-6" type="checkbox" />
+    <input class="peer/option7 sr-only" id="option-7" type="checkbox" />
+    <input class="peer/option8 sr-only" id="option-8" type="checkbox" />
+    <input class="peer/option9 sr-only" id="option-9" type="checkbox" />
+
+    <div
+      class="p-8 bg-[#1A1D46] rounded-xl sm:-translate-y-full peer-checked/option1:[&>div>div.option-1]:bg-blue-400 peer-checked/option2:[&>div>div.option-2]:bg-blue-600 peer-checked/option3:[&>div>div.option-3]:bg-blue-800 peer-checked/option4:[&>div>div.option-4]:bg-teal-300 peer-checked/option5:[&>div>div.option-5]:bg-teal-500 peer-checked/option6:[&>div>div.option-6]:bg-teal-700 peer-checked/option7:[&>div>div.option-7]:bg-green-600">
+      <h2 class="text-lg mb-4">Build uour page</h2>
+      <p class="text-xs">
+        Complete options to unlock new features along the way.
+        <br />On average completed pages get 30% more traffic
+      </p>
+      <div
+        class="mt-8 flex flex-wrap gap-1 [&>div]:bg-[#0F1224] [&>div]:w-10 [&>div]:h-3 [&>div]:rounded-full [&>div]: [&>div]:">
+        <div class="option-1"></div>
+        <div class="option-2"></div>
+        <div class="option-3"></div>
+        <div class="option-4"></div>
+        <div class="option-5"></div>
+        <div class="option-6"></div>
+        <div class="option-7"></div>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col gap-3 p-8 bg-[#1A1D46] rounded-xl relative isolate before:absolute before:-top-2 before:-left-2 sm:before:-top-6 sm:before:-left-6 before:w-40 before:h-40 before:rounded-xl before:bg-blue-400 before:-z-10 after:absolute after:inset-0 after:m-auto after:rounded-xl after:bg-[#1A1D46] after:z-[-5] before: [&>label]:relative [&>label]:text-sm [&>label]:flex [&>label]:cursor-pointer hover:[&>label]:text-white [&>label]:gap-3 [&>label]:items-center before:[&>label]:w-6 before:[&>label]:aspect-square before:[&>label]:grid before:[&>label]:place-content-center before:[&>label]:border before:[&>label]:border-[#9AA1D7] before:[&>label]:rounded-full before:[&>label]:text-xs before:[&>label]:text-white before:[&>label]: peer-checked/option1:before:[&>label.option-1]:bg-blue-800 peer-checked/option1:before:[&>label.option-1]:content-['&check;'] peer-checked/option2:before:[&>label.option-2]:bg-blue-800 peer-checked/option2:before:[&>label.option-2]:content-['&check;'] peer-checked/option3:before:[&>label.option-3]:bg-blue-800 peer-checked/option3:before:[&>label.option-3]:content-['&check;'] peer-checked/option4:before:[&>label.option-4]:bg-blue-800 peer-checked/option4:before:[&>label.option-4]:content-['&check;'] peer-checked/option5:before:[&>label.option-5]:bg-blue-800 peer-checked/option5:before:[&>label.option-5]:content-['&check;'] peer-checked/option6:before:[&>label.option-6]:bg-blue-800 peer-checked/option6:before:[&>label.option-6]:content-['&check;'] peer-checked/option7:before:[&>label.option-7]:bg-blue-800 peer-checked/option7:before:[&>label.option-7]:content-['&check;']">
+      <h2>Checklist</h2>
+      <label for="option-1" class="option-1">Industry</label>
+      <label for="option-2" class="option-2">Website URL</label>
+      <label for="option-3" class="option-3">Company size</label>
+      <label for="option-4" class="option-4">Description</label>
+      <label for="option-5" class="option-5">LogoL</label>
+      <label for="option-6" class="option-6">Location</label>
+      <label for="option-7" class="option-7">Contact Information</label>
+    </div>
+  </body>
+</html>
