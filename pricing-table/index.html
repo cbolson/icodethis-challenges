@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
+  <!--https://icodethis.com/submissions/41297-->
+  <body
+    class="bg-gray-50 family-serif flex justify-center items-center min-h-screen">
+    <div
+      class="bg-white/30 text-[#181028] p-12 shadow-lg rounded-xl grid sm:grid-cols-3 sm:space-y-0 gap-16 sm:gap-8 w-full max-w-4xl border-[1.2rem] border-white [&>section]:flex [&>section]:flex-col [&>section]:gap-6 [&>section]:relative [&>section]:transition [&>section]:duration-300 [&_.price]:text-5xl [&_.price]:font-bold [&_.price]:w-fit [&_.price]:pl-4 [&_.price]:relative [&_.price]:mb-2 before:[&_.price]:content-['$'] before:[&_.price]:absolute before:[&_.price]:text-2xl before:[&_.price]:bottom-0 before:[&_.price]:left-0 [&_.tagline]:text-xs [&_.desc]: [&_button]:mt-auto [&_button]:text-sm [&_button]:border [&_button]:w-fit [&_button]:rounded-md [&_button]:py-3 [&_button]:px-6 [&_button]:duration-300 [&_button]:transiton-all [&_button:hover]:bg-slate-800 [&_button:hover]:text-white before:[&>section]:absolute before:[&>section]:w-72 before:[&>section]:aspect-square before:[&>section]:rounded-full before:[&>section]:blur-xl before:[&>section]:-z-10 before:[&>section]:opacity-50 before:[&>section]:transition-all before:[&>section]:duration-500 before:[&>section#free]:bg-[#E6A7FD] [&>section#free>button]:bg-[#E6A7FD] hover:[&>section#free>button]:bg-[#BA87D0] before:[&>section#free]:top-0 before:[&>section#free]:-left-24 sm:before:[&>section#free]:top-20 sm:before:[&>section#free]:-left-32 before:[&>section#standard]:bg-[#A0EFF2] [&>section#standard>button]:bg-[#A0EFF2] hover:[&>section#standard>button]:bg-[#89CBCF] before:[&>section#standard]:-top-0 before:[&>section#standard]:-left-24 sm:before:[&>section#standard]:-top-40 sm:before:[&>section#standard]:-left-20 before:[&>section#premium]:bg-[#FEDAAB] [&>section#premium>button]:bg-[#FEDAAB] hover:[&>section#premium>button]:bg-[#D9BE97] before:[&>section#premium]:-top-0 before:[&>section#premium]:-left-24 sm:before:[&>section#premium]:-top-20 sm:before:[&>section#premium]:-right-24 hover:before:[&>section]:scale-150">
+      <section id="free" class=":">
+        <h3>Free</h3>
+
+        <div>
+          <p class="price">0</p>
+          <p class="tagline">Free for your whole team</p>
+        </div>
+        <p class="desc">
+          For individuals or temas looking to organize anything.
+        </p>
+
+        <button type="button" class="">Get started</button>
+      </section>
+
+      <section id="standard">
+        <h3>Standard</h3>
+        <div>
+          <p class="price">6</p>
+          <p class="tagline">per user per month</p>
+        </div>
+        <p class="desc">For teams that need to manage more work</p>
+
+        <button type="button">Upgrade Now</button>
+      </section>
+
+      <section id="premium">
+        <h3>Premium</h3>
+        <div>
+          <p class="price">12</p>
+          <p class="tagline">Per user per month</p>
+        </div>
+        <p class="desc">best for teams that need to track multiple projects</p>
+
+        <button type="button" class="">Try for free</button>
+      </section>
+    </div>
+  </body>
+</html>
