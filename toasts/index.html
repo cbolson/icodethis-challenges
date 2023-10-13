@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toasts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+    <!--https://icodethis.com/submissions/40742-->
+    <body class="bg-gray-100 flex flex-col gap-6 justify-center items-center min-h-screen px-4
+    
+        [&>section]:bg-white
+        [&>section]:text-black
+        [&>.black]:bg-black
+        [&>.black]:text-white
+        even:[&>section]:mb-10
+        [&>section]:w-full
+        [&>section]:origin-right
+        [&>section]:max-w-2xl
+        [&>section]:py-3
+        [&>section]:px-3
+        [&>section]:flex
+        [&>section]:items-center
+        [&>section]:gap-4
+        [&>section]:transition-all
+        [&>section]:duration-500
+        [&>section]:ease-in-out
+        [&>section]:text-sm
+        [&>section]:shadow-xl
+        [&>section]:relative
+        [&>section]:isolate
+        [&>section]:overflow-hidden
+        hover:[&>section]:text-black
+
+        before:[&>section]:absolute
+        before:[&>section]:inset-full
+        before:[&>section]:bg-lime-200
+        before:[&>section]:-z-10
+        before:[&>section.rounded-full]:rounded-full
+        before:[&>section]:transition-all
+        before:[&>section]:duration-300
+        before:[&>section]:ease-in-out
+        hover:before:[&>section]:inset-0
+
+
+        [&>.last]:!justify-center
+        after:[&>.last]:absolute
+        after:[&>.last]:h-1
+        after:[&>.last]:w-[20%]
+        after:[&>.last]:bg-slate-400
+        after:[&>.last]:bottom-0
+        after:[&>.last]:left-0
+        after:[&>.last]:transition-all
+        after:[&>.last]:duration-1000
+        hover:after:[&>.last]:w-full
+
+        [&_span]:rounded-full
+        [&_span]:w-6
+        [&_span]:h-6
+        [&_span]:shrink-0
+        [&_span]:text-base
+        [&_span]:grid
+        [&_span]:place-content-center
+        [&_span]:bg-green-500
+        [&_span]:text-white
+
+        [&_.black>span]:bg-white
+        [&_.black>span]:text-green-500
+
+        hover:[&_span]:!bg-green-500
+        hover:[&_span]:!text-white
+
+        [&_button]:ml-auto
+        [&_button]:text-base
+        [&_button]:transition-all
+        [&_button]:duration-300
+        hover:[&_button]:text-red-500
+        hover:[&_button]:scale-125
+    ">
+        
+        <section>
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+            <button type="button" btn-close class="material-symbols-outlined ">close</button>
+        </section>
+
+        <section class="black">
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+            <button type="button" btn-close class="material-symbols-outlined ">close</button>
+        </section>
+
+        <section class="rounded-full">
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+            <button type="button" btn-close class="material-symbols-outlined ">close</button>
+        </section>
+        <section class="black rounded-full">
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+            <button type="button" btn-close class="material-symbols-outlined ">close</button>
+        </section>
+
+        <section class="last">
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+        </section>
+        <section class="black last">
+            <span class="material-symbols-outlined">check</span>
+            <p>File has been removed successfully</p>
+        </section>
+
+
+        
+    </body>
+</html>
