@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+</head>
+<!--https://icodethis.com/submissions/40753-->
+<body class="bg-[#FB4A52]  text-slate-800 flex justify-center items-center min-h-screen relative px-8">
+
+   
+
+    <!-- main contents -->
+    <main class="bg-white p-6 sm:py-12 sm:px-20 space-y-4 w-full max-w-2xl rounded-xl
+    ">
+        <section class="w-full space-y-6 relative">
+                <div id="slider" class="pb-6 overflow-hidden  w-full transition duration-300 scroll-smooth">
+                    <div id="list-cards" class="relative h-32
+                        [&>div]:absolute 
+                        [&>div]:text-center
+                        [&>div]:w-full
+                        [&>div]:min-w-full
+                        [&>div]:flex
+                        [&>div]:flex-col
+                        [&>div]:justify-between
+                        [&_blockquote]:line-clamp-3
+                    ">
+                        <!-- cards loaded here -->
+                    </div>
+                </div>
+
+                <div id="list-dots" class="flex items-center justify-center gap-2
+                        [&>span]:rounded-full
+                        [&>span]:bg-slate-300
+                        [&>span]:w-2
+                        [&>span]:h-2
+                        ">
+                </div>
+
+                <div class="flex items-center justify-center gap-2 text-primary-300">
+                    <button data-slide="prev" class="material-symbols-outlined text-4xl will-change-scroll transition hover:scale-125">navigate_before</button>
+                    <button data-slide="next" class="material-symbols-outlined text-4xl  will-change-scroll transition hover:scale-125">navigate_next</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- background blocks -->
+    <div class="absolute w-2/4 h-[40%] top-0 left-0 bg-indigo-600 -z-10"></div>
+    <div class="absolute w-3/4 h-[70%] top-[40%] left-0 bg-[#FD9552] -z-20"></div>
+
+    <!-- template - cards -->
+    <template id="tpl-card">
+        <div class="card translate-y-[400px]">
+            <blockquote></blockquote>
+            <div class="mt-4  details text-center text-sm translate-y-[100px] transition delay-500 duration-500">
+                <img review-img class="w-12 h-12 mx-auto object-cover rounded-full" alt="">
+                <p review-name class="font-bold text-xs"></p>
+            </div>
+        </div>
+    </template>
+</body>
+
+</html>
