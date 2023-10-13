@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin Form - icodethis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="scripts.js" defer></script>
+
+    </head>
+    <!-- https://icodethis.com/submissions/40733 -->
+    <body class="bg-[#5071CE] flex justify-center items-center min-h-screen px-4">
+       
+        <main class="bg-white text-[#181028]  flex flex-col shadow-lg rounded-xl w-full max-w-4xl relative overflow-hidden isolate">
+            
+            <section class="py-20 w-60 sm:w-72 mx-auto 
+                [&_label]:text-xs
+                [&_label]:font-semibold
+                [&_label]:mb-2
+                [&_input]:p-2
+                [&_input]:rounded-md
+                [&_input]:
+                [&_input]:
+                [&_input]:
+                [&_a]:text-blue-400
+                [&_a]:transition
+                hover:[&_a]:text-red-500
+            ">
+                <p class="text-center mb-12 font-semibold">Sign In to your accout</p>
+                <form class="space-y-4">
+                    <div class="flex flex-col">
+                        <label for="email">Username or Email</label>
+                        <input type="email" id="email" placeholder="youremail@somwhere.com" required class="border">
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="pass">Password</label>
+                        <input type="password" id="pass" name="password"  required class="border">
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs">
+                        <div>
+                            <input type="checkbox" id="remember" name="remember">
+                            <label for="remember" >Remember</label>
+                        </div>
+                        <a href="#" class="text-xs">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="py-2 w-full rounded-md bg-slate-300 text-white transition duration-300 hover:bg-slate-500">Sign In</button>
+
+                    <p class="text-xs text-center">Don't have an account? <a href="#">Sign Up</a></p>
+
+                </form>
+            </section>
+
+            <footer class=" flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-8 py-8 px-8 sm:px-40 text-xs [&>*]:whitespace-nowrap hover:[&>a]:text-red-500">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Classic</a>
+                <span>&copy; 2023 My Brand</span>
+            </footer>
+            
+            <svg  viewBox="0 0 600 600" class="absolute bottom-0 left-0 -z-10 pointer-events-none">
+                
+                
+                <path
+                    d="M0 530L11.5 536.5C23 543 46 556 69 558.5C92 561 115 553 138.2 547.8C161.3 542.7 184.7 540.3 207.8 539.8C231 539.3 254 540.7 277 538.3C300 536 323 530 346 526.7C369 523.3 392 522.7 415.2 525C438.3 527.3 461.7 532.7 484.8 536.3C508 540 531 542 554 543.5C577 545 600 546 623 544C646 542 669 537 692.2 532C715.3 527 738.7 522 761.8 521C785 520 808 523 831 527.8C854 532.7 877 539.3 888.5 542.7L900 546L900 601L888.5 601C877 601 854 601 831 601C808 601 785 601 761.8 601C738.7 601 715.3 601 692.2 601C669 601 646 601 623 601C600 601 577 601 554 601C531 601 508 601 484.8 601C461.7 601 438.3 601 415.2 601C392 601 369 601 346 601C323 601 300 601 277 601C254 601 231 601 207.8 601C184.7 601 161.3 601 138.2 601C115 601 92 601 69 601C46 601 23 601 11.5 601L0 601Z"
+                    fill="#8dcbfc"></path>
+                    <path
+                        d="M0 528L11.5 525.8C23 523.7 46 519.3 69 521.3C92 523.3 115 531.7 138.2 528.7C161.3 525.7 184.7 511.3 207.8 513.5C231 515.7 254 534.3 277 539C300 543.7 323 534.3 346 530.3C369 526.3 392 527.7 415.2 526.5C438.3 525.3 461.7 521.7 484.8 518.2C508 514.7 531 511.3 554 509C577 506.7 600 505.3 623 505.8C646 506.3 669 508.7 692.2 507.3C715.3 506 738.7 501 761.8 503.3C785 505.7 808 515.3 831 514.8C854 514.3 877 503.7 888.5 498.3L900 493L900 601L888.5 601C877 601 854 601 831 601C808 601 785 601 761.8 601C738.7 601 715.3 601 692.2 601C669 601 646 601 623 601C600 601 577 601 554 601C531 601 508 601 484.8 601C461.7 601 438.3 601 415.2 601C392 601 369 601 346 601C323 601 300 601 277 601C254 601 231 601 207.8 601C184.7 601 161.3 601 138.2 601C115 601 92 601 69 601C46 601 23 601 11.5 601L0 601Z"
+                        fill="#bfdbfe80"></path>
+                
+            </svg>
+
+            <div id="msg"
+                class="absolute inset-0 bg-[#8dcbfc] rounded-xl text-white  p-20 grid place-items-center  text-center text-2xl transition duration-300 translate-y-full z-20">
+                    Logging in ...
+                    <span class="material-symbols-outlined text-8xl animate-spin">progress_activity</span>
+               </div>
+            </div>
+        </main>
+    </body>
+</html>
