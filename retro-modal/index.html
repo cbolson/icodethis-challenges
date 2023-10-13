@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body
+    class="bg-blue-50 text-slate-400 font-thin flex justify-center items-center min-h-screen [&_*]:transition-all [&_*]:duration-300 [&_*]:ease-in before:bg-[url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80')] before:-inset-20 before:m-auto before:fixed before:opacity-100 before:bg-cover before:bg-center before:-z-10 before:-transition-all before:duration-500 before:ease-in before:blur-xl-NO">
+    <div
+      id="alert"
+      class="bg-white p-6 space-y-4 shadow-lg rounded-xl max-w-md md:max-w-lg text-center absolute scale-0 z-20">
+      <header class="flex items-center justify-between border-b pb-2">
+        Confirm
+        <button
+          type="button"
+          btn-close
+          class="material-symbols-outlined hover:scale-125">
+          close
+        </button>
+      </header>
+
+      <section class="overflow-hidden">
+        <div
+          id="icon"
+          class="w-16 h-16 rounded-md text-6xl pt-2 bg-primary-200 text-white mx-auto font-semibold relative isolate -translate-y-full before:absolute before:w-6 before:h-6 before:bg-primary-200 before:-bottom-2 before:left-2/4 before:-translate-x-2/4 before:rotate-45 before:-z-10 before:transition before:duration-300 before:delay-300 before:-translate-y-full">
+          ?
+        </div>
+
+        <p class="text-primary-400 mt-4 mb-8 px-16">
+          Are you sure you want to navigate away from this page?
+        </p>
+        <p class="text-sm mb-6">
+          Press OK to contiune or Cancel to stay on the current page
+        </p>
+
+        <footer
+          class="flex items-center gap-6 justify-center [&>button]:rounded-md [&>button]:py-2 [&>button]:w-32 [&>button]:bg-primary-200 [&>button]:text-primary-400 [&>button]:shadow-xl [&>button]:relative [&>button]:isolate [&>button]:overflow-hidden [&>button]:text-xl [&>button]:duration-700 [&>button]:ease-out Xhover:[&>button]:bg-primary-400 hover:[&>button]:text-white before:[&>button]:absolute before:[&>button]:inset-0 before:[&>button]:m-auto before:[&>button]:bg-primary-400 before:[&>button]:-z-10 before:[&>button]:transition before:[&>button]:duration-300 first:before:[&>button]:translate-x-full last:before:[&>button]:-translate-x-full hover:before:[&>button]:translate-x-0">
+          <button type="button" id="btn-confirm" class="translate-x-[-300px]">
+            OK
+          </button>
+          <button
+            type="button"
+            btn-close
+            id="btn-cancel"
+            class="translate-x-[300px]">
+            Cancel
+          </button>
+        </footer>
+      </section>
+    </div>
+
+    <div
+      class="grid [grid-template-areas:'stack'] [&_button]:rounded-md [&_button]:[grid-area:stack] [&_button]:py-4 [&_button]:px-8 [&_button]:w-fit [&_button]:bg-white/90 [&_button]:text-primary-400 [&_button]:shadow-xl [&_button]:relative [&_button]:isolate [&_button]:overflow-hidden [&_button]:text-xl [&_button]:duration-700 [&_button]:ease-out before:[&_button]:absolute before:[&_button]:inset-0 before:[&_button]:m-auto before:[&_button]:bg-primary-400 before:[&_button]:-z-10 before:[&_button]:transition before:[&_button]:duration-500 before:[&_button]:-translate-x-full after:[&_button]:absolute after:[&_button]:inset-0 after:[&_button]:m-auto after:[&_button]:bg-primary-400 after:[&_button]:-z-10 after:[&_button]:transition after:[&_button]:duration-500 after:[&_button]:translate-x-full hover:[&_button]:text-white hover:before:[&_button]:translate-x-0 hover:after:[&_button]:translate-x-0">
+      <button type="button" id="btn-page-1">Go to page 2</button>
+
+      <button type="button" id="btn-page-2" class="scale-0">
+        Return to page 1
+      </button>
+    </div>
+  </body>
+</html>

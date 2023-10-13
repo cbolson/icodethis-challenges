@@ -1,0 +1,19 @@
+.blur-out {
+  animation: deBlur 4s ease 0s forwards;
+}
+
+@keyframes deBlur {
+  from {
+    -webkit-filter: blur(50px);
+    -moz-filter: blur(50px);
+    -o-filter: blur(50px);
+    -ms-filter: blur(50px);
+  }
+
+  to {
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+  }
+}
