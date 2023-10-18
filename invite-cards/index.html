@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Cards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="scripts.js"></script>
+</head>
+<!-- https://icodethis.com/submissions/43689 -->
+<body class="bg-pink-50 flex flex-col gap-6 justify-center items-center min-h-screen p-4
+    [&_section]:bg-white/70
+    [&_section]:p-4
+    sm:[&_section]:p-12
+    [&_section]:space-y-4
+    [&_section]:rounded-xl
+    [&_section]:w-full
+    [&_section]:overflow-hidden
+    [&_section]:transition-all
+    [&_section]:duration-500
+    [&_section]:ease-in-out
+
+    [&_h2]:text-xl
+    [&_h2]:font-semibold
+    X-[&_h2]:border-b
+    X-[&_h2]:pb-2
+    X-[&_h2]:border-slate-300/30
+
+
+    [&_a]:text-violet-500 
+    hover:[&_a]:text-violet-900
+    [&_a]:underline
+    
+    [&_p]:text-sm
+    [&_label]:text-sm
+    [&_label]:font-semibold
+
+    [&_button]:relative
+    [&_button]:isolate
+    [&_button]:overflow-hidden
+    [&_button]:rounded-sm
+    [&_button]:py-2
+    [&_button]:px-4
+    [&_button]:shrink-0
+    [&_button]:bg-violet-400
+    [&_button]:text-white
+    [&_button]:whitespace-nowrap
+
+    before:[&_button]:absolute
+    before:[&_button]:inset-[0_100%_0_100%]
+    before:[&_button]:m-auto
+    before:[&_button]:bg-violet-900
+    before:[&_button]:transiton-all
+    before:[&_button]:duration-300
+    hover:before:[&_button]:inset-0
+    before:[&_button]:-z-10
+
+    [&_.field]:flex     
+    [&_.field]:gap-2
+    [&_.field]:p-1
+    [&_.field]:rounded-sm
+    [&_.field]:bg-white
+    [&_.field]:border
+    [&_.field]:border-slate-500/30
+    [&_.field]:transition-all
+    [&_.field]:duration-300
+    focus-within:[&_.field]:
+    focus-within:[&_.field]:bg-violet-200
+
+    [&_input]:bg-transparent
+    [&_input]:py-2
+    [&_input]:px-4
+    [&_input]:w-full
+    focus:[&_input]:border-none
+    focus:[&_input]:outline-none
+    focus:[&_input]:ring-0
+
+    [&_select]:rounded-md
+    [&_select]:py-2
+    [&_select]:px-4
+    [&_select]:bg-transparent
+    [&_select]:w-full
+    focus:[&_select]:w-full
+    focus:[&_select]:border-none
+    focus:[&_select]:outline-none
+    [&_select]:ring-0
+
+    before:absolute
+    before:w-[40rem]
+    before:aspect-square
+    before:rounded-full
+    before:bg-gradient-to-r
+    before:from-blue-400
+    before:to-violet-600
+    before:blur-2xl
+    before:-left-16
+    before:-top-16
+    before:-z-10
+    before:opacity-50
+
+    after:absolute
+    after:w-[30rem]
+    after:aspect-square
+    after:rounded-full
+    after:bg-gradient-to-r
+    after:from-violet-600
+    after:to-rose-500
+    after:blur-2xl
+    after:-right-24
+    after:-bottom-8
+    after:-z-10
+    after:opacity-50
+
+    [&_.switch]:rounded-full
+    [&_.switch]:w-fit
+    [&_.switch]:cursor-pointer
+    [&_.switch]:flex
+    [&_.switch]:items-center
+    [&_.switch]:text-center
+    [&_.switch]:bg-slate-300
+    [&_.switch]:p-1
+    [&_.switch]:relative
+    [&_.switch]:isolate
+    before:[&_.switch]:absolute
+    before:[&_.switch]:rounded-full
+    before:[&_.switch]:inset-[2px_50%_2px_2px]
+    before:[&_.switch]:m-auto
+    before:[&_.switch]:-z-10
+    before:[&_.switch]:
+    before:[&_.switch]:bg-white/70
+    before:[&_.switch]:transition-all
+    before:[&_.switch]:duration-500
+    before:[&_.switch]:ease-in-out
+">
+    <input class="peer/option1 sr-only" id="option-1" type="radio" name="panel" checked />
+    <input class="peer/option2 sr-only" id="option-2" type="radio" name="panel"  />
+    <input class="peer/option3 sr-only" id="option-3" type="radio" name="panel"  />
+
+   
+    <!-- nav -->
+    <section class=" max-w-xs !p-7
+        [&_label]:!text-2xl
+        [&_label]:py-3
+        [&_label]:px-6
+        [&_label]:rounded-xl
+        [&_label]:text-white
+        [&_label]:text-center
+        [&_label]:cursor-pointer
+        [&_label]:relative
+        [&_label]:
+        [&_label]:bg-purple-400
+        [&_label]:isolate
+
+        before:[&_label]:absolute
+        before:[&_label]:inset-[100%]
+        before:[&_label]:m-auto
+        before:[&_label]:bg-violet-900
+        before:[&_label]:transiton-all
+        before:[&_label]:duration-300
+        before:[&_label]:-z-10
+        before:[&_label]:rounded-xl
+        hover:before:[&_label]:inset-0
+
+        after:[&_label]:absolute
+        after:[&_label]:content-[attr(title)]
+        after:[&_label]:w-full
+        after:[&_label]:-bottom-5
+        after:[&_label]:left-0
+        after:[&_label]:-z-20
+        after:[&_label]:text-xs
+        after:[&_label]:text-purple-900
+        after:[&_label]:grid
+        after:[&_label]:place-content-center
+        after:[&_label]:transition-all
+        after:[&_label]:duration-300
+        hover:after:[&_label]:translate-y-0
+        after:[&_label]:font-sans
+        after:[&_label]:translate-y-12
+
+        peer-checked/option1:[&_#nav-1]:bg-violet-900
+        peer-checked/option2:[&_#nav-2]:bg-violet-900
+        peer-checked/option3:[&_#nav-3]:bg-violet-900
+
+    ">
+        <div class="flex justify-between gap-4">
+            <label for="option-1" id="nav-1" class="material-symbols-outlined" title="Invite User">person_add</label>
+            <label for="option-2" id="nav-2" class="material-symbols-outlined"  title="Invite Group">group_add</label>
+            <label for="option-3" id="nav-3" class="material-symbols-outlined" title="Invite Board">assignment</label>
+        </div>
+    </section>
+
+    <main class=" grid [grid-template-areas:'stack'] w-full max-w-md
+    [&>section]:[grid-area:stack]
+    [&>section]:scale-0
+    peer-checked/option1:[&>#panel-1]:scale-100
+    peer-checked/option1:[&>#panel-1]:delay-500
+
+    peer-checked/option2:[&>#panel-2]:scale-100
+    peer-checked/option2:[&>#panel-2]:delay-500
+
+    peer-checked/option3:[&>#panel-3]:scale-100
+    peer-checked/option3:[&>#panel-3]:delay-500
+    ">
+    
+        <!-- panel - invite people -->
+        <section id="panel-1" >
+            <h2>Invite people</h2>
+            <p>All invited people will be granted access to all sites within our organisation</p>
+            
+            
+            <input type="checkbox" id="invite"  class="peer sr-only" checked>
+            <label  for="invite" class="switch  peer-checked:before:inset-[2px_2px_2px_50%] 
+                [&>div]:py-2
+                [&>div]:px-4
+                [&>div]:text-sm
+            ">
+                <div>Invite with email</div>
+                <div >Invite with link</div>
+            </label>
+
+            <div class="grid [grid-template-areas:'stack'] 
+                [&>div]:[grid-area:stack]
+                [&>div]:translate-all
+                [&>div]:duration-500
+                [&>div]:ease-in-out
+                last:[&>div]:translate-x-[600px]
+                peer-checked:first:[&>div]:translate-x-[-600px]
+                peer-checked:last:[&>div]:translate-x-0
+            ">   
+                <div class="">
+                    <label>Add to team</label>
+                    <div class="field">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="button">Send email</button>
+                    </div>
+                </div>
+
+                <div class="">
+                    <label>Share Link</label>
+                    <div class="field">
+                        <div id="link" class="flex-1 py-2 px-4">https://www.icodethis.com</div>
+                        <button type="button" id="btn-copy" class="flex items-center gap-2">
+                            <span class="material-symbols-outlined">content_copy</span><span class="hidden sm:block">Copy</span></button>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-[0.6rem]">People with organisation email will be able to join with a link. <a href="javascript:void()">Deactivate</a> it if you don't need this.</p>
+        </section>
+
+        <!-- panel - invite team -->
+        <section  id="panel-2" >
+            <h2>Invite to team</h2>
+            
+            <div class="grid sm:grid-cols-2 gap-2 pb-6">
+                <div class="space-y-2">
+                    <label>Team member</label>
+                    <div class="field">
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" placeholder="Email address" required>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label>Permission</label>
+                    <div class="field">
+                        <select>
+                            <option>Read Only</option>
+                            <option>Read & Edit</option>
+                            <option>Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <a href=javascript:void()" class="text-sm">+ Add more</a>
+            </div>
+
+            <button type="button" disabled>Send invites</button>
+        
+        </section>
+
+        <!-- panel - invite block -->
+        <section  id="panel-3" class=" space-y-3 flex flex-col gap-8">
+            <h2>Invite to Board</h2>
+            <div class="field">
+                <input type="email" placeholder="Email address" required>
+            </div>
+            <div>
+                <label>Invite with link</label>
+                <p class="text-xs">Anyone with the link can view your board. <a href="javascript:void()">Create link</a>
+            </div>
+            <button type="button" class="w-full !mt-auto">Send Invitation</button>
+        </section>
+    </main>
+</body>
+</html>
