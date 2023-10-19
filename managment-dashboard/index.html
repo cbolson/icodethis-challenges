@@ -1,0 +1,767 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Managment Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/43974 -->
+  <body
+    class="bg-gray-100 text-slate-700 flex justify-center items-center min-h-screen">
+    <!-- hidden radio buttons which control which panel to show and which nav item to higlight -->
+    <input
+      class="peer/option1 sr-only"
+      id="option-1"
+      type="radio"
+      name="panel"
+      checked />
+    <input
+      class="peer/option2 sr-only"
+      id="option-2"
+      type="radio"
+      name="panel" />
+    <input
+      class="peer/option3 sr-only"
+      id="option-3"
+      type="radio"
+      name="panel" />
+    <input
+      class="peer/option4 sr-only"
+      id="option-4"
+      type="radio"
+      name="panel" />
+    <input
+      class="peer/option5 sr-only"
+      id="option-5"
+      type="radio"
+      name="panel" />
+    <input
+      class="peer/option6 sr-only"
+      id="option-6"
+      type="radio"
+      name="panel" />
+
+    <div
+      class="bg-white overflow-hidden shadow-lg rounded-xl w-full max-w-5xl grid grid-cols-[55px_auto] sm:grid-cols-[210px_auto] peer-checked/option1:[&_#nav-1]:bg-blue-50 peer-checked/option1:[&_#panel-1]:translate-x-0 peer-checked/option1:[&_#panel-1]:delay-500 peer-checked/option1:[&_#panel-1]:duration-500 peer-checked/option2:[&_#nav-2]:bg-blue-50 peer-checked/option2:[&_#panel-2]:translate-x-0 peer-checked/option2:[&_#panel-2]:delay-500-X peer-checked/option2:[&_#panel-2]:duration-500-X peer-checked/option2:[&_#panel-2>h2]:translate-y-0 peer-checked/option2:[&_#panel-2>h2]:delay-300 peer-checked/option2:[&_#panel-2_button]:scale-100 peer-checked/option3:[&_#nav-3]:bg-blue-50 peer-checked/option3:[&_#panel-3]:translate-x-0 peer-checked/option3:[&_#panel-3]:delay-500 peer-checked/option3:[&_#panel-3]:duration-500 peer-checked/option3:[&_#panel-3>h2]:translate-y-0 peer-checked/option4:[&_#nav-4]:bg-blue-50 peer-checked/option4:[&_#panel-4]:translate-x-0 peer-checked/option4:[&_#panel-4]:delay-500 peer-checked/option4:[&_#panel-4]:duration-500 peer-checked/option4:[&_#panel-4>h2]:translate-y-0 peer-checked/option5:[&_#nav-5]:bg-blue-50 peer-checked/option5:[&_#panel-5]:translate-x-0 peer-checked/option5:[&_#panel-5]:delay-500 peer-checked/option5:[&_#panel-5]:duration-500 peer-checked/option5:[&_#panel-5>h2]:translate-y-0 peer-checked/option6:[&_#nav-6]:bg-blue-50 peer-checked/option6:[&_#panel-6]:translate-x-0 peer-checked/option6:[&_#panel-6]:delay-500 peer-checked/option6:[&_#panel-6]:duration-500 peer-checked/option6:[&_#panel-6>h2]:translate-y-0">
+      <nav class="border-r h-full">
+        <div
+          class="flex flex-col justify-between gap-6 fixed [&>*]:px-2 sm:[&>*]:px-8">
+          <div class="text-4xl font-bold pt-2 sm:pt-6 ml-2 sm:ml-4">s</div>
+          <div
+            class="flex gap-2 flex-col [&>label]:flex [&>label]:items-center [&>label]:gap-2 [&>label]:py-2 [&>label]:px-2 sm:[&>label]:px-4 [&>label]:rounded-full [&>label]:w-full [&>label]:relative [&>label]:isolate [&>label]:overflow-hidden [&>label]:cursor-pointer last:[&_span]:hidden sm:last:[&_span]:block [&>button.active]:bg-blue-50 before:[&>label]:absolute before:[&>label]:left-0 before:[&>label]:scale-0 sm:before:[&>label]:scale-100 sm:before:[&>label]:w-10 sm:before:[&>label]:h-full before:[&>label]:aspect-square before:[&>label]:rounded-full before:[&>label]:-z-10 before:[&>label]:transition-all before:[&>label]:duration-300 before:[&>label]:ease-out hover:before:[&>label]:bg-red-50 hover:before:[&>label]:scale-100 hover:before:[&>label]:w-full">
+            <label for="option-1" id="nav-1" class="active">
+              <span class="material-symbols-outlined">vital_signs</span>
+              <span>Dashboard</span>
+            </label>
+            <label for="option-2" id="nav-2">
+              <span class="material-symbols-outlined">folder</span>
+              <span>Folders</span>
+            </label>
+
+            <label for="option-3" id="nav-3">
+              <span class="material-symbols-outlined">content_copy</span>
+              <span>Projects</span>
+            </label>
+
+            <label for="option-4" id="nav-4">
+              <span class="material-symbols-outlined">note_alt</span>
+              <span>Tasks</span>
+            </label>
+
+            <label for="option-5" id="nav-5">
+              <span class="material-symbols-outlined">settings</span>
+              <span>Settings</span>
+            </label>
+          </div>
+
+          <label
+            for="option-6"
+            id="nav-6"
+            class="mt-24 py-4 border-y flex items-center gap-2 cursor-pointer transition-all duration-300 hover:bg-red-100">
+            <img
+              src="https://i.pravatar.cc/150?img=19"
+              class="w-8 h-8 object-cover rounded-full" />
+            <p class="hidden sm:block font-bold">Devin Lee</p>
+            <span
+              class="material-symbols-outlined hidden sm:block ml-auto rounded-full bg-gray-100"
+              >keyboard_arrow_right</span
+            >
+          </label>
+        </div>
+      </nav>
+      <main
+        class="grid [grid-template-areas:'stack'] overflow-hidden [&>section]:[grid-area:stack] [&>section]:b [&>section]:-translate-x-full [&>section]:p-4 sm:[&>section]:p-8 [&>section]:transition-all [&>section]:duration-300 [&>section]:ease-out [&>section]: [&>section]: [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:transition-all [&_h2]:duration-300 [&_h2]:delay-1000 [&_h2]:-translate-y-20 [&_h3]:font-semibold [&_h3]:uppercase [&_h3]:text-sm [&_h3]:pt-6 [&_.btn]:bg-blue-50 [&_.btn]:h-24 [&_.btn]:w-24 [&_.btn]:rounded-lg [&_.btn]:p-4 [&_.btn]:text-xs [&_.btn.folder]:text-[0.6rem] [&_.btn.folder]:whitespace-nowrap [&_.btn]:grid [&_.btn]:place-content-center [&_.btn]:gap-1 [&_.btn]:relative [&_.btn]:isolate [&_.btn]:transition-all [&_.btn]:duration-300 [&_.btn]:overflow-hidden before:[&_.btn]:absolute before:[&_.btn]:w-5 before:[&_.btn]:h-5 before:[&_.btn]:bg-blue-100 before:[&_.btn]:border-4 before:[&_.btn]:border-white before:[&_button.new]:bg-red-300 before:[&_.btn]:rounded-full before:[&_.btn]:top-0 before:[&_.btn]:right-0 before:[&_.btn]:-z-10 before:[&_.btn]:duration-300 before:[&_.btn]:transition-all hover:before:[&_.btn]:w-[200%] hover:before:[&_.btn]:h-[200%] hover:before:[&_.btn]:translate-x-12 hover:before:[&_.btn]:-translate-y-12 hover:[&_.btn]:text-white-X [&_svg]:w-10 [&_svg]:mx-auto">
+        <!-- panel - dashboard -->
+        <section id="panel-1" class="">
+          <header
+            class="flex items-center justify-between flex-wrap gap-8 [&_button]:transition-all [&_button]:duration-300 hover:[&_button]:text-red-500">
+            <div
+              class="border rounded-full flex gap-2 py-2 px-4 focus-within:bg-blue-50 w-48 transition-all duration-300 ease-in-out focus-within:flex-1">
+              <button type="button" class="material-symbols-outlined">
+                search
+              </button>
+              <input
+                type="text"
+                placeholder="Search"
+                class="bg-transparent focus:border-0 focus:outline-none focus:ring-0 w-32" />
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-6">
+              <button type="button" class="material-symbols-outlined">
+                email
+              </button>
+              <button type="button" class="material-symbols-outlined">
+                alarm
+              </button>
+              <div
+                class="flex sm:flex-col items-center sm:items-end gap-2 sm:gap-0">
+                <time id="current-time" class="sm:text-4xl"></time>
+                <div id="current-date" class="text-right text-xs"></div>
+              </div>
+            </div>
+          </header>
+
+          <div class="grid md:grid-cols-[2fr_1fr]">
+            <div>
+              <div class="space-y-2">
+                <h3>Recent folders</h3>
+                <div class="flex gap-2 flex-wrap">
+                  <button type="button" class="btn folder">
+                    <svg
+                      viewBox="0 0 309.267 309.267"
+                      xml:space="preserve"
+                      fill="#000000">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g>
+                          <path
+                            style="fill: #0284c7"
+                            d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                          <path
+                            style="fill: #e4e7e7"
+                            d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                          <path
+                            style="fill: #0ea5e9"
+                            d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <p>Invoices</p>
+                  </button>
+
+                  <button type="button" class="btn new folder">
+                    <svg
+                      viewBox="0 0 309.267 309.267"
+                      xml:space="preserve"
+                      fill="#000000">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <g>
+                          <path
+                            style="fill: #0284c7"
+                            d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                          <path
+                            style="fill: #e4e7e7"
+                            d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                          <path
+                            style="fill: #0ea5e9"
+                            d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                        </g>
+                      </g>
+                    </svg>
+                    <p>Customers</p>
+                  </button>
+                </div>
+                <h3>Projects</h3>
+                <div
+                  class="flex gap-2 flex-wrap [&>*]:!w-48 [&_.project]:text-left [&_.project]:grid [&_.project]:grid-cols-[30px_1fr] [&_.project]:!gap-x-4 [&_.project]:!place-content-start [&_.project]: [&_.logo]:rounded-full [&_.logo]:bg-white [&_.logo]:w-8 [&_.logo]:h-8 [&_.logo]:grid [&_.logo]:place-content-center [&_.logo]:font-bold [&_.progress]:bg-white [&_.progress]:rounded-full [&_.progress]:p-0 [&_.progress]:h-1 [&_.progress]:mb-1 [&_.progress>div]:bg-gradient-to-r [&_.progress>div]:from-blue-800 [&_.progress>div]:to-blue-400 [&_.progress>div]:h-full [&_.progress>div]:rounded-full [&>.btn]: last:[&>button>div]:col-start-2 last:[&>button>div]:text-xs last:[&>button>div]:space-y-1 last:[&>button>div]:w-full last:[&>button>div]: [&_h4]:font-bold [&_h4]:text-sm [&_h4]:pt-1">
+                  <button type="button" class="btn project">
+                    <div class="logo text-fuchsia-700">S</div>
+                    <h4>Sintext</h4>
+                    <div>
+                      <div class="progress"><div class="w-[66%]"></div></div>
+                      <span>26/47</span>
+                    </div>
+                  </button>
+                  <button type="button" class="btn project">
+                    <div class="logo text-amber-500">T</div>
+                    <h4>Tetrion</h4>
+                    <div>
+                      <div class="progress"><div class="w-[39%]"></div></div>
+                      <span>7/21</span>
+                    </div>
+                  </button>
+                  <button type="button" class="btn project new">
+                    <div class="logo text-emerald-400">P</div>
+                    <h4>Petron</h4>
+                    <div>
+                      <div class="progress"><div class="w-[89%]"></div></div>
+                      <span>14/16</span>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btn !bg-transparent border text-slate-300 hover:text-slate-700">
+                    <span class="material-symbols-outlined">add</span>
+                    <p>Add new</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h3>Your Tasks</h3>
+              <div
+                class="bg-blue-50 rounded-lg mt-2 p-4 space-y-2 [&_label]:bg-white [&_label]:flex [&_label]:gap-2 [&_label]:cursor-pointer [&_label]:p-2 [&_label]:relative [&_label]:isolate hover:[&_label]:text-black [&_label]:transtion-all [&_label]:duration-300 hover:[&_label]:!bg-red-100 [&_label>div]:grid [&_label>div]:[grid-template-areas:'stack'] [&_label>div>span]:[grid-area:stack] [&_label>div>span]:text-2xl first:[&_label>div>span]:opacity-50 last:[&_label>div>span]:text-blue-500 last:[&_label>div>span]:scale-0 [&_label>div>span]:transition-all [&_label>div>span]:duration-300 [&_h4]:text-sm [&_h4]:w-full [&_h4]:whitespace-nowrap [&_h4]:space-y-2 [&_h4_span]:rounded-full [&_h4_span]:block [&_h4_span]:w-fit [&_h4_span]:py-px [&_h4_span]:px-3 [&_h4_span]:text-[0.65rem] [&_h4_span]:text-white [&_h4>div]:flex [&_h4>div]:items-center [&_h4>div]:justify-between last:[&_h4>div>span]:opacity-60 last:[&_h4>div>span]:text-black">
+                <div>
+                  <input type="checkbox" id="task-1" class="peer sr-only" />
+                  <label
+                    for="task-1"
+                    class="peer-checked:bg-white/50 peer-checked:[&>p]:opacity-50 peer-checked:[&>div>span]:scale-100">
+                    <div>
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-0"
+                        >circle</span
+                      >
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-100"
+                        >check_circle</span
+                      >
+                    </div>
+                    <h4>
+                      <p>Better quality favicon</p>
+                      <span class="bg-red-400">Design</span>
+                    </h4>
+                  </label>
+                </div>
+
+                <div>
+                  <input type="checkbox" id="task-2" class="peer sr-only" />
+                  <label
+                    for="task-2"
+                    class="peer-checked:bg-white/50 peer-checked:[&>p]:opacity-50 peer-checked:[&>div>span]:scale-100">
+                    <div>
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-0"
+                        >circle</span
+                      >
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-100"
+                        >check_circle</span
+                      >
+                    </div>
+                    <h4>
+                      <p>Better quality favicon</p>
+                      <div>
+                        <span class="bg-green-400">Watching</span>
+                        <span>12:30</span>
+                      </div>
+                    </h4>
+                  </label>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    id="task-3"
+                    class="peer sr-only"
+                    checked />
+                  <label
+                    for="task-3"
+                    class="peer-checked:bg-white/50 peer-checked:[&>p]:opacity-50 peer-checked:[&>div>span]:scale-100">
+                    <div>
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-0"
+                        >circle</span
+                      >
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-100"
+                        >check_circle</span
+                      >
+                    </div>
+                    <h4>
+                      <p>Better quality favicon</p>
+                      <div>
+                        <span class="bg-violet-500">Development</span>
+                        <span>14:30</span>
+                      </div>
+                    </h4>
+                  </label>
+                </div>
+
+                <div>
+                  <input
+                    type="checkbox"
+                    id="task-4"
+                    class="peer sr-only"
+                    checked />
+                  <label
+                    for="task-4"
+                    class="peer-checked:bg-white/50 peer-checked:[&>p]:opacity-50 peer-checked:[&>div>span]:scale-100">
+                    <div>
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-0"
+                        >circle</span
+                      >
+                      <span
+                        class="material-symbols-outlined peer-checked:scale-100"
+                        >check_circle</span
+                      >
+                    </div>
+                    <h4>
+                      <p>Better quality favicon</p>
+                      <span class="bg-red-400">Design</span>
+                    </h4>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- panel - folders -->
+        <section id="panel-2">
+          <h2>Folders</h2>
+          <div class="mt-6 flex gap-2 flex-wrap [&>button]:scale-0">
+            <button type="button" class="btn folder delay-[300ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Invoices</p>
+            </button>
+            <button type="button" class="btn folder new delay-[400ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Customers</p>
+            </button>
+            <button type="button" class="btn folder delay-[500ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Receipts</p>
+            </button>
+            <button type="button" class="btn folder new delay-[600ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Images</p>
+            </button>
+            <button type="button" class="btn folder delay-[700ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Documents</p>
+            </button>
+            <button type="button" class="btn folder new delay-[800ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Taxes</p>
+            </button>
+            <button type="button" class="btn folder delay-[900ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>ProjectX</p>
+            </button>
+            <button type="button" class="btn folder delay-[1000ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Secret-Vault</p>
+            </button>
+            <button type="button" class="btn folder new delay-[1100ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Peters-chickens</p>
+            </button>
+            <button type="button" class="btn folder delay-[1200ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Quantum-Physics</p>
+            </button>
+            <button type="button" class="btn folder delay-[1300ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Urban-Exploration</p>
+            </button>
+            <button type="button" class="btn folder delay-[1400ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Hidden-Treasures</p>
+            </button>
+            <button type="button" class="btn folder delay-[1500ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Retro-Music</p>
+            </button>
+
+            <button type="button" class="btn folder delay-[1600ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Artistic-Creations</p>
+            </button>
+            <button type="button" class="btn folder delay-[1700ms]">
+              <svg
+                viewBox="0 0 309.267 309.267"
+                xml:space="preserve"
+                fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g>
+                    <path
+                      style="fill: #0284c7"
+                      d="M260.944,43.491H125.64c0,0-18.324-28.994-28.994-28.994H48.323c-10.67,0-19.329,8.65-19.329,19.329 v222.286c0,10.67,8.659,19.329,19.329,19.329h212.621c10.67,0,19.329-8.659,19.329-19.329V62.82 C280.273,52.15,271.614,43.491,260.944,43.491z"></path>
+                    <path
+                      style="fill: #e4e7e7"
+                      d="M28.994,72.484h251.279v77.317H28.994V72.484z"></path>
+                    <path
+                      style="fill: #0ea5e9"
+                      d="M19.329,91.814h270.609c10.67,0,19.329,8.65,19.329,19.329l-19.329,164.298 c0,10.67-8.659,19.329-19.329,19.329H38.658c-10.67,0-19.329-8.659-19.329-19.329L0,111.143C0,100.463,8.659,91.814,19.329,91.814z "></path>
+                  </g>
+                </g>
+              </svg>
+              <p>Markers</p>
+            </button>
+          </div>
+        </section>
+
+        <!-- panel - projects -->
+        <section id="panel-3">
+          <h2>Projects</h2>
+          <div class="text-green-500 mt-6">
+            Contents would go here but it probably won't happen...
+          </div>
+        </section>
+
+        <!-- panel - tasks -->
+        <section id="panel-4">
+          <h2>Tasks</h2>
+          <div class="text-green-500 mt-6">
+            Contents would go here but it probably won't happen...
+          </div>
+        </section>
+
+        <!-- panel - settings -->
+        <section id="panel-5">
+          <h2>Settings</h2>
+          <div class="text-green-500 mt-6">
+            Contents would go here but it probably won't happen...
+          </div>
+        </section>
+
+        <!-- panel - user -->
+        <section id="panel-6">
+          <h2>Personal Data</h2>
+          <div class="text-green-500 mt-6">
+            Contents would go here but it probably won't happen...
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
