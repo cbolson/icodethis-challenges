@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding</title>
+<html>
+    <!-- https://icodethis.com/submissions/45369 -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    </head>
+    <body class="bg-gray-100 text-gray-800 min-h-screen">
+         <input class="peer/theme sr-only" id="theme" type="checkbox"  checked />
+         <input class="peer/option1 sr-only" id="option-1" type="radio" name="panel" checked />
+        <input class="peer/option2 sr-only" id="option-2" type="radio" name="panel"  />
+        <input class="peer/option3 sr-only" id="option-3" type="radio" name="panel"  />
+        <input class="peer/option4 sr-only" id="option-4" type="radio" name="panel"  />
+
+    <div class=" flex justify-center items-center min-h-screen overflow-hidden bg-gray-100 relative  px-4
+        before:absolute
+        before:inset-0
+        before:bg-indigo-900
+        before:transition-all
+        before:duration-[1000ms]
+        before:ease-in-out
+        after:absolute
+        after:inset-0
+        after:bg-indigo-900
+        after:transition-all
+        after:duration-[1000ms]
+        after:ease-in-out
+        before:-translate-x-full
+        after:translate-x-full
+        peer-checked/theme:before:-translate-x-[45%]
+        peer-checked/theme:after:translate-x-[45%]
+
+        peer-checked/theme:before:ease-in
+        peer-checked/theme:after:ease-in
+        peer-checked/theme:before:[&_main]:-translate-x-[45%]
+        peer-checked/theme:after:[&_main]:translate-x-[45%]
+        peer-checked/theme:before:[&_main]:delay-500
+        peer-checked/theme:before:[&_main]:duration-500
+        peer-checked/theme:after:[&_main]:delay-500
+        peer-checked/theme:after:[&_main]:duration-500
+
+
+        peer-checked/theme:[&_#dark]:scale-0 
+        peer-checked/theme:[&_#light]:scale-100
+        peer-checked/theme:[&_#light]:text-white
+        peer-checked/theme:[&_label.skip]:text-indigo-100
+        peer-checked/theme:[&_label.skip]:delay-500
+        peer-checked/theme:[&_label.next]:bg-indigo-900
+        peer-checked/theme:[&_label.next]:delay-500
+
+        peer-checked/option1:[&_#panel-1>section]:scale-100
+        peer-checked/option1:[&_#panel-1>div]:translate-y-0
+        peer-checked/option1:[&_#panel-1>*:nth-child(4)]:delay-[900ms]
+        peer-checked/option2:[&_#panel-2>section]:scale-100
+        peer-checked/option2:[&_#panel-2>div]:translate-y-0
+        peer-checked/option2:[&_#panel-2>*:nth-child(4)]:delay-[900ms]
+        peer-checked/option3:[&_#panel-3>section]:scale-100
+        peer-checked/option3:[&_#panel-3>div]:translate-y-0
+        peer-checked/option3:[&_#panel-3>*:nth-child(4)]:delay-[900ms]
+        peer-checked/option4:[&_#panel-4>section]:scale-100
+        peer-checked/option4:[&_#panel-4>div]:translate-y-0
+        peer-checked/option4:[&_#panel-4>*:nth-child(4)]:delay-[900ms]
+    ">
+       
+       <main class="bg-white  z-10 p-8 space-y-4 shadow-lg rounded-lg w-72 grid [grid-template-areas:'stack'] overflow-hidden relative isolate
+            before:absolute
+            before:inset-0
+            before:bg-indigo-400
+            before:transition-all
+            before:ease-in-out
+            before:duration-[650ms]
+            after:duration-[650ms]
+            after:absolute
+            after:inset-0
+            after:bg-indigo-400
+            after:transition-all
+            after:ease-in-out
+            after:-z-10
+            after:translate-x-full
+            before:-translate-x-full
+
+            
+
+            [&_*]:transition-all
+            [&_*]:duration-500
+            [&_*]:ease-out
+            [&>div]:text-center
+            [&>div]:
+            [&>div]:[grid-area:stack]
+            X-[&>div]:translate-x-[300px]
+            [&>div]:flex
+            [&>div]:flex-col
+            [&>div]:gap-8
+            [&>div>section]:scale-0
+            [&>div>div]:translate-y-24
+            [&>div>:nth-child(1)]:delay-[300ms]
+            [&>div>*:nth-child(2)]:delay-[500ms]
+            [&>div>*:nth-child(3)]:delay-[700ms]
+            [&>div>*:nth-child(4)]:delay-[0ms]
+            [&_img]:w-full
+            [&_h2]:font-bold
+            [&_h2]:text-lg
+            [&_p]:text-sm
+            [&>div>div]:flex
+            [&>div>div]:items-center
+            [&>div>div]:justify-between
+            [&>div>div]:mt-auto
+            [&_label]:cursor-pointer
+            [&_label.skip]:text-gray-400
+            hover:[&_label.skip]:text-indigo-500
+            [&_label.skip]:text-sm
+            [&_label.next]:bg-indigo-500
+            [&_label.next]:text-white
+            [&_label.next]:w-fit
+            [&_label.next]:flex
+            [&_label.next]:items-center
+            [&_label.next]:gap-2
+            [&_label.next]:py-2
+            [&_label.next]:px-3
+            [&_label.next]:rounded-br-xl
+            [&_label.next]:relative
+            before:[&_label.next]:absolute
+            before:[&_label.next]:transition-all
+            before:[&_label.next]:duration-150
+            before:[&_label.next]:w-full
+            before:[&_label.next]:h-full
+            before:[&_label.next]:right-0
+            before:[&_label.next]:bottom-0
+            before:[&_label.next]:bg-indigo-300
+            before:[&_label.next]:rounded-br-xl
+            before:[&_label.next]:-z-20
+            hover:before:[&_label.next]:-right-1
+            hover:before:[&_label.next]:-bottom-1
+            
+           
+       ">
+            <!-- panel - step 1 -->
+            <div id="panel-1">
+                <section>
+                    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/undraw_social.svg" alt="connect">
+                </section>
+                <section>
+                    <h2>Connect multiple accounts</h2>
+                </section>
+                <section>
+                    <p>Stay connected to any platgorm and are used to. Starting from Twitter, Instagram, Slack or whatever.</p>
+                </section>
+                <div>
+                    <label for="option-4" class="skip">Skip</label>
+                    <label for="option-2" class="next"><span class="material-symbols-outlined">arrow_forward</span></label>
+                </div>
+            </div>
+            
+            <!-- panel - step 2 -->
+            <div id="panel-2">
+                <section>
+                <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/undraw_online.svg" alt="messaging">
+                </section>
+                <section>
+                    <h2>Start messaging system</h2>
+                </section>
+                <section>
+                    <p>View your messages without leaving the viewo you are currently watching.</p>
+                </section>
+                <div>
+                    <label for="option-4" class="skip">Skip</label>
+                    <label for="option-3" class="next"><span class="material-symbols-outlined">arrow_forward</span></label>
+                </div>
+            </div>
+
+            <!-- panel - step 3 -->
+            <div id="panel-3">
+                <section>
+                <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/undraw_pie_graph.svg" alt="analytics">
+                </section>
+                <section>
+                    <h2>Instant data analysis</h2>
+                </section>
+                <section>
+                    <p>View and analyze all your activities grouped systematically for you to get conclusions.</p>
+                </section>
+                <div>
+                    <label for="option-4" class="next mx-auto">Get Started<span class="material-symbols-outlined">arrow_forward</span></label>
+                </div>
+            </div>
+            
+            <!-- panel - step 4 -->
+            <div id="panel-4">
+                <section>
+                    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/undraw_positive_attitude.svg" alt="success">
+                </section>
+                <section>
+                    <h2>Start Now!</h2>
+                </section>
+                <section>
+                    <p>Congratulations, you are now ready to start.</p>
+                </section>
+                <div>
+                    <label for="option-1" class="next mx-auto">Reset<span class="material-symbols-outlined">refresh</span></label>
+                </div>
+            </div>
+
+        
+        <label for="theme" class="absolute -top-2 right-2 grid [grid-template-areas:'stack'] cursor-pointer  transition z-10  text-indigo-500 
+                    [&>span]:transition-all
+                    [&>span]:[grid-area:stack]
+                    [&>span]:duration-200
+                    [&>#light]:scale-0 
+                    active:scale-100
+                    hover:text-indigo-900 
+                    hover:scale-125
+                ">
+                    <span id="dark" class="material-symbols-outlined">dark_mode</span>
+                    <span id="light" class="material-symbols-outlined">light_mode</span>
+                </label>
+            </main>
+    
+    </div>
+    </body>
+</html>
