@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <script src="scripts.js" defer></script>
+</head>
+<!-- https://icodethis.com/submissions/45256 -->
+<body class="bg-gradient-to-tr from-cyan-800 to-cyan-500 flex justify-center mt-12 items-start md:items-center   min-h-screen p-4">
+    
+        <section id="calendar" class="bg-white w-full max-w-sm  font-thin relative shadow-xl ">
+            
+            <header class="flex justify-between items-center py-2 px-4 text-gray-800 
+                [&_button]:text-3xl
+                [&_button]:transition
+                [&>button:hover]:text-cyan-500
+            ">
+                <button type="button" cal-nav="prev" class="material-symbols-outlined">arrow_left</button>
+                <h1 data-month class="uppercase"></h1>
+                <button type="button" cal-nav="next" class="material-symbols-outlined">arrow_right</button>
+            </header>
+
+            <main class="p-2 relative isolate overflow-hidden
+                before:bg-[url('https://images.pexels.com/photos/4085654/pexels-photo-4085654.jpeg?auto=compress&cs=tinysrgb&w=400&h=750&dpr=1')]
+                before:-inset-40
+                before:m-auto
+                before:absolute
+                before:bg-cover
+                before:bg-center
+                before:-z-10
+                before:opacity-80
+                [&>ul]:grid
+                [&>ul]:grid-cols-7
+                [&>ul>li]:flex
+                [&>ul>li]:items-center
+                [&>ul>li]:justify-center
+                [&>ul>li]:relative
+                [&>ul>li]:isolate
+                [&>ul>li]:transition
+                [&>ul>li]:aspect-square
+                [&>ul>li]:font-bold
+            ">
+                <!-- weekday titles -->
+                <ul data-weekdays class="weedays text-white font-semibold ">
+                </ul>
+
+                <!-- dates -->
+                <ul data-dates class="grid-rows-6 text-white text-sm 
+                    [&>li.inactive]:opacity-50
+                    [&>li:not(.inactive)]:cursor-pointer
+                    [&>li>div]:absolute
+                    [&>li>div]:bottom-0
+                    [&>li>div]:flex
+                    [&>li>div]:gap-1
+                    [&>li>div>span]:rounded-full
+                    [&>li>div>span]:w-1
+                    [&>li>div>span]:h-1
+                    [&>li.today]:text-cyan-600
+                    [&>li.active]:text-cyan-600
+                    before:[&>li]:absolute 
+                    before:[&>li]:transition
+                    before:[&>li]:duration-300
+                    before:[&>li]:rounded-full
+                    before:[&>li]:bg-transparent
+                    before:[&>li]:inset-2
+                    before:[&>li]:-z-10
+                    before:[&>li]:border
+                    before:[&>li]:border-transparent
+                    before:[&>li.today]:bg-yellow-300
+                    before:[&>li.active]:bg-cyan-400
+                    X-before:[&>li:not(.inactive):hover]:border-white
+                    before:[&>li:not(.inactive):hover]:bg-cyan-200
+                    hover:[&>li:not(.inactive)]:text-cyan-700
+                ">
+                </ul>
+            </main>
+
+            <section class="h-60 relative overflow-hidden">
+                
+                <!-- selected date events -->
+                <div id="list-events" class="h-48  overflow-y-auto"> </div>
+
+                <button type="button" id="btn-add-event" class="material-symbols-outlined absolute -bottom-12 -right-12 rounded-full text-4xl w-24 h-24 bg-cyan-300 text-white py-0 pb-10 pl-0 pr-10 transition-all duration-300 hover:bg-cyan-700 hover:scale-150">add</button>
+                
+                <!-- new event add -->
+                <div id="panel-new-event"
+                    class="absolute w-full inset-0 bg-white  p-6   transition duration-300 z-30 space-y-2 translate-y-full">
+                
+                    <form id="form-new-event" class="w-full space-y-4 
+                        [&_input]:rounded-md
+                        [&_button]:rounded-md
+                        [&_label]:rounded-md
+                        [&_.switch]:rounded-full
+                        [&_.switch]:w-12
+                        [&_.switch]:h-6
+                        [&_.switch]:cursor-pointer
+                        [&_.switch]:border
+                        [&_.switch]:border-slate-400
+                        [&_.switch]:box-content
+                        [&_.switch]:relative
+                        before:[&_.switch]:absolute
+                        before:[&_.switch]:rounded-full
+                        before:[&_.switch]:w-5
+                        before:[&_.switch]:h-5
+                        before:[&_.switch]:top-0.5
+                        before:[&_.switch]:left-1
+                        before:[&_.switch]:bg-slate-400
+                        before:[&_.switch]:transition-all
+                        before:[&_.switch]:ease-in-out
+
+                    ">
+                        <h2 data-lang="events-btn-add" clas="flex gap-2 items-center">
+                            New event on
+                            <input type="date" id="event-date" class=" bg-transparent font-bold" readonly>
+                        </h2>
+                        <div class="flex items-center gap-2">
+                            at <input type="time" id="event-time" class=" bg-transparent font-bold">
+                            
+                            <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs">
+                                <input type="checkbox" id="alarm" name="alarm" class="peer sr-only">
+                                <label  for="alarm" class="switch 
+                                    peer-disabled:opacity-50 
+                                    peer-checked:before:bg-green-500 
+                                    peer-checked:before:translate-x-full
+                                    peer-checked:border-green-500
+                                ">
+                                </label>
+                                <label for="alarm" class="hover:text-red-900">Set Alarm</label>
+                            </div>
+                        </div>
+                
+                        <input type="text" id="event-desc" required placeholder="eg. meeting" autocomplete="off" class="w-full py-1 px-3 text-[#2A3231] border focus:ring-0 focus:outline-none focus:border-[#2A3231]">
+                        <button type="submit" id="btn-save-event" class="py-2 w-full bg-cyan-500 text-white transition hover:bg-cyan-600 "" data-lang="events-btn-save">save event</button>
+                
+                    </form>
+                    <button type="button" id="btn-close-add-event" class="material-symbols-outlined absolute top-0 right-2 ttext-cyan-500 ransition-all hover:scale-125  hover:text-cyan-600 ">close</button>
+                </div>
+            </section>
+        </section>
+
+
+    <!-- template - no events for date -->
+    <template id="tpl-no-events">
+        <div id="icon-no-event" class="grid place-items-center p-6 transition">
+            <span class="material-symbols-outlined text-6xl text-slate-400">calendar_month</span>
+            <p class="text-xs">No events for this day</p>
+        </div>
+    </template>
+
+    <!-- events list item -->
+    <template id="tpl-event">
+        <article class="text-left flex items-center  gap-2 justify-between w-full border-b border-white/30  transition hover:bg-gray-100 opacity-0">
+            <span event-alarm class="material-symbols-outlined text-green-400 p-3 sm:p-4 bg-gray-100">alarm</span>
+            
+            <div class="space-y-0">
+                <p event-title class="text-sm font-semibold tracking-wider"></p>
+                <time event-time class="text-xs"></time>
+            </div>
+            <div class="pr-4 flex gap-2 ml-auto [&>button:hover]:scale-125 [&>button]:transition">
+                <button type="button" event-edit class="material-symbols-outlined text-base hidden">edit</button>
+                <button type="button"  event-delete class="material-symbols-outlined text-base text-cyan-500 hover:text-cyan-700">delete</button>
+            </div>
+    
+        </article>
+    </template>
+</body>
+</html>
