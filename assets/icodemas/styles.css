@@ -1,0 +1,199 @@
+.material-fill-1 {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.animate-in::after {
+  translate: 0 50px;
+  transform-origin: left;
+  animation: grow-up 500ms forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes grow-up {
+  0% {
+    translate: 0 50px;
+  }
+
+  60% {
+    translate: 0 -5px;
+  }
+
+  100% {
+    translate: 0;
+  }
+}
+
+#santa {
+  --speed: 1000ms;
+  --iterations: 4;
+  --delay: 1000ms;
+  transform: translateX(300px);
+  transform-origin: center right;
+  animation: move 4s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes move {
+  0% {
+    rotate: -2deg;
+    transform: translateX(300px);
+  }
+  15% {
+    rotate: 2deg;
+  }
+  20% {
+    rotate: -2deg;
+  }
+  25% {
+    rotate: 2deg;
+  }
+  30% {
+    rotate: -2deg;
+  }
+  35% {
+    rotate: 2deg;
+  }
+  40% {
+    rotate: -2deg;
+  }
+  45% {
+    rotate: 2deg;
+  }
+  50% {
+    rotate: -2deg;
+  }
+  55% {
+    rotate: 2deg;
+  }
+  60% {
+    rotate: -2deg;
+  }
+  65% {
+    rotate: 2deg;
+  }
+  70% {
+    rotate: -1deg;
+  }
+  75% {
+    rotate: 1deg;
+  }
+  80% {
+    rotate: -1deg;
+  }
+  85% {
+    rotate: 1deg;
+  }
+  95% {
+    rotate: 0deg;
+  }
+  100% {
+    transform: translateX(0px);
+    rotate: 0deg;
+  }
+}
+
+#arm-back {
+  transform-origin: center left;
+  animation: move-arm var(--speed) ease-out;
+  animation-iteration-count: var(--iterations);
+  animation-delay: var(--delay);
+}
+@keyframes move-arm {
+  0%,
+  100% {
+    rotate: 0deg;
+    translate: 0rem 0rem;
+  }
+  50% {
+    rotate: z 10deg;
+    translate: 0 -2rem;
+  }
+}
+#leg-back {
+  transform-origin: center left;
+  animation: move-leg-back var(--speed) ease-out;
+  animation-iteration-count: var(--iterations);
+  animation-delay: var(--delay);
+}
+@keyframes move-leg-back {
+  0%,
+  100% {
+    rotate: 0deg;
+    translate: 0rem 0rem;
+  }
+  50% {
+    rotate: z 20deg;
+    translate: 0.5rem -2rem;
+  }
+}
+
+#leg-front {
+  transform-origin: center left;
+  animation: move-leg-front var(--speed) ease-out;
+  animation-iteration-count: var(--iterations);
+  animation-delay: var(--delay);
+}
+
+@keyframes move-leg-front {
+  0%,
+  100% {
+    rotate: 0deg;
+    translate: 0rem;
+  }
+  50% {
+    rotate: -10deg;
+    translate: 0.5rem 0rem;
+  }
+}
+
+svg#star .group {
+  transform: translate(42.5px, 42.5px);
+}
+svg#star path {
+  transform: translate(-42.5px, -42.5px);
+}
+svg#star .large {
+  animation: sparkle 2.5s infinite;
+}
+svg#star .small {
+  animation: sparkle 2.5s infinite reverse;
+}
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+dialog {
+  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0);
+  transition: 500ms ease-out;
+}
+dialog.fadeUp {
+  box-shadow: 0 0 0 100vw rgba(0, 0, 1, 0.4);
+  transition: 1s ease-out;
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(white, white);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px white);
+  z-index: 999;
+}
+
+#container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
