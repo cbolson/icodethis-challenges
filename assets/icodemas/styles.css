@@ -1,3 +1,6 @@
+* {
+  /*outline: 1px dashed red;*/
+}
 .material-fill-1 {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
@@ -196,4 +199,36 @@ dialog.fadeUp {
   width: 200px;
   height: 200px;
   margin: 20px;
+}
+
+svg#scroll-line {
+  position: absolute;
+  top: 20rem;
+  display: block;
+  left: 50%;
+  overflow: visible;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+svg#scroll-line path {
+  stroke: transparent;
+  stroke-width: 2px;
+}
+#sleigh-amimate {
+  z-index: 100;
+  position: absolute;
+  width: 4rem;
+  top: -320px;
+  left: -200px;
+  pointer-events: none;
+}
+@media (min-width: 650px) {
+  svg#scroll-line {
+    top: 25rem;
+  }
+  #sleigh-amimate {
+    width: 6rem;
+    top: -165px;
+    left: -100px;
+  }
 }

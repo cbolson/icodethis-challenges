@@ -1,5 +1,6 @@
 // tailwind config
 tailwind.config = {
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -11,6 +12,58 @@ tailwind.config = {
     },
   },
 };
+
+/****************** dark mode toggle ***************/
+document.querySelector("#toggle-mode").addEventListener("change", () => {
+  document.documentElement.classList.toggle("dark");
+});
+
+/************** LOGO ANIMATION **************/
+const logoBlocks = document.querySelectorAll("#icodethis-logo path");
+console.log(logoBlocks);
+let logoInterval;
+let currentIndex = 0;
+function animateLogo() {
+  // check if an interval has already been set up
+  if (!logoInterval) {
+    logoInterval = setInterval(moveBlocks, 500);
+  }
+}
+const locations = [
+  "M 0 0 H 40 V 25 H 60 V 0 Z",
+  "M 20 25 V 60 H 80 V 25 Z",
+  "M 0 60 V 100 H 100 V 60",
+];
+
+function moveBlocks() {
+  logoBlocks.forEach((b, i) => {
+    let newKey = (i + currentIndex) % logoBlocks.length;
+    b.setAttribute("d", locations[newKey]);
+  });
+  currentIndex = (currentIndex + 1) % locations.length;
+}
+
+function stopTextColor() {
+  clearInterval(logoInterval);
+  logoInterval = null;
+}
+
+animateLogo();
+
+//**************** SLIDE TO ANCHOR ***************/
+function scrollToSection(sectionId) {
+  document
+    .querySelector(`#panel-${sectionId}`)
+    .scrollIntoView({ behavior: "smooth" });
+}
+// nav button event handler to simulate anchors
+document
+  .querySelectorAll("[nav-btn]")
+  .forEach((btn) =>
+    btn.addEventListener("pointerdown", () =>
+      scrollToSection(btn.getAttribute("nav-btn"))
+    )
+  );
 
 //************* COUNTDOWN  ***************** //
 const elDays = document.querySelector("#days");
@@ -290,7 +343,7 @@ const PRODUCTS = [
     rating: 5,
     price: 950,
     discount: 25,
-    cat: 1,
+    cat: 2,
     featured: true,
     recent: false,
   },
@@ -299,14 +352,125 @@ const PRODUCTS = [
     name: "Ginger Bread Man",
     desc: `A whole box overflowing with home-made gingerbread men using our very own secret recepie. You will want to eat them all!`,
     img: "/images/iCodeMas/gingerbread_cookie.png",
-    rating: 5,
+    rating: 3,
     price: 1099,
     discount: 0,
-    cat: 1,
+    cat: 3,
     featured: true,
     recent: false,
   },
+  {
+    id: 4,
+    name: "Snowflake Decoration",
+    desc: `Add some "cool" features to your Christmas decorations`,
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 3,
+    price: 499,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 5,
+    name: "Star Shaped Cookie",
+    desc: ``,
+    img: "/images/iCodeMas/star_cookie.png",
+    rating: 5,
+    price: 1299,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 6,
+    name: `Santas's Hat`,
+    desc: ``,
+    img: "/images/iCodeMas/santa_hat.png",
+    rating: 5,
+    price: 3999,
+    discount: 15,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 7,
+    name: "Candy Cane",
+    desc: ``,
+    img: "/images/iCodeMas/candy_cane.png",
+    rating: 5,
+    price: 999,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: true,
+  },
+  {
+    id: 8,
+    name: "Snowman Decoration",
+    desc: ``,
+    img: "/images/iCodeMas/snowman_deco.png",
+    rating: 5,
+    price: 3999,
+    discount: 10,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 9,
+    name: "Christmas Ball",
+    desc: ``,
+    img: "/images/iCodeMas/christmas_ball.png",
+    rating: 5,
+    price: 399,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 10,
+    name: `Christmas Red Sock's`,
+    desc: ``,
+    img: "/images/iCodeMas/christmas_sock.png",
+    rating: 5,
+    price: 2999,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
+  {
+    id: 11,
+    name: "Red Ribbon",
+    desc: ``,
+    img: "/images/iCodeMas/red_ribbon.png",
+    rating: 5,
+    price: 399,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: true,
+  },
+  {
+    id: 12,
+    name: "Christmas Tree Cookie",
+    desc: ``,
+    img: "/images/iCodeMas/tree_cookie.png",
+    rating: 5,
+    price: 1399,
+    discount: 0,
+    cat: 1,
+    featured: false,
+    recent: false,
+  },
 ];
+
+const CART = [];
+
 /*
 {
         id: 0,
@@ -324,45 +488,90 @@ const PRODUCTS = [
 
 // selectors
 
-const tplProductButton = document.querySelector("#tpl-product-button");
+const tplProductItem = document.querySelector("#tpl-product-item");
+const tplProductItemFeatured = document.querySelector(
+  "#tpl-product-item-featured"
+);
 const panelFeaturedList = document.querySelector("#panel-featured-list");
 const tplProductDetails = document.querySelector("#tpl-product-details");
 const panelFeaturedProduct = document.querySelector("#panel-featured-product");
+const panelShop = document.querySelector("#panel-shop");
+const navCart = document.querySelector("#nav-cart");
 
 let firstLoad = true;
 
 function renderProducts(dest, type = "") {
   dest.innerHTML = "";
-
-  const arr = filterProductsByProperty(PRODUCTS, "featured", true);
-
+  let arr;
+  if (type) arr = filterProductsByProperty(PRODUCTS, type, true);
+  else arr = PRODUCTS;
+  //console.log(arr)
   let delay = 0;
   let delaySpacer = 300;
 
   arr.forEach((a) => {
-    const clone = tplProductButton.content.cloneNode(true);
-    const btn = clone.querySelector("button");
-    const img = btn.querySelector("img");
+    let clone;
+    let product;
+    let btn;
+    if (type === "featured") {
+      clone = tplProductItemFeatured.content.cloneNode(true);
+      product = clone.querySelector("button");
+      btn = product;
+    } else {
+      clone = tplProductItem.content.cloneNode(true);
+      product = clone.querySelector("article");
+      btn = product.querySelector("button");
+    }
+    const elProductImg = product.querySelector(".product-img");
+    const img = elProductImg.querySelector("img");
     img.src = a.img;
     img.setAttribute("alt", a.name);
     if (a.recent) {
-      btn.setAttribute("label", "new");
-      btn.classList.add("new");
+      elProductImg.setAttribute("label", "new");
+      product.classList.add("new");
     }
     if (a.discount) {
-      btn.setAttribute("label", `${a.discount}%`);
-      btn.classList.add("offer");
+      elProductImg.setAttribute("label", `${a.discount}%`);
+      product.classList.add("offer");
     }
+
+    if (type != "featured") {
+      clone.querySelector("[data-title]").innerText = a.name;
+      clone.querySelector("[data-price]").innerText = formatAsDollarsAndCents(
+        a.price
+      );
+    }
+
     // add to dom
     dest.append(clone);
 
     // animate in
-    setTimeout(() => btn.classList.remove("scale-0"), delay);
+    setTimeout(() => product.classList.remove("scale-0"), delay);
     delay += delaySpacer;
     btn.addEventListener("pointerdown", () => {
       // need to add some code to prevent clicking on the button again
 
-      if (type === "featured") displayFeatured(a);
+      if (type === "featured") {
+        displayFeatured(a);
+      } else {
+        if (!isProductInCart(a.id)) {
+          //console.log("add to cart");
+          // not in cart - add
+          addProductToCart(a.id);
+          btn.classList.add("bg-[#C5E0FB]", "text-black");
+          btn.classList.remove("sm:translate-y-full");
+          btn.querySelector("p").innerText = "Remove";
+          btn.querySelector("span").innerText = "remove_shopping_cart";
+        } else {
+          // in cart - remove
+          //console.log("REMOVE from cart");
+          removeProductFromCart(a.id);
+          btn.classList.remove("bg-[#C5E0FB]", "text-black");
+          btn.classList.add("sm:translate-y-full");
+          btn.querySelector("p").innerText = "Add to Cart";
+          btn.querySelector("span").innerText = "shopping_cart";
+        }
+      }
     });
   });
 }
@@ -370,9 +579,14 @@ function renderProducts(dest, type = "") {
 function displayFeatured(item) {
   displayProductDetails(panelFeaturedProduct, item);
 }
+// add featured products
 renderProducts(panelFeaturedList, "featured");
 displayFeatured(PRODUCTS[0]);
 
+// add all products
+renderProducts(panelShop);
+
+// FEATURED - function - show product details
 function displayProductDetails(dest, item) {
   // remove current contents (to animate)
   let delay = 0;
@@ -487,6 +701,57 @@ function displayProductDetails(dest, item) {
       }, delay);
     }
   }, delayLoadProduct);
+}
+
+// CART Function - add a product to the cart
+function addProductToCart(productId) {
+  // Check if the product already exists in the cart
+  const existingProduct = CART.find(
+    (product) => product.productId === productId
+  );
+
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    CART.push({ productId, quantity: 1 });
+  }
+
+  // update cart in nav
+  updateCartTotalElement();
+}
+
+// CART Function to remove a product from the cart
+function removeProductFromCart(productId) {
+  // Find the index of the product in the cart
+  const productIndex = CART.findIndex(
+    (product) => product.productId === productId
+  );
+  if (productIndex !== -1) {
+    // If the product is found, remove it from the cart
+    CART.splice(productIndex, 1);
+  }
+  // update cart in nav
+  updateCartTotalElement();
+}
+
+// CART Function - check if a product is in the cart
+function isProductInCart(productId) {
+  return CART.some((product) => product.productId === productId);
+}
+// CART function - get total in cart
+function getTotalItemsInCart() {
+  // Use the reduce method to sum the quantities of all products
+  return CART.reduce((acc, product) => acc + product.quantity, 0);
+}
+// CART Function - update an HTML element with the total number of items
+function updateCartTotalElement() {
+  navCart.classList.add("after:scale-0");
+  //console.log(navCart);
+  const totalItems = getTotalItemsInCart();
+  navCart.setAttribute("data-num", totalItems);
+  setTimeout(() => {
+    if (totalItems > 0) navCart.classList.remove("after:scale-0");
+  }, 200);
 }
 
 function addToCart(item) {
@@ -765,4 +1030,86 @@ document.querySelector("#toggle-snow").addEventListener("change", (e) => {
 });
 
 window.addEventListener("resize", createSnow);
-createSnow();
+//createSnow()
+
+document.querySelector("#toggle-snow").addEventListener("change", (e) => {
+  if (e.target.checked) createSnow();
+  else snow.classList.add("hidden");
+});
+
+/********************* SVG onSCROLL ********************/
+const path = document.querySelector(".path");
+const circle = document.querySelector("#sleigh-amimate");
+
+let pathPosition = path.getBoundingClientRect();
+let documentPosition = document.body.getBoundingClientRect();
+const pathTotalLength = path.getTotalLength();
+
+function positionElements() {
+  // SVG passes center of screen
+  const relativePageOffset =
+    -pathPosition.top + (window.pageYOffset + window.innerHeight * 0.5);
+
+  const pointPercentage = relativePageOffset / pathPosition.height;
+  const pointOnPath = pointPercentage * pathTotalLength;
+  const pathPoint = path.getPointAtLength(pointOnPath);
+
+  circle.style.transform = `translate(
+			${pathPosition.left + pathPoint.x}px,
+			${pathPosition.top + pathPoint.y}px
+		)`;
+}
+
+window.addEventListener("scroll", () => {
+  positionElements();
+});
+
+window.addEventListener("resize", () => {
+  pathPosition = path.getBoundingClientRect();
+  documentPosition = document.body.getBoundingClientRect();
+
+  positionElements();
+});
+
+positionElements();
+
+// get all the "close" buttons (the selector can be by type, classname, or data attribute)
+document.querySelectorAll("[btn-close]").forEach((btn) => {
+  // get parrent container (section, div, article, class name etc.)
+  // Note - I prefer to get this outside of the eventlistener so as to avoid making the JavasSript find it each time the button is clicked
+
+  // button event listener (click)
+  btn.addEventListener("click", () => {
+    const panelID = btn.getAttribute("btn-close");
+    const el = document.querySelector(`#${panelID}`);
+    // scale element down (or whatever effect you want)
+    if (panelID === "panel-alert") {
+      el.classList.add("-top-24");
+      // remove dom
+      setTimeout(() => el.classList.add("hidden"), 500);
+    }
+  });
+});
+
+const panelHeader = document.getElementById("header-principal");
+const panelAlert = document.getElementById("panel-alert");
+
+// Function to handle intersection changes
+function handleIntersection(entries, observer) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      panelHeader.style.top = "0";
+    } else {
+      panelHeader.style.top = "2rem";
+    }
+  });
+}
+
+// Set up the Intersection Observer
+var observer = new IntersectionObserver(handleIntersection, {
+  root: null,
+  threshold: 0,
+});
+
+// Observe the alert panel - when out of view update the header "top" position
+observer.observe(panelAlert);

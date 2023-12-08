@@ -9,88 +9,212 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-            <link rel="stylesheet" href="styles.css">
-            <script type="module" src="scripts.js"></script>
     </head>
 
-    <body class="bg-white font-roboto flex flex-col  items-center min-h-screen 
-        [&_.product]:relative        
-        before:[&_.product]:content-[attr(label)]
-        before:[&_.product]:absolute
-        before:[&_.product]:top-0
-        before:[&_.product]:left-0
-        before:[&_.product]:text-xs
-        before:[&_.product]:grid
-        before:[&_.product]:place-content-center
-        before:[&_.product]:py-[2px]
-        before:[&_.product]:px-1
-        before:[&_.product]:w-10
-        before:[&_.product]:uppercase
-        before:[&_.product]:text-white
-        [&_.new]:border-teal
-        before:[&_.product.new]:bg-teal
-        X-[&_.offer]:border-red-500
-        before:[&_.product.offer]:bg-red-500
+    <body class=" bg-white dark:bg-teal transition-all duration-300 font-roboto flex flex-col  items-center min-h-screen 
+        [&_.product-img]:relative        
+        [&_.product-img]:isolate
+        before:[&_.product-img]:content-[attr(label)]
+        before:[&_.product-img]:absolute
+        before:[&_.product-img]:top-0
+        before:[&_.product-img]:left-0
+        before:[&_.product-img]:text-xs
+        before:[&_.product-img]:grid
+        before:[&_.product-img]:place-content-center
+        before:[&_.product-img]:py-[2px]
+        before:[&_.product-img]:px-1
+        before:[&_.product-img]:w-10
+        before:[&_.product-img]:-z-10
+        before:[&_.product-img]:uppercase
+        before:[&_.product-img]:text-white
+        before:[&_.new_.product-img]:bg-teal
+        before:[&_.offer_.product-img]:bg-red-500
 
     ">
-    <div id="snow" data-count="200" class="fixed left-0 top-0 z-30 h-full w-full overflow-hidden pointer-events-none"></div>
-    <input  id="toggle-snow"  type="checkbox" class="peer/snow sr-only" checked>
-    <input  id="toggle-music"  type="checkbox" class="peer/music sr-only">
-    <input  id="toggle-mode"  type="checkbox" class="peer/mode sr-only">
-    
-    <!-- page settings -->
-    <div class="absolute top-2 left-2 flex items-center gap-2 z-10
-        [&>label]:cursor-pointer
-        [&>label]:text-white
-        [&>label]:p-2
-        [&>label]:grid
-        [&>label]:place-content-center
-        [&>label]:relative
-        [&>label]:isolate
-        before:[&>label]:absolute
-        before:[&>label]:inset-full
-        before:[&>label]:transistion-all
-        before:[&>label]:duration-300
-        before:[&>label]:bg-white/50
-        before:[&>label]:-z-10
-        before:[&>label]:rounded-full
-        hover:before:[&>label]:inset-0
-        peer-checked/snow:[&_#btn-snow]:text-red-500
-       
-        peer-checked/mode:[&_#btn-mode]:text-red-500
-         peer-checked/music:[&_#btn-music]:text-red-500
-        peer-checked/music:before:[&_#btn-music]:inset-[0_-200px_0_0]
-        peer-checked/music:before:[&_#btn-music]:bg-white
-        peer-checked/music:[&_#audio-info]:scale-100
-    "> 
-        <label for="toggle-mode" id="btn-mode" class=" material-symbols-outlined">dark_mode</label>
-        <label for="toggle-snow" id="btn-snow" class=" material-symbols-outlined">ac_unit</label>
-        <label for="toggle-music" id="btn-music" class="material-symbols-outlined group">music_note</label>
    
+        
+        <div id="snow" data-count="200" class="fixed left-0 top-0 z-40 h-full w-full overflow-hidden pointer-events-none"></div>
+        
+        <input id="toggle-snow"  type="checkbox" class="peer/snow sr-only">
+        <input id="toggle-music"  type="checkbox" class="peer/music sr-only">
+        <input id="toggle-mode"  type="checkbox" class="peer/mode sr-only">
+        <input id="toggle-nav" type="checkbox" class="peer/nav sr-only" />
+        
 
-        <article id="audio-info"
-            class="bg-white w-fit scale-0 transition-all duration-300 origin-left text-left text-sm gap-2 flex items-center  py-2 px-4 rounded-full -translate-x-4">   
-            <div audio-img class="w-10 h-10 rounded-full p-1">
-                <img src="" class="w-full h-full object-cover rounded-full" alt="">
-            </div>
-            <div>
-                <p audio-title class="font-semibold "></p>
-                <p class="text-xs -mt-1">Music by <a target="_blank" class="text-teal"><span audio-artist></span></a> from <a
-                        target="_blank" class="text-teal">Pixabay</a>
-            </div>
-            <button type="button" id="btn-audio-next" class="material-symbols-outlined">skip_next</button>   
-        </article>
-</div>
+        <!-- promo alert -->
+        <section id="panel-alert" class="relative top-0 left-0 w-full bg-red-100 p-1 gap-2 sm:gap-6 px-4 sm:px-8 text-center text-sm relative flex items-center justify-between w-full transition-all duration-300 z-30">
+            <span></span>
+            <p>Use code "XMAS" for a 20% discount at checkout</p>
+            <button type="button" btn-close="panel-alert" class="material-symbols-outlined text-base transition duration-300 hover:scale-150 hover:text-teal focus:scale-150 focus:text-teal focus:ring-0 outline-none border-none">close</button>
+        </section>
+        
+        <!-- main header -->
+        <header id="header-principal" class="fixed top-8 z-10 bg-white  dark:bg-teal  w-full flex items-center justify-center 
+            peer-checked/nav:[&_#nav-btn-open]:scale-0
+            peer-checked/nav:[&_#nav-btn-close]:scale-100
+            peer-checked/nav:[&_#nav-principal]:translate-y-0
+            peer-checked/nav:[&_#nav-principal]:opacity-100
+            peer-checked/nav:[&_#nav-principal]:transition-all
+            peer-checked/nav:[&_#nav-principal]:duration-500
+        ">
+            <section class="w-full max-w-4xl relative isolate flex items-center gap-2  px-4 h-14 dark:text-white
+                before:inset-0
+                before:absolute 
+                before:bg-white
+                 dark:before:bg-teal
+                before:-z-10
+            ">
+                <p class="font-bold text-lg flex items-center gap-2">
+                    <svg id="icodethis-logo" class="w-6 [&>p]:tranistion-all [&>p]:duration-300 [&>p]:ease-in-out"
+                        viewBox="0 0 100 100" fill="none">
+                        <path d="M 0 0 H 40 V 25 H 60 V 0 Z" fill="#E32A77"></path>
+                        <path d="M 20 25 V 60 H 80 V 25 Z" fill="#181028"></path>
+                        <path d="M 0 60 V 100 H 100 V 60" fill="#8961DF"></path>
+                    </svg>
+                    iCodeMas
+                </p>
     
+                <label id="btn-nav" for="toggle-nav" class="ml-auto grid [grid-template-areas:'stack'] place-items-center  cursor-pointer transition-all sm:hidden
+                    [&>span]:[grid-area:stack]
+                    [&>span]:transition-all
+                    [&>span]:duration-300
+                    [&>span#nav-btn-close]:scale-0
+                ">
+                    <span class="material-symbols-outlined"  id="nav-btn-open">menu</span>
+                    <span class="material-symbols-outlined" id="nav-btn-close">close</span>
+                 </label>
+        
+        
+                <div id="nav-principal" class="absolute -z-20 top-14 right-0 w-72 bg-[#97C0DA] pt-2 px-4 -translate-y-32 opacity-0 flex flex-col sm:gap-4 items-center 
+                    justify-center w-full
+                    sm:static
+                    sm:translate-y-0 
+                    sm:pt-0
+                    sm:px-0
+                    sm:justify-between
+                    sm:bg-transparent
+                    sm:z-20
+                    sm:flex-row
+                    sm:duration-0 
+                    sm:transition-none
+                    sm:opacity-100
+                ">
+                    <!-- search bar -->
+                    <div
+                        class="my-2 rounded-full bg-gray-200 text-slate-500 py-2 sm:py-1 px-2 flex gap-2 transition-all duration-300 w-2/5 focus-within:bg-gray-300 focus-within:w-full hover:w-full transition-all duration-300">
+                        <button type="button" class="material-symbols-outlined outline-none focus:border-none focus:ring-0 focus:text-teal">search</button>
+                        <input type="text" id="search" placeholder="Search" class="w-full  shrink-1 bg-transparent text-sm outline-none focus:border-none focus:ring-0 ">
+                    </div>
+                    <!-- nav -->
+                    <nav class="flex items-center justify-center sm:ml-auto 
+                        [&_button]:py-4
+                        [&_button]:px-2
+                        [&_button]:relative
+                        [&_button]:transition
+                        [&_button]:duration-300
+                        focus:[&_button]:ring-0
+                        [&_button]:outline-none
+                        focus:[&_button]:
+                        hover:[&_button]:text-teal
+                        before:[&_button]:absolute
+                        before:[&_button]:inset-[100%_0_0_0]
+                        before:[&_button]:bg-teal
+                        before:[&_button]:transition-all
+                        before:[&_button]:duration-300
+                        hover:before:[&_button]:inset-[90%_0_0_0]
+                        focus:before:[&_button]:inset-[90%_0_0_0]
+                        before:[&_button.current]:inset-[90%_0_0_0]  
+                    ">
+                        <button type="button" nav-btn="featured">Featured</button>
+                        <button type="button" nav-btn="shop">Shop</button>
+                        <button type="button" nav-btn="faq">FAQ</button>
+                    </nav>
+                </div>
+                <button type="button" nav-btn="cart" id="nav-cart" data-num="" class="material-symbols-outlined py-4 relative isolate outline-none 
+                    focus:ring-0
+                    hover:text-teal
+                    before:absolute
+                    before:inset-[100%_0_0_0]
+                    before:bg-teal
+                    before:transition-all
+                    before:duration-300
+                    hover:before:inset-[90%_0_0_0]
+                    focus:before:inset-[90%_0_0_0]
+                    
+                    after:content-[attr(data-num)]
+                    after:absolute
+                    after:-right-2
+                    after:top-2
+                    after:transition
+                    after:duration-300
+                    after:w-5
+                    after:h-5
+                    after:aspect-square
+                    after:grid
+                    after:place-content-center
+                    after:bg-red-600 
+                    after:text-white
+                    after:text-[.6rem]
+                    after:rounded-full
+                    after:font-roboto
+                    after:scale-0
+                ">shopping_bag</button>
+            </section>
+        </header>
 
-       <!-- countdown -->
-        <section class="text-white w-full p-6 pb-24 sm:p-12 sm:p-32 relative bg-[url('https://www.icodethis.com/images/iCodeMas/snow_bg.png')] bg-cover bg-center overflow-hidden">
+        
+
+       <!-- countdown AND SETTINGS -->
+        <section id="panel-countdown" class="mt-16 text-white w-full p-6 pt-1 pb-24 sm:p-12 sm:p-32 relative bg-[url('/images/iCodeMas/snow_bg.png')] bg-cover bg-center overflow-hidden
+            peer-checked/snow:[&_#btn-snow]:text-red-500
+            peer-checked/mode:[&_#btn-mode]:text-red-500
+            peer-checked/music:[&_#btn-music]:text-red-500
+            peer-checked/music:before:[&_#btn-music]:inset-[0_-200px_0_0]
+            peer-checked/music:before:[&_#btn-music]:bg-white
+            peer-checked/music:[&_#audio-info]:scale-100
+        ">
            
-            <header class="w-full max-w-xl mx-auto space-y-2 text-center">
-                <h1 class="text-[clamp(1rem,5vw,2.5rem)] font-semibold tracking-wider">iCodeMas is coming to town</h1>
+            <div class="w-full max-w-xl mx-auto space-y-2 text-center">
+                <h1 class="text-[clamp(1rem,5vw,2.5rem)] font-semibold tracking-wider ">iCodeMas is coming to town</h1>
                 <p class="text-sm">Celebrate the Magic of the Seasonal Exclusive Christmas Challenges for 24 days!</p>
-            </header>
+            </div>
             <div class="w-full max-w-md mx-auto my-8 px-6 sm:px-0 ">
+            <!-- page settings -->
+            <div class="absolute top-2 left-2 flex items-center gap-2 
+                        [&>label]:cursor-pointer
+                        [&>label]:text-white
+                        [&>label]:p-2
+                        [&>label]:grid
+                        [&>label]:place-content-center
+                        [&>label]:relative
+                        [&>label]:isolate
+                        before:[&>label]:absolute
+                        before:[&>label]:inset-full
+                        before:[&>label]:transistion-all
+                        before:[&>label]:duration-300
+                        before:[&>label]:bg-white/50
+                        before:[&>label]:-z-10
+                        before:[&>label]:rounded-full
+                        hover:before:[&>label]:inset-0
+                        
+                    ">
+                <label for="toggle-mode" id="btn-mode" class=" material-symbols-outlined">dark_mode</label>
+                <label for="toggle-snow" id="btn-snow" class=" material-symbols-outlined">ac_unit</label>
+                <label for="toggle-music" id="btn-music" class="material-symbols-outlined material-fill-1 group">music_note</label>
+                <article id="audio-info"
+                    class="bg-white text-teal w-fit scale-0 transition-all duration-300 origin-left text-left text-sm gap-2 flex items-center  py-1 pl-2 pr-4 rounded-full -translate-x-4">
+                    <div audio-img class="w-10 h-10 rounded-full p-1">
+                        <img src="" class="w-full h-full object-cover rounded-full" alt="">
+                    </div>
+                    <div>
+                        <p audio-title class="font-semibold "></p>
+                        <p class="text-xs -mt-1">Music by <a target="_blank" class="text-teal"><span audio-artist></span></a> from
+                            <a target="_blank" class="text-teal">Pixabay</a>
+                    </div>
+                    <button type="button" id="btn-audio-next" class="material-symbols-outlined material-fill-1">skip_next</button>
+                </article>
+            </div>
+
                 <div data-color class="w-full grid max-[300px]:grid-cols-1 grid-cols-2 min-[460px]:grid-cols-4 gap-2 sm:gap-4 sm:gap-4 text-[#0A3D4C] font-thin text-5xl 
                     [&>div]:bg-white
                     [&>div]:pt-3
@@ -141,8 +265,8 @@
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 pb-2 px-6 sm:px-16 flex items-center justify-between w-full max-[300px]:pl-20">
-                <img src="https://www.icodethis.com/images/iCodeMas/snowman.png" alt="snowman" class="max-[300px]:hidden w-24 sm:w-36 sm:ml-20 -translate-y-2 sm:translate-y-6 ">
-                <!--<img id="santa" src="https://www.icodethis.com/images/iCodeMas/santa.png" alt="santa">-->
+                <img src="/images/iCodeMas/snowman.png" alt="snowman" class="max-[300px]:hidden w-24 sm:w-36 sm:ml-20 -translate-y-2 sm:translate-y-6 ">
+                <!--<img id="santa" src="/images/iCodeMas/santa.png" alt="santa">-->
                 <div id="santa"  class="w-32 sm:w-48">
                     <svg id="santa" xmlns="http://www.w3.org/2000/svg" class="w-full" viewBox="0 0 335 327" fill="none">
 
@@ -283,14 +407,14 @@
             </div>
         </section>
 
-        <main class="bg-blue-50 text-slate-800 w-full max-w-4xl border-t-[2rem] border-white">
+        <main class="bg-blue-50 dark:bg-red-900 text-slate-800 dark:text-slate-300 w-full max-w-4xl border-t-[2rem] border-white dark:border-teal transition-all duration-300">
 
             <!-- featured -->
-            <section class=" p-12 px-8 sm:px-24 relative ">
+            <section id="panel-featured" class=" p-12 px-8 sm:px-24 relative ">
                 <header class="w-full max-w-xl mx-auto space-y-2 text-center">
                     <h2 class="text-[clamp(1rem,5vw,2.5rem)] font-semibold tracking-wider">Featured Products</h2>
                     
-                    <p class="text-sm">Discover the magic of the season with our handpicked Featured Products. From enchanting decorations to delightful gifts, these curated items are sure to add a touch of jou to your festive celebrations.</p>
+                    <p class="text-sm">Discover the magic of the sason with our handpicked Featured Products. From enchanting decorations to delightful gifts, these curated items are sure to add a touch of jou to your festive celebrations.</p>
                 </header>
                 <div id="panel-featured-list" class="my-12 flex grid min-[300px]:grid-cols-3 gap-4 max-w-md mx-auto"></div>
                 <div id="panel-featured-product"></div>
@@ -313,7 +437,7 @@
             </div>
 
             <!-- shop banner -->
-             <section class="group bg-white grid place-content-center p-12 sm:p-24 sm:py-32 shadow-lg w-full max-w-4xl text-center transition-all md:duration-[1000ms] bg-[url('https://www.icodethis.com/images/iCodeMas/sale_banner.png')] bg-cover bg-center overflow-hidden md:bg-[size:120%] md:hover:bg-[size:110%] ">
+             <section id="panel-shop-promo" class="group bg-white grid place-content-center p-12 sm:p-24 sm:py-32 shadow-lg w-full max-w-4xl text-center transition-all md:duration-[1000ms] bg-[url('/images/iCodeMas/sale_banner.png')] bg-cover bg-center overflow-hidden md:bg-[size:120%] md:hover:bg-[size:110%] ">
 
                 <div class="w-full max-w-lg mx-auto ">
                     <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-semibold tracking-wider leading-[clamp(2rem,5vw,3rem)] mb-4 bg-clip-text text-transparent bg-gradient-to-t from-[#694015] to-[#EDD481] transition-all duration-1000 group-hover:scale-110">Unwrap Joy with Our Spectacluar Christmas Sale!</h1>
@@ -347,6 +471,25 @@
                     </button>
                 </div>
                 
+            </section>
+            
+            <!-- SHOP -->
+            <section id="panel-shop" class="my-12 px-6  grid [grid-template-columns:repeat(auto-fill,minmax(10rem,1fr))] gap-2 ">
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section id="panel-faq" class="my-6 border h-[600px] grid place-content-center">
+
+                FAQ goes here
+            </section>
+
+            <!-- CART -->
+            
+            <section id="panel-cart" class="my-6 border h-[600px] grid place-content-center">
+            
+                CART goes here
             </section>
 
         
@@ -415,7 +558,7 @@
                             [&_.field>label]:duration-300
                             [&_.field>label]:pointer-events-none
                         ">
-                <img src="https://www.icodethis.com/images/iCodeMas/modal_bg.png" class="h-40 sm:h-full sm:block w-full  object-cover z-10">
+                <img src="/images/iCodeMas/modal_bg.png" class="h-40 sm:h-full sm:block w-full  object-cover z-10">
         
                 <section class="p-6 sm:p-12 sm:py-20 flex flex-col text-center text-teal relative">
                     <header class="space-y-2 px-8">
@@ -453,19 +596,61 @@
             <button type="button" btn-close class="bg-white rounded-full p-2 material-symbols-outlined absolute top-3 right-3 z-20 transition-all duration-300 hover:scale-125 hover:text-red-500 focus:text-red-500 focus:border-none focus:outline-none focus:ring-0">close</button>
         </dialog>
 
+        <!-- scrolling div -->
+
+<svg id="scroll-line"  viewBox="0 0 793.5 3719">
+<path d="M 328 96 c 12.83 51.17 54.11 182.87 145.38 216.5 c 114 42 291.62 96.5 183.62 252.5 s -423 -42 -528 275 s 51 176 199 273 s 383 262 207 318 s -104 -74.5 -212 -45.5 s -312 63 -285 258.5 s 128 197.5 242 148.5 s 403 -151.5 328 138.5 s -70 204.5 -339 124 s -344.62 96 -244 208 s 39 209 189 281 c 1062 179 328 114 316.62 962"
+					stroke-dasharray="14.02 14.02"
+					stroke="#a7abb2"
+					stroke-miterlimit="10"
+					stroke-width="2"
+					fill="none"
+					id="car-path"
+					class="path"
+				/></path>
+</svg>
 
 
-        <!-- template product button -->
-        <template id="tpl-product-button">
-            <button type="button" class="product group bg-white p-4  aspect-square border-2 border-transparent transition-all duration-300 hover:border-red-500 grid place-content-center scale-0" label="new">
-                <img src="https://www.icodethis.com/images/iCodeMas/tree.png" alt="tree" class="w-20 h-auto  transition-all duration-1000 ">
+<img id="sleigh-amimate" src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/santa-sleigh.png" class="hidden sm:block">
+
+
+
+
+        <!-- template product BUTTON (featured) -->
+        <template id="tpl-product-item-featured">
+            <button type="button" class=" group bg-white  aspect-square border-2 border-transparent transition-all duration-300 hover:border-red-500 scale-0" label="new">
+                <div class="product-img border aspect-square bg-gray-50 grid place-content-center overflow-hidden">
+                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000 ">
+                </div>
             </button>
+        </template>
+
+        <!-- template product ARTICLE (shop) -->
+        <template id="tpl-product-item">
+            <article
+                class=" group bg-white  transition-all duration-300  flex flex-col gap-1  justify-center scale-0  text-left pb-4">
+                <div class="product-img p-2 aspect-square bg-gray-50 grid place-content-center overflow-hidden" label="new">
+                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000 ">
+        
+                    <button type="button" class="absolute bottom-0 py-1 bg-teal text-white text-sm flex items-center justify-center gap-2 w-full transition-full duration-300  sm:translate-y-full group-hover:translate-y-0 hover:bg-red-600 hover:text-white">
+                        <p>Add to cart</p>
+                        <span class="material-symbols-outlined text-base">shopping_cart</span>
+                    </button>
+                </div>
+                <div class="p-2">
+                    <p data-title class="text-sm line-clamp-1">Christmas Tree</p>
+                    <p data-price class="font-semibold">$1.99</p>
+                </div>
+            </article>
         </template>
 
         <!-- template product details -->
         <template id="tpl-product-details">
             <article class="grid min-[400px]:grid-cols-2 gap-8 w-full max-w-xl mx-auto [&_*]:origin-left [&_*]:transition-all [&_*]:duration-500 overflow-hidden">
-                <div class="product relative bg-white p-8 aspect-square grid place-content-center z-10">
+                <div class="product relative bg-white p-8 aspect-square grid place-content-center z-10 relative 
+                
+                    
+                ">
                     <img src="" alt="" class="w-24 h-auto  transition-all duration-1000 scale-0 !origin-center">
                 </div>
                 <div class="flex flex-col gap-1">
