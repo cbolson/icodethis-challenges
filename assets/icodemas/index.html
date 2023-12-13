@@ -11,7 +11,7 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
 
-    <body class=" bg-white dark:bg-teal transition-all duration-300 font-roboto flex flex-col  items-center min-h-screen 
+    <body class=" bg-white dark:bg-teal transition-all duration-300 font-roboto flex flex-col pt-20  items-center min-h-screen 
         [&_.product-img]:relative        
         [&_.product-img]:isolate
         before:[&_.product-img]:content-[attr(label)]
@@ -42,14 +42,14 @@
         
 
         <!-- promo alert -->
-        <section id="panel-alert" class="relative top-0 left-0 w-full bg-red-100 p-1 gap-2 sm:gap-6 px-4 sm:px-8 text-center text-sm relative flex items-center justify-between w-full transition-all duration-300 z-30">
+        <section id="panel-alert" class="fixed top-0 left-0 w-full bg-red-100 p-1 gap-2 sm:gap-6 px-4 sm:px-8 text-center text-sm flex items-center justify-between w-full transition-all duration-300 z-30">
             <span></span>
             <p>Use code "XMAS" for a 20% discount at checkout</p>
             <button type="button" btn-close="panel-alert" class="material-symbols-outlined text-base transition duration-300 hover:scale-150 hover:text-teal focus:scale-150 focus:text-teal focus:ring-0 outline-none border-none">close</button>
         </section>
         
         <!-- main header -->
-        <header id="header-principal" class="fixed top-8 z-10 bg-white  dark:bg-teal  w-full flex items-center justify-center 
+        <header id="header-principal" class="fixed top-8 z-10 bg-white  dark:bg-teal border-b  w-full flex items-center justify-center 
             peer-checked/nav:[&_#nav-btn-open]:scale-0
             peer-checked/nav:[&_#nav-btn-close]:scale-100
             peer-checked/nav:[&_#nav-principal]:translate-y-0
@@ -57,11 +57,11 @@
             peer-checked/nav:[&_#nav-principal]:transition-all
             peer-checked/nav:[&_#nav-principal]:duration-500
         ">
-            <section class="w-full max-w-4xl relative isolate flex items-center gap-2  px-4 h-14 dark:text-white
+            <section class="w-full max-w-4xl relative isolate flex items-center gap-2  px-4 h-12    dark:text-white
                 before:inset-0
                 before:absolute 
                 before:bg-white
-                 dark:before:bg-teal
+                dark:before:bg-teal
                 before:-z-10
             ">
                 <p class="font-bold text-lg flex items-center gap-2">
@@ -103,7 +103,7 @@
                     <div
                         class="my-2 rounded-full bg-gray-200 text-slate-500 py-2 sm:py-1 px-2 flex gap-2 transition-all duration-300 w-2/5 focus-within:bg-gray-300 focus-within:w-full hover:w-full transition-all duration-300">
                         <button type="button" class="material-symbols-outlined outline-none focus:border-none focus:ring-0 focus:text-teal">search</button>
-                        <input type="text" id="search" placeholder="Search" class="w-full  shrink-1 bg-transparent text-sm outline-none focus:border-none focus:ring-0 ">
+                        <input type="text" id="search-products" placeholder="Search" class="w-full  shrink-1 bg-transparent text-sm outline-none focus:border-none focus:ring-0 ">
                     </div>
                     <!-- nav -->
                     <nav class="flex items-center justify-center sm:ml-auto 
@@ -164,8 +164,8 @@
 
         
 
-       <!-- countdown AND SETTINGS -->
-        <section id="panel-countdown" class="mt-16 text-white w-full p-6 pt-1 pb-24 sm:p-12 sm:p-32 relative bg-[url('/images/iCodeMas/snow_bg.png')] bg-cover bg-center overflow-hidden
+       <!-- HERO countdown AND SETTINGS -->
+        <section id="panel-countdown" class=" text-white w-full p-6 pt-1 pb-24 sm:p-12 sm:p-32 relative bg-[url('/images/iCodeMas/snow_bg.png')] bg-cover bg-center overflow-hidden
             peer-checked/snow:[&_#btn-snow]:text-red-500
             peer-checked/mode:[&_#btn-mode]:text-red-500
             peer-checked/music:[&_#btn-music]:text-red-500
@@ -407,10 +407,16 @@
             </div>
         </section>
 
-        <main class="bg-blue-50 dark:bg-red-900 text-slate-800 dark:text-slate-300 w-full max-w-4xl border-t-[2rem] border-white dark:border-teal transition-all duration-300">
+        <main class="px-6 sm:px-0 text-slate-800 dark:text-slate-300 w-full max-w-4xl my-6 border-white dark:border-teal transition-all duration-300 space-y-12 
+            [&>section]:[scroll-margin-top:6rem;]
+            X[&>*]:outline-dashed
+            X[&>*]:outline-px 
+            X[&>*]:outline-red-500 
+        ">
 
+            
             <!-- featured -->
-            <section id="panel-featured" class=" p-12 px-8 sm:px-24 relative ">
+            <section id="panel-featured" class="bg-blue-50 dark:bg-red-900 p-12 px-8 sm:px-24 relative ">
                 <header class="w-full max-w-xl mx-auto space-y-2 text-center">
                     <h2 class="text-[clamp(1rem,5vw,2.5rem)] font-semibold tracking-wider">Featured Products</h2>
                     
@@ -419,12 +425,47 @@
                 <div id="panel-featured-list" class="my-12 flex grid min-[300px]:grid-cols-3 gap-4 max-w-md mx-auto"></div>
                 <div id="panel-featured-product"></div>
             </section>
+
+            <!-- promos -->
+            <section id="promos" class="grid sm:grid-cols-2 gap-6
+                [&>article]:bg-cover
+                [&>article]:bg-center
+                [&>article]:overflow-hidden
+                [&>article]:
+                [&>article]:
+                [&>article]:h-80
+                [&>article]:flex
+                [&>article]:flex-col
+                [&>article>div]:mt-auto
+                [&>article>div]:p-6
+                [&>article>div]:flex
+                [&>article>div]:items-center
+                [&>article>div]:justify-between
+                [&>article>div]:
+            ">
+                <article class="bg-[url('/images/iCodeMas/promo_1.png')]">
+                    <div class="bg-teal text-white h-20">
+                        something here
+                        <button type="button" data-dialog="feedback" >open feedback</button>
+                    </div>
+                </article>
+
+                
+
+                <article class="bg-[url('/images/iCodeMas/promo_2.png')]">
+                    <div class="bg-red-600 text-white h-20">
+                        something here
+                        
+                        <button type="button" data-dialog="gift-card" >Giftcard</button>
+                    </div>
+                </article>
+            </section>
             
 
             <!-- button promo -->
             <!-- this won't actually go here but just adding it for now to add the code and JS -->
             <div class="my-12 grid place-content-center">
-                <button type="button" data-dialog="dialog-order-promo" data-type="promo" class="py-4 px-8 bg-teal text-white text-xl transition-all !duration-300 hover:scale-125 capitalize rounded-md flex items-center gap-2 ">
+                <button type="button" data-dialog="promo" class="py-4 px-8 bg-teal text-white text-xl transition-all !duration-300 hover:scale-125 capitalize rounded-md flex items-center gap-2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-12"
                         viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -435,6 +476,7 @@
                     Get a special Christmas discount
                 </button>
             </div>
+
 
             <!-- shop banner -->
              <section id="panel-shop-promo" class="group bg-white grid place-content-center p-12 sm:p-24 sm:py-32 shadow-lg w-full max-w-4xl text-center transition-all md:duration-[1000ms] bg-[url('/images/iCodeMas/sale_banner.png')] bg-cover bg-center overflow-hidden md:bg-[size:120%] md:hover:bg-[size:110%] ">
@@ -472,24 +514,379 @@
                 </div>
                 
             </section>
-            
+
+
             <!-- SHOP -->
-            <section id="panel-shop" class="my-12 px-6  grid [grid-template-columns:repeat(auto-fill,minmax(10rem,1fr))] gap-2 ">
+            <section id="panel-shop" class="">
+                <input type="checkbox" name="filter-box" id="filter-box" class="peer sr-only">
+                
+                
+                <div class="flex items-center justify-between gap-6">
+                    
+                    <div>
+                        <h2 class="font-bold text-xl">Christmas collection</h2>
+                        <p class="text-sm opacity-70">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore odio dolorem temporibus ullam consectetur cumque.</p>
+                    </div>
+                
+                
+                    <!-- sort list button -->
+                    <input type="checkbox" id="show-sort-order" class="peer/sort sr-only">
+                    
+                    <div class="w-56 relative 
+                        peer-checked/sort:[&>div]:[grid-template-rows:1fr]
+                        peer-checked/sort:[&>label>span]:rotate-180
+                    ">
+                    
+                        <label for="show-sort-order" id="btn-sort-order"  class="cursor-pointer flex itemes-center justify-between w-full rounded-full border-none bg-gray-300 text-sm  py-2 px-4 transition ease-in-out duration-150">
+                            <p>Most recent</p>
+                            <span class="material-symbols-outlined transition duration-300">expand_more</span>
+                        </label>
+                    
+                        <div id="options-wrapper" role="menu" aria-orientation="vertical" aria-labelledby="options-menu" class=" origin-top-left absolute left-0 mt-2 w-56 
+                            grid [grid-template-rows:0fr] [transition:grid-template-rows_200ms_ease-in-out]
+                        ">
+                            <div class="overflow-hidden z-10">
+                                <div id="sort-options-list" class="bg-white flex flex-col rounded-3xl border 
+                                    [&>button]:py-2
+                                    [&>button]:px-4
+                                    [&>button]:text-left
+                                    [&>button]:relative
+                                    [&>button]:isolate
+                                    [&>button]:overflow-hidden
+                                    before:[&>button]:rounded-3xl
+                                    before:[&>button]:transition-all
+                                    before:[&>button]:duration-300
+                                    before:[&>button]:inset-[100%_0_100%_0]
+                                    before:[&>button]:absolute
+                                    before:[&>button]:bg-gray-200
+                                    before:[&>button]:-z-10
+                                    before:[&>button]:-z-10
+                                    hover:before:[&>button]:inset-0
+                                ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="py-6 grid sm:min-[400px]:grid-cols-[10rem_auto] content-start">
+                    <div id="filters" class=" mb-12 sm:mb-0
+                    [&_label]:cursor-pointer
+                    
+                    [&_div]:transition-all
+                    [&_div]:duration-500
+                    [&>div]:grid
+                    [&>div]:[grid-template-rows:0fr]
+                    [&>div]:[transition:grid-template-rows_500ms_ease-in-out]
+                    sm:[&>div]:[grid-template-rows:1fr]
+                    peer-checked:[&>div]:[grid-template-rows:1fr]
+                    peer-checked:[&_#toggle-filter>span]:rotate-180
+
+                    [&>div>div]:overflow-hidden
+                    [&>div>div>div>div]:my-2
+                
+                    [&_.field-checkbox_label]:flex
+                    [&_.field-checkbox_label]:items-center
+                    [&_.field-checkbox_label]:gap-1
+                    [&_.field-checkbox_label]:cursor-pointer
+                    [&_.field-checkbox_label:transtion-all
+                    [&_.field-checkbox_label:duration-300
+                    [&_.field-checkbox_label:relative
+                    hover:[&_.field-checkbox_label]:text-teal
+
+                    [&_.field-checkbox_label>div]:grid
+                    [&_.field-checkbox_label>div]:[grid-template-areas:'stack']
+                    [&_.field-checkbox_label>div>span]:[grid-area:stack]
+                    [&_.field-checkbox_label>div>span]:text-2xl
+                    [&_.field-checkbox_label>div>span]:text-slate-300
+                    last:[&_.field-checkbox_label>div>span]:scale-0
+                    [&_.field-checkbox_label>div>span]:transition-all
+                    [&_.field-checkbox_label>div>span]:duration-300
+                    [&_input:focus~label]:text-teal
+                    first:[&_input:checked~label>div>span]:scale-0
+                    last:[&_input:checked~label>div>span]:scale-100
+                    [&_input:checked~label]:text-teal
+                    [&_input:checked~label>div>span]:text-teal
+                ">
+                    <label id="toggle-filter" for="filter-box" class=" text-left flex items-center gap-2 border rounded-sm py-2 px-6 w-fit bg-gray-200 sm:bg-transparent sm:border-none sm:p-0">
+                        Filters
+                        <span class="material-symbols-outlined sm:hidden transition-all duration-300">expand_more</span>
+                    </label>
+                    <div id="filter-options">
+                        <div>
+                        <div class="grid min-[350px]:grid-cols-3 sm:min-[400px]:grid-cols-1">
+                            <div id="filters-special">
+                                <div class="field-checkbox">
+                                    <input type="checkbox" id="filter-featured" name="featured" class="peer sr-only" value="1">
+                                    <label for="filter-featured">
+                                        <div class="grid [grid-template-areas:'stack']">
+                                            <span class="material-symbols-outlined ">check_box_outline_blank</span>
+                                            <span class="material-symbols-outlined ">check_box</span>
+                                        </div>
+                                        <p class="block">Featured</p>
+                                    </label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <input type="checkbox" id="filter-discount" name="discount" class="peer sr-only" value="1">
+                                    <label for="filter-discount">
+                                        <div class="grid [grid-template-areas:'stack']">
+                                            <span class="material-symbols-outlined ">check_box_outline_blank</span>
+                                            <span class="material-symbols-outlined ">check_box</span>
+                                        </div>
+                                        <p class="block">Offers</p>
+                                    </label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <input type="checkbox" id="filter-recent" name="recent" class="peer sr-only" value="1">
+                                    <label for="filter-recent">
+                                        <div class="grid [grid-template-areas:'stack']">
+                                            <span class="material-symbols-outlined ">check_box_outline_blank</span>
+                                            <span class="material-symbols-outlined ">check_box</span>
+                                        </div>
+                                        <p class="block">Just In</p>
+                                    </label>
+                                </div>
+                                <div class="field-checkbox">
+                                    <input type="checkbox" id="filter-stock" name="stock" class="peer sr-only" value="1">
+                                    <label for="filter-stock">
+                                        <div class="grid [grid-template-areas:'stack']">
+                                            <span class="material-symbols-outlined ">check_box_outline_blank</span>
+                                            <span class="material-symbols-outlined ">check_box</span>
+                                        </div>
+                                        <p class="block">In stock</p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id="filters-categories">
+                                <h3>Category</h3>
+                            </div>
+                            <div id="filters-size">
+                                <h3>Size</h3>
+                            </div>
+                            
+                            <div id="filters-color">
+                                <h3>Color</h3>
+                            </div>
+                            
+                        </div>
+                        <button id="btn-filter-clear" class="bg-teal text-white py-1 px-4 w-fit  rounded-sm text-sm transition-all !duration-300 hover:bg-red-700">Clear Filters</button>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div id="products-list" class=" grid content-start [grid-template-columns:repeat(auto-fill,minmax(10rem,1fr))] gap-4  "></div>
+                </div>
+            </section>
+
+
+            <!-- mini banners -->
+            <section class="grid md:grid-cols-3 gap-6 w-full max-w-5xl
+                [&>article]:w-full
+                [&>article]:flex
+                [&>article]:items-center
+                [&>article]:gap-3
+                [&>article>div>div]:p-4
+                
+                [&_.flip-card-back]:bg-teal
+                [&_.flip-card-back]:text-white
+                [&_.flip-card-back]:font-thin
+                [&_.flip-card-back]:grid 
+                [&_.flip-card-back]:place-content-center
+                [&_.flip-card-back]:text-center
+                
+                [&_img]:w-12
+                
+                [&_h4]:text-lg
+                [&_p]:text-sm
+                [&_p]:font-thin
+            ">
+
+                <article class="flip-card" style="--delay:0ms">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-yellow-100 flex items-center gap-2">
+                            <img src="/images/iCodeMas/free_shipping.png" alt="shipping" class="scale-in" style="--d:300ms">
+                            <div>
+                                <h4>Free shipping</h4>
+                                <p>Free shipping on all orders over $19.99</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            Yes, that's right, free international postage for all orders over $19.99
+                        </div>
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--delay:300ms">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-blue-100 flex items-center gap-2">
+                            <img src="/images/iCodeMas/money_back.png" alt="guarantee" class="scale-in" style="--d:600ms">
+                        <div>
+                            <h4>Money back guarantee</h4>
+                            <p>Within 30 days of purchase</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        Except for any food items that you have eaten!
+                    </div>
+                </article>
+
+                <article class="flip-card" style="--delay:600ms">
+                    <div class="flip-card-inner relative w-full h-10">
+                        <div class="flip-card-front bg-red-100 flex items-center gap-2">
+                            <img src="/images/iCodeMas/online_support.png" alt="support" class="scale-in" style="--d:900ms">
+                        <div>
+                            <h4>Online support</h4>
+                            <p>Our online support is here for you</p>
+                        </div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button type="button" class="border rounded-md py-1 px-4 transition-all duration-300 bg-teal text-white hover:bg-red-600 focus:bg-red-600">Chat with one of our elves</button>
+                    </div>
+                </article>
+        
             </section>
 
 
             <!-- FAQ -->
+            <section id="panel-faq" class="sm:px-32 space-y-4">
+                <h2 class="text-center text-2xl font-semibold">Frequently asked questions</h2>
+                <p class="text-center">Have questions? Explore our Frequently Asked Questionsmsection for quick answers. If your question isn't answered, feel free to reach out to our helpful support team.</p>
+                <div role="" class="space-y-2 text-sm
+                    [&_article]:border
+                    [&_article]:rounded-md
 
-            <section id="panel-faq" class="my-6 border h-[600px] grid place-content-center">
+                    [&_input]:sr-only
 
-                FAQ goes here
-            </section>
+                    [&_label]:p-4
+                    [&_label]:flex
+                    [&_article]:transition-all
+                    [&_article]:duration-300
+                    [&_label]:items-center
+                    [&_label]:justify-between
+                    [&_label]:cursor-pointer
+                    [&_label]:text-slate-500
+                    hover:[&_label]:text-teal-900
+                    hover:[&_article]:bg-blue-50
 
-            <!-- CART -->
-            
-            <section id="panel-cart" class="my-6 border h-[600px] grid place-content-center">
-            
-                CART goes here
+                    [&_label>div]:grid
+                    [&_label>div]:[grid-template-areas:'stack']
+
+                    [&_label_span]:[grid-area:stack]
+                    [&_label_span]:rounded-full 
+                    [&_label_span]:bg-teal-100
+                    [&_label_span]:w-6
+                    [&_label_span]:h-6
+                    [&_label_span]:grid
+                    [&_label_span]:place-content-center
+                    [&_label_span]:p-1 
+                    [&_label_span]:text-base
+                    [&_label_span]:transition-all
+                    [&_label_span]:duration-500
+                    last:[&_input:checked~label_span]:scale-0
+
+                    [&_article>section]:grid
+                    [&_article>section]:[grid-template-rows:0fr]
+                    [&_input:checked~section]:[grid-template-rows:1fr]
+                    [&_article>section]:[transition:grid-template-rows_500ms_ease-in-out]
+
+                    [&_article>section>div]:overflow-hidden
+                    [&_article>section>div]:text-slate-500
+                    [&_article>section>div]:text-sm
+                    [&_article>section>div>p]:pb-4
+                    [&_article>section>div>p]:px-4
+                ">
+                    <article>
+                        <input type="radio" name="faq" id="article-1">
+                        <label for="article-1">
+                            When will my order ship?
+                            <div>
+                                <span class="material-symbols-outlined">horizontal_rule</span>
+                                <span class="material-symbols-outlined">add</span>
+                            </div>
+                        </label>
+                        <section>
+                            <div>
+                                <p>
+                                  Santa's sleigh doesn't wait for a clock to strike; it follows the rhythm of the holiday spirit! While we can't pinpoint an exact departure time, rest assured that your gifts are on a magical journey as soon as they're packed with care and love by Santa's elves.
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="faq" id="article-2">
+                        <label for="article-2">
+                            What are your shipping rates?
+                            <div>
+                                <span class="material-symbols-outlined">horizontal_rule</span>
+                                <span class="material-symbols-outlined">add</span>
+                            </div>
+                        </label>
+                        <section>
+                            <div>
+                                <p>
+                                    Ho ho ho, the cost of spreading holiday cheer with Santa's sleigh is as magical as the season itself! Shipping rates are calculated based on your location, gift weight, and size. Simply proceed to the checkout, and the twinkling stars will reveal the shipping cost for your festive treasures.
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="faq" id="article-3">
+                        <label for="article-3">
+                            Do you offer gift wrapping?
+                            <div>
+                                <span class="material-symbols-outlined">horizontal_rule</span>
+                                <span class="material-symbols-outlined">add</span>
+                            </div>
+                        </label>
+                        <section>
+                            <div>
+                                <p>
+                                    Ho ho ho, indeed! Santa's elves are ready to sprinkle some magic on your presents. During the checkout journey, look for the enchanting gift wrapping option. Click it, and let the holiday spirit unfold!
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="faq" id="article-4">
+                        <label for="article-4">
+                            What is your return policy?
+                            <div>
+                                <span class="material-symbols-outlined">horizontal_rule</span>
+                                <span class="material-symbols-outlined">add</span>
+                            </div>
+                        </label>
+                        <section>
+                            <div>
+                                <p>
+                                   Ho ho ho, Santa's heart is big enough for everyone! Naughty or nice, you can return a gift with a sprinkle of Christmas magic. Santa's Return Elves are here to help, no matter the list you find yourself on!
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+
+                    <article>
+                        <input type="radio" name="faq" id="article-5">
+                        <label for="article-5">
+                            Do you have a store location?
+                            <div>
+                                <span class="material-symbols-outlined">horizontal_rule</span>
+                                <span class="material-symbols-outlined">add</span>
+                            </div>
+                        </label>
+                        <section>
+                            <div>
+                                <p>
+                                    As much as Santa loves spreading cheer, direct pick-ups from the North Pole are a bit tricky. We've partnered with
+                                    trusted sleigh delivery services to ensure your gifts reach your doorstep with the magic and care they deserve.
+                                </p>
+                            </div>
+                        </section>
+                    </article>
+                    
+                </div>
             </section>
 
         
@@ -497,67 +894,149 @@
 
 
 
+        <!-- SUBSCRIBE -->
+        <section id="panel-subscribe" class="w-full grid place-content-center bg-[url('/images/iCodeMas/subscribe_bg.png')] bg-cover bg-center overflow-hidden  text-center p-24 text-white space-y-4">
+            <h2 class="font-bold text-4xl">Subscribe to our newsletter</h2>
+            <p>Staying in the loop with the latest festive trends and exclusive offers byt subscribing to our newsletter</p>
 
+            <div class="rounded-full bg-white p-1  flex items-center w-fit mx-auto border border-white focus-within:border-teal ">
+                <input type="email" placeholder="Enter your email" class="w-fit px-4 flex-1 bg-transparent focus:border-none outline-none focus:ring-0">
+                <button type="button" class="rounded-full bg-teal text-white  py-2 px-6 w-fit">Subscribe</button>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="bg-[url('/images/iCodeMas/footer_bg.png')] bg-cover bg-center overflow-hidden  w-full   grid place-content-center h-80">
+    footer
+        </footer>
+
+
+        <!-- cart -->
+        <div id="panel-cart"
+            class="dark:bg-teal dark:text-white fixed top-24 right-0 w-96 sm:h-[calc(100%-6rem)] bg-white z-100 py-4 px-8 flex flex-col border-l translate-x-full duration-500 transition-all">
+            <div class="flex items-center justify-between">
+                <p>Your cart</p>
+                <button type="button" id="btn-close-cart" class="material-symbols-outlined transition-all duration-300 hover:scale-125 hover:text-red-500">close</button>
+            </div>
+        
+            <div id="list-cart-items"> </div>
+        
+            <footer class="mt-auto">
+                <div class="flex justify-between mb-6">
+                    <span class="text-gray-500">Subtotal</span>
+                    <span id="cart-total" class="font-semibold" id="subtotal"></span>
+                </div>
+                <button class="flex items-center justify-center gap-2 bg-teal text-white py-2 px-4 rounded-full hover:bg-red-700 focus:outline-none w-full transition duration-300">
+                        Proceed to checkout
+                        <span class="material-symbols-outlined">arrow_right_alt</span>
+                      </button>
+            </footer>
+        </div>
+
+        <!-- CHAT BOX -->
+        <div id="panel-chat" class="sticky bottom-20 right-0 ml-auto mr-6 rounded-2xl  transition ease-in-out duration-300  w-full min-[300px]:w-80 sm:w-96 h-[542px] sm:h-[520px] text-slate-700 flex flex-col justify-between scale-0 origin-bottom-right overflow-hidden shadow-xl">
+                
+
+            <header class="bg-teal text-white relative text-center p-4 sm:px-10">
+                <p class=" text-lg p-2 px-6">Virtual assistant</p>
+                <p class="text-sm font-thin opacity-70">Our virutal assistant is ready to assist you, making your online experience seamless and enjoyable</p>
+                
+                <button type="button" id="btn-chat-close" class="material-symbols-outlined absolute top-3 right-3 transition">close</button>
+            </header>
+
+            <div id="chat-list-messages" class="bg-white h-full p-3 sm:p-6 space-y-2 h-[400px] overflow-y-auto">
+                <!-- user messages loaded here -->
+            </div>
+
+            <form id="chat-form">
+                <footer class="bg-white flex gap-2 justify-between focus-within:bg-blue-50 border-t border-teal/30 px-4">
+                    <input type="text" id="new-msg" class="w-full py-4 bg-transparent focus-within:border-0 focus-within:outline-none focus-within:ring-0 " placeholder="What can I help you with?" title="" required autocomplete="off">
+                    <button type="submit" id="" class="material-symbols-outlined material-fill-1 -rotate-45 text-teal transition  hover:text-red-600 hover:rotate-0">send</button>
+                </footer>
+            </form>
+        </div>
+        
+        <!-- CHAT - button -->
+        <button type="button" id="btn-chat" class="sticky bottom-3 right-0 ml-auto mr-6 rounded-full bg-teal text-white w-12 h-12  hover:bg-red-600 grid [grid-template-areas:'stack'] place-items-center
+            [&>span]:[grid-area:stack]
+            [&>span]:transition-all
+            [&>span]:duration-300
+        ">
+            <span id="chat-open" class="material-symbols-outlined">chat_bubble</span>
+            <span id="chat-close" class="material-symbols-outlined scale-0">expand_more</span>
+        </button>
+   
+
+        <!-- scrolling div -->
+        <svg id="scroll-line"  viewBox="0 0 793.5 3719">
+            <path d="M 328 96 c 12.83 51.17 54.11 182.87 145.38 216.5 c 114 42 291.62 96.5 183.62 252.5 s -423 -42 -528 275 s 51 176 199 273 s 383 262 207 318 s -104 -74.5 -212 -45.5 s -312 63 -285 258.5 s 128 197.5 242 148.5 s 403 -151.5 328 138.5 s -70 204.5 -339 124 s -344.62 96 -244 208 s 39 209 189 281 c 1062 179 328 114 316.62 962"
+                                stroke-dasharray="14.02 14.02"
+                                stroke="#a7abb2"
+                                stroke-miterlimit="10"
+                                stroke-width="2"
+                                fill="none"
+                                id="car-path"
+                                class="path"
+                            />
+            </path>
+        </svg>
+        <img id="sleigh-amimate" src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/santa-sleigh.png" class="hidden sm:block">
 
 
         <!-- dialog - promo -->
-        <dialog id="dialog-order-promo"
+        <dialog id="dialog-promo"
             class="rounded-xl  scale-[25%] translate-y-[-1000px] transition-all duration-500 relative">
         
             <div class="bg-white rounded-xl shadow-xl overflow-hidden w-full max-w-2xl  grid sm:grid-cols-2
-                            [&_button]:py-2
-                            [&_button]:px-6
-                            [&_button]:w-full
-                            [&_button]:flex
-                            [&_button]:items-center
-                            [&_button]:gap-2
-                            [&_button]:justify-center
-                            [&_button]:rounded-full
-                             [&_button]:capitalize
-                            [&_button]:transition
-                            [&_button]:duration-300
-                            [&_button]:relative
-                            [&_button]:isolate
-                            [&_button]:overflow-hidden
-                            hover:[&_button]:text-white
-                            focus:[&_button]:text-white
-                            before:[&_button]:absolute
-                            before:[&_button]:inset-0
-                            before:[&_button]:-z-10
-                            before:[&_button]:rounded-full
-                            before:[&_button]:translate-y-full
-                            before:last:[&_button]:-translate-y-full
-                            before:[&_button]:bg-red-500
-                            before:[&_button]:transition-all
-                            before:[&_button]:duration-300
-                            hover:before:[&_button]:translate-y-0
-                            focus:before:[&_button]:translate-y-0
-        
-                        
-                            focus:[&_button]:ring-0
-                            focus:[&_button]:outline-none
-                            
-                            
-                            [&_input]:border-2
-                            [&_input]:py-2
-                            [&_input]:px-5
-                            [&_input]:w-full
-                            [&_input]:rounded-full
-                            [&_input]:transition-all
-                            [&_input]:duration-300
-                            focus:[&_input]:bg-slate-200
-                            focus:[&_input]:outline-none
-                            focus:[&_input]:ring-0
-                            [&_.field]:relative
-                            [&_.field>label]:text-slate-400
-                            [&_.field>label]:absolute
-                            [&_.field>label]:left-2
-                            [&_.field>label]:-top-5
-                            [&_.field>label]:text-sm
-                            [&_.field>label]:transition-all
-                            [&_.field>label]:duration-300
-                            [&_.field>label]:pointer-events-none
-                        ">
+                [&_button]:py-2
+                [&_button]:px-6
+                [&_button]:w-full
+                [&_button]:flex
+                [&_button]:items-center
+                [&_button]:gap-2
+                [&_button]:justify-center
+                [&_button]:rounded-full
+                 [&_button]:capitalize
+                [&_button]:transition
+                [&_button]:duration-300
+                [&_button]:relative
+                [&_button]:isolate
+                [&_button]:overflow-hidden
+                hover:[&_button]:text-white
+                focus:[&_button]:text-white
+                before:[&_button]:absolute
+                before:[&_button]:inset-0
+                before:[&_button]:-z-10
+                before:[&_button]:rounded-full
+                before:[&_button]:translate-y-full
+                before:last:[&_button]:-translate-y-full
+                before:[&_button]:bg-red-500
+                before:[&_button]:transition-all
+                before:[&_button]:duration-300
+                hover:before:[&_button]:translate-y-0
+                focus:before:[&_button]:translate-y-0
+                focus:[&_button]:ring-0
+                focus:[&_button]:outline-none
+                [&_input]:border-2
+                [&_input]:py-2
+                [&_input]:px-5
+                [&_input]:w-full
+                [&_input]:rounded-full
+                [&_input]:transition-all
+                [&_input]:duration-300
+                focus:[&_input]:bg-slate-200
+                focus:[&_input]:outline-none
+                focus:[&_input]:ring-0
+                [&_.field]:relative
+                [&_.field>label]:text-slate-400
+                [&_.field>label]:absolute
+                [&_.field>label]:left-2
+                [&_.field>label]:-top-5
+                [&_.field>label]:text-sm
+                [&_.field>label]:transition-all
+                [&_.field>label]:duration-300
+                [&_.field>label]:pointer-events-none
+            ">
                 <img src="/images/iCodeMas/modal_bg.png" class="h-40 sm:h-full sm:block w-full  object-cover z-10">
         
                 <section class="p-6 sm:p-12 sm:py-20 flex flex-col text-center text-teal relative">
@@ -596,61 +1075,228 @@
             <button type="button" btn-close class="bg-white rounded-full p-2 material-symbols-outlined absolute top-3 right-3 z-20 transition-all duration-300 hover:scale-125 hover:text-red-500 focus:text-red-500 focus:border-none focus:outline-none focus:ring-0">close</button>
         </dialog>
 
-        <!-- scrolling div -->
+        <!-- dialog - feedback -->
+         <dialog id="dialog-feedback" class="rounded-xl scale-[25%] translate-y-[-1000px] transition-all duration-500 relative">
+            <div class="bg-white p-4 sm:p-12 shadow-lg rounded-xl w-full max-w-lg relative text-center space-y-4 transition-all duration-300"> 
+           
+                <h2 class="text-2xl font-semibold ">We value your feedback!</h2>
+                <p class="text-sm font-thin ">Your feedback is invluable in shaping a better xmas shoppingnjourney for you and others. Thank you for being par of our commitement to excellence!</p>
 
-<svg id="scroll-line"  viewBox="0 0 793.5 3719">
-<path d="M 328 96 c 12.83 51.17 54.11 182.87 145.38 216.5 c 114 42 291.62 96.5 183.62 252.5 s -423 -42 -528 275 s 51 176 199 273 s 383 262 207 318 s -104 -74.5 -212 -45.5 s -312 63 -285 258.5 s 128 197.5 242 148.5 s 403 -151.5 328 138.5 s -70 204.5 -339 124 s -344.62 96 -244 208 s 39 209 189 281 c 1062 179 328 114 316.62 962"
-					stroke-dasharray="14.02 14.02"
-					stroke="#a7abb2"
-					stroke-miterlimit="10"
-					stroke-width="2"
-					fill="none"
-					id="car-path"
-					class="path"
-				/></path>
-</svg>
+                <div class="grid grid-cols-5 gap-2
+                
+                    [&_input]:sr-only
+
+                    [&_label]:transition-all
+                    [&_label]:duration-300
+                    hover:[&_label]:scale-110
+                    hover:[&_label]:shadow-xl
+                    focus:[&_label]:scale-110
+                    focus:[&_label]:shadow-xl
+                    [&_label]:border
+                    [&_label]:relative
+                    [&_label]:tranistion-all
+                    [&_label]:duration-300
+                    [&_label]:cursor-pointer
+                    [&_label]:rounded-sm
+                    [&_label]:p-2
+                    [&_label]:flex
+                    [&_label]:flex-col
+                    [&_label]:items-center
+                    [&_label]:justify-center 
+                    [&_label]:gap-2
+                    [&_label]:isolate
+                    [&_label>p]:text-xs
+                    [&_label>p]:opacity-70
+
+                    
+
+                    before:[&_label]:absolute
+                    before:[&_label]:bg-[url('/images/iCodeMas/santa_hat.png')]
+                    before:[&_label]:bg-cover
+                    before:[&_label]:w-12 
+                    before:[&_label]:h-10 
+                    before:[&_label]:-top-4
+                    before:[&_label]:left-2/4
+                    before:[&_label]:-translate-x-4
+                    before:[&_label]:z-10
+                    before:[&_label]:transition-all
+                    before:[&_label]:duration-300
+                    before:[&_label]:opacity-0 
 
 
-<img id="sleigh-amimate" src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/santa-sleigh.png" class="hidden sm:block">
+                    [&_input:checked~label]:border-red-700
+                    before:[&_input:checked~label]:opacity-100
 
+                    [&_img]:w-12
+                    [&_svg]:
+                    [&_svg]:
+                ">
+                    <div class="">
+                        <input type="radio" name="rating" id="rating-1" value="Terrible">
+                        <label for="rating-1">
+                            <img src="/images/iCodeMas/face_1.png" alt="terrible">
+                            <p>Terrible</p>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="rating" id="rating-2" value="Bad">
+                        <label for="rating-2">
+                            
+                            <img src="/images/iCodeMas/face_2.png" alt="Bad">
+                            <p>Bad</p>
+                        </label>
+                    </div>
+
+                    <div class="">
+                        <input type="radio" name="rating" id="rating-3" value="Okay" checked>
+                        <label for="rating-3">
+                            <img src="/images/iCodeMas/face_3.png" alt="okay">
+                            <p>Okay</p>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="rating" id="rating-4" value="Good">
+                        <label for="rating-4">
+                            <img src="/images/iCodeMas/face_4.png" alt="Good">
+                            <p>Good</p>
+                        </label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="rating" id="rating-5" value="Amazing">
+                        <label for="rating-5">
+                            <img src="/images/iCodeMas/face_5.png" alt="Amazing">
+                            <p>Amazing</p>
+                        </label>
+                    </div>
+                </div>
+                <h3 class="font-semibold text-left ">Share your feedback</h3>
+                <textarea class="rounded-sm border w-full h-24 p-2 transition-all duration-300 hover:border-teal focus:border-teal  focus:ring-0 outline-none " style="--d:2100ms" placeholder="Message"></textarea>
+                
+                <div class="text-center " >
+                    <button type="button" id="btn-feedback" class="rounded-full bg-teal text-white py-2 px-6 mx-auto transition-all duration-300 hover:bg-red-600  focus:border-none focus:ring-0 outline-none">Send feedback</button>
+                </div>
+
+                <button type="button" btn-close="dialog-feedback" data-reopen="4000" class="absolute top-2 right-4 material-symbols-outlined transition-all duration-300 hover:text-red-600 focus:text-red-600 focus:border-none focus:ring-0 outline-none " >close</button>
+ 
+                <img src="/images/iCodeMas/santa_hat.png" style="--d:700" class="scale-in absolute -top-14 -left-14 sm:-top-20 sm:-left-20 w-32 sm:w-48 [transform:scaleX(-1)rotate(20deg)]">
+            </div>
+            <div data-msg class="absolute inset-0 bg-teal text-white grid place-content-center transition-all duration-300 scale-0">message goes here</div>
+        </dialog>
+
+        <!-- dialog - gift card -->
+        <dialog id="dialog-gift-card" class="rounded-xl scale-[25%] translate-y-[-1000px] transition-all duration-500 relative">
+            <div class=" bg-white p-4 sm:p-12 shadow-lg rounded-xl w-full max-w-lg relative text-center space-y-4 transition-all duration-300">
+           
+                <h2 class="text-2xl font-semibold ">Gift the joy of choice!</h2>
+                <p class="text-sm font-thin ">Show them you care with a gift they'll love. With an online gift card, they can choose from a wide selection of products.</p>
+
+
+                <div class="grid grid-cols-[1fr_2fr_1fr] divide-x border rounded-md w-40 h-12 mx-auto
+                    [&>*]:grid
+                    [&>*]:place-content-center
+                    [&>*]:text-2xl
+                    [&>*]:transition-all
+                ">
+                    <button type="button" data-giftnav="prev" class="hover:bg-teal hover:text-white">-</button>
+                    <span id="current-gift-card">$75</span>
+                    <button type="button"  data-giftnav="next" class=" hover:bg-teal hover:text-white">+</button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2
+                    [&_input]:sr-only
+                    [&_label]:transition-all
+                    [&_label]:duration-300
+                    hover:[&_label]:scale-110
+                    hover:[&_label]:shadow-xl
+                    focus:[&_label]:scale-110
+                    focus:[&_label]:shadow-xl
+                    [&_label]:border
+                    [&_label]:relative
+                    [&_label]:tranistion-all
+                    [&_label]:duration-300
+                    [&_label]:cursor-pointer
+                    [&_label]:rounded-sm
+                    [&_label]:p-2
+                    [&_label]:flex
+                    [&_label]:flex-col
+                    [&_label]:items-center
+                    [&_label]:justify-center 
+                    [&_label]:gap-2
+                    [&_label]:isolate
+                    [&_label>p]:text-xs
+
+                    [&_input:checked~label]:border-teal
+                ">
+                    <div class="">
+                        <input type="radio" name="gift-card" id="gift-card-1" value="25">
+                        <label for="gift-card-1">$25</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="gift-card" id="gift-card-2" value="30">
+                        <label for="gift-card-2">$30</label>
+                    </div>
+
+                    <div class="">
+                        <input type="radio" name="gift-card" id="gift-card-3" value="75" checked>
+                        <label for="gift-card-3">$75</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="gift-card" id="gift-card-4" value="100">
+                        <label for="gift-card-4">$100</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="gift-card" id="gift-card-5" value="200">
+                        <label for="gift-card-5">$200</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="gift-card" id="gift-card-6" value="300">
+                        <label for="gift-card-6">$300</label>
+                    </div>
+                </div>
+                
+                
+                <div class="text-center" >
+                    <button type="button" id="btn-gift-card-send" class="rounded-full bg-teal text-white py-2 px-6 mx-auto transition-all duration-300 hover:bg-red-600  focus:border-none focus:ring-0 outline-none flex items-center gap-2">
+                        Add to cart
+                        <span class="material-symbols-outlined text-lg">shopping_cart</span>
+                    </button>
+                </div>
+
+                <button type="button" btn-close="dialog-gift-card" data-reopen="4000" class="absolute top-2 right-4 material-symbols-outlined transition-all duration-300 hover:text-red-600 focus:text-red-600 focus:border-none focus:ring-0 outline-none " >close</button>
+
+
+                <img src="/images/iCodeMas/gift.png" style="--d:7700ms" class="scale-in absolute w-20 sm:w-32 -top-10 -left-2 sm:-top-14 sm:-left-6  -rotate-12">
+            </div>
+
+            <div data-msg class="absolute inset-0 bg-teal text-white grid place-content-center transition-all duration-300 scale-0">
+                message goes here</div>
+        </dialog>
+
+
+
+      
 
 
 
         <!-- template product BUTTON (featured) -->
         <template id="tpl-product-item-featured">
-            <button type="button" class=" group bg-white  aspect-square border-2 border-transparent transition-all duration-300 hover:border-red-500 scale-0" label="new">
-                <div class="product-img border aspect-square bg-gray-50 grid place-content-center overflow-hidden">
-                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000 ">
+            <button type="button" class=" group bg-white  aspect-square border-2 border-white transition-all duration-300 hover:border-red-500 scale-0" label="new">
+                <div class="product-img aspect-square bg-gray-50 grid place-content-center overflow-hidden">
+                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000 " loading="lazy">
                 </div>
             </button>
         </template>
 
-        <!-- template product ARTICLE (shop) -->
-        <template id="tpl-product-item">
-            <article
-                class=" group bg-white  transition-all duration-300  flex flex-col gap-1  justify-center scale-0  text-left pb-4">
-                <div class="product-img p-2 aspect-square bg-gray-50 grid place-content-center overflow-hidden" label="new">
-                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000 ">
-        
-                    <button type="button" class="absolute bottom-0 py-1 bg-teal text-white text-sm flex items-center justify-center gap-2 w-full transition-full duration-300  sm:translate-y-full group-hover:translate-y-0 hover:bg-red-600 hover:text-white">
-                        <p>Add to cart</p>
-                        <span class="material-symbols-outlined text-base">shopping_cart</span>
-                    </button>
-                </div>
-                <div class="p-2">
-                    <p data-title class="text-sm line-clamp-1">Christmas Tree</p>
-                    <p data-price class="font-semibold">$1.99</p>
-                </div>
-            </article>
-        </template>
-
-        <!-- template product details -->
+        <!-- template product details (featured) -->
         <template id="tpl-product-details">
-            <article class="grid min-[400px]:grid-cols-2 gap-8 w-full max-w-xl mx-auto [&_*]:origin-left [&_*]:transition-all [&_*]:duration-500 overflow-hidden">
-                <div class="product relative bg-white p-8 aspect-square grid place-content-center z-10 relative 
-                
-                    
-                ">
+            <article class="grid min-[400px]:grid-cols-2 gap-8 w-full max-w-xl mx-auto [&_*]:origin-left [&_*]:transition-all [&_*]:duration-500 overflow-hidden isolate">
+                <div class="product relative bg-white p-8 aspect-square grid place-content-center z-10 relative">
                     <img src="" alt="" class="w-24 h-auto  transition-all duration-1000 scale-0 !origin-center">
                 </div>
                 <div class="flex flex-col gap-1">
@@ -659,13 +1305,121 @@
                     <p product-price class="-translate-x-96 font-bold text-lg"></p>
                     <div product-stars class="-translate-x-96 flex text-yellow-400 [&>span]:text-base"></div>
                     <p product-desc class="-translate-x-96 text-xs opacity-80"></p>
-                    <button product-btn type="button" class="scale-0 !origin-center mt-auto w-fit py-2 px-4 bg-teal text-white text-sm flex items-center gap-2 transition-all duration-300 hover:bg-red-700">
-                        Add to Cart
-                        <span class="material-symbols-outlined text-base">shopping_bag</span>
+                    <button product-btn type="button" class="scale-0 !origin-center mt-auto w-fit py-2 px-4 bg-teal text-white text-sm flex items-center gap-2 transition-all duration-300 hover:bg-red-700 grid [grid-template-areas:'stack']
+                        [&>div]:[grid-area:stack] 
+                        [&>div]:transition-all
+                        [&>div]:duration-300
+                        [&>div]:flex
+                        [&>div]:items-center
+                        [&>div]:justify-center
+                        [&>div]:gap-2
+                    ">
+                        <div data-btn-add>
+                            <p>Add to cart</p>
+                            <span class="material-symbols-outlined text-base">shopping_cart</span>
+                        </div>
+                        <div data-btn-remove class="scale-0">
+                            <p>Remove</p>
+                            <span class="material-symbols-outlined text-base">remove_shopping_cart</span>
+                        </div>
                     </button>
                 </div>
             </article>
         </template>
+
+
+        <!-- template product item (shop) -->
+        <template id="tpl-product-item">
+            <article class=" group bg-white  transition-all duration-300  flex flex-col gap-1  justify-center scale-0  text-left  relative">
+                <div class="product-img p-2 aspect-square bg-gray-50 grid place-content-center overflow-hidden relative" >
+                    <img src="/images/iCodeMas/tree.png" alt="tree" class="mx-auto w-16 h-auto  transition-all duration-1000" loading="lazy">
+
+                    <button type="button" class="absolute bottom-0 py-1 bg-teal text-white text-sm  w-full transition-full duration-300  sm:translate-y-full group-hover:translate-y-0 hover:bg-red-600 hover:text-white grid [grid-template-areas:'stack']
+                        [&>div]:[grid-area:stack] 
+                        [&>div]:transition-all
+                        [&>div]:duration-300
+                        [&>div]:flex
+                        [&>div]:items-center
+                        [&>div]:justify-center
+                        [&>div]:gap-2
+                    ">
+                       <div data-btn-add >
+                            <p>Add to cart</p>
+                            <span class="material-symbols-outlined text-base">shopping_cart</span>
+                        </div>
+                        <div data-btn-remove  class="scale-0">
+                            <p>Remove</p>
+                            <span class="material-symbols-outlined text-base">remove_shopping_cart</span>
+                        </div>
+                    </button>
+                    <div data-banner class="absolute grid place-content-center mix-blend-differnce  w-full bottom-2 -z-10 X-rotate-[25deg] text-red-600 font-semibold tracking-wider text-lg whitespace-nowrap hidden "></div>
+                </div>
+                <div class="p-2">
+                    <p data-title class="text-sm line-clamp-1"></p>
+                    <div class="flex items-center gap-2">
+                        <p data-price-orig class="opacity-50 line-through text-sm"</p>
+                        <p data-price class="font-semibold">$1.99</p>
+                    </div>
+                </div>
+                
+            </article>
+        </template>
+
+        <!-- template filter checkbox -->
+        <template id="tpl-filter-checkbox">
+            <div class="field-checkbox">
+                <input type="checkbox" id="" name="" class="peer sr-only">
+                <label for="" >
+                    <div class="grid [grid-template-areas:'stack']">
+                        <span class="material-symbols-outlined ">check_box_outline_blank</span>
+                        <span class="material-symbols-outlined ">check_box</span>
+                    </div>
+                    <p class="block"></p>
+                </label>
+            </div>
+        </template>
+
+        <!-- template cart item -->
+        <template id="tpl-cart-item">
+            <article class="flex gap-4  my-2 pt-2 pb-3 border-b">
+                <img src="" alt="" class="h-10 w-10 object-cover">
+        
+                <div class="w-full space-y-1">
+                    <p data-title></p>
+                    <p class=" price" data-price="12.99">$12.99</p>
+        
+                    <div class="flex items-center justify-between w-full">
+                        <div class="grid grid-cols-3 divide-x border rounded-md">
+                            <button type="button" data-action="remove" class="  w-8 h-8 p-4 grid place-content-center text-2xl transition-all hover:bg-teal hover:text-white quantity-decrease">-</button>
+                            <span data-quantity class=" w-8 h-8 p-4 grid place-content-center quantity">2</span>
+                            <button type="button" data-action="add" class="  w-8 h-8 p-4 grid place-content-center text-2xl transition-all hover:bg-teal hover:text-white quantity-increase">+</button>
+                        </div>
+        
+                        <button type="button" data-btn-delete class="material-symbols-outlined">delete</button>
+                    </div>
+                </div>
+            </article>
+        </template>
+
+        <!-- template - chat message item -->
+        <template id="tpl-chat-message">
+            <article class="flex gap-2 opacity-0 tranistion-all duration-300">
+                <div class="w-12 h-12 shrink-0 justify-self-end ">
+                    <img src="" class="w-full h-full aspect-square object-cover rounded-full border-4 border-white group-hover:border-white transition shadow-lg" alt="">
+                </div>
+                <div msg-container class="bg-white rounded-md  p-1 px-3 shadow-lg ">
+                    <p msg-txt class=""></p>
+                    <time class="text-xs opacity-50"></time>
+                </div>
+            </article>
+        </template>
+
+        <!-- template - chat date -->
+        <template id="tpl-chat-date">
+            <div class="text-center opacity-70 text-xs relative text-purple-600">
+            </div>
+        </template>
+        
 
 
     </body>

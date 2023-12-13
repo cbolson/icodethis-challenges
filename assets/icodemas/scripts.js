@@ -20,7 +20,6 @@ document.querySelector("#toggle-mode").addEventListener("change", () => {
 
 /************** LOGO ANIMATION **************/
 const logoBlocks = document.querySelectorAll("#icodethis-logo path");
-console.log(logoBlocks);
 let logoInterval;
 let currentIndex = 0;
 function animateLogo() {
@@ -321,6 +320,19 @@ document.querySelector("#santa").addEventListener("pointerdown", () => {
 
 /*************** PRODUCTS *****************/
 
+// categories
+const CATEGORIES = {
+  1: "Cookies",
+  2: "Candies",
+  3: "Ornaments",
+  4: "Accessories",
+};
+const COLORS = {
+  1: "Red",
+  2: "Green",
+  3: "Brown",
+};
+
 const PRODUCTS = [
   {
     id: 1,
@@ -330,22 +342,32 @@ const PRODUCTS = [
     rating: 4.5,
     price: 1999,
     discount: 0,
-    cat: 1,
+    category: 3,
+    size: "large",
+    colors: ["green"],
     featured: true,
     recent: true,
+    stock: 10,
+    rating: 3.5,
+    sales: 124,
   },
   {
     id: 2,
-    name: "Box it up",
+    name: "Gift Box",
     desc: `A quality box designed to make your presents have that added quality feel.
         30cm x 30cm with a red ribbon.`,
     img: "/images/iCodeMas/gift.png",
     rating: 5,
     price: 950,
     discount: 25,
-    cat: 2,
+    category: 4,
+    size: "medium",
+    colors: ["red", "white"],
     featured: true,
     recent: false,
+    stock: 10,
+    rating: 4,
+    sales: 45,
   },
   {
     id: 3,
@@ -355,9 +377,14 @@ const PRODUCTS = [
     rating: 3,
     price: 1099,
     discount: 0,
-    cat: 3,
+    category: 1,
+    size: "small",
+    colors: ["red", "brown"],
     featured: true,
     recent: false,
+    stock: 10,
+    rating: 5,
+    sales: 475,
   },
   {
     id: 4,
@@ -367,105 +394,151 @@ const PRODUCTS = [
     rating: 3,
     price: 499,
     discount: 0,
-    cat: 1,
+    category: 3,
+    size: "small",
+    colors: ["blue"],
     featured: false,
     recent: false,
+    stock: 2,
+    rating: 2.8,
+    sales: 584,
   },
   {
     id: 5,
     name: "Star Shaped Cookie",
     desc: ``,
-    img: "/images/iCodeMas/star_cookie.png",
+    img: "https://icodethis.com/images/iCodeMas/star_cookie.png",
     rating: 5,
     price: 1299,
     discount: 0,
-    cat: 1,
+    category: 1,
+    size: "small",
+    colors: ["brown", "white"],
     featured: false,
     recent: false,
+    stock: 10,
+    rating: 4.8,
+    sales: 2153,
   },
   {
     id: 6,
     name: `Santas's Hat`,
     desc: ``,
-    img: "/images/iCodeMas/santa_hat.png",
+    img: "https://icodethis.com/images/iCodeMas/santa_hat.png",
     rating: 5,
     price: 3999,
     discount: 15,
-    cat: 1,
+    category: 4,
+    size: "medium",
+    colors: ["red", "white"],
     featured: false,
     recent: false,
+    stock: 100,
+    msg: "Back in stock",
+    rating: 5,
+    sales: 5143,
   },
   {
     id: 7,
     name: "Candy Cane",
     desc: ``,
-    img: "/images/iCodeMas/candy_cane.png",
+    img: "https://icodethis.com/images/iCodeMas/candy_cane.png",
     rating: 5,
     price: 999,
     discount: 0,
-    cat: 1,
+    category: 2,
+    size: "small",
+    colors: ["red", "white"],
     featured: false,
     recent: true,
+    stock: 10,
+    rating: 4.3,
+    sales: 785,
   },
   {
     id: 8,
     name: "Snowman Decoration",
     desc: ``,
-    img: "/images/iCodeMas/snowman_deco.png",
+    img: "https://icodethis.com/images/iCodeMas/snowman_deco.png",
     rating: 5,
     price: 3999,
     discount: 10,
-    cat: 1,
+    category: 3,
+    size: "small",
+    colors: ["red", "white"],
     featured: false,
     recent: false,
+    stock: 10,
+    rating: 3,
+    sales: 177,
   },
   {
     id: 9,
     name: "Christmas Ball",
     desc: ``,
-    img: "/images/iCodeMas/christmas_ball.png",
+    img: "https://icodethis.com/images/iCodeMas/christmas_ball.png",
     rating: 5,
     price: 399,
     discount: 0,
-    cat: 1,
+    category: 3,
+    size: "small",
+    colors: ["red", "white"],
     featured: false,
     recent: false,
+    stock: 0,
+    rating: 3.5,
+    sales: 633,
   },
   {
     id: 10,
     name: `Christmas Red Sock's`,
     desc: ``,
-    img: "/images/iCodeMas/christmas_sock.png",
+    img: "https://icodethis.com/images/iCodeMas/christmas_sock.png",
     rating: 5,
     price: 2999,
     discount: 0,
-    cat: 1,
+    category: 4,
+    size: "medium",
+    colors: ["red", "white"],
     featured: false,
     recent: false,
+    stock: 10,
+    rating: 5,
+    sales: 1975,
   },
   {
     id: 11,
     name: "Red Ribbon",
     desc: ``,
-    img: "/images/iCodeMas/red_ribbon.png",
+    img: "https://icodethis.com/images/iCodeMas/red_ribbon.png",
     rating: 5,
     price: 399,
     discount: 0,
-    cat: 1,
+    category: 3,
+    size: "small",
+    colors: ["red"],
     featured: false,
     recent: true,
+    stock: 3,
+    rating: 1,
+    sales: 23,
   },
   {
     id: 12,
     name: "Christmas Tree Cookie",
     desc: ``,
-    img: "/images/iCodeMas/tree_cookie.png",
+    img: "https://icodethis.com/images/iCodeMas/tree_cookie.png",
     rating: 5,
     price: 1399,
     discount: 0,
-    cat: 1,
+    category: 1,
+    size: "small",
+    colors: ["red", "white", "brown", "green"],
     featured: false,
     recent: false,
+    stock: 6,
+    rating: 4.8,
+    sales: 2541,
   },
 ];
 
@@ -486,8 +559,8 @@ const CART = [];
     }
 */
 
-// selectors
-
+/* SELECTORS */
+const main = document.querySelector("main");
 const tplProductItem = document.querySelector("#tpl-product-item");
 const tplProductItemFeatured = document.querySelector(
   "#tpl-product-item-featured"
@@ -497,31 +570,35 @@ const tplProductDetails = document.querySelector("#tpl-product-details");
 const panelFeaturedProduct = document.querySelector("#panel-featured-product");
 const panelShop = document.querySelector("#panel-shop");
 const navCart = document.querySelector("#nav-cart");
+const panelCart = document.querySelector("#panel-cart");
 
+const tplProduct = document.querySelector("#tpl-product-item");
+const panelProductsList = document.querySelector("#products-list");
+
+// define to avoid delay on product list clearance etc.
 let firstLoad = true;
+// delay between product loading each item
+let delayProductDisplay = 100;
+//// thumbnail hack (thanks marcinmalecki)
+// overide the delays etc for the thumbnail generation
+if (navigator.userAgent.includes("Headless")) {
+  delayProductDisplay = 0;
+  document.body.classList.add("pt-32");
+}
 
-function renderProducts(dest, type = "") {
-  dest.innerHTML = "";
-  let arr;
-  if (type) arr = filterProductsByProperty(PRODUCTS, type, true);
-  else arr = PRODUCTS;
-  //console.log(arr)
+/************** FEATURED **************/
+
+// FEATURED - products list (I orginally used the same code as I use for the shop products but it got over complicated)
+function renderFeaturedProducts() {
+  panelFeaturedList.innerHTML = "";
+  let arr = filterProductsByProperty(PRODUCTS, "featured", true);
+
   let delay = 0;
   let delaySpacer = 300;
 
   arr.forEach((a) => {
-    let clone;
-    let product;
-    let btn;
-    if (type === "featured") {
-      clone = tplProductItemFeatured.content.cloneNode(true);
-      product = clone.querySelector("button");
-      btn = product;
-    } else {
-      clone = tplProductItem.content.cloneNode(true);
-      product = clone.querySelector("article");
-      btn = product.querySelector("button");
-    }
+    const clone = tplProductItemFeatured.content.cloneNode(true);
+    const product = clone.querySelector("button");
     const elProductImg = product.querySelector(".product-img");
     const img = elProductImg.querySelector("img");
     img.src = a.img;
@@ -534,65 +611,30 @@ function renderProducts(dest, type = "") {
       elProductImg.setAttribute("label", `${a.discount}%`);
       product.classList.add("offer");
     }
-
-    if (type != "featured") {
-      clone.querySelector("[data-title]").innerText = a.name;
-      clone.querySelector("[data-price]").innerText = formatAsDollarsAndCents(
-        a.price
-      );
-    }
-
     // add to dom
-    dest.append(clone);
+    panelFeaturedList.append(clone);
 
     // animate in
     setTimeout(() => product.classList.remove("scale-0"), delay);
     delay += delaySpacer;
-    btn.addEventListener("pointerdown", () => {
+    product.addEventListener("pointerdown", () => {
       // need to add some code to prevent clicking on the button again
-
-      if (type === "featured") {
-        displayFeatured(a);
-      } else {
-        if (!isProductInCart(a.id)) {
-          //console.log("add to cart");
-          // not in cart - add
-          addProductToCart(a.id);
-          btn.classList.add("bg-[#C5E0FB]", "text-black");
-          btn.classList.remove("sm:translate-y-full");
-          btn.querySelector("p").innerText = "Remove";
-          btn.querySelector("span").innerText = "remove_shopping_cart";
-        } else {
-          // in cart - remove
-          //console.log("REMOVE from cart");
-          removeProductFromCart(a.id);
-          btn.classList.remove("bg-[#C5E0FB]", "text-black");
-          btn.classList.add("sm:translate-y-full");
-          btn.querySelector("p").innerText = "Add to Cart";
-          btn.querySelector("span").innerText = "shopping_cart";
-        }
-      }
+      displayFeatured(a);
     });
   });
 }
-// funciton - display featured product item when clicked
+// FEATURED - display featured product item when clicked
 function displayFeatured(item) {
   displayProductDetails(panelFeaturedProduct, item);
 }
-// add featured products
-renderProducts(panelFeaturedList, "featured");
-displayFeatured(PRODUCTS[0]);
 
-// add all products
-renderProducts(panelShop);
-
-// FEATURED - function - show product details
+// FEATURED - show product details
 function displayProductDetails(dest, item) {
   // remove current contents (to animate)
   let delay = 0;
-  const delaySpacer = 150;
+  const delaySpacer = 50;
 
-  let delayLoadProduct = 1000;
+  let delayLoadProduct = 500;
   if (firstLoad) {
     delayLoadProduct = 0;
     firstLoad = false;
@@ -636,7 +678,6 @@ function displayProductDetails(dest, item) {
     delay += 50;
     setTimeout(() => dest.querySelector("img").classList.add("scale-0"), delay);
   }
-
   setTimeout(() => {
     dest.innerHTML = "";
 
@@ -666,7 +707,18 @@ function displayProductDetails(dest, item) {
     elDesc.innerText = item.desc;
 
     // button event handlear
-    elButton.addEventListener("click", () => addToCart(item));
+    elButton.addEventListener("click", () => {
+      if (!isProductInCart(item.id)) {
+        // not in cart - add
+        addProductToCart(item.id);
+        updateProductButton(elButton, true, "featured");
+      } else {
+        // in cart - remove
+
+        removeProductFromCart(item.id);
+        updateProductButton(elButton, false, "featured");
+      }
+    });
 
     dest.append(clone);
 
@@ -703,24 +755,336 @@ function displayProductDetails(dest, item) {
   }, delayLoadProduct);
 }
 
-// CART Function - add a product to the cart
+// FEATURED - render list and inital product to display (this could be randomized???)
+renderFeaturedProducts();
+displayFeatured(PRODUCTS[0]);
+
+/************ END FEATURED ************/
+
+/**************** SHOP *******************/
+
+const radioSort = document.querySelector("#show-sort-order");
+const dropDownButtons = document.querySelector("#sort-options-list");
+const buttonSortOrder = document.querySelector("#btn-sort-order");
+
+let currentSortOption = "newest"; // Default selected option
+let currProductsArr = PRODUCTS;
+
+// SHOP - render products
+function renderShopProducts() {
+  panelProductsList.innerHTML = "";
+
+  if (currProductsArr.length === 0) {
+    panelProductsList.innerHTML = `<p class=" col-span-2 text-red-600 font-semibold">Sorry, Santa doesn't have any products that fulfill your search criteria.</p>`;
+  } else {
+    // let arr
+    // if (type) arr = filterProductsByProperty(PRODUCTS, type, true);
+    //else arr = PRODUCTS
+    let delay = 0;
+
+    // sort array according to currently defined method
+    currProductsArr = sortProducts(currProductsArr);
+
+    currProductsArr.forEach((a) => {
+      const clone = tplProduct.content.cloneNode(true);
+      const product = clone.querySelector("article");
+      const btn = product.querySelector("button");
+      const img = product.querySelector("img");
+      const elProductImg = product.querySelector(".product-img");
+      const elBanner = product.querySelector("[data-banner]");
+      const elPrice = product.querySelector("[data-price]");
+      const elPriceOrig = product.querySelector("[data-price-orig]");
+
+      img.src = a.img;
+      img.setAttribute("alt", a.name);
+      clone.querySelector("[data-title]").innerText = a.name;
+
+      if (a.recent) {
+        elProductImg.setAttribute("label", "new");
+        product.classList.add("new");
+      }
+      if (a.discount) {
+        elProductImg.setAttribute("label", `${a.discount}%`);
+        product.classList.add("offer");
+      }
+      // check if in cart
+      if (isProductInCart(a.id)) {
+        // product is in cart - change button text
+        updateProductButton(btn, true);
+      }
+      if (a.stock < 1) {
+        img.classList.add("opacity-30");
+        btn.remove();
+        elBanner.innerText = `Sold Out`;
+        elBanner.classList.add("-rotate-12", "!bottom-10");
+        elBanner.classList.remove("hidden");
+      } else if (a.stock < 5) {
+        // img.classList.add("opacity-50")
+        elBanner.innerText = `Only ${a.stock} left!`;
+        elBanner.classList.remove("hidden");
+        //elBanner.classList.add("animate-pulse")
+      } else if (a.msg) {
+        // img.classList.add("opacity-50")
+        elBanner.innerText = a.msg;
+        elBanner.classList.remove("hidden");
+        //elBanner.classList.add("animate-pulse")
+      }
+
+      // calculate price
+      let finalPrice = a.price;
+      if (a.discount) {
+        finalPrice = calculateDiscountedPrice(a.price, a.discount);
+        elPriceOrig.innerText = formatAsDollarsAndCents(a.price);
+      } else {
+        elPriceOrig.remove();
+      }
+      elPrice.innerText = formatAsDollarsAndCents(finalPrice);
+
+      // add to dom
+      panelProductsList.append(clone);
+
+      // animate in
+      setTimeout(() => product.classList.remove("scale-0"), delay);
+      delay += delayProductDisplay;
+      btn.addEventListener("pointerdown", () => {
+        // need to add some code to prevent clicking on the button again
+        // console.log("add to cart");
+        if (!isProductInCart(a.id)) {
+          //console.log("add to cart");
+          // not in cart - add
+          addProductToCart(a.id);
+          updateProductButton(btn, true);
+        } else {
+          // in cart - remove
+          removeProductFromCart(a.id);
+          updateProductButton(btn, false);
+        }
+      });
+    });
+  }
+}
+
+// SHOP - update cart button when added or removed
+function updateProductButton(btn, inCart, btnType = "") {
+  if (inCart) {
+    btn.classList.add("bg-[#C5E0FB]", "text-black");
+    if (btnType != "featured") btn.classList.remove("sm:translate-y-full");
+    btn.querySelector("[data-btn-add]").classList.add("scale-0");
+    btn.querySelector("[data-btn-remove]").classList.remove("scale-0");
+  } else {
+    btn.classList.remove("bg-[#C5E0FB]", "text-black");
+    if (btnType != "featured") btn.classList.add("sm:translate-y-full");
+    btn.querySelector("[data-btn-add]").classList.remove("scale-0");
+    btn.querySelector("[data-btn-remove]").classList.add("scale-0");
+  }
+}
+renderShopProducts();
+
+// FILTER - get unique values for a given key (eg for cat which has it's own definitions JSON)
+function getSortedUniqueValues(data, key) {
+  return [...new Set(data.flatMap((item) => item[key]))].sort();
+}
+
+// FILTER - generate filter options for a given key
+const tplFilterCheckbox = document.querySelector("#tpl-filter-checkbox");
+
+// FILTER - generate filter options
+function generateFilterOptions(data, key, definitions, containerId) {
+  const uniqueValues = getSortedUniqueValues(data, key);
+  const filterOptionsContainer = document.getElementById(containerId);
+  //console.log(uniqueValues);
+  uniqueValues.forEach((value) => {
+    const clone = tplFilterCheckbox.content.cloneNode(true);
+    const label = clone.querySelector("label");
+    const input = clone.querySelector("input");
+
+    input.name = key;
+    input.value = value;
+    input.id = `filter-${value}`;
+    input.addEventListener("change", updateFilteredResults);
+
+    // define label
+    label.querySelector("p").innerText = definitions[value] || value;
+    label.setAttribute("for", `filter-${value}`);
+    filterOptionsContainer.appendChild(clone);
+  });
+}
+
+//document.querySelectorAll("#filter-options input").forEach(el => el.addEventListener("change", updateFilteredResults))
+
+// FILTER - update filtered results based on selected filters
+function updateFilteredResults() {
+  //console.log("asdsa");
+  // get checked filters (and convet node list to array)
+  const arrFiltersCategory = Array.from(
+    document.querySelectorAll('input[name="category"]:checked')
+  );
+  const arrFiltersSize = Array.from(
+    document.querySelectorAll('input[name="size"]:checked')
+  );
+  const arrFilterColor = Array.from(
+    document.querySelectorAll('input[name="colors"]:checked')
+  );
+  const filterOffer = document.querySelector("#filter-discount:checked");
+  const filterRecent = document.querySelector("#filter-recent:checked");
+  const filterFeatured = document.querySelector("#filter-featured:checked");
+  const filterStock = document.querySelector("#filter-stock:checked");
+
+  // Perform filtering based on selected options
+  currProductsArr = PRODUCTS.filter((product) => {
+    return (
+      (!arrFiltersCategory.length ||
+        arrFiltersCategory.some(
+          (filter) => product.category === parseInt(filter.value, 10)
+        )) &&
+      (!arrFiltersSize.length ||
+        arrFiltersSize.some((filter) => product.size === filter.value)) &&
+      (!arrFilterColor.length ||
+        arrFilterColor.some((filter) =>
+          product.colors.includes(filter.value)
+        )) &&
+      (!filterOffer || product.discount) &&
+      (!filterRecent || product.recent) &&
+      (!filterFeatured || product.featured) &&
+      (!filterStock || product.stock > 0)
+    );
+  });
+  console.log("as");
+  // display filtered results
+  renderShopProducts();
+}
+
+const elFilters = document.querySelector("#filters");
+const btnFiltersClear = document.querySelector("#btn-filter-clear");
+// FILTER - clear all button
+btnFiltersClear.addEventListener("click", clearAllFilters);
+
+// FILTER - clear all filters
+function clearAllFilters() {
+  elFilters.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+  // reset current products array to full list
+  currProductsArr = PRODUCTS;
+  // Update filtered results
+  renderShopProducts();
+}
+
+// Generate filters
+generateFilterOptions(PRODUCTS, "category", CATEGORIES, "filters-categories");
+generateFilterOptions(PRODUCTS, "size", {}, "filters-size");
+generateFilterOptions(PRODUCTS, "colors", {}, "filters-color");
+
+const searchProducts = document.querySelector("#search-products");
+
+searchProducts.addEventListener("input", (e) => filterProducts(e));
+// FILTER - filter products based on search input
+function filterProducts(e) {
+  const searchInput = e.target.value.toLowerCase();
+  currProductsArr = PRODUCTS.filter((product) => {
+    return product.name.toLowerCase().includes(searchInput);
+  });
+  // slide shop to top of page
+  document.querySelector(`#panel-shop`).scrollIntoView({ behavior: "smooth" });
+  renderShopProducts();
+}
+
+// SORT products
+const SORT_OPTIONS = [
+  { newest: "Most recent" },
+  { popular: "Most popular" },
+  { sales: "Sales" },
+  { "price-lowest": "Lowest price first" },
+  { "price-highest": "Highest price first" },
+];
+
+// SORT - generate sort option list (excluing currently selected)
+function updateSortOptionsList() {
+  dropDownButtons.innerHTML = ""; // Clear existing buttons
+  SORT_OPTIONS.forEach((option) => {
+    const key = Object.keys(option)[0];
+
+    if (key !== currentSortOption) {
+      const value = option[key];
+      const button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("data-sort", key);
+      button.textContent = value;
+
+      button.addEventListener("click", function () {
+        radioSort.checked = false;
+        updatebuttonSortOrder(key);
+        renderShopProducts();
+      });
+      dropDownButtons.appendChild(button);
+    }
+  });
+}
+
+// SORT - buttton - this will eventually update the products list
+function updatebuttonSortOrder(option) {
+  buttonSortOrder.querySelector("p").textContent =
+    SORT_OPTIONS.find((item) => Object.keys(item)[0] === option)?.[option] ||
+    "Most Recent";
+  buttonSortOrder.setAttribute("data-sort", option);
+  currentSortOption = option;
+  updateSortOptionsList();
+}
+
+updateSortOptionsList(); // Initial generation of the sort options list
+
+function sortProducts(arr) {
+  switch (currentSortOption) {
+    case "newest":
+      // Sorting by id in descending order for most recent
+      arr.sort((a, b) => b.id - a.id);
+      break;
+    case "popular":
+      // Sorting by sales in descending order for most popular
+      arr.sort((a, b) => b.sales - a.sales);
+      break;
+    case "sales":
+      // Sorting by sales in ascending order
+      arr.sort((a, b) => a.sales - b.sales);
+      break;
+    case "price-lowest":
+      // Sorting by price in ascending order
+      arr.sort((a, b) => a.price - b.price);
+      break;
+    case "price-highest":
+      // Sorting by price in descending order
+      arr.sort((a, b) => b.price - a.price);
+      break;
+    default:
+      // Default to sorting by id in descending order for most recent
+      products.sort((a, b) => b.id - a.id);
+  }
+
+  return arr;
+
+  // Call a function to update the display with the sorted products
+  displaySortedProducts();
+}
+
+/************** END SHOP ****************/
+
+/**************** CART *****************/
+// CART - add a product
 function addProductToCart(productId) {
   // Check if the product already exists in the cart
   const existingProduct = CART.find(
     (product) => product.productId === productId
   );
-
   if (existingProduct) {
     existingProduct.quantity += 1;
   } else {
     CART.push({ productId, quantity: 1 });
   }
-
   // update cart in nav
-  updateCartTotalElement();
+  updateCartIconCounter();
 }
 
-// CART Function to remove a product from the cart
+// CART - remove a product
 function removeProductFromCart(productId) {
   // Find the index of the product in the cart
   const productIndex = CART.findIndex(
@@ -731,22 +1095,21 @@ function removeProductFromCart(productId) {
     CART.splice(productIndex, 1);
   }
   // update cart in nav
-  updateCartTotalElement();
+  updateCartIconCounter();
 }
 
-// CART Function - check if a product is in the cart
+// CART - check if a product is in the cart
 function isProductInCart(productId) {
   return CART.some((product) => product.productId === productId);
 }
-// CART function - get total in cart
+// CART - get total in cart
 function getTotalItemsInCart() {
   // Use the reduce method to sum the quantities of all products
   return CART.reduce((acc, product) => acc + product.quantity, 0);
 }
-// CART Function - update an HTML element with the total number of items
-function updateCartTotalElement() {
+// CART - update an HTML element with the total number of items
+function updateCartIconCounter() {
   navCart.classList.add("after:scale-0");
-  //console.log(navCart);
   const totalItems = getTotalItemsInCart();
   navCart.setAttribute("data-num", totalItems);
   setTimeout(() => {
@@ -754,12 +1117,106 @@ function updateCartTotalElement() {
   }, 200);
 }
 
-function addToCart(item) {
-  // TO DO
-  console.log("ADD TO CART: ", item.name);
+/****************** PANEL CART ***************/
+let cartVisible = false;
+const tplCartItem = document.querySelector("#tpl-cart-item");
+const cartListItems = document.querySelector("#list-cart-items");
+const btnCartClose = document.querySelector("#btn-close-cart");
+const cartTotal = panelCart.querySelector("#cart-total");
+
+navCart.addEventListener("pointerdown", (e) => {
+  if (!cartVisible) loadCart();
+  else closeCart();
+});
+function closeCart() {
+  cartVisible = false;
+  panelCart.classList.remove("translate-x-0");
+  main.classList.remove("blur-md", "pointer-events-none", "select-none");
+}
+btnCartClose.addEventListener("pointerdown", () => closeCart());
+
+function loadCart() {
+  cartVisible = true;
+  cartListItems.innerHTML = "";
+  let subtotal = 0;
+  // get items from cart
+  if (CART.length === 0) {
+    cartListItems.innerHTML =
+      '<div class="mt-12 text-red-500 flex flex-col items-center gap-4"><p>Your cart is empty. Santa is sad.</p><img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/sad-santa.png"></div>';
+  } else {
+    CART.forEach((c) => {
+      // get item details
+      const product = PRODUCTS.find((p) => p.id == c.productId);
+
+      // calculate price
+      let unitPrice = product.price;
+      if (product.discount) {
+        unitPrice = calculateDiscountedPrice(product.price, product.discount);
+      }
+      let finalPrice = unitPrice * c.quantity;
+
+      const clone = tplCartItem.content.cloneNode(true);
+      clone.querySelector("[data-title]").innerText = product.name;
+      clone.querySelector("[data-price]").innerText =
+        formatAsDollarsAndCents(unitPrice);
+      clone.querySelector("[data-quantity]").innerText = c.quantity;
+      clone.querySelector("img").src = product.img;
+      clone.querySelector("img").setAttribute("alt", product.name);
+      // quantity buttons
+      clone.querySelectorAll("[data-action]").forEach((btn) => {
+        btn.addEventListener("pointerdown", () => {
+          updateQuantity(c, btn.dataset.action);
+        });
+      });
+      // btn - remove from cart
+      clone
+        .querySelector("[data-btn-delete]")
+        .addEventListener("pointerdown", () => {
+          removeProductFromCart(c.productId);
+
+          updateCartIconCounter();
+          loadCart();
+          renderShopProducts();
+        });
+      cartListItems.append(clone);
+
+      // running total
+      subtotal += finalPrice;
+    });
+  }
+  cartTotal.innerText = formatAsDollarsAndCents(subtotal);
+  if (subtotal == 0) {
+    // hide subtotal and button
+    panelCart.querySelector("footer").classList.add("hidden");
+  } else {
+    panelCart.querySelector("footer").classList.remove("hidden");
+  }
+  main.classList.add("blur-md", "pointer-events-none", "select-none");
+  panelCart.classList.add("translate-x-0");
 }
 
-/************ END PRODUCTS ***************/
+// CART - update quantity
+function updateQuantity(cartItem, action) {
+  if (action === "add") {
+    // add 1 to cart quantitu
+    // should probably check stock but I will leave that for later. -TO DO
+    cartItem.quantity++;
+  } else {
+    // remove 1
+    cartItem.quantity--;
+    if (cartItem.quantity < 1) {
+      // remove from cart
+      removeProductFromCart(cartItem.productId);
+      // need to update product list to remove product "remove from cart" button - TO DO
+      //updateProductButton(btn, false)
+      renderShopProducts();
+    }
+  }
+  updateCartIconCounter();
+  loadCart();
+}
+
+/************ END CART ***************/
 
 /*************** DIALOG *****************/
 
@@ -769,9 +1226,8 @@ buttonsDialog.forEach((btn) => {
   btn.addEventListener("pointerdown", () => {
     // get dialog ID
     const dialogID = btn.dataset.dialog;
-    const dialogType = btn.dataset.type;
 
-    const elDialog = document.querySelector(`#${dialogID}`);
+    const elDialog = document.querySelector(`#dialog-${dialogID}`);
     const btnClose = elDialog.querySelector("[btn-close]");
 
     // show dialg
@@ -793,33 +1249,112 @@ buttonsDialog.forEach((btn) => {
       setTimeout(() => elDialog.close(), 1000);
     }
 
-    // special promo dialog
-    if (dialogType === "promo") {
-      const btnConfirm = elDialog.querySelector("#btn-dialog-confirm");
-      const dialogForm = elDialog.querySelector("#form-promo");
-      const panelMessage = elDialog.querySelector("#panel-dialog-msg");
-      const btnCloseMsg = panelMessage.querySelector("#btn-dialog-close");
-      const btnCancel = elDialog.querySelector("#btn-dialog-cancel");
+    console.log(dialogID);
+    switch (dialogID) {
+      // special promo dialog
+      case "promo":
+        const btnConfirm = elDialog.querySelector("#btn-dialog-confirm");
+        const dialogForm = elDialog.querySelector("#form-promo");
+        const panelMessage = elDialog.querySelector("#panel-dialog-msg");
+        const btnCloseMsg = panelMessage.querySelector("#btn-dialog-close");
+        const btnCancel = elDialog.querySelector("#btn-dialog-cancel");
 
-      btnCancel.addEventListener("pointerdown", () => closeDialog());
-      btnCloseMsg.addEventListener("pointerdown", () => closeDialog());
+        btnCancel.addEventListener("pointerdown", () => closeDialog());
+        btnCloseMsg.addEventListener("pointerdown", () => closeDialog());
 
-      // reset form and message on close
-      elDialog.addEventListener("close", (e) => {
-        //console.log("dialog closed")
-        panelMessage.classList.remove("translate-x-0");
-        btnConfirm.innerText = "Save Email";
-        dialogForm.reset();
-      });
+        // reset form and message on close
+        elDialog.addEventListener("close", (e) => {
+          panelMessage.classList.remove("translate-x-0");
+          btnConfirm.innerText = "Save Email";
+          dialogForm.reset();
+        });
 
-      // form submit - show message
-      dialogForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        panelMessage.querySelector("[promo-email]").innerText =
-          dialogForm.querySelector("#promo-email").value;
-        btnConfirm.innerText = "Saving Email...";
-        setTimeout(() => panelMessage.classList.add("translate-x-0"), 500);
-      });
+        // form submit - show message
+        dialogForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          panelMessage.querySelector("[promo-email]").innerText =
+            dialogForm.querySelector("#promo-email").value;
+          btnConfirm.innerText = "Saving Email...";
+          setTimeout(() => panelMessage.classList.add("translate-x-0"), 500);
+        });
+
+        break;
+
+      case "feedback":
+        elDialog
+          .querySelector("#btn-feedback")
+          .addEventListener("pointerdown", () => {
+            // get value of radion
+            const val = getCheckedValue("rating");
+            // define message
+            const text = `<p class="w-72 p-8">Thanks for your feedback.<br>Santa will take into account that your rated the service as "<strong>${val}</strong>"</p>`;
+
+            // define message element
+            const elMsg = elDialog.querySelector("[data-msg]");
+
+            // add message to DOM
+            elMsg.innerHTML = text;
+
+            // show message
+            setTimeout(() => elMsg.classList.remove("scale-0"), 600);
+
+            // hide messsage new dialog
+            setTimeout(() => elMsg.classList.add("scale-0"), 3500);
+          });
+        break;
+
+      case "gift-card":
+        // TO FINISH
+        const giftDisplayCurrent = document.querySelector("#current-gift-card");
+
+        // update giftcard display on radio change
+        const radioGiftCards = document.querySelectorAll(
+          `input[name="gift-card`
+        );
+        radioGiftCards.forEach((radio) => {
+          radio.addEventListener("change", () => {
+            giftDisplayCurrent.innerText = `$${radio.value}`;
+          });
+        });
+
+        // gift card nav "-", "+" buttons to rotate through gift card options
+        document.querySelectorAll("[data-giftnav]").forEach((btn) => {
+          btn.addEventListener("pointerdown", () => {
+            const currentValue = navigateRadioButtons(
+              btn.dataset.giftnav,
+              "gift-card"
+            );
+            giftDisplayCurrent.innerText = `$${currentValue}`;
+          });
+        });
+
+        elDialog
+          .querySelector("#btn-gift-card-send")
+          .addEventListener("pointerdown", () => {
+            // get value of radion
+            const val = getCheckedValue("gift-card");
+            // add value to cart - TO DO IN FINAL CHALLENGE
+
+            // show message
+            const text = `<p class="w-72 p-8">Your gift card for <strong class="text-2xl">$${val}</strong> has been added to your cart.</p>`;
+
+            // define message element
+            const elMsg = elDialog.querySelector("[data-msg]");
+
+            // add message to DOM
+            elMsg.innerHTML = text;
+
+            // ADD TO CARD - TO DO
+            console.log("NEED TO ADD THIS TO THE CART..... TO DO");
+
+            // show message
+            setTimeout(() => elMsg.classList.remove("scale-0"), 600);
+
+            // hide messsage new dialog
+            setTimeout(() => elMsg.classList.add("scale-0"), 3500);
+          });
+
+        break;
     }
   });
 });
@@ -905,6 +1440,377 @@ function formatDate(date) {
   const newDate = new Date(date);
   return newDate.toLocaleString("en-US", options);
 }
+
+/****************** CHAT BOX **********************/
+
+const CHAT_USERS = [
+  {
+    id: 1,
+    username: "You",
+    avatar: "",
+  },
+  {
+    id: 2,
+    username: "Santa",
+    avatar: "/images/iCodeMas/tiny_santa.png",
+  },
+];
+
+const CHAT_MESSAGES = [
+  {
+    id: 1,
+    parent_id: 0,
+    user_id: 2,
+    ts: "2023-12-13 09:31:23",
+    msg: "Ho,Ho,Ho!",
+  },
+  {
+    id: 2,
+    parent_id: 1,
+    user_id: 2,
+    ts: "2023-12-13 09:31:29",
+    msg: "What can I help you with?",
+  },
+  {
+    id: 3,
+    parent_id: 1,
+    user_id: 1,
+    ts: "2023-12-13 09:32:01",
+    msg: "Hello Santa",
+  },
+  {
+    id: 4,
+    parent_id: 11,
+    user_id: 1,
+    ts: "2023-12-13 09:33:12",
+    msg: "I'd like to know when you'll bring my gift?",
+  },
+];
+
+// silly santa replies provided by ChatGPT
+const santaReplies = [
+  "Ho, ho, ho! Merry Christmas!",
+  "Jingle all the way!",
+  "Santa is on his way with gifts!",
+  "Wishing you a joyful holiday season!",
+  "Santa's workshop is bustling with activity!",
+  "Remember to leave out some cookies and milk!",
+  "Sending you warm wishes for a magical Christmas!",
+  "Santa loves spreading joy and happiness!",
+  "May your days be merry and bright!",
+  "Ho-ho-ho! Have a holly, jolly Christmas!",
+  "Santa has just added your favorite items to his online shopping cart!",
+  "Jingle bells, jingle bells, check out the great deals in Santa's online store!",
+  "Santa's online workshop is now open for holiday shopping!",
+  "Ho, ho, ho! Enjoy exclusive online discounts from Santa's workshop!",
+  "Santa's sleigh is equipped with high-speed internet for faster online deliveries!",
+  "Shop online with Santa and sleigh your holiday shopping list!",
+  "Santa's online elves are working around the clock to fulfill your orders!",
+  "Treat yourself to some festive online shopping with Santa's special deals!",
+  "Online sales alert! Santa's gift selection is now available for purchase!",
+  "Santa's secret to stress-free shopping: Online sleigh-side delivery!",
+];
+
+// CHAT selectors
+const chatListMessages = document.querySelector("#chat-list-messages");
+const chatTpleMessage = document.querySelector("#tpl-chat-message");
+const chatTplDate = document.querySelector("#tpl-chat-date");
+const chatButtonOpen = document.querySelector("#btn-chat");
+const chatBox = document.querySelector("#panel-chat");
+const chatButtonClose = document.querySelector("#btn-chat-close");
+const chatForm = document.querySelector("#chat-form");
+const chatNewMessage = document.querySelector("#new-msg");
+
+const today = new Date();
+let chatCurrentUserID = 2;
+let chatCurrentParentID = 1;
+let chatLastUserID = chatCurrentUserID;
+const chatReplyDelay = 1000; // delay until santa gets back to you with a silly reply
+
+//// thumbnail hack (thanks marcinmalecki)
+// overide the delays etc for the thumbnail generation
+if (navigator.userAgent.includes("Headless")) {
+  loadCHAT_MESSAGES();
+}
+
+// get  user byt id
+function findUserById(id) {
+  return CHAT_USERS.find((x) => x.id === id);
+}
+
+// CHAT - group CHAT_MESSAGES by parent message and sort to cronological order
+function groupCHAT_MESSAGESByUser(CHAT_MESSAGES, userId) {
+  // get the messass int the correct orded
+  const sortedCHAT_MESSAGES = sortByTimestamp(CHAT_MESSAGES);
+
+  const initialMessage = sortedCHAT_MESSAGES.find(
+    (message) => message.user_id === userId
+  );
+  if (!initialMessage) {
+    console.error(`Initial message with user id: ${userId} not found.`);
+    return [];
+  }
+
+  // Build the conversation thread starting with the initial message
+  const createConversation = (parentId) => {
+    const parentMessage = sortedCHAT_MESSAGES.find(
+      (message) => message.id === parentId
+    );
+    if (!parentMessage) {
+      return [];
+    }
+    // filter CHAT_MESSAGES by parentId
+    const filteredCHAT_MESSAGES = sortedCHAT_MESSAGES.filter(
+      (message) => message.parent_id === parentId
+    );
+    const conversationArray = filteredCHAT_MESSAGES.map((reply) =>
+      createConversation(reply.id)
+    );
+    const replies = conversationArray.flat();
+    /*
+                const replies = sortedCHAT_MESSAGES
+                    .filter(message => message.parent_id === parentId)
+                    .map(reply => createConversation(reply.id))
+                    .flat();
+                    */
+
+    return [parentMessage, ...replies];
+  };
+  const conversation = createConversation(initialMessage.id);
+  return conversation;
+}
+
+// CHAT - load CHAT_MESSAGES for given user
+function loadCHAT_MESSAGES() {
+  // get all CHAT_MESSAGES and their replies from this user
+  const conversationThread = groupCHAT_MESSAGESByUser(
+    CHAT_MESSAGES,
+    chatCurrentUserID
+  );
+
+  // clear previous chat CHAT_MESSAGES
+  chatListMessages.innerHTML = "";
+
+  // get other user data (name & Avatar)
+  let chatLastUserID = "";
+  let previousDate = null;
+
+  conversationThread.forEach((message, idx) => {
+    if (idx === 0) {
+      // define parent id for new replies to be added
+      chatCurrentParentID = message.id;
+    }
+    const currentDate = message.ts.split(" ")[0]; // Extract date from timestamp
+    if (currentDate !== previousDate) {
+      // add date to DOM
+      const cloneDate = chatTplDate.content.cloneNode(true);
+      cloneDate.querySelector("div").innerText = formatLongDate(currentDate);
+      chatListMessages.append(cloneDate);
+      previousDate = currentDate;
+    }
+    // create message element and add to list
+    renderMessage(message, chatLastUserID);
+
+    // define last user ID so that we only show the other user avatar once per message group
+    chatLastUserID = message.user_id;
+  });
+  chatListMessages.scrollTop = chatListMessages.scrollHeight;
+  // define last parent id for next message
+  // reveal newly loaded chatbox
+  openChatBox();
+}
+let chatBoxOpen = false;
+// CHAT button - load CHAT_MESSAGES and reveal chatbox
+chatButtonOpen.addEventListener("pointerdown", () => {
+  if (chatBoxOpen) {
+    closeChatBox();
+  } else {
+    loadCHAT_MESSAGES();
+  }
+});
+
+// CHAT button - close CHAT_MESSAGES
+chatButtonClose.addEventListener("click", closeChatBox);
+
+// CHAT function -  open chatbox
+function openChatBox() {
+  chatBox.classList.remove("scale-0");
+  chatButtonOpen.querySelector("#chat-open").classList.add("scale-0");
+  chatButtonOpen.querySelector("#chat-close").classList.remove("scale-0");
+  chatBoxOpen = true;
+}
+// CHAT function - close message windo
+function closeChatBox() {
+  chatBox.classList.add("scale-0");
+  chatButtonOpen.querySelector("#chat-open").classList.remove("scale-0");
+  chatButtonOpen.querySelector("#chat-close").classList.add("scale-0");
+  chatBoxOpen = false;
+}
+
+// CHAT - render individual message contents
+function renderMessage(message, chatLastUserID) {
+  // get other user data (name & Avatar)
+  const userData = findUserById(message.user_id);
+  const userAvatar = userData.avatar;
+  const userName = userData.username;
+
+  // add message to DOM
+  const clone = chatTpleMessage.content.cloneNode(true);
+  const elArticle = clone.querySelector("article");
+  const elImg = clone.querySelector("img");
+  const elMsg = clone.querySelector("[msg-container]");
+
+  if (message.user_id === 1) {
+    // user typing
+    // int this specific chatbox we ddon't show the avatar for the current user
+    elImg.closest("div").classList.add("hidden");
+    elArticle.classList.add("flex-row-reverse", "text-right");
+    elMsg.classList.add("bg-green-50");
+  } else {
+    elMsg.classList.add("bg-red-50");
+    if (message.user_id != chatLastUserID) {
+      elImg.src = userAvatar;
+      elImg.setAttribute("alt", userName);
+    } else {
+      // in this version we are only showing the user image once per message grouping
+      elImg.remove();
+    }
+  }
+
+  clone.querySelector("[msg-txt]").innerText = message.msg;
+  clone.querySelector("time").innerText = formatTimestamp(message.ts);
+
+  // add message to DOM
+  chatListMessages.append(clone);
+
+  // smooth scroll to latest message
+  elArticle.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest",
+  });
+
+  setTimeout(() => elArticle.classList.remove("opacity-0"), 300);
+}
+
+// CHAT - form - add new message to chat array and chat box
+chatForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const msg = chatNewMessage.value;
+  const obj = {
+    id: generateRandomId(),
+    parent_id: chatCurrentParentID,
+    ts: getCurrentDateTime(),
+    user_id: 1,
+    msg: `${msg}`,
+  };
+  // console.log(obj)
+  // add new message to message array
+  CHAT_MESSAGES.push(obj);
+
+  // add new message to DOM
+  renderMessage(obj, 1);
+
+  // add random reply (this should really be an AI response based on the user message)
+  const randomSantaReply =
+    santaReplies[Math.floor(Math.random() * santaReplies.length)];
+  const reply = {
+    id: generateRandomId(),
+    parent_id: chatCurrentParentID,
+    ts: getCurrentDateTime(),
+    user_id: 2,
+    msg: `${randomSantaReply}`,
+  };
+  //console.log(reply)
+  // add new reply to message array
+  CHAT_MESSAGES.push(reply);
+  // display reply after a short timeout
+  setTimeout(() => renderMessage(reply, 1), chatReplyDelay);
+
+  // clear input
+  chatNewMessage.value = "";
+
+  // reload CHAT_MESSAGES - this works but is not the smoothest solution
+  //loadCHAT_MESSAGES(chatCurrentUserID)
+});
+
+// UTILITY - sort by timestamp
+function sortByTimestamp(jsonArray) {
+  if (!Array.isArray(jsonArray)) {
+    console.error("Invalid input. Please provide an array of objects.");
+    return;
+  }
+  // Sorting the array of objects by the 'ts' property
+  jsonArray.sort((a, b) => {
+    const dateA = new Date(a.ts.replace(/-/g, "/")).getTime();
+    const dateB = new Date(b.ts.replace(/-/g, "/")).getTime();
+    return dateA - dateB;
+  });
+  return jsonArray;
+}
+
+// UTILTY - format date according to time passed
+function formatTimestamp(timestamp) {
+  const currentDate = new Date();
+  const messageDate = new Date(timestamp);
+  const timeDifference = currentDate - messageDate;
+  const seconds = Math.floor(timeDifference / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  const options = { hour: "numeric", minute: "numeric", hour12: false };
+
+  if (seconds < 60) {
+    //return `${seconds} seconds ago`;
+    return `${messageDate.toLocaleTimeString("en-US", options)}`;
+  } else if (minutes < 60) {
+    //return `${minutes} minutes ago`;
+    return `${messageDate.toLocaleTimeString("en-US", options)}`;
+  } else if (hours < 24) {
+    //return `${hours} hours ago`;
+    return `${messageDate.toLocaleTimeString("en-US", options)}`;
+  } else if (days < 3) {
+    return `${days} days ago`;
+  } else {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return messageDate.toLocaleDateString(undefined, options);
+  }
+}
+
+// UTILITY - random id
+function generateRandomId() {
+  const timestamp = new Date().getTime();
+  const random = Math.floor(Math.random() * 1000000); // Adjust the range as needed
+  return `${timestamp}_${random}`;
+}
+
+// UTILITY - current timestamp
+function getCurrentDateTime() {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const hours = String(currentDate.getHours()).padStart(2, "0");
+  const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+  const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+// UTILITY  - return date as string
+function formatLongDate(date) {
+  const d = new Date(date);
+  const options = {
+    weekday: "short",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+  return d.toLocaleDateString("en-US", options);
+}
+
+/****************** END CHAT BOX **********************/
 
 /***************** SNOW *******************/
 // adapted from here: https://www.cssscript.com/falling-snowflakes-pure/
@@ -1073,24 +1979,6 @@ window.addEventListener("resize", () => {
 
 positionElements();
 
-// get all the "close" buttons (the selector can be by type, classname, or data attribute)
-document.querySelectorAll("[btn-close]").forEach((btn) => {
-  // get parrent container (section, div, article, class name etc.)
-  // Note - I prefer to get this outside of the eventlistener so as to avoid making the JavasSript find it each time the button is clicked
-
-  // button event listener (click)
-  btn.addEventListener("click", () => {
-    const panelID = btn.getAttribute("btn-close");
-    const el = document.querySelector(`#${panelID}`);
-    // scale element down (or whatever effect you want)
-    if (panelID === "panel-alert") {
-      el.classList.add("-top-24");
-      // remove dom
-      setTimeout(() => el.classList.add("hidden"), 500);
-    }
-  });
-});
-
 const panelHeader = document.getElementById("header-principal");
 const panelAlert = document.getElementById("panel-alert");
 
@@ -1113,3 +2001,44 @@ var observer = new IntersectionObserver(handleIntersection, {
 
 // Observe the alert panel - when out of view update the header "top" position
 observer.observe(panelAlert);
+
+// utility - get checked radio button value
+function getCheckedValue(radioName) {
+  var radios = document.getElementsByName(`${radioName}`);
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      // console.log("Checked value:", radios[i].value);
+      return radios[i].value;
+    }
+  }
+
+  //console.log("No radio button checked");
+  return null; // or whatever default value you want
+}
+
+// utility - nav through radio buttons series. Returns current value
+function navigateRadioButtons(direction, radioName) {
+  const radioButtons = document.querySelectorAll(`input[name="${radioName}"]`);
+  let currentIndex = -1;
+
+  // Find the index of the currently checked radio button
+  radioButtons.forEach((radioButton, index) => {
+    if (radioButton.checked) {
+      currentIndex = index;
+    }
+  });
+
+  // Update the index based on the navigation direction
+  if (direction === "next") {
+    currentIndex = (currentIndex + 1) % radioButtons.length;
+  } else if (direction === "prev") {
+    currentIndex =
+      (currentIndex - 1 + radioButtons.length) % radioButtons.length;
+  }
+
+  // Check the radio button at the new index
+  radioButtons[currentIndex].checked = true;
+
+  // Return current value
+  return radioButtons[currentIndex].value;
+}
