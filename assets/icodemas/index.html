@@ -73,7 +73,12 @@
                     </svg>
                     iCodeMas
                 </p>
-    
+                <!-- search bar -->
+                <div
+                    class="my-2 rounded-full bg-gray-200 text-slate-500 py-1 px-2 flex gap-2 transition-all duration-300 w-2/5 focus-within:bg-gray-300 focus-within:w-full hover:w-full transition-all duration-300">
+                    <button type="button" class="material-symbols-outlined outline-none focus:border-none focus:ring-0 focus:text-teal">search</button>
+                    <input type="text" id="search-products" placeholder="Search" class="w-full  shrink-1 bg-transparent text-sm outline-none focus:border-none focus:ring-0 ">
+                </div>
                 <label id="btn-nav" for="toggle-nav" class="ml-auto grid [grid-template-areas:'stack'] place-items-center  cursor-pointer transition-all sm:hidden
                     [&>span]:[grid-area:stack]
                     [&>span]:transition-all
@@ -85,7 +90,7 @@
                  </label>
         
         
-                <div id="nav-principal" class="absolute -z-20 top-14 right-0 w-72 bg-[#97C0DA] pt-2 px-4 -translate-y-32 opacity-0 flex flex-col sm:gap-4 items-center 
+                <div id="nav-principal" class="absolute -z-20 top-12 right-0 w-72 bg-[#97C0DA] px-4 -translate-y-32 opacity-0 flex flex-col sm:gap-4 items-center 
                     justify-center w-full
                     sm:static
                     sm:translate-y-0 
@@ -99,12 +104,7 @@
                     sm:transition-none
                     sm:opacity-100
                 ">
-                    <!-- search bar -->
-                    <div
-                        class="my-2 rounded-full bg-gray-200 text-slate-500 py-2 sm:py-1 px-2 flex gap-2 transition-all duration-300 w-2/5 focus-within:bg-gray-300 focus-within:w-full hover:w-full transition-all duration-300">
-                        <button type="button" class="material-symbols-outlined outline-none focus:border-none focus:ring-0 focus:text-teal">search</button>
-                        <input type="text" id="search-products" placeholder="Search" class="w-full  shrink-1 bg-transparent text-sm outline-none focus:border-none focus:ring-0 ">
-                    </div>
+                    
                     <!-- nav -->
                     <nav class="flex items-center justify-center sm:ml-auto 
                         [&_button]:py-4
@@ -740,7 +740,7 @@
                         </div>
                     </div>
                     <div class="flip-card-back">
-                        <button type="button" class="border rounded-md py-1 px-4 transition-all duration-300 bg-teal text-white hover:bg-red-600 focus:bg-red-600">Chat with one of our elves</button>
+                        <button type="button" id="btn-promo-chat" class="border rounded-md py-1 px-4 transition-all duration-300 bg-teal text-white hover:bg-red-600 focus:bg-red-600">Chat with one of our elves</button>
                     </div>
                 </article>
         
@@ -906,7 +906,7 @@
         </section>
 
         <!-- footer -->
-        <footer class="bg-[url('/images/iCodeMas/footer_bg.png')] bg-cover bg-center overflow-hidden  w-full   grid place-content-center h-80">
+        <footer class=" bg-[url('/images/iCodeMas/footer_bg.png')] bg-cover bg-center overflow-hidden  w-full   grid place-content-center h-80">
     footer
         </footer>
 
@@ -934,7 +934,7 @@
         </div>
 
         <!-- CHAT BOX -->
-        <div id="panel-chat" class="sticky bottom-20 right-0 ml-auto mr-6 rounded-2xl  transition ease-in-out duration-300  w-full min-[300px]:w-80 sm:w-96 h-[542px] sm:h-[520px] text-slate-700 flex flex-col justify-between scale-0 origin-bottom-right overflow-hidden shadow-xl">
+        <div id="panel-chat" class="fixed bottom-20 right-6 rounded-2xl  transition ease-in-out duration-300  w-full min-[300px]:w-80 sm:w-96 h-[542px] sm:h-[520px] text-slate-700 flex flex-col justify-between scale-0 origin-bottom-right overflow-hidden shadow-xl">
                 
 
             <header class="bg-teal text-white relative text-center p-4 sm:px-10">
@@ -957,7 +957,7 @@
         </div>
         
         <!-- CHAT - button -->
-        <button type="button" id="btn-chat" class="sticky bottom-3 right-0 ml-auto mr-6 rounded-full bg-teal text-white w-12 h-12  hover:bg-red-600 grid [grid-template-areas:'stack'] place-items-center
+        <button type="button" id="btn-chat" class="fixed bottom-3 right-6 rounded-full bg-teal text-white w-12 h-12  hover:bg-red-600 grid [grid-template-areas:'stack'] place-items-center
             [&>span]:[grid-area:stack]
             [&>span]:transition-all
             [&>span]:duration-300

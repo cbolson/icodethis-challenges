@@ -1530,7 +1530,7 @@ const chatReplyDelay = 1000; // delay until santa gets back to you with a silly 
 //// thumbnail hack (thanks marcinmalecki)
 // overide the delays etc for the thumbnail generation
 if (navigator.userAgent.includes("Headless")) {
-  loadCHAT_MESSAGES();
+  loadChatBox();
 }
 
 // get  user byt id
@@ -1581,7 +1581,7 @@ function groupCHAT_MESSAGESByUser(CHAT_MESSAGES, userId) {
 }
 
 // CHAT - load CHAT_MESSAGES for given user
-function loadCHAT_MESSAGES() {
+function loadChatBox() {
   // get all CHAT_MESSAGES and their replies from this user
   const conversationThread = groupCHAT_MESSAGESByUser(
     CHAT_MESSAGES,
@@ -1620,12 +1620,18 @@ function loadCHAT_MESSAGES() {
   openChatBox();
 }
 let chatBoxOpen = false;
+
+// promo button also loads chatbox
+document
+  .querySelector("#btn-promo-chat")
+  .addEventListener("pointerdown", loadChatBox);
+
 // CHAT button - load CHAT_MESSAGES and reveal chatbox
 chatButtonOpen.addEventListener("pointerdown", () => {
   if (chatBoxOpen) {
     closeChatBox();
   } else {
-    loadCHAT_MESSAGES();
+    loadChatBox();
   }
 });
 
@@ -1731,7 +1737,7 @@ chatForm.addEventListener("submit", (e) => {
   chatNewMessage.value = "";
 
   // reload CHAT_MESSAGES - this works but is not the smoothest solution
-  //loadCHAT_MESSAGES(chatCurrentUserID)
+  //loadChatBox(chatCurrentUserID)
 });
 
 // UTILITY - sort by timestamp
