@@ -64,7 +64,8 @@ document
     )
   );
 
-//************* COUNTDOWN  ***************** //
+/***************** COUNTDOWN ********************/
+const panelCountdown = document.querySelector("#panel-countdown");
 const elDays = document.querySelector("#days");
 const elDaysSpan = elDays.querySelectorAll("span");
 const elHours = document.querySelector("#hours");
@@ -73,25 +74,18 @@ const elMinutes = document.querySelector("#minutes");
 const elMinutesSpan = elMinutes.querySelectorAll("span");
 const elSeconds = document.querySelector("#seconds");
 const elSecondsSpan = elSeconds.querySelectorAll("span");
-//const elDate = document.querySelector("#date-today");
 
-// get next specific date (always in the furture so once current year date has passed, it will calculate for next year)
-//let today = new Date();
-//const expirationDate = new Date("Dec 12, 2023 00:00:00").getTime();
 const expirationDate = new Date("2023-12-25 00:00");
-
-// add date to dom
-//elDate.innerText = formatDate(expirationDate);
 
 const SPEED = 150;
 
 let currentDays = [];
 let currentHours = [];
 let currentMins = [];
-let currentSecs = [];
+let currentSecs = {};
+//let tempCounter = 0;
 
-// start coundown
-const expirationDateInterval = setInterval(() => {
+function updateCountdown() {
   const { days, hours, minutes, seconds } = getCurrentDate();
 
   // update days
@@ -116,8 +110,11 @@ const expirationDateInterval = setInterval(() => {
   let s = padTo2(seconds);
   if (s[0] != currentSecs[0]) changeNum(elSecondsSpan[0], s[0], 200);
   if (s[1] != currentSecs[1]) changeNum(elSecondsSpan[1], s[1], 150);
-  currentSecs = [s[0], s[1]];
-}, 1000);
+  currentSecs = { ...s };
+
+  // tempCounter++;
+  //console.log(tempCounter);
+}
 
 function initalLoad() {
   const { days, hours, minutes, seconds } = getCurrentDate();
@@ -142,14 +139,56 @@ function initalLoad() {
 
   // update seconds
   let s = padTo2(seconds);
-  currentSecs = [s[0], s[1]];
+  currentSecs = { ...s };
   elSecondsSpan[0].innerText = currentSecs[0];
   elSecondsSpan[1].innerText = currentSecs[1];
 }
 
+// Intersection Observer options
+const observerOptions = {
+  root: null,
+  rootMargin: "-250px",
+  threshold: 0.01,
+};
+
+// Callback function for the Intersection Observer
+function countdownIntersectionHandler(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Update the countdown when the target element is visible
+      startCountdownInterval();
+    } else {
+      // Clear the interval when the element is not visible
+      clearInterval(expirationDateInterval);
+    }
+  });
+}
+
+// Create an Intersection Observer
+const intersectionObserver = new IntersectionObserver(
+  countdownIntersectionHandler,
+  observerOptions
+);
+
+// in attempt to reduce load, I stop the countdown when it is not in view
+intersectionObserver.observe(panelCountdown);
+
+// Update the countdown initially in case the element is already visible
 initalLoad();
 
-// get curreent date - return object with "days", "hours", "minunts", "seconds"
+// Set interval to update the countdown every second (as before)
+let expirationDateInterval;
+
+function startCountdownInterval() {
+  clearInterval(expirationDateInterval);
+  expirationDateInterval = setInterval(() => {
+    updateCountdown();
+  }, 1000);
+}
+
+// Start the countdown interval initially
+startCountdownInterval();
+
 function getCurrentDate() {
   const currentDate = new Date().getTime();
   const totalTimeLeft = expirationDate - currentDate;
@@ -164,23 +203,15 @@ function getCurrentDate() {
   return obj;
 }
 
-// hide element, change content then reveal after delay
 function changeNum(el, newVal, timing) {
-  // note - if we want stagggered aniamtions we can pass the "timing" with the function call
-  // alternatively we can define a set speed for all the numbers
-  // timing = SPEED
-
-  // remove current number with animation
   el.classList.add("scale-0");
 
-  // empty element and move back to top (if using translate)
   setTimeout(() => {
     el.innerText = "";
     el.classList.remove("scale-0");
     el.classList.add("-translate-y-24");
   }, timing);
 
-  // set new value and return to view
   setTimeout(() => {
     el.innerText = newVal;
     el.classList.remove("-translate-y-24");
@@ -332,8 +363,63 @@ const COLORS = {
   2: "Green",
   3: "Brown",
 };
+const SIZES = ["Small", "Medium", "Large"];
 
 const PRODUCTS = [
+  {
+    id: 90001,
+    name: "Gift Card $30",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 2500,
+    sales: 2324,
+    display_in_shop: false,
+  },
+  {
+    id: 90002,
+    name: "Gift Card $50",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 5000,
+    sales: 2324,
+    display_in_shop: false,
+  },
+  {
+    id: 90003,
+    name: "Gift Card $75",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 7500,
+    sales: 2324,
+    display_in_shop: false,
+  },
+  {
+    id: 90004,
+    name: "Gift Card $100",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 10000,
+    sales: 2324,
+    display_in_shop: false,
+  },
+  {
+    id: 90005,
+    name: "Gift Card $200",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 20000,
+    sales: 2324,
+    display_in_shop: false,
+  },
+  {
+    id: 90006,
+    name: "Gift Card $300",
+    desc: ``,
+    img: "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/gift-card-svg.svg",
+    price: 30000,
+    sales: 2324,
+    display_in_shop: false,
+  },
   {
     id: 1,
     name: "Christmas Tree Decoration",
@@ -350,6 +436,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 3.5,
     sales: 124,
+    display_in_shop: true,
   },
   {
     id: 2,
@@ -368,6 +455,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 4,
     sales: 45,
+    display_in_shop: true,
   },
   {
     id: 3,
@@ -385,6 +473,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 5,
     sales: 475,
+    display_in_shop: true,
   },
   {
     id: 4,
@@ -402,6 +491,7 @@ const PRODUCTS = [
     stock: 2,
     rating: 2.8,
     sales: 584,
+    display_in_shop: true,
   },
   {
     id: 5,
@@ -419,6 +509,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 4.8,
     sales: 2153,
+    display_in_shop: true,
   },
   {
     id: 6,
@@ -437,6 +528,7 @@ const PRODUCTS = [
     msg: "Back in stock",
     rating: 5,
     sales: 5143,
+    display_in_shop: true,
   },
   {
     id: 7,
@@ -454,6 +546,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 4.3,
     sales: 785,
+    display_in_shop: true,
   },
   {
     id: 8,
@@ -471,6 +564,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 3,
     sales: 177,
+    display_in_shop: true,
   },
   {
     id: 9,
@@ -488,6 +582,7 @@ const PRODUCTS = [
     stock: 0,
     rating: 3.5,
     sales: 633,
+    display_in_shop: true,
   },
   {
     id: 10,
@@ -505,6 +600,7 @@ const PRODUCTS = [
     stock: 10,
     rating: 5,
     sales: 1975,
+    display_in_shop: true,
   },
   {
     id: 11,
@@ -522,6 +618,7 @@ const PRODUCTS = [
     stock: 3,
     rating: 1,
     sales: 23,
+    display_in_shop: true,
   },
   {
     id: 12,
@@ -539,11 +636,363 @@ const PRODUCTS = [
     stock: 6,
     rating: 4.8,
     sales: 2541,
+    display_in_shop: true,
+  },
+  {
+    id: 21,
+    name: "Festive Gingerbread Cookies",
+    desc: "A delightful cookies for the holidays. Perfect for adding a touch of magic to your Christmas festivities.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: getRandomNumber(0, 20),
+    category: 1,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 22,
+    name: "Peppermint Twist Candy Canes",
+    desc: "Add a twist of peppermint magic to your holiday season with these delightful candy canes.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: getRandomNumber(0, 20),
+    category: 2,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["2"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 23,
+    name: "Golden Christmas Bauble Ornament",
+    desc: "Elevate your tree decor with this elegant golden bauble ornament. A timeless addition to your festive collection.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 3,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 24,
+    name: `Santa's Workshop Accessory Set`,
+    desc: `Transform your space into Santa\'s workshop with this charming accessory set. Perfect for creating a festive atmosphere.`,
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: getRandomNumber(0, 20),
+    category: 4,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["2"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 25,
+    name: `Snowflake Sugar Cookies`,
+    desc: `Delicious snowflake-shaped sugar cookies that will melt in your mouth. A sweet treat for the winter season`,
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 1,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["2"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 26,
+    name: "Mint Chocolate Truffles",
+    desc: "Indulge in the rich and creamy goodness of mint chocolate truffles. A delightful treat for chocolate lovers.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: getRandomNumber(0, 20),
+    category: 2,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["2"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 27,
+    name: "Silver Glitter Snowflake Ornament",
+    desc: "Add a touch of sparkle to your tree with this silver glitter snowflake ornament. The perfect accent for a winter wonderland theme.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 3,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["2"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 8,
+    name: "Cozy Christmas Scarf",
+    desc: "Stay warm and festive with this cozy Christmas scarf. A stylish accessory for chilly winter days.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: getRandomNumber(0, 20),
+    category: 4,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 29,
+    name: "Holiday Star-Shaped Cookies",
+    desc: "Bite into the magic of the season with these delightful star-shaped cookies. Perfect for sharing joy with loved ones.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 1,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 30,
+    name: "Christmas Joy Lollipops",
+    desc: "Spread Christmas joy with these colorful and delicious lollipops. A sweet way to celebrate the season.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 2,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["2"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 31,
+    name: "Classic Glass Ball Ornament",
+    desc: "Embrace the classics with this timeless glass ball ornament. A sophisticated addition to your Christmas tree.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 3,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["1"], COLORS["2"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 32,
+    name: `Santa's Helper Elf Hat`,
+    desc: "Get into the holiday spirit with this adorable elf hat. Perfect for adding a touch of whimsy to your Christmas celebrations.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: getRandomNumber(1, 5),
+    price: getRandomNumber(2000, 500),
+    discount: 0,
+    category: 4,
+    size: getRandomFromArray(SIZES),
+    colors: [COLORS["2"], COLORS["3"]],
+    featured: false,
+    recent: getRandomBoolean(),
+    stock: getRandomNumber(1, 100),
+    sales: getRandomNumber(1000, 6000),
+    display_in_shop: true,
+  },
+  {
+    id: 33,
+    name: "Cranberry Bliss Cookies",
+    desc: "Experience the bliss of the season with these cranberry-infused cookies. A perfect blend of sweet and tart flavors.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 3,
+    price: 1000,
+    discount: 8,
+    category: 1,
+    size: "Small",
+    colors: ["Red", "Green"],
+    featured: false,
+    recent: true,
+    stock: 20,
+    sales: 3800,
+    display_in_shop: true,
+  },
+  {
+    id: 34,
+    name: "Winter Wonderland Gummies",
+    desc: "Create your own winter wonderland with these festive gummies. A fun and delicious treat for the holiday season.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 4,
+    price: 1300,
+    discount: 10,
+    category: 2,
+    size: "Medium",
+    colors: ["Red", "Green"],
+    featured: false,
+    recent: false,
+    stock: 15,
+    sales: 3100,
+    display_in_shop: true,
+  },
+  {
+    id: 35,
+    name: "Holly Jolly Christmas Ornaments",
+    desc: "Decorate your tree with these holly jolly Christmas ornaments. A cheerful addition to your holiday decorations.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 5,
+    price: 1800,
+    discount: 15,
+    category: 0,
+    size: "Large",
+    colors: ["Brown"],
+    featured: false,
+    recent: true,
+    stock: 12,
+    sales: 2600,
+    display_in_shop: true,
+  },
+  {
+    id: 36,
+    name: "Joyful Jingle Bell Earrings",
+    desc: "Spread joy with these delightful jingle bell earrings. A festive accessory for holiday parties and gatherings.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 3,
+    price: 1000,
+    discount: 5,
+    category: 4,
+    size: "Small",
+    colors: ["Red", "Brown"],
+    featured: false,
+    recent: false,
+    stock: 18,
+    sales: 3300,
+    display_in_shop: true,
+  },
+  {
+    id: 37,
+    name: "Cinnamon Spice Snickerdoodles",
+    desc: "Indulge in the warmth of the season with these cinnamon spice snickerdoodles. A perfect treat for cozy winter nights.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 4,
+    price: 1400,
+    discount: 8,
+    category: 1,
+    size: "Large",
+    colors: ["Red", "Brown"],
+    featured: false,
+    recent: true,
+    stock: 14,
+    sales: 2900,
+    display_in_shop: true,
+  },
+  {
+    id: 38,
+    name: "Festive Peppermint Bark",
+    desc: "Celebrate the season with the classic taste of festive peppermint bark. A delicious combination of chocolate and mint.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 5,
+    price: 1600,
+    discount: 0,
+    category: 2,
+    size: "Medium",
+    colors: ["Green", "Brown"],
+    featured: false,
+    recent: false,
+    stock: 10,
+    sales: 2400,
+    display_in_shop: true,
+  },
+  {
+    id: 39,
+    name: "Crystal Snowflake Pendant Necklace",
+    desc: "Adorn yourself with the beauty of winter with this crystal snowflake pendant necklace. A charming accessory for holiday outfits.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 4,
+    price: 1200,
+    discount: 0,
+    category: 3,
+    size: "Large",
+    colors: ["Red", "Green"],
+    featured: false,
+    recent: true,
+    stock: 16,
+    sales: 3700,
+    display_in_shop: true,
+  },
+  {
+    id: 40,
+    name: "Santa Claus Plush Toy",
+    desc: "Bring the magic of Santa Claus to your home with this adorable plush toy. A cuddly companion for the holiday season.",
+    img: "/images/iCodeMas/snowflake.png",
+    rating: 5,
+    price: 2000,
+    discount: 10,
+    category: 4,
+    size: "Medium",
+    colors: ["Red", "Green", "Brown"],
+    featured: false,
+    recent: false,
+    stock: 12,
+    sales: 2600,
+    display_in_shop: true,
   },
 ];
+// UTILITY - return random number between values
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// utility - return random from array
+function getRandomFromArray(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+function getRandomBoolean() {
+  return Math.random() < 0.5;
+}
 
 const CART = [];
-
 /*
 {
         id: 0,
@@ -558,6 +1007,21 @@ const CART = [];
         recent: false
     }
 */
+const ITEMS_PER_PAGE = 10; // number if items to show on each page
+const PAGINATION_NUM_TO_SHOW = 5; // the number of numbers to display - this could be adjusted according to screen size (TO TO)
+
+let curPage = 0;
+
+// define intital total results (this will be the products in the JSON )
+//let totalResults = data.length;
+let totalResults = 0;
+
+const offset = curPage * ITEMS_PER_PAGE;
+
+const panelPagination = document.querySelector("#panel-pagination");
+const paginationList = panelPagination.querySelector("#pages-numbers");
+const paginationButtons = panelPagination.querySelectorAll("[data-page]");
+const panelPageContent = document.querySelector("#panel-page"); // temp - replace with products listing in final project
 
 /* SELECTORS */
 const main = document.querySelector("main");
@@ -569,7 +1033,7 @@ const panelFeaturedList = document.querySelector("#panel-featured-list");
 const tplProductDetails = document.querySelector("#tpl-product-details");
 const panelFeaturedProduct = document.querySelector("#panel-featured-product");
 const panelShop = document.querySelector("#panel-shop");
-const navCart = document.querySelector("#nav-cart");
+const navCartIcon = document.querySelector("#nav-cart");
 const panelCart = document.querySelector("#panel-cart");
 
 const tplProduct = document.querySelector("#tpl-product-item");
@@ -619,17 +1083,17 @@ function renderFeaturedProducts() {
     delay += delaySpacer;
     product.addEventListener("pointerdown", () => {
       // need to add some code to prevent clicking on the button again
-      displayFeatured(a);
+      displayFeatured(a.id);
     });
   });
 }
-// FEATURED - display featured product item when clicked
-function displayFeatured(item) {
-  displayProductDetails(panelFeaturedProduct, item);
-}
 
 // FEATURED - show product details
-function displayProductDetails(dest, item) {
+function displayFeatured(idItem) {
+  // get selected item data
+  const item = PRODUCTS.find((p) => p.id === idItem);
+  const dest = panelFeaturedProduct;
+
   // remove current contents (to animate)
   let delay = 0;
   const delaySpacer = 50;
@@ -710,6 +1174,7 @@ function displayProductDetails(dest, item) {
     elButton.addEventListener("click", () => {
       if (!isProductInCart(item.id)) {
         // not in cart - add
+        moveToCart(elImg);
         addProductToCart(item.id);
         updateProductButton(elButton, true, "featured");
       } else {
@@ -757,7 +1222,7 @@ function displayProductDetails(dest, item) {
 
 // FEATURED - render list and inital product to display (this could be randomized???)
 renderFeaturedProducts();
-displayFeatured(PRODUCTS[0]);
+displayFeatured(1);
 
 /************ END FEATURED ************/
 
@@ -785,13 +1250,32 @@ function renderShopProducts() {
     // sort array according to currently defined method
     currProductsArr = sortProducts(currProductsArr);
 
-    currProductsArr.forEach((a) => {
+    // Filter out products where display_in_shop is false
+    const filteredProducts = currProductsArr.filter(
+      (product) => product.display_in_shop
+    );
+    //console.log(filteredProducts);
+    // Calculate the start and end index based on the current page and products per page
+    const startIndex = curPage * ITEMS_PER_PAGE;
+    const endIndex = Math.min(
+      startIndex + ITEMS_PER_PAGE,
+      filteredProducts.length
+    );
+    //console.log("OFFSET", startIndex,endIndex);
+    // Slice the array to get the products for the current page
+    const productsToDisplay = filteredProducts.slice(startIndex, endIndex);
+
+    // ensure pagination is showing based on filterd products
+    pagination(startIndex, filteredProducts.length);
+
+    productsToDisplay.forEach((a) => {
+      //console.log(a.recent);
       const clone = tplProduct.content.cloneNode(true);
       const product = clone.querySelector("article");
       const btn = product.querySelector("button");
       const img = product.querySelector("img");
-      const elProductImg = product.querySelector(".product-img");
-      const elBanner = product.querySelector("[data-banner]");
+      // const elProductImg = product.querySelector(".product-img");
+      // const elBanner = product.querySelector("[data-banner]");
       const elPrice = product.querySelector("[data-price]");
       const elPriceOrig = product.querySelector("[data-price-orig]");
 
@@ -800,11 +1284,12 @@ function renderShopProducts() {
       clone.querySelector("[data-title]").innerText = a.name;
 
       if (a.recent) {
-        elProductImg.setAttribute("label", "new");
+        product.setAttribute("label", "new");
         product.classList.add("new");
+        // console.log(a.name);
       }
       if (a.discount) {
-        elProductImg.setAttribute("label", `${a.discount}%`);
+        product.setAttribute("label", `${a.discount}%`);
         product.classList.add("offer");
       }
       // check if in cart
@@ -812,23 +1297,26 @@ function renderShopProducts() {
         // product is in cart - change button text
         updateProductButton(btn, true);
       }
-      if (a.stock < 1) {
-        img.classList.add("opacity-30");
-        btn.remove();
-        elBanner.innerText = `Sold Out`;
-        elBanner.classList.add("-rotate-12", "!bottom-10");
-        elBanner.classList.remove("hidden");
-      } else if (a.stock < 5) {
-        // img.classList.add("opacity-50")
-        elBanner.innerText = `Only ${a.stock} left!`;
-        elBanner.classList.remove("hidden");
-        //elBanner.classList.add("animate-pulse")
-      } else if (a.msg) {
-        // img.classList.add("opacity-50")
-        elBanner.innerText = a.msg;
-        elBanner.classList.remove("hidden");
-        //elBanner.classList.add("animate-pulse")
-      }
+      /*
+                if (a.stock < 1) {
+                    img.classList.add("opacity-30")
+                    btn.remove()
+                    elBanner.innerText = `Sold Out`;
+                   // elBanner.classList.add("-rotate-12", "!bottom-10")
+                    elBanner.classList.remove("hidden")
+
+                } else if (a.stock < 5) {
+                    // img.classList.add("opacity-50")
+                   // elBanner.innerText = `Only ${a.stock} left!`;
+                    elBanner.classList.remove("hidden")
+                    //elBanner.classList.add("animate-pulse")
+                } else if (a.msg) {
+                    // img.classList.add("opacity-50")
+                    elBanner.innerText = a.msg;
+                    elBanner.classList.remove("hidden")
+                    //elBanner.classList.add("animate-pulse")
+                }
+                */ 0;
 
       // calculate price
       let finalPrice = a.price;
@@ -852,6 +1340,7 @@ function renderShopProducts() {
         if (!isProductInCart(a.id)) {
           //console.log("add to cart");
           // not in cart - add
+          moveToCart(img);
           addProductToCart(a.id);
           updateProductButton(btn, true);
         } else {
@@ -894,27 +1383,31 @@ function generateFilterOptions(data, key, definitions, containerId) {
   const filterOptionsContainer = document.getElementById(containerId);
   //console.log(uniqueValues);
   uniqueValues.forEach((value) => {
-    const clone = tplFilterCheckbox.content.cloneNode(true);
-    const label = clone.querySelector("label");
-    const input = clone.querySelector("input");
+    if (value) {
+      const clone = tplFilterCheckbox.content.cloneNode(true);
+      const label = clone.querySelector("label");
+      const input = clone.querySelector("input");
 
-    input.name = key;
-    input.value = value;
-    input.id = `filter-${value}`;
-    input.addEventListener("change", updateFilteredResults);
+      input.name = key;
+      input.value = value;
+      input.id = `filter-${value}`;
+      input.addEventListener("change", updateFilteredResults);
 
-    // define label
-    label.querySelector("p").innerText = definitions[value] || value;
-    label.setAttribute("for", `filter-${value}`);
-    filterOptionsContainer.appendChild(clone);
+      // define label
+      label.querySelector("p").innerText = definitions[value] || value;
+      label.setAttribute("for", `filter-${value}`);
+      filterOptionsContainer.appendChild(clone);
+    }
   });
 }
-
-//document.querySelectorAll("#filter-options input").forEach(el => el.addEventListener("change", updateFilteredResults))
+// FILTER - specil filter hadlers (these are hardcoded in the HTML)
+document
+  .querySelectorAll("#filter-options input")
+  .forEach((el) => el.addEventListener("change", updateFilteredResults));
 
 // FILTER - update filtered results based on selected filters
 function updateFilteredResults() {
-  //console.log("asdsa");
+  //console.log("filering...");
   // get checked filters (and convet node list to array)
   const arrFiltersCategory = Array.from(
     document.querySelectorAll('input[name="category"]:checked')
@@ -949,15 +1442,17 @@ function updateFilteredResults() {
       (!filterStock || product.stock > 0)
     );
   });
-  console.log("as");
+
   // display filtered results
   renderShopProducts();
 }
 
-const elFilters = document.querySelector("#filters");
-const btnFiltersClear = document.querySelector("#btn-filter-clear");
 // FILTER - clear all button
-btnFiltersClear.addEventListener("click", clearAllFilters);
+document
+  .querySelector("#btn-filter-clear")
+  .addEventListener("click", clearAllFilters);
+
+const elFilters = document.querySelector("#filters-options");
 
 // FILTER - clear all filters
 function clearAllFilters() {
@@ -968,6 +1463,27 @@ function clearAllFilters() {
   currProductsArr = PRODUCTS;
   // Update filtered results
   renderShopProducts();
+
+  // uncheck filters radio to close the filters
+  radioShowFilters.checked = false;
+}
+
+// FILTERS - radio button
+const radioShowFilters = document.querySelector("#show-filters");
+radioShowFilters.addEventListener("change", (e) => {
+  if (e.target.checked)
+    document.addEventListener("click", handleDocClickFilters);
+  else document.removeEventListener("click", handleDocClickFilters);
+});
+// FILTERS - doc click event handler to close filters if user clicks outsidechange event listener
+function handleDocClickFilters(e) {
+  // Check if the clicked element or its ancestors include the "filters-options" element
+  const isClickInsideFilters = e.target.closest("#filters-options");
+
+  if (!isClickInsideFilters) {
+    radioShowFilters.checked = false;
+    document.removeEventListener("click", handleDocClickFilters);
+  }
 }
 
 // Generate filters
@@ -985,8 +1501,13 @@ function filterProducts(e) {
     return product.name.toLowerCase().includes(searchInput);
   });
   // slide shop to top of page
-  document.querySelector(`#panel-shop`).scrollIntoView({ behavior: "smooth" });
+  scrollToShop();
   renderShopProducts();
+}
+
+function scrollToShop() {
+  // slide shop to top of page
+  document.querySelector(`#panel-shop`).scrollIntoView({ behavior: "smooth" });
 }
 
 // SORT products
@@ -1019,6 +1540,23 @@ function updateSortOptionsList() {
       dropDownButtons.appendChild(button);
     }
   });
+}
+
+// SORT - radio button
+radioSort.addEventListener("change", (e) => {
+  if (e.target.checked)
+    document.addEventListener("click", handleDocClickSorting);
+  else document.removeEventListener("click", handleDocClickSorting);
+});
+// SORT - doc click event handler to close sort list if user clicks outsidechange event listener
+function handleDocClickSorting(e) {
+  // Check if the clicked element or its ancestors include the "sort-options-wrapper" element
+  const isClickInsideSort = e.target.closest("#sort-options-wrapper");
+
+  if (!isClickInsideSort) {
+    radioSort.checked = false;
+    document.removeEventListener("click", handleDocClickSorting);
+  }
 }
 
 // SORT - buttton - this will eventually update the products list
@@ -1066,22 +1604,137 @@ function sortProducts(arr) {
   displaySortedProducts();
 }
 
+// UTILITY calculate total pages
+function numPages(num) {
+  return Math.round(num / ITEMS_PER_PAGE);
+}
+
+// PAGINATION
+
+// PAGINATAION - render page number buttons
+function pagination(offset, totalResults) {
+  //console.log(offset, totalResults)
+  // ensure that curPage is a number
+  curPage = Number(curPage);
+
+  let totalPages = numPages(totalResults);
+
+  paginationList.innerHTML = "";
+  const maxNumbers = 5;
+  const startPage = Math.max(0, Math.min(curPage - 3, totalPages - maxNumbers));
+  const endPage = Math.min(totalPages - 1, startPage + maxNumbers - 1);
+  for (let i = startPage; i <= endPage; i++) {
+    const btn = document.createElement("button");
+    btn.value = i;
+    btn.innerText = i + 1;
+
+    // add class to current page number
+    if (i === curPage) setTimeout(() => btn.classList.add("current"), 150);
+
+    paginationList.append(btn);
+    btn.addEventListener("click", () => {
+      curPage = btn.value;
+      console.log(curPage, offset, totalResults);
+      //pagination(curPage, totalResults); // Refresh pagination after a click
+      renderShopProducts();
+    });
+  }
+  checkCurrentPage();
+
+  paginationButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const page = btn.dataset.page;
+      switch (page) {
+        case "first":
+          curPage = 0;
+          break;
+        case "prev":
+          curPage = curPage > 0 ? curPage - 1 : 0;
+          break;
+        case "next":
+          curPage = curPage < totalPages ? curPage + 1 : totalPages - 1;
+          break;
+        case "last":
+          curPage = totalPages - 1;
+          break;
+      }
+      renderShopProducts();
+      // render pagination
+      //pagination(curPage, totalResults)
+    });
+  });
+
+  // PAGINATION - disabled/enable paginationButtons
+  function checkCurrentPage() {
+    // first & prev buttons
+    paginationButtons[0].disabled = curPage == 0 ? true : false;
+    paginationButtons[1].disabled = curPage == 0 ? true : false;
+    // next & last  buttons
+    paginationButtons[2].disabled = curPage == totalPages - 1 ? true : false;
+    paginationButtons[3].disabled = curPage == totalPages - 1 ? true : false;
+  }
+  //renderCurrentPage(curPage)
+}
+
+// PAGINATION - load inital page numbers
+//pagination(curPage)
+
 /************** END SHOP ****************/
 
 /**************** CART *****************/
 // CART - add a product
 function addProductToCart(productId) {
+  // console.log(productId);
+
   // Check if the product already exists in the cart
   const existingProduct = CART.find(
     (product) => product.productId === productId
   );
+
   if (existingProduct) {
     existingProduct.quantity += 1;
   } else {
     CART.push({ productId, quantity: 1 });
   }
+
   // update cart in nav
   updateCartIconCounter();
+}
+
+const TIME_TO_CART = 1000;
+function moveToCart(productImage) {
+  const clone = productImage.cloneNode(true);
+
+  clone.style.transition = `transform ${TIME_TO_CART}ms ease-in-out,opacity ${
+    TIME_TO_CART * 2
+  }ms ease-in-out`;
+  // Append the clone to the document body
+  document.body.appendChild(clone);
+
+  // Calculate the difference between the current and destination positions
+  const cartIconRect = navCartIcon.getBoundingClientRect();
+  const initialPosition = productImage.getBoundingClientRect();
+  const diffX = cartIconRect.left - initialPosition.left;
+  const diffY = cartIconRect.top - initialPosition.top;
+  //console.log(cartIconRect.left, cartIconRect.top)
+  // Set the initial position of the clone
+  clone.style.position = "absolute";
+  clone.style.zIndex = "999";
+  clone.style.left = `${initialPosition.left - 20 + window.scrollX}px`;
+  clone.style.top = `${initialPosition.top + window.scrollY}px`;
+  //console.log(clone.style.left, clone.style.top)
+
+  // Force a reflow to ensure the starting position is set before transitioning
+  clone.offsetHeight;
+
+  // Add the transformation
+  clone.style.transform = `translate(${diffX}px, ${diffY}px)  scale(20%)`;
+  //clone.style.opacity = `10%`;
+
+  // Remove the clone once the transition is complete
+  clone.addEventListener("transitionend", () => {
+    clone.remove();
+  });
 }
 
 // CART - remove a product
@@ -1102,18 +1755,20 @@ function removeProductFromCart(productId) {
 function isProductInCart(productId) {
   return CART.some((product) => product.productId === productId);
 }
+
 // CART - get total in cart
 function getTotalItemsInCart() {
   // Use the reduce method to sum the quantities of all products
   return CART.reduce((acc, product) => acc + product.quantity, 0);
 }
+
 // CART - update an HTML element with the total number of items
 function updateCartIconCounter() {
-  navCart.classList.add("after:scale-0");
+  navCartIcon.classList.add("after:scale-0");
   const totalItems = getTotalItemsInCart();
-  navCart.setAttribute("data-num", totalItems);
+  navCartIcon.setAttribute("data-num", totalItems);
   setTimeout(() => {
-    if (totalItems > 0) navCart.classList.remove("after:scale-0");
+    if (totalItems > 0) navCartIcon.classList.remove("after:scale-0");
   }, 200);
 }
 
@@ -1123,15 +1778,19 @@ const tplCartItem = document.querySelector("#tpl-cart-item");
 const cartListItems = document.querySelector("#list-cart-items");
 const btnCartClose = document.querySelector("#btn-close-cart");
 const cartTotal = panelCart.querySelector("#cart-total");
+const btnCheckOut = document.querySelector("#btn-checkout");
 
-navCart.addEventListener("pointerdown", (e) => {
+navCartIcon.addEventListener("pointerdown", (e) => {
   if (!cartVisible) loadCart();
   else closeCart();
 });
+
 function closeCart() {
   cartVisible = false;
   panelCart.classList.remove("translate-x-0");
-  main.classList.remove("blur-md", "pointer-events-none", "select-none");
+  //main.classList.remove("blur-md", "pointer-events-none", "select-none");
+  document.removeEventListener("click", handleDocClickCart);
+  toggleBlurOverlay(false); // Remove blur when closing the cart
 }
 btnCartClose.addEventListener("pointerdown", () => closeCart());
 
@@ -1144,6 +1803,7 @@ function loadCart() {
     cartListItems.innerHTML =
       '<div class="mt-12 text-red-500 flex flex-col items-center gap-4"><p>Your cart is empty. Santa is sad.</p><img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/icodemas/sad-santa.png"></div>';
   } else {
+    //console.log(CART)
     CART.forEach((c) => {
       // get item details
       const product = PRODUCTS.find((p) => p.id == c.productId);
@@ -1191,8 +1851,51 @@ function loadCart() {
   } else {
     panelCart.querySelector("footer").classList.remove("hidden");
   }
-  main.classList.add("blur-md", "pointer-events-none", "select-none");
+
+  // main.classList.add("blur-md", "pointer-events-none", "select-none")
   panelCart.classList.add("translate-x-0");
+  toggleBlurOverlay(true);
+  document.addEventListener("click", handleDocClickCart);
+}
+
+// function - add blurred overlay
+function createBlurOverlay() {
+  if (!document.querySelector(".blur-overlay")) {
+    const overlay = document.createElement("div");
+    overlay.className = "blur-overlay";
+    document.body.appendChild(overlay);
+  }
+}
+
+// function - remove blurred overlay
+function removeBlurOverlay() {
+  const overlay = document.querySelector(".blur-overlay");
+  if (overlay) {
+    overlay.parentNode.removeChild(overlay);
+  }
+}
+
+// Function to toggle the blur overlay based on cart state
+function toggleBlurOverlay(isBlur) {
+  if (isBlur) {
+    createBlurOverlay();
+  } else {
+    removeBlurOverlay();
+  }
+  // Adjust the z-index of the cart based on the blur state
+  panelCart.style.zIndex = isBlur ? "1001" : "1000";
+}
+
+// CART - close if click outside
+function handleDocClickCart(e) {
+  // Check if the clicked element or its ancestors include the "filters-options" element
+  const isClickInsideCart = e.target.closest("#panel-cart");
+  // Check if the clicked element or its ancestors include the "open-cart-icon" element
+  const isOpenCartIconClicked = e.target.closest("#nav-cart");
+
+  if (!isClickInsideCart && !isOpenCartIconClicked) {
+    closeCart();
+  }
 }
 
 // CART - update quantity
@@ -1223,31 +1926,29 @@ function updateQuantity(cartItem, action) {
 // get all dialog buttons
 const buttonsDialog = document.querySelectorAll("[data-dialog]");
 buttonsDialog.forEach((btn) => {
-  btn.addEventListener("pointerdown", () => {
-    // get dialog ID
-    const dialogID = btn.dataset.dialog;
+  btn.addEventListener("pointerdown", (e) => {
+    openDialog(btn.dataset.dialog);
+  });
+});
 
+let currentDialog = null;
+
+function openDialog(dialogID) {
+  // Close the current dialog if there is one
+  closeDialog();
+  // wait for closedialog delay ebfore defining and opening the new dialog - this prevents us closing the wrong dialog
+  setTimeout(() => {
     const elDialog = document.querySelector(`#dialog-${dialogID}`);
     const btnClose = elDialog.querySelector("[btn-close]");
 
     // show dialg
     elDialog.showModal();
-    elDialog.classList.remove("translate-y-[-1000px]");
-    setTimeout(() => elDialog.classList.remove("scale-[25%]"), 700);
 
-    // add backdrop with fade
-    setTimeout(() => elDialog.classList.add("fadeUp"), 1000);
+    // dialog scale and fade in bg
+    setTimeout(() => elDialog.classList.add("scale-100", "fadeUp"), 150);
 
-    // fade out and close dialog
+    // buttton to close dialog
     btnClose.addEventListener("click", () => closeDialog());
-
-    // close this dialog
-    function closeDialog() {
-      elDialog.classList.add("scale-[25%]");
-      setTimeout(() => elDialog.classList.add("translate-y-[-1000px]"), 700);
-      setTimeout(() => elDialog.classList.remove("fadeUp"), 200);
-      setTimeout(() => elDialog.close(), 1000);
-    }
 
     console.log(dialogID);
     switch (dialogID) {
@@ -1299,8 +2000,16 @@ buttonsDialog.forEach((btn) => {
             setTimeout(() => elMsg.classList.remove("scale-0"), 600);
 
             // hide messsage new dialog
-            setTimeout(() => elMsg.classList.add("scale-0"), 3500);
+            setTimeout(() => {
+              elMsg.classList.add("scale-0");
+              closeDialog();
+            }, 4000);
           });
+        break;
+      case "order-complete":
+        // show me the confetti!
+        reloadConetti();
+
         break;
 
       case "gift-card":
@@ -1313,7 +2022,7 @@ buttonsDialog.forEach((btn) => {
         );
         radioGiftCards.forEach((radio) => {
           radio.addEventListener("change", () => {
-            giftDisplayCurrent.innerText = `$${radio.value}`;
+            giftDisplayCurrent.innerText = `$${radio.dataset.value}`;
           });
         });
 
@@ -1330,13 +2039,14 @@ buttonsDialog.forEach((btn) => {
 
         elDialog
           .querySelector("#btn-gift-card-send")
-          .addEventListener("pointerdown", () => {
-            // get value of radion
-            const val = getCheckedValue("gift-card");
-            // add value to cart - TO DO IN FINAL CHALLENGE
+          .addEventListener("pointerdown", (e) => {
+            // get ID of radion
+            const giftID = getCheckedValue("gift-card");
+            // add to cart
+            addProductToCart(giftID);
 
             // show message
-            const text = `<p class="w-72 p-8">Your gift card for <strong class="text-2xl">$${val}</strong> has been added to your cart.</p>`;
+            const text = `<p class="w-72 p-8">Your gift card for has been added to your cart.</p>`;
 
             // define message element
             const elMsg = elDialog.querySelector("[data-msg]");
@@ -1344,20 +2054,35 @@ buttonsDialog.forEach((btn) => {
             // add message to DOM
             elMsg.innerHTML = text;
 
-            // ADD TO CARD - TO DO
-            console.log("NEED TO ADD THIS TO THE CART..... TO DO");
-
             // show message
-            setTimeout(() => elMsg.classList.remove("scale-0"), 600);
+            setTimeout(() => elMsg.classList.remove("scale-0"), 300);
 
+            // hide dialog
+            // setTimeout(() => closeDialog(), 3000);
             // hide messsage new dialog
-            setTimeout(() => elMsg.classList.add("scale-0"), 3500);
+            setTimeout(() => elMsg.classList.add("scale-0"), 3000);
           });
 
         break;
     }
-  });
-});
+
+    currentDialog = elDialog;
+  }, 152);
+}
+
+// DIALOG - close
+function closeDialog() {
+  //console.log("close dialog if open")
+  // Check if there is a current open dialog
+  if (currentDialog && currentDialog.close) {
+    currentDialog.classList.remove("fadeUp", "scale-100");
+    setTimeout(() => {
+      //console.log("CLOSING: ", currentDialog);
+      currentDialog.close();
+      currentDialog = null;
+    }, 150);
+  }
+}
 
 /************* END DIALOG ***************/
 
@@ -1820,15 +2545,16 @@ function formatLongDate(date) {
 
 /***************** SNOW *******************/
 // adapted from here: https://www.cssscript.com/falling-snowflakes-pure/
-
+/*
 let snowflakesCount = 200; // Snowflake count, can be overwritten by attrs
 let baseCSS = ``;
 
+
 // set global attributes
-if (typeof SNOWFLAKES_COUNT !== "undefined") {
+if (typeof SNOWFLAKES_COUNT !== 'undefined') {
   snowflakesCount = SNOWFLAKES_COUNT;
 }
-if (typeof BASE_CSS !== "undefined") {
+if (typeof BASE_CSS !== 'undefined') {
   baseCSS = BASE_CSS;
 }
 
@@ -1837,22 +2563,24 @@ let pageHeightVh = null;
 
 function setHeightVariables() {
   bodyHeightPx = document.body.offsetHeight;
-  pageHeightVh = (100 * bodyHeightPx) / window.innerHeight;
+  pageHeightVh = (100 * bodyHeightPx / window.innerHeight);
 }
 
 // get params set in snow div
 function getSnowAttributes() {
-  const snowWrapper = document.getElementById("snow");
-  snowflakesCount = Number(snowWrapper?.dataset?.count || snowflakesCount);
+  const snowWrapper = document.getElementById('snow');
+  snowflakesCount = Number(
+    snowWrapper?.dataset?.count || snowflakesCount
+  );
 }
 
 // Creating snowflakes
 function generateSnow(snowDensity = 200) {
   snowDensity -= 1;
-  const snowWrapper = document.getElementById("snow");
-  snowWrapper.innerHTML = "";
+  const snowWrapper = document.getElementById('snow');
+  snowWrapper.innerHTML = '';
   for (let i = 0; i < snowDensity; i++) {
-    let board = document.createElement("div");
+    let board = document.createElement('div');
     board.className = "snowflake";
     snowWrapper.appendChild(board);
   }
@@ -1862,8 +2590,8 @@ function getOrCreateCSSElement() {
   let cssElement = document.getElementById("psjs-css");
   if (cssElement) return cssElement;
 
-  cssElement = document.createElement("style");
-  cssElement.id = "psjs-css";
+  cssElement = document.createElement('style');
+  cssElement.id = 'psjs-css';
   document.head.appendChild(cssElement);
   return cssElement;
 }
@@ -1897,14 +2625,14 @@ function generateSnowCSS(snowDensity = 200) {
 
   for (let i = 1; i < snowDensity; i++) {
     let randomX = Math.random() * 100; // vw
-    let randomOffset = Math.random() * 10; // vw;
+    let randomOffset = Math.random() * 10 // vw;
     let randomXEnd = randomX + randomOffset;
-    let randomXEndYoyo = randomX + randomOffset / 2;
+    let randomXEndYoyo = randomX + (randomOffset / 2);
     let randomYoyoTime = getRandomArbitrary(0.3, 0.8);
     let randomYoyoY = randomYoyoTime * pageHeightVh; // vh
     let randomScale = Math.random();
-    let fallDuration = randomIntRange(10, (pageHeightVh / 10) * 3); // s
-    let fallDelay = randomInt((pageHeightVh / 10) * 3) * -1; // s
+    let fallDuration = randomIntRange(10, pageHeightVh / 10 * 3); // s
+    let fallDelay = randomInt(pageHeightVh / 10 * 3) * -1; // s
     let opacity = Math.random();
 
     rule += `
@@ -1921,7 +2649,7 @@ function generateSnowCSS(snowDensity = 200) {
           transform: translate(${randomXEndYoyo}vw, ${pageHeightVh}vh) scale(${randomScale});
         }
       }
-    `;
+    `
   }
   addCSS(rule);
 }
@@ -1932,61 +2660,443 @@ function createSnow() {
   getSnowAttributes();
   generateSnowCSS(snowflakesCount);
   generateSnow(snowflakesCount);
-}
+};
 
-const snow = document.querySelector("#snow");
+const snow = document.querySelector('#snow');
 
 document.querySelector("#toggle-snow").addEventListener("change", (e) => {
-  if (e.target.checked) snow.classList.remove("hidden");
-  else snow.classList.add("hidden");
-});
+    if (e.target.checked)  snow.classList.remove("hidden")
+    else  snow.classList.add("hidden")
+})
 
-window.addEventListener("resize", createSnow);
+//window.addEventListener('resize', createSnow);
 //createSnow()
 
+
+
+
+
 document.querySelector("#toggle-snow").addEventListener("change", (e) => {
-  if (e.target.checked) createSnow();
-  else snow.classList.add("hidden");
-});
+    if (e.target.checked)  createSnow();
+    else  snow.classList.add("hidden")
+})
+*/
 
 /********************* SVG onSCROLL ********************/
-const path = document.querySelector(".path");
-const circle = document.querySelector("#sleigh-amimate");
 
-let pathPosition = path.getBoundingClientRect();
-let documentPosition = document.body.getBoundingClientRect();
-const pathTotalLength = path.getTotalLength();
+const motionPath = document.querySelector("#scroll-line path");
+const follower = document.getElementById("santa-sleigh");
 
-function positionElements() {
-  // SVG passes center of screen
-  const relativePageOffset =
-    -pathPosition.top + (window.pageYOffset + window.innerHeight * 0.5);
+const pathLength = motionPath.getTotalLength();
 
-  const pointPercentage = relativePageOffset / pathPosition.height;
-  const pointOnPath = pointPercentage * pathTotalLength;
-  const pathPoint = path.getPointAtLength(pointOnPath);
+// Function to update the image position based on the scroll and path
+function updateImagePosition() {
+  const scrollPercentage =
+    window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  const offset = pathLength * scrollPercentage;
+  const point = motionPath.getPointAtLength(offset);
 
-  circle.style.transform = `translate(
-			${pathPosition.left + pathPoint.x}px,
-			${pathPosition.top + pathPoint.y}px
-		)`;
+  follower.style.transform = `translate(${point.x}px, ${point.y}px)`;
 }
 
-window.addEventListener("scroll", () => {
-  positionElements();
-});
+// Update image position on scroll
+window.addEventListener("scroll", updateImagePosition);
 
-window.addEventListener("resize", () => {
-  pathPosition = path.getBoundingClientRect();
-  documentPosition = document.body.getBoundingClientRect();
+// Update image position on page load
+updateImagePosition();
 
-  positionElements();
-});
-
-positionElements();
+// EHADER ALERT
 
 const panelHeader = document.getElementById("header-principal");
 const panelAlert = document.getElementById("panel-alert");
+
+/******************** PAYMENT *******************/
+
+// PAYMENT - credit card selectors
+//const elDialog = document.querySelector("dialog")
+const formPayment = document.querySelector("#form-payment");
+const cardNumber = formPayment.querySelector("#credit-card");
+const cardCVC = formPayment.querySelector("#credit-cvc");
+const cardDate = formPayment.querySelector("#expiration-date");
+
+// PAYMENT - Format credit card number
+const formatNumber = (number) => {
+  const numericOnly = number.replace(/\D/g, "");
+  return numericOnly.replace(/(\d{4}(?=\d))/g, "$1 ");
+};
+
+// PAYMENT - Event listener for card bunber
+cardNumber.addEventListener("input", () => {
+  cardNumber.value = formatNumber(cardNumber.value);
+});
+
+// PAYMENT - Event listener for cardCVC
+cardCVC.addEventListener("input", () => {
+  cardCVC.value = formatNumber(cardCVC.value);
+});
+// PAYMENT - Event listener to allow only numbers
+cardNumber.addEventListener("keypress", onlyNumberKey);
+
+// PAYMENT - Event listener card date
+cardDate.addEventListener("input", () => {
+  let inputValue = cardDate.value;
+
+  // Remove non-numeric and non-slash characters
+  inputValue = inputValue.replace(/[^\d/]/g, "");
+
+  // Ensure it's in the format "mm/yy"
+  inputValue = inputValue.replace(
+    /^(\d{0,2})\/?(\d{0,2})$/,
+    (match, p1, p2) => {
+      if (p1.length > 0) {
+        const month = Math.min(parseInt(p1, 10), 12);
+        const year = p2 ? `/${p2}` : "";
+        return `${month}${year}`;
+      } else {
+        return "";
+      }
+    }
+  );
+
+  cardDate.value = inputValue;
+});
+
+// PAYMENT - handle payment method change
+function handlePaymentMethodChange() {
+  let selectedValue = getCheckedValue("payment-method");
+  console.log(selectedValue);
+  switch (selectedValue) {
+    case "1":
+      // card - enable fields
+      cardNumber.disabled = false;
+      cardDate.disabled = false;
+      cardCVC.disabled = false;
+      break;
+    default:
+      // clear values to ensure that no data is sent
+      cardNumber.value = "";
+      cardDate.value = "";
+      cardCVC.value = "";
+      // disable so that they won't be "required"
+      cardNumber.disabled = true;
+      cardDate.disabled = true;
+      cardCVC.disabled = true;
+      break;
+  }
+}
+
+// PAYMENT - Add change event listener to payment method radio buttons
+document
+  .querySelectorAll('input[name="payment-method"]')
+  .forEach((radio) =>
+    radio.addEventListener("change", handlePaymentMethodChange)
+  );
+
+// PAYMENT - handler for form submit
+formPayment.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // const elDialog = document.querySelector("#dialog-checkout");
+  // elDialog.setAttribute("open", "false")
+  //elDialog.classList.remove("scale-100", "fadeUp");
+  //setTimeout(() => elDialog.close(), 500);
+  openDialog("order-complete");
+});
+
+/********************* END PAYMENT ***********************/
+
+//****************** CONFETTI *********************/
+
+const btnConfetti = document.querySelector("#btn-confetti-start");
+
+// Start the confetti animation
+let stopConfetti = "";
+//loadConfetti();
+//setTimeout(() => {
+//stopConfetti.stop();
+//}, 5000);
+btnConfetti.addEventListener("click", reloadConetti);
+
+const dialogCompletePurchase = document.querySelector("dialog");
+// close button - will be diffferent on final challenge
+/*
+document.querySelector("#btn-confetti-close").addEventListener("click", () => {
+    dialogCompletePurchase.classList.add("scale-y-[5%]");
+    setTimeout(() => dialogCompletePurchase.classList.add("scale-x-[5%]"), 750)
+    setTimeout(() => dialogCompletePurchase.classList.add("opacity-0"), 1500)
+    stopConfetti.stop()
+
+    // bring it back again
+    setTimeout(() => {
+        //formPayment.reset();
+        dialogCompletePurchase.classList.remove("opacity-0", "scale-y-[5%]", "scale-x-[5%]")
+        stopConfetti = loadConfetti();
+    }, 3500)
+})
+*/
+
+reloadConetti();
+
+// COFETTI - reload
+function reloadConetti() {
+  //console.log("reload")
+  stopConfetti = loadConfetti();
+  setTimeout(() => {
+    stopConfetti.stop();
+  }, 500000);
+}
+// CONFETTI
+/*
+* confetti copied from here https://codepen.io/bananascript/pen/EyZeWm
+Modified to add a stopConfetti function.
+I also optimized the code slightly, swapping out the "var" for const or let.
+I also updated the confetti container so that it doesn't cause overflow on the body
+*/
+
+function loadConfetti() {
+  btnConfetti.classList.add("scale-0");
+
+  // Globals
+  let frame;
+  const confetti = [];
+  let timer;
+  const random = Math.random;
+  const cos = Math.cos;
+  const sin = Math.sin;
+  const PI = Math.PI;
+  const PI2 = PI * 2;
+  const particles = 10;
+  const spread = 40;
+  const sizeMin = 3;
+  const sizeMax = 12 - sizeMin;
+  const eccentricity = 10;
+  const deviation = 100;
+  const dxThetaMin = -0.1;
+  const dxThetaMax = -dxThetaMin - dxThetaMin;
+  const dyMin = 0.13;
+  const dyMax = 0.18;
+  const dThetaMin = 0.4;
+  const dThetaMax = 0.7 - dThetaMin;
+  const colorThemes = [
+    () => {
+      // christmas colors
+      const colors = [
+        { r: 255, g: 0, b: 0 }, // Red
+        { r: 0, g: 255, b: 0 }, // Green
+      ];
+      const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+      return color(selectedColor.r, selectedColor.g, selectedColor.b);
+    },
+  ];
+
+  function color(r, g, b) {
+    return `rgb(${r},${g},${b})`;
+  }
+
+  // Cosine interpolation
+  function interpolation(a, b, t) {
+    return ((1 - cos(PI * t)) / 2) * (b - a) + a;
+  }
+
+  // Create a 1D Maximal Poisson Disc over [0, 1]
+  const radius = 1 / eccentricity;
+  const radius2 = radius + radius;
+  function createPoisson() {
+    // domain is the set of points which are still available to pick from
+    // D = union{ [d_i, d_i+1] | i is even }
+    let domain = [radius, 1 - radius];
+    let measure = 1 - radius2;
+    const spline = [0, 1];
+
+    while (measure) {
+      let dart = measure * random();
+      let i, l, interval, a, b, c, d;
+
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+        a = domain[i];
+        b = domain[i + 1];
+        interval = b - a;
+
+        if (dart < measure + interval) {
+          spline.push((dart += a - measure));
+          break;
+        }
+        measure += interval;
+      }
+
+      c = dart - radius;
+      d = dart + radius;
+
+      for (i = domain.length - 1; i > 0; i -= 2) {
+        l = i - 1;
+        a = domain[l];
+        b = domain[i];
+
+        if (a >= c && a < d) {
+          if (b > d) {
+            domain[l] = d;
+          } else {
+            domain.splice(l, 2);
+          }
+        } else if (a < c && b > c) {
+          if (b <= d) {
+            domain[i] = c;
+          } else {
+            domain.splice(i, 0, c, d);
+          }
+        }
+      }
+
+      for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+        measure += domain[i + 1] - domain[i];
+      }
+    }
+
+    return spline.sort();
+  }
+
+  // Create the overarching container
+  const container = document.createElement("div");
+  container.style.position = "fixed";
+  container.id = "confetti";
+  container.style.inset = "0";
+  container.style.pointerEvents = "none";
+  container.style.overflow = "hidden";
+
+  container.style.isolation = "isolate";
+  container.style.zIndex = "999999";
+
+  // Confetto constructor
+  class Confetto {
+    constructor(theme) {
+      this.frame = 0;
+      this.outer = document.createElement("div");
+      this.inner = document.createElement("div");
+      this.outer.appendChild(this.inner);
+
+      const outerStyle = this.outer.style;
+      const innerStyle = this.inner.style;
+      outerStyle.position = "absolute";
+      outerStyle.width = `${sizeMin + sizeMax * random()}px`;
+      outerStyle.height = `${sizeMin + sizeMax * random()}px`;
+      innerStyle.width = "100%";
+      innerStyle.height = "100%";
+      // innerStyle.borderRadius = '50%';
+      innerStyle.backgroundColor = theme();
+
+      outerStyle.perspective = "50px";
+      outerStyle.transform = `rotate(${360 * random()}deg)`;
+      this.axis = `rotate3D(${cos(360 * random())},${cos(360 * random())},0,`;
+      this.theta = 360 * random();
+      this.dTheta = dThetaMin + dThetaMax * random();
+      innerStyle.transform = `${this.axis}${this.theta}deg)`;
+
+      this.x = window.innerWidth * random();
+      this.y = -deviation;
+      this.dx = sin(dxThetaMin + dxThetaMax * random());
+      this.dy = dyMin + dyMax * random();
+      outerStyle.left = `${this.x}px`;
+      outerStyle.top = `${this.y}px`;
+
+      // Create the periodic spline
+      this.splineX = createPoisson();
+      this.splineY = [];
+      let l;
+      for (let i = 1, length = this.splineX.length - 1; i < length; ++i) {
+        l = i;
+        this.splineY[i] = deviation * random();
+      }
+      this.splineY[0] = this.splineY[l] = deviation * random();
+
+      this.update = function (height, delta) {
+        this.frame += delta;
+        this.x += this.dx * delta;
+        this.y += this.dy * delta;
+
+        let phi = (this.frame % 7777) / 7777;
+        let i = 0,
+          j = 1;
+
+        while (phi >= this.splineX[j]) {
+          i = j++;
+        }
+
+        let phiModifier =
+          (phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i]);
+        let rho = interpolation(this.splineY[i], this.splineY[j], phiModifier);
+
+        phi *= PI2;
+
+        outerStyle.left = `${this.x + rho * cos(phi)}px`;
+        outerStyle.top = `${this.y + rho * sin(phi)}px`;
+        innerStyle.transform = `${this.axis}${this.theta}deg)`;
+        return this.y > height + deviation;
+      };
+
+      this.stop = function () {
+        container.removeChild(this.outer);
+        const index = confetti.indexOf(this);
+        if (index !== -1) {
+          confetti.splice(index, 1);
+        }
+      };
+    }
+  }
+
+  function poof() {
+    if (!frame) {
+      document.body.appendChild(container);
+
+      const theme = colorThemes[0];
+      (function addConfetto() {
+        const confetto = new Confetto(theme);
+        confetti.push(confetto);
+        container.appendChild(confetto.outer);
+        timer = setTimeout(addConfetto, spread * random());
+      })(0);
+
+      let prev = undefined;
+      function loop(timestamp) {
+        const delta = prev ? timestamp - prev : 0;
+        prev = timestamp;
+        const height = window.innerHeight;
+
+        for (let i = confetti.length - 1; i >= 0; --i) {
+          if (confetti[i].update(height, delta)) {
+            container.removeChild(confetti[i].outer);
+            confetti.splice(i, 1);
+          }
+        }
+
+        if (timer || confetti.length) {
+          frame = requestAnimationFrame(loop);
+        } else {
+          document.body.removeChild(container);
+          frame = undefined;
+        }
+      }
+
+      frame = requestAnimationFrame(loop);
+    }
+  }
+
+  poof();
+
+  return {
+    stop: function () {
+      clearTimeout(timer); // Clear the timer to stop adding new confetti
+      btnConfetti.classList.remove("scale-0");
+    },
+  };
+
+  return {
+    stop: function () {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+    },
+  };
+}
+
+//****************** END CONFETTI *********************/
 
 // Function to handle intersection changes
 function handleIntersection(entries, observer) {
@@ -2047,4 +3157,23 @@ function navigateRadioButtons(direction, radioName) {
 
   // Return current value
   return radioButtons[currentIndex].value;
+}
+
+// UTILITY - prevent link clicks (only if #)
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    if (link.getAttribute("href") === "#") {
+      e.preventDefault();
+    }
+  });
+});
+
+// Utility - numbers only
+function onlyNumberKey(evt) {
+  // Only ASCII character in that range allowed
+  var ASCIICode = evt.which ? evt.which : evt.keyCode;
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) {
+    return false;
+  }
+  return true;
 }

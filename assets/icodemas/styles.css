@@ -116,7 +116,6 @@
     rotate: 0deg;
   }
 }
-
 #arm-back {
   transform-origin: center left;
   animation: move-arm var(--speed) ease-out;
@@ -170,17 +169,16 @@
     translate: 0.5rem 0rem;
   }
 }
-
-svg#star .group {
-  transform: translate(42.5px, 42.5px);
+svg.star > g {
+  transform: translate(40px, 40px);
 }
-svg#star path {
-  transform: translate(-42.5px, -42.5px);
+svg.star path {
+  transform: translate(-42px, -42px);
 }
-svg#star .large {
+svg.star > g > g:nth-child(odd) {
   animation: sparkle 2.5s infinite;
 }
-svg#star .small {
+svg.star > g > g:nth-child(even) {
   animation: sparkle 2.5s infinite reverse;
 }
 @keyframes sparkle {
@@ -199,12 +197,12 @@ svg#star .small {
 
 dialog {
   box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0);
-  transition: 500ms ease-out;
+  transition: 150ms ease-out;
   overflow: visible;
 }
 dialog.fadeUp {
   box-shadow: 0 0 0 100vw rgba(0, 0, 1, 0.4);
-  transition: 1s ease-out;
+  transition: 150ms ease-out;
 }
 
 .snowflake {
@@ -225,35 +223,27 @@ dialog.fadeUp {
 }
 
 svg#scroll-line {
-  position: absolute;
-  top: 20rem;
-  display: block;
-  left: 50%;
+  position: fixed;
+  inset: 0;
   overflow: visible;
-  transform: translateX(-50%);
   pointer-events: none;
 }
+
 svg#scroll-line path {
   stroke: transparent;
   stroke-width: 2px;
 }
-#sleigh-amimate {
-  z-index: 100;
+
+#santa-sleigh {
   position: absolute;
-  width: 4rem;
-  top: -320px;
-  left: -200px;
-  pointer-events: none;
+  top: 0;
+  left: 200px;
+  transition: transform 0.3s ease-out;
+  z-index: 999;
+  width: 200px;
 }
+
 @media (min-width: 650px) {
-  svg#scroll-line {
-    top: 25rem;
-  }
-  #sleigh-amimate {
-    width: 6rem;
-    top: -265px;
-    left: -100px;
-  }
 }
 
 /* FLIP CARDS */
@@ -289,4 +279,27 @@ svg#scroll-line path {
 }
 .flip-card-front {
   transform: rotateY(0deg);
+}
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(111, 197, 247);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  pointer-events: none;
+  animation: blur-in 500ms forwards;
+}
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 0.8;
+    backdrop-filter: blur(100px);
+  }
 }
