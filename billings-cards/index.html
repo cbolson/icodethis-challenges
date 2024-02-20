@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billings cards</title>
+<script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <!-- https://icodethis.com/submissions/70063 -->
+    <body class="bg-[#171726] flex justify-center items-center min-h-screen p-4
+        before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-glowing.webp)]
+        before:fixed
+        before:inset-0
+        before:w-full
+        before:h-full
+        before:opacity-20
+        before:bg-cover
+        before:bg-center
+        before:-z-10
+    
+    ">
+        <div class="w-full max-w-md grid gap-6 relative
+            *:shadow-lg
+            *:rounded-xl 
+            X*:bg-[#1C1D32]
+            *:bg-black/30
+            *:backdrop-blur-md
+            *:border
+            *:border-white/20
+            *:ring-1
+            *:ring-white/5
+            *:text-gray-200
+            *:p-10
+            sm:*:px-12
+            *:space-y-6
+            *:w-fit
+            *:transition-all
+            *:duration-500
+            *:ease-in-out
+            [&_h2]:font-serif
+            [&_h2]:text-lg
+            [&_h2]:font-medium
+
+            [&_.btn]:rounded
+            [&_.btn]:py-3
+            [&_.btn]:px-6
+            [&_.btn]:ring-1
+            [&_.btn]:ring-white/20
+            [&_.btn]:relative
+            [&_.btn]:isolate
+            [&_.btn]:transition-all
+            [&_.btn]:duration-300
+            [&_.btn]:text-white
+            [&_button]:outline-none
+            [&_button]:ring-0
+            before:[&_.btn]:absolute
+            before:[&_.btn]:inset-full
+            before:[&_.btn]:bg-pink-700/70
+            before:[&_.btn]:-z-10
+            before:[&_.btn]:rounded
+            before:[&_.btn]:transition-all
+            before:[&_.btn]:duration-300
+            before:[&_.btn]:ease-in-out
+            hover:before:[&_.btn]:inset-0
+            focus-visible:before:[&_.btn]:inset-0
+
+            [&_a]:underline
+            hover:[&_a]:text-pink-700
+            [&_a]:transition-all
+            [&_a]:duration-300
+        ">
+
+            <article class="sm:-translate-x-48 sm:translate-y-40">
+                <h2>Your plan</h2>
+                <p class="text-3xl">Professional</p>
+                <div class="flex items-center gap-4 text-sm">
+                    <button type="button" class="btn">Upgrade Plan</button>
+                    <a href="javascript:void()">Cancel Plan</a>
+                </div>
+            </article>
+
+            <article  class="sm:translate-x-48 sm:-translate-y-36">
+                <h2>Invoice history</h2>
+                <div class="text-sm
+                    *:grid
+                    *:grid-cols-3
+                    *:py-2
+                    *:relative 
+                    *:isolate 
+                    before:*:absolute
+                    before:*:inset-[0_-1rem_0_-1rem]
+                    before:*:bg-[#171726]
+                    before:*:rounded
+                    before:*:-z-10
+                    before:*:opacity-0
+                    before:*:transition-all 
+                    before:*:duration-300
+                    hover:before:*:opacity-100
+                    focus-within:before:*:opacity-100
+                  
+                    [&_button]:transition-all
+                    [&_button]:duration-300
+                    [&_button]:opacity-0
+                    [&_button]:text-rose-700
+                    [&>div:hover_button]:opacity-100 
+                    [&>div:focus-within_button]:opacity-100 
+                    
+                ">
+                    <div>
+                        <p>Feb 20,2024</p>
+                        <p>$25.00</p>
+                       <button type="button">Download PDF</button>
+                    </div>
+                    <div>
+                        <p>Feb 19,2024</p>
+                        <p>$25.00</p>
+                        <button type="button">Download PDF</button>
+                    </div>
+                    <div>
+                        <p>Feb 16,2024</p>
+                        <p>$25.00</p>
+                        <button type="button">Download PDF</button>
+                    </div>
+                    <div>
+                        <p>Feb 15,2024</p>
+                        <p>$25.00</p>
+                        <button type="button">Download PDF</button>
+                    </div>
+                    <div>
+                        <p>Feb 14,2024</p>
+                        <p>$25.00</p>
+                        <button type="button">Download PDF</button>
+                    </div>
+                    
+                </div>
+                <button type="button" class="btn">Show all invoices</button>
+            </article>
+                
+        </div>
+    </body>
+</html>
