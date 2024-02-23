@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown -3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/70538 -->
+  <body
+    class="bg-[#00594F] text-[#00352F] flex justify-center items-center min-h-screen p-4 before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-aston-martin-2023.jpg)] before:fixed before:inset-0 before:w-full before:h-full before:opacity-10 before:bg-cover before:bg-center before:-z-10">
+    <div
+      class="w-full max-w-3xl m Xtext-center [--primary:#00352F] [--accent:#CEDC00]">
+      <h1
+        class="text-[var(--primary)] text-[clamp(2rem,8vw,6rem)] tracking-wide">
+        JUST A LITTLE MORE...
+      </h1>
+
+      <div
+        class="flex flex-wrap items-center gap-2 text-white font-sans font-thin text-sm mb-4 leading-3 *:relative after:*:inline-block after:*:content-['-'] last:after:*:content-[''] after:*:ml-2">
+        <div id="race-country"></div>
+        <div id="race-name"></div>
+        <div id="race-date"></div>
+        <div id="race-time"></div>
+      </div>
+      <div
+        data-color
+        class="w-full grid grid-cols-2 min-[500px]:grid-cols-4 items-center justify-center gap-2 sm:gap-4 sm:gap-4 text-[#0A3D4C] font-thin text-5xl *:bg-black/50 *:ring-4 *:ring-black/5 *:aspect-square *:px-8 sm:*:px-10 md:*:px-14 *:shadow-xl *:transition *:grid *:gap-1 *:grid-cols-2 *:items-center *:justify-center *:overflow-hidden *:relative *:isolate *:border *:border-[#CEDC00]/30 [&_span]:grid first:[&_span]:place-content-end last:[&_span]:place-content-start [&_span]: [&_span]:font-bold [&_span]:text-[4rem] min-[500px]:[&_span]:text-[6rem] [&_span]:text-[var(--accent)] [&_span]:duration-300 [&_span]:transition-all [&_span]:ease-in-out after:*:absolute after:*:font-thin after:*:content-[attr(data-desc)] after:*:bottom-1 sm:after:*:-bottom-3 after:*:left-6 after:*:text-left after:*:text-2xl sm:after:*:text-4xl after:*:uppercase after:*:text-white/50 sm:after:*:-rotate-90 after:*:origin-left after:*:opacity-50 after:*:tracking-wider before:*:absolute before:*:-inset-2/4 before:*:rounded-full before:*:bg-black/20 before:*:-z-10">
+        <!--
+                    <div id="months" data-desc="Months" class="animate-in " style="--d:1800ms">
+                        <span>2</span>
+                        <span>0</span>
+                    </div>
+                    -->
+        <div id="days" data-desc="Days" class="animate-in" style="--d: 1500ms">
+          <span>2</span>
+          <span>0</span>
+        </div>
+        <div
+          id="hours"
+          data-desc="Hours"
+          class="animate-in"
+          style="--d: 1200ms">
+          <span>2</span>
+          <span>3</span>
+        </div>
+        <div
+          id="minutes"
+          data-desc="Minutes"
+          class="animate-in"
+          style="--d: 800ms">
+          <span>1</span>
+          <span>2</span>
+        </div>
+
+        <div
+          id="seconds"
+          data-desc="seconds"
+          class="animate-in"
+          style="--d: 500ms">
+          <span>0</span>
+          <span>1</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
