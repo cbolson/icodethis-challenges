@@ -8,6 +8,89 @@ tailwind.config = {
     },
   },
 };
+const TEAMS = [
+  {
+    team: "Mercedes",
+    hex: "#00A19B",
+    hexAccent: "#C8CCCE",
+    "hex-3": "",
+    rgb: [39, 244, 210],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-mercedes.jpg",
+  },
+  {
+    team: "Red Bull Racing",
+    hex: "#3671C6",
+    hexAccent: "#C0BFBF",
+    rgb: [54, 113, 198],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-redbull.jpg",
+  },
+  {
+    team: "Ferrari",
+    hex: "#EF1A2D",
+    hexAccent: "#FFF",
+    rgb: [232, 0, 45],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-ferrari.jpg",
+  },
+  {
+    team: "McLaren",
+    hex: "#FF8000",
+    hexAccent: "#000000",
+    rgb: [255, 128, 0],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-mclaren.jpg",
+  },
+  {
+    team: "Alpine",
+    hex: "#02192B",
+    hexAccent: "#2173B8",
+    rgb: [255, 135, 188],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-alpine.jpg",
+  },
+  {
+    team: "RB",
+    hex: "#6692FF",
+    hexAccent: "#FFFFFF",
+    rgb: [102, 146, 255],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-rb.jpg",
+  },
+  {
+    team: "Aston Martin",
+    hex: "#00594F",
+    hexAccent: "#CEDC00",
+    rgb: [34, 153, 113],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-aston-martin-2023.jpg",
+  },
+  {
+    team: "Williams",
+    hex: "#00A0DE",
+    hexAccent: "#000000",
+    rgb: [100, 196, 255],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-william.jpg",
+  },
+  {
+    team: "Kick Sauber",
+    hex: "#00e701",
+    hexAccent: "#000000",
+    rgb: [82, 226, 82],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-sauber.jpg",
+  },
+  {
+    team: "Haas",
+    hex: "#E6002B",
+    hexAccent: "#FFFFFF",
+    rgb: [182, 186, 189],
+    image:
+      "https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-f1-haas.jpg",
+  },
+];
 
 const RACES = [
   {
@@ -192,12 +275,6 @@ const expirationDate = new Date(
   `${nextEvent.date} ${nextEvent.time.split(" - ")[0]}`
 );
 
-console.log("Next Event Information:");
-console.log("Country:", nextEvent.country);
-console.log("Name:", nextEvent.name);
-console.log("Time:", nextEvent.time);
-console.log("Expiration Date:", expirationDate);
-
 document.querySelector("#race-country").innerText = nextEvent.country;
 document.querySelector("#race-name").innerText = nextEvent.name;
 document.querySelector("#race-date").innerText = nextEvent.date;
@@ -361,3 +438,91 @@ function formatDate(date) {
     return newDate.toLocaleString('en-US', options);
 }
 */
+
+let selectedTeam = "Aston Martin";
+
+const bgMasksEl = document.querySelector("#bg-masks");
+
+const listTeamToggles = document.querySelector("#list-team-toggles");
+
+// Function to create and append HTML elements
+function addTeamElements() {
+  const body = document.body;
+  bgMasksEl.innerHTML = "";
+
+  TEAMS.forEach((team, index) => {
+    // Create label for the team toggle
+    const label = document.createElement("label");
+    label.setAttribute("for", `radio-team-${index}`);
+    label.setAttribute("title", team.team);
+    //label.className = "hidden";
+    label.className = `hover:bg-[${team.hex}]`;
+
+    const imgEl = document.createElement("img");
+    imgEl.src = team.image;
+    imgEl.id = `image-${index}`;
+    bgMasksEl.append(imgEl);
+
+    // Create SVG element for the team color
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("class", `hover:text-[${team.hexAccent}]`);
+    svg.setAttribute("version", "1.1");
+    svg.setAttribute("viewBox", "0 0 512 512");
+
+    // Create 'use' element for SVG icon
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", "#svg-car");
+
+    svg.appendChild(use);
+    label.appendChild(svg);
+
+    // create dropdown name
+    const nameEl = document.createElement("div");
+    nameEl.innerText = team.team;
+    label.append(nameEl);
+
+    // Create radio button for`the team
+    const radio = document.createElement("input");
+    radio.setAttribute("type", "radio");
+    radio.setAttribute("id", `radio-team-${index}`);
+    radio.setAttribute("name", "team-selection");
+    radio.setAttribute("value", team.team);
+    radio.className = `sr-only peer/team-${index}`;
+
+    // Append label and radio button to the list and body, respectively
+    listTeamToggles.appendChild(label);
+    body.prepend(radio);
+
+    if (team.team == selectedTeam) {
+      setTheme(index);
+    }
+    radio.addEventListener("change", () => {
+      setTheme(index);
+    });
+  });
+}
+// Call the function to add team elements
+addTeamElements();
+
+function setTheme(index) {
+  const currentTeam = TEAMS[index];
+  const bgImages = bgMasksEl.querySelectorAll("img");
+
+  bgImages.forEach((img, idx) => {
+    if (idx === index) img.classList.add("!opacity-20");
+    else img.classList.remove("!opacity-20");
+  });
+
+  const teamToggles = listTeamToggles.querySelectorAll("label");
+  console.log(teamToggles);
+  teamToggles.forEach((t, idx) => {
+    if (idx === index) t.classList.add("active");
+    else t.classList.remove("active");
+  });
+  console.log(teamToggles);
+
+  // document.querySelectorAll("#bg-masks img")[index].classList.add("opacity-20");
+
+  document.body.style.backgroundColor = currentTeam.hex;
+  document.body.style.setProperty("--accent", `${currentTeam.hexAccent}`);
+}
