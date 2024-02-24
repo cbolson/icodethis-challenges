@@ -1,0 +1,48 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --d: 0;
+    --ani-speed: 1000ms;
+  }
+
+  [slide-in-left] {
+    translate: -600px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+
+  [slide-in-right] {
+    translate: 800px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+
+  [slide-down] {
+    translate: 0 -40px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+
+  [slide-up] {
+    translate: 0 300px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+
+  [scale-up] {
+    scale: 0;
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+}
+
+@keyframes slide-in {
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes scale-up {
+  to {
+    scale: 1;
+  }
+}
