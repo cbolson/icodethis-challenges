@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E Ticket 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!-- https://icodethis.com/submissions/70823 -->
+  <body
+    class="bg-white flex justify-center items-center min-h-screen p-4 before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-despicable-me-4.jpg)] before:fixed before:inset-0 before:opacity-50 before:bg-cover before:bg-center before:-z-10 before:blur-md">
+    <div
+      id="device"
+      class="rounded-[2.5rem] w-full max-w-sm relative isolate overflow-hidden text-white border-8 border-black outline outline-white/50 outline-1 shadow-xl ring-2 ring-black/5 before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-despicable-me-4.jpg)] before:absolute before:inset-0 before:opacity-70 before:bg-cover before:bg-center before:-z-10">
+      <div
+        class="grid grid-cols-3 gap-1 items-center text-xs py-2 px-3 text-white">
+        <div class="flex items-center gap-1">12:37 pm</div>
+
+        <div
+          class="mx-auto relative rounded-full bg-black py-2 w-28 px-3 flex items-center">
+          <div class="camera ml-auto size-3 rounded-full"></div>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <span class="material-symbols-outlined ml-auto text-base"
+            >bluetooth</span
+          >
+          <span class="material-symbols-outlined text-base"
+            >signal_cellular_alt</span
+          >
+          <span class="material-symbols-outlined text-base">wifi</span>
+          <span class="material-symbols-outlined rotate-180 text-base"
+            >battery_horiz_075</span
+          >
+        </div>
+      </div>
+
+      <h1 class="text-center uppercase my-4">My Tickets</h1>
+
+      <main class="mx-4 sm:mx-8 rounded-xl overflow-hidden">
+        <section class="relative uppercase text-zinc-700">
+          <div class="bg-gradient-to-r from-violet-700 to-orange-500 h-3"></div>
+          <div class="text-center p-8 space-y-6">
+            <h2
+              class="bg-clip-text text-2xl bg-gradient-to-r from-violet-700 to-rose-600 text-transparent font-bold">
+              Despicable Me 4
+            </h2>
+            <p class="uppercase text-sm">
+              Booking Nr. <span class="text-xl font-bold">#3339</span>
+            </p>
+          </div>
+          <div
+            class="bg-gradient-to-r from-violet-700 to-orange-500 py-4 flex items-center justify-center gap-8 *:text-center *:text-white first:[&_p]:font-thin first:[&_p]: last:[&_p]:font-bold last:[&_p]:text-2xl">
+            <div>
+              <p>Room</p>
+              <p>2024</p>
+            </div>
+            <div>
+              <p>Row</p>
+              <p>02</p>
+            </div>
+            <div>
+              <p>Seat</p>
+              <p>25</p>
+            </div>
+          </div>
+
+          <div
+            class="py-4 pb-6 flex flex-wrap items-center justify-center gap-3 opacity-50 font-thin">
+            <p>Price <span class="text-lg font-bold">$5</span></p>
+            <p>Date <span class="text-lg font-bold">07.03.2024</span></p>
+          </div>
+        </section>
+
+        <section class="relative p-2">
+          <img
+            src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/qr-dispicable-me.png"
+            class="w-32 mx-auto object-cover" />
+        </section>
+      </main>
+
+      <p class="mx-12 pt-2 pb-6 text-center text-xs">
+        Use the booking number to pick up your tiockets before the show.
+      </p>
+
+      <div
+        class="grid grid-cols-4 bg-black relative isolate text-zinc-700 p-2 py-3 gap-3 [&>button]:flex [&>button]:items-center [&>button]:flex-col [&>button]:outline-none [&>button]:border-none [&>button]:ring-0 [&>button]:transition-all [&>button]:duration-300 [&>button]:text-white [&>button]:relative [&>button]:isolate before:[&>button]:absolute before:[&>button]:inset-[-.25rem_0_-.25rem_0] before:[&>button]:bg-white/20 before:[&>button]:rounded-lg before:[&>button]:opacity-0 before:[&>button]:transition-all before:[&>button]:duration-300 hover:before:[&>button]:opacity-100 focus-visible:before:[&>button]:opacity-100 [&_span]:text-3xl [&_span]:opacity-70 [&_p]:text-[0.65rem] sm:[&_p]:text-xs [&_p]:text-orange-500">
+        <button type="button">
+          <span class="material-symbols-outlined">grid_view</span>
+          <p>Home</p>
+        </button>
+        <button type="button">
+          <span class="material-symbols-outlined">movie</span>
+          <p>Movies</p>
+        </button>
+        <button type="button">
+          <span class="material-symbols-outlined">star</span>
+          <p>Favorites</p>
+        </button>
+        <button type="button">
+          <span class="material-symbols-outlined -rotate-45"
+            >confirmation_number</span
+          >
+          <p>My Tickets</p>
+        </button>
+
+        <div
+          class="col-span-4 bg-slate-100 rounded-full mt-1 h-1 w-28 mx-auto"></div>
+      </div>
+    </div>
+  </body>
+</html>

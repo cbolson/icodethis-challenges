@@ -1,0 +1,45 @@
+main {
+  --r: 10px;
+  --bg: #ffffff;
+}
+
+/* cutouts between boarding pass and stub */
+main > section:first-child {
+  background: radial-gradient(
+        circle var(--r) at bottom left,
+        #0000 98%,
+        var(--bg)
+      )
+      bottom left,
+    radial-gradient(circle var(--r) at bottom right, #0000 98%, var(--bg))
+      bottom right;
+  background-size: 51% 100%;
+  background-repeat: no-repeat;
+}
+
+main > section:last-child {
+  background: radial-gradient(circle var(--r) at top left, #0000 98%, var(--bg))
+      top left,
+    radial-gradient(circle var(--r) at top right, #0000 98%, var(--bg)) top
+      right;
+  background-size: 51% 100%;
+  background-repeat: no-repeat;
+}
+
+main > section:first-child::before {
+  content: "";
+  position: absolute;
+  border: 1px dashed orange;
+  bottom: 0;
+  left: var(--r);
+  width: calc(100% - var(--r) * 2);
+  height: 0;
+}
+
+.camera {
+  box-shadow: inset 0 0 0.25em #4c4da3;
+  background: radial-gradient(#6667ac, transparent 50%) no-repeat 33.3% 10%/75%
+      50%,
+    radial-gradient(#454680, transparent 50%) no-repeat 60% 85%/50% 50%;
+  background-color: #080928;
+}
