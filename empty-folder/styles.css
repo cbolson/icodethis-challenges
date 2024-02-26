@@ -1,0 +1,16 @@
+/* Add CSS here */
+@media (prefers-reduced-motion: no-preference) {
+  .chart-box {
+    animation: pulse calc(var(--s) * 20ms) infinite -1000ms;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 100;
+  }
+}
