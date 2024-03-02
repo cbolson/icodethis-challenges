@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get the App</title>
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=montserrat:300,500,700"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body
+    class="font-montserrat font-thin bg-slate-900 flex justify-center items-center min-h-screen p-4 before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-circles.webp)] before:inset-0 before:w-full before:h-full before:fixed before:opacity-20 before:bg-cover before:bg-center before:-z-10 before:bg-no-repeat">
+    <input type="checkbox" id="theme" class="sr-only peer/theme" checkedS />
+
+    <div
+      id="wrapper"
+      scale-up
+      class="[--order:1] bg-black/40 backdrop-blur-md border border-white/30 text-center p-12 sm:p-16 space-y-4 sm:space-y-12 shadow-lg rounded-xl w-72 sm:w-full max-w-2xl transition-all duration-700 Xdelay-50 relative overflow-hidden text-slate-300 peer-checked/theme:text-slate-950 [&_button]:border-none [&_button]:outline-none [&_button]:ring-0 peer-checked/theme:[&_#light]:scale-0 peer-checked/theme:[&_#dark]:scale-100 xpeer-checked/theme:[&_#dark]:delay-300 peer-checked/theme:border-black/30 peer-checked/theme:bg-white/40">
+      <h1
+        id="title"
+        scale-from-center
+        class="[--order:2] text-[clamp(1.2rem,5vw,3rem)] transition-all duration-500">
+        Get the app
+      </h1>
+      <p
+        id="subtitle"
+        scale-from-center
+        class="[--order:2] text-[clamp(1rem,2.5vw,1.4rem)] sm:px-2 transition-all duration-500">
+        Choose any of the following options to get the app for your device
+      </p>
+
+      <div
+        class="pt-6 grid sm:grid-cols-3 gap-16 *:rounded-lg *:p-2 *:transition-all *:duration-500 *:aspect-square *:grid *:place-content-center *:relative *:isolate *:text-slate-950 before:*:absolute before:*:-inset-2 before:*:bg-white/30 before:*:rounded-xl before:*:-z-10 before:*:transition-all before:*:duration-300 hover:before:*:-inset-6 focus-visible:before:*:-inset-6 after:*:absolute after:*:inset-0 after:*:bg-slate-100 after:*:rounded-lg after:*:-z-10 after:*:ring-2 after:*:ring-black/5 max-[300px]:[&_svg]:w-12 [&_svg]:w-20 [&_svg]:mx-auto [&_svg]:text-rose-400 [&_svg]:transition-all [&_svg]:duration-300 [&>button:hover_svg]:text-rose-500 [&>button:focus-visible_svg]:text-rose-500">
+        <!-- -->
+        <button id="button-1" type="button" slide-in-left class="[--order:3]">
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            id="mobile-phone"
+            data-name="Flat Line"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon flat-line">
+            <path
+              id="secondary"
+              d="M17,3H14l-.5,2h-3L10,3H7A1,1,0,0,0,6,4V20a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1V4A1,1,0,0,0,17,3Z"
+              style="stroke-width: 2"
+              fill="currentColor"></path>
+            <path
+              id="primary"
+              d="M13,17H11M14,3H10l.5,2h3Zm4,17V4a1,1,0,0,0-1-1H7A1,1,0,0,0,6,4V20a1,1,0,0,0,1,1H17A1,1,0,0,0,18,20Z"
+              style="
+                fill: none;
+                stroke: #000000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2;
+              "></path>
+          </svg>
+          <p>Phone</p>
+        </button>
+
+        <button id="button-2" type="button" slide-in-bottom class="[--order:3]">
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            id="qr-code"
+            data-name="Flat Line"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon flat-line">
+            <path
+              id="secondary"
+              d="M9,10H4A1,1,0,0,1,3,9V4A1,1,0,0,1,4,3H9a1,1,0,0,1,1,1V9A1,1,0,0,1,9,10ZM21,9V4a1,1,0,0,0-1-1H15a1,1,0,0,0-1,1V9a1,1,0,0,0,1,1h5A1,1,0,0,0,21,9ZM10,20V15a1,1,0,0,0-1-1H4a1,1,0,0,0-1,1v5a1,1,0,0,0,1,1H9A1,1,0,0,0,10,20Z"
+              fill="currentColor"
+              style="stroke-width: 2"></path>
+            <path
+              id="primary"
+              d="M21,14v5a2,2,0,0,1-2,2H14"
+              style="
+                fill: none;
+                stroke: #000000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2;
+              "></path>
+            <path
+              id="primary-2"
+              data-name="primary"
+              d="M17,17H14V14h3ZM10,9V4A1,1,0,0,0,9,3H4A1,1,0,0,0,3,4V9a1,1,0,0,0,1,1H9A1,1,0,0,0,10,9Zm10,1H15a1,1,0,0,1-1-1V4a1,1,0,0,1,1-1h5a1,1,0,0,1,1,1V9A1,1,0,0,1,20,10ZM9,21H4a1,1,0,0,1-1-1V15a1,1,0,0,1,1-1H9a1,1,0,0,1,1,1v5A1,1,0,0,1,9,21Z"
+              style="
+                fill: none;
+                stroke: #000000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2;
+              "></path>
+          </svg>
+          <p>QR code</p>
+        </button>
+
+        <button id="button-3" type="button" slide-in-right class="[--order:3]">
+          <svg
+            fill="#000000"
+            viewBox="0 0 24 24"
+            id="link"
+            data-name="Flat Line"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon flat-line">
+            <path
+              id="secondary"
+              d="M4.5,19.5h0a3,3,0,0,1,0-4.24L6.76,13A3,3,0,0,1,11,13h0a3,3,0,0,1,0,4.24L8.74,19.5A3,3,0,0,1,4.5,19.5ZM17.24,11,20,8.24A3,3,0,0,0,20,4h0a3,3,0,0,0-4.24,0L13,6.76A3,3,0,0,0,13,11h0A3,3,0,0,0,17.24,11Z"
+              fill="currentColor"
+              style="stroke-width: 2"></path>
+            <path
+              id="primary"
+              d="M4.5,19.5h0a3,3,0,0,1,0-4.24L6.76,13A3,3,0,0,1,11,13h0a3,3,0,0,1,0,4.24L8.74,19.5A3,3,0,0,1,4.5,19.5ZM17.24,11,20,8.24A3,3,0,0,0,20,4h0a3,3,0,0,0-4.24,0L13,6.76A3,3,0,0,0,13,11h0A3,3,0,0,0,17.24,11ZM10,14l4-4"
+              style="
+                fill: none;
+                stroke: #000000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2;
+              "></path>
+          </svg>
+          <p>Link</p>
+        </button>
+      </div>
+
+      <button
+        type="button"
+        id="btn-close"
+        slide-in-right
+        class="[--order:4] absolute top-0 sm:-top-6 right-6 material-symbols-outlined border-none outline-none ring-0 transition-all duration-300 hover:rotate-90 hover:scale-150 focus-visible:rotate-90 focus-visible:scale-150">
+        close
+      </button>
+
+      <label
+        id="theme-toggle"
+        for="theme"
+        slide-in-left
+        class="[--order:4] cursor-pointer absolute top-0 sm:-top-6 left-6 !grid !place-content-center !gap-0 [grid-template-areas:'stacked'] !rounded-full transition-all duration-300 hover:rotate-90 hover:scale-150 focus-visible:rotate-90 focus-visible:scale-150 [&>span]:[grid-area:stacked] [&>span]:transition-all [&>span]:duration-200 [&>#dark]:scale-0">
+        <span id="dark" class="material-symbols-outlined">dark_mode</span>
+        <span id="light" class="material-symbols-outlined">light_mode</span>
+      </label>
+    </div>
+
+    <!-- theme bg mask -->
+    <div
+      class="fixed top-12 sm:top-48 left-2/4 -translate-x-2/4 rounded-full shadow-lg bg-gray-200/10 opacity-50 shadow-inner-lg -z-20 transition-all duration-1000 size-20 peer-checked/theme:scale-[5000%] peer-checked/theme:bg-white/70 peer-checked/theme:opacity-100"></div>
+  </body>
+</html>

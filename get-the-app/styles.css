@@ -1,0 +1,118 @@
+/*
+* Credits:
+* https://wallpapers.com/background/circle-background-avz4mdvmshgu91n2.html Wallpaper by stel0081 on Wallpapers.com
+*/
+
+.circle > div {
+  --radius: 3rem;
+  --d: calc(var(--i) / var(--total));
+  --r-offset: -0.25turn;
+  --r-amount: 1turn;
+  --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+
+  transform: rotate(var(--r)) translate(var(--radius))
+    rotate(calc(-2 * var(--r)));
+  transition: transform 1.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --d: 0;
+    --ani-speed: 500ms;
+  }
+
+  [slide-in-left] {
+    translate: -400px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-in-right] {
+    translate: 400px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-in-top] {
+    translate: 0 -400px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-in-bottom] {
+    translate: 0 400px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-up] {
+    scale: 0;
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-from-top] {
+    transform-origin: top;
+    scale: 1 0;
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-from-center] {
+    transform-origin: center center;
+    scale: 1 0;
+
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [stretch-out] {
+    animation: stretch-out var(--ani-speed) ease-in forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+    white-space: nowrap;
+  }
+
+  [stretch-in] {
+    margin-right: -100px;
+    transform-origin: center;
+    opacity: 0;
+    letter-spacing: 100px;
+    animation: stretch-in var(--ani-speed) ease-in-out forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+    white-space: nowrap;
+  }
+}
+
+@keyframes slide-in {
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    scale: 0;
+  }
+
+  60% {
+    scale: 1.15;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes stretch-out {
+  to {
+    letter-spacing: 100px;
+    opacity: 0;
+  }
+}
+@keyframes stretch-in {
+  to {
+    margin-right: 0;
+    letter-spacing: normal;
+    opacity: 100;
+  }
+}
