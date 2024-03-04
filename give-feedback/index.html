@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Give Feedback</title>
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=merriweather:700|poppins:300,400,600|comic-neue:300,400,700,700i"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <!-- https://icodethis.com/submissions/71777 -->
+  <body
+    class="bg-gradient-to-t from-slate-300 to-slate-100 text-white/90 flex justify-center flex-col gap-4 items-center min-h-screen p-4 [&_*]:transition-all [&_*]:duration-500 [&_a]:underline hover:[&_a]:text-black">
+    <input type="checkbox" id="theme" class="sr-only peer" checked />
+
+    <!-- toggle -->
+    <div
+      class="[&>label]:block [&>label]:rounded-full [&>label]:w-12 [&>label]:h-6 [&>label]:cursor-pointer [&>label]:box-content hover:[&>label]:scale-110 [&>label]:ease-in-out [&>label]:relative [&>label]:bg-black before:[&>label]:absolute before:[&>label]:rounded-full before:[&>label]:aspect-square before:[&>label]:h-full before:[&>label]:top-0 before:[&>label]:left-0 before:[&>label]:bg-white before:[&>label]:border-2 before:[&>label]:border-black before:[&>label]:transition-all before:[&>label]:duration-500 peer-checked:[&>label]:bg-amber-600 peer-checked:before:[&>label]:border-amber-600 peer-checked:before:[&>label]:translate-x-full">
+      <label for="theme" class="switch"></label>
+    </div>
+
+    <div
+      class="w-full max-w-lg [perspective:1000px;] [&>div]:[transform-style:preserve-3d;] [&>div]:duration-1000 [&_section]:[-webkit-backface-visibility:hidden;] [&_section]:[backface-visibility:hidden;] [&_section]:[grid-area:stack] last:[&_section]:[transform:rotateY(180deg);] peer-checked:[&>div]:[transform:rotateY(180deg)] peer-checked:[&_#svg-2]:translate-x-0 peer-checked:[&_#btn-1]:translate-y-96 peer-checked:[&_#btn-1]:!opacity-0 peer-checked:[&_#btn-2]:translate-y-0 peer-checked:[&_#btn-2]:opacity-100 Xpeer-checked:[&_#theme-original_button]:hidden Xpeer-checked:[&_#theme-original_button]:hidden Xpeer-checked:[&_#theme-original_input]:hidden Xpeer-checked:[&_#theme-original_textarea]:hidden">
+      <div class="grid [grid-template-areas:'stack']">
+        <!-- based on challenge image -->
+        <section
+          id="theme-original"
+          class="font-poppins bg-white text-[#181028] p-8 sm:p-20 space-y-6 [box-shadow:0rem_0rem_black] transition-all duration-300 ease-in-out hover:[box-shadow:.5rem_.5rem_black] border border-black/30">
+          <h1 class="font-merriweather text-2xl">Give feedback</h1>
+
+          <p class="sm:pr-20">
+            Your thoughts are valuable in helping improve our products
+          </p>
+
+          <textarea
+            id="message"
+            placeholder="Let us know what's on your mind"
+            class="w-full h-32 p-4 border border-slate-200 rounded outline-none ring-0 focus-visible:border-rose-500 transition-all duration-300"></textarea>
+
+          <ul
+            class="my-6 space-y-6 [&_label]:flex [&_label]:items-center [&_label]:gap-4 [&_label]:cursor-pointer [&_label]:transtion-all [&_label]:duration-300 [&_label>div]:grid [&_label>div]:[grid-template-areas:'stack'] [&_label>div>span]:[grid-area:stack] [&_label>div>span]:text-3xl [&_label]:text-black/70 last:[&_label>div>span]: last:[&_label>div>span]:scale-0 [&_label>div>span]:transition-all [&_label>div>span]:duration-300 [&_p]:text-sm hover:[&_label]:text-rose-500 first:[&_input:checked~label>div>span]:scale-0 last:[&_input:checked~label>div>span]:scale-100 [&_input:checked~label]:textblack">
+            <li>
+              <input type="checkbox" id="option-1" class="peer sr-only" />
+              <label for="option-1">
+                <div>
+                  <span class="material-symbols-outlined"
+                    >check_box_outline_blank</span
+                  >
+                  <span class="material-symbols-outlined material-fill-1"
+                    >check_box</span
+                  >
+                </div>
+                <p>
+                  I may be contacted dabout this feedback. See our
+                  <a href="javascript:void()">pricacy policy</a>
+                </p>
+              </label>
+            </li>
+            <li>
+              <input type="checkbox" id="option-2" class="peer sr-only" />
+              <label for="option-2">
+                <div>
+                  <span class="material-symbols-outlined"
+                    >check_box_outline_blank</span
+                  >
+                  <span class="material-symbols-outlined material-fill-1"
+                    >check_box</span
+                  >
+                </div>
+                <p>
+                  I'd like to help imporve the products by joing the
+                  <a href="javascript:void();">Research Group</a>
+                </p>
+              </label>
+            </li>
+          </ul>
+
+          <button
+            type="button"
+            class="group bg-black py-3 px-6 w-full text-white relative isolate flex items-center justify-center gap-2 outline-none border-none ring-0 before:absolute before:inset-[0_100%_0_0] before:bg-rose-500 before:-z-10 before:transition-all before:duration-300 before:ease-in-out hover:before:inset-0 focus-visible:before:inset-0 before:">
+            Send feedback
+            <span
+              class="material-symbols-outlined transition-all duration-300 delay-100 origin-left scale-x-0 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+              >send</span
+            >
+          </button>
+        </section>
+
+        <!-- beano inspired design -->
+        <section
+          class="font-comic bg-white text-[#181028] space-y-6 w-full max-w-lg border-4 border-black relative [box-shadow:0.125rem_0.125rem,0_0.125vmin;]">
+          <h1
+            class="absolute -top-1 -left-1 text-[clamp(0.9rem,2.5vw,1.4rem)] uppercase bg-amber-200 py-3 px-8 italic w-fit border-4 border-black">
+            Drop some feedback bombs...
+          </h1>
+          <p
+            class="absolute top-6 left-8 bg-rose-200 Xrounded-xl w-[85%] py-4 px-6 italic border-4 border-black">
+            "Blimey! We reckon your noggin's got some cracking ideas to make our
+            stuff even more top-notch!"
+          </p>
+
+          <div
+            class="pt-32 max-[400px]:pt-[11rem] sm:pt-32 pb-16 px-6 sm:px-12 grid grid-cols-[0.5fr_1fr]">
+            <div class="relative col-span-2 mx-auto sm:mx-0 sm:-right-24">
+              <div
+                class="font-comic h-48 w-full max-w-80 sm:max-w-96 py-12 px-12 border-4 border-black rounded-[100%] bg-amber-50 hover:bg-amber-100 focus-within:bg-amber-100 [box-shadow:0_-0.25vmin,0_0.125vmin;] transtion-all duration-300 before:absolute before:block before:-bottom-10 before:w-32 before:h-32 before:rounded-full before:transition-all before:duration-300 max-[400px]:before:left-4 before:-left-8 before:[box-shadow:0.5vmin_0,2vmin_-0.5vmin_#FFFBEB,2vmin_-0.5vmin_0_0.5vmin;] hover:before:[box-shadow:0.5vmin_0,2vmin_-0.5vmin_#FEF3C7,2vmin_-0.5vmin_0_0.5vmin;] focus-within:before:[box-shadow:0.5vmin_0,2vmin_-0.5vmin_#FEF3C7,2vmin_-0.5vmin_0_0.5vmin;] before:[clip-path:polygon(0%_49%,150%_48%,150%_100%,0%_100%);]">
+                <textarea
+                  id="message"
+                  placeholder="Spill the beans on what's cookin' in that noggin of yours, mate!"
+                  class="w-full h-full resize-none bg-transparent border-none outline-none ring-0 transition-all duration-300"></textarea>
+              </div>
+            </div>
+
+            <ul
+              class="col-start-2 max-[400px]:mt-6 max-[400px]:pl-10 mt-20 space-y-4 [&_label]:flex max-[400px]:[&_label]:flex-col [&_label]:items-start [&_label]:gap-2 [&_label]:cursor-pointer [&_label]:transtion-all [&_label]:duration-300 [&_label>div]:grid [&_label>div]:[grid-template-areas:'stack'] [&_label>div>span]:[grid-area:stack] [&_label>div>span]:text-3xl [&_label]:text-black/70 last:[&_label>div>span]: last:[&_label>div>span]:scale-0 [&_label>div>span]:transition-all [&_label>div>span]:duration-300 [&_p]:text-sm hover:[&_label]:text-rose-500 first:[&_input:checked~label>div>span]:scale-0 last:[&_input:checked~label>div>span]:scale-100 [&_input:checked~label]:textblack">
+              <li>
+                <input type="checkbox" id="option-3" class="peer sr-only" />
+                <label for="option-3">
+                  <div>
+                    <span class="material-symbols-outlined"
+                      >check_box_outline_blank</span
+                    >
+                    <span class="material-symbols-outlined material-fill-1"
+                      >check_box</span
+                    >
+                  </div>
+                  <p>
+                    Give us a shout, we might drop you a line about your
+                    feedback. Check out our super-secret
+                    <a href="javascript:void()">privacy policy</a>
+                  </p>
+                </label>
+              </li>
+              <li>
+                <input type="checkbox" id="option-4" class="peer sr-only" />
+                <label for="option-4">
+                  <div>
+                    <span class="material-symbols-outlined"
+                      >check_box_outline_blank</span
+                    >
+                    <span class="material-symbols-outlined material-fill-1"
+                      >check_box</span
+                    >
+                  </div>
+                  <p>
+                    I'm up for makin' things even more awesome! Count me in for
+                    the <a href="javascript:void();">Research Group</a>
+                  </p>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            class="absolute z-20 -bottom-4 right-6 group bg-white border-4 border-black py-3 px-3 sm:px-6 w-fit isolate font-bold transition-all duration-300 hover:text-white focus-visible:text-white outline-none ring-0 before:absolute before:inset-[100%_0_0_0] before:bg-red-600 before:-z-10 before:transition-all before:duration-300 before:ease-in-out hover:before:inset-0 focus-visible:before:inset-0">
+            Share your thoughts
+            <span class="hidden sm:inline-block">– let 'em rip!</span>
+          </button>
+
+          <img
+            src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/beano-3.png"
+            class="[transform:scaleX(-1)] w-56 sm:w-72 absolute bottom-0 -left-8 sm:-left-12 pointer-events-none" />
+        </section>
+      </div>
+    </div>
+
+    <!-- bg masks -->
+    <div
+      class="fixed -z-10 inset-0 bg-[url(https://i.pinimg.com/736x/b8/0c/56/b80c56843e78549cd5d2be4fa169412b.jpg)] bg-cover bg-center bg-no-repeat opacity-0 delay-300 -z-10 transition duration-500 peer-checked:opacity-100"></div>
+  </body>
+</html>
