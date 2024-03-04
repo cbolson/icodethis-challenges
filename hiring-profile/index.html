@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiring Profile</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <!-- https://icodethis.com/submissions/71907 -->
+    <body class="bg-gradient-to-r from-sky-900 to-cyan-600 text-sky-900 flex justify-center items-center min-h-screen p-8
+        before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-wedding.jpeg)]
+        before:inset-0
+        before:w-full
+        before:h-full
+        before:fixed
+        before:opacity-[5%]
+        before:bg-cover
+        before:bg-center
+        before:-z-10
+        before:bg-no-repeat
+    ">
+        <div id="wrapper" class="group  shadow-lg w-full max-w-sm relative border border-sky-400/20 ring-8 ring-black/5 
+            [&_button]:border-none
+            [&_button]:outline-none
+            [&_button]:ring-0
+            [&_button]:
+        ">
+
+            <header class="h-40 p-8 overflow-hidden relative isolate 
+                before:bg-[url(https://images.pexels.com/photos/6310660/pexels-photo-6310660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)]
+                before:absolute
+                before:inset-0
+                before:opacity-100
+                before:bg-cover
+                before:bg-center
+                before:-z-10
+                before:scale-150
+                before:transition-all
+                before:duration-[5000ms]
+                group-hover:before:scale-100
+                
+                [&>button]:absolute
+                [&>button]:top-4
+                [&>button]:left-4
+                [&>button]:text-white
+                [&>button]:isolate
+                [&>button]:border-none
+                [&>button]:outline-none 
+                [&>button]:ring-0
+                 [&>button]:p-2
+
+                [&>label]:cursor-pointer
+                [&>label]:absolute
+                [&>label]:top-4
+                [&>label]:right-4
+                [&>label]:text-white
+                [&>label]:isolate
+                [&>label]:border-none
+                [&>label]:outline-none 
+                [&>label]:ring-0
+                [&>label]:p-2
+                
+               
+                before:[&>button]:transition-all
+                before:[&>button]:duration-300
+                before:[&>button]:rounded
+                before:[&>button]:absolute
+                before:[&>button]:inset-0
+                before:[&>button]:bg-sky-700
+                before:[&>button]:opacity-50
+                before:[&>button]:-z-10
+                hover:before:[&>button]:opacity-100
+                focus-within:before:[&>button]:opacity-100
+
+                before:[&>label]:transition-all
+                before:[&>label]:duration-300
+                before:[&>label]:rounded
+                before:[&>label]:absolute
+                before:[&>label]:inset-0
+                before:[&>label]:bg-sky-700
+                before:[&>label]:opacity-50
+                before:[&>label]:-z-10
+                hover:before:[&>label]:opacity-100
+                focus-within:before:[&>label]:opacity-100
+
+                [&_input:checked~label]:text-black
+                
+            
+            ">
+                <input type="checkbox" id="fav" class="sr-only peer/fav">
+                <h1 class="text-center font-mediumbold text-2xl tracking-wider text-white">Jon B. Elliot</h1>
+                <button type="button" class="material-symbols-outlined">arrow_left_alt</button>
+                <label for="fav" class="material-symbols-outlined  material-fill-1">star</label>
+            </header>
+            
+            <section class="bg-sky-100 backdrop-blur-sm relative pt-20 pb-8 px-4 sm:px-8 border-b border-sky-400/20">
+                <img src="https://i.pravatar.cc/150?img=67" alt="Jon Elliot" class="absolute -top-16  left-2/4 -translate-x-2/4 size-32 object-cover rounded-full border-8 border-sky-300 shadow-lg">
+                <h2 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi consequuntur eaque, recusandae eos fuga, eveniet quam velit consectetur iste saepe magnam sapiente.</h2>
+            </section>
+
+            <section class="bg-white overflow-hidden">
+                <input type="radio" name="panels" id="radio-1" class="sr-only peer/radio-1">
+                <input type="radio" name="panels" id="radio-2" class="sr-only peer/radio-2" checked>
+                <input type="radio" name="panels" id="radio-3" class="sr-only peer/radio-3" >
+
+                <nav style="--items:3" class="flex items-center justify-between overflow-hidden relative isolate 
+                    after:absolute
+                    after:bg-sky-100
+                    after:transition
+                    after:duration-300
+                    after:ease-in-out
+                    after:-z-10
+                    after:h-full
+                    after:w-[calc((100/var(--items))*1%)]
+                    after:translate-x-[-100%]
+                    peer-checked/radio-1:after:translate-x-[0%]
+                    peer-checked/radio-2:after:translate-x-[100%]
+                    peer-checked/radio-3:after:translate-x-[200%]
+                    *:py-3 
+                    *:px-6
+                    *:uppercase
+                    *:whitespace-nowrap 
+                    *:text-sm
+                    *:flex-1        
+                    *:grid
+                    *:place-content-center
+                    *:cursor-pointer
+                    *:transition-all
+                    *:duration-300
+                    *:relative
+                    *:isolate
+                    *:overflow-hidden
+                    hover:*:font-bold
+                ">
+                    <label id="tab-1" for="radio-1">About me</label>
+                    <label id="tab-2" for="radio-2">Skills</label>
+                    <label id="tab-3" for="radio-3">Portfolio</label>
+                </nav>
+                <div class="bg-white backdrop-blur-sm grid [grid-template-areas:'stack'] transition-all duration-500 
+                    *:[grid-area:stack]
+                    X*:-translate-x-full
+                    *:p-8
+                   
+                    *:h-56
+                    *:transition-all
+                    *:duration-500
+                    peer-checked/radio-1:[&_#panel-1]:translate-x-0
+                    peer-checked/radio-1:[&_p:nth-child(2)]:translate-y-0
+                    peer-checked/radio-1:[&_p:nth-child(2)]:delay-[500ms]
+
+                    peer-checked/radio-2:[&_#panel-2]:translate-y-0
+                    peer-checked/radio-2:[&_#progress-1]:w-[60%]
+                    peer-checked/radio-2:[&_#progress-1]:delay-300
+                    peer-checked/radio-2:[&_#progress-2]:w-[83%]
+                    peer-checked/radio-2:[&_#progress-2]:delay-[600ms]
+                    peer-checked/radio-2:[&_#progress-3]:w-[48%]
+                    peer-checked/radio-2:[&_#progress-3]:delay-[900ms]
+
+                    peer-checked/radio-3:[&_#panel-3]:translate-x-0
+                    peer-checked/radio-3:[&_img:nth-of-type(1)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(1)]:delay-[300ms]
+                    peer-checked/radio-3:[&_img:nth-of-type(2)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(2)]:delay-[600ms]
+                    peer-checked/radio-3:[&_img:nth-of-type(3)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(3)]:delay-[900ms]
+                    peer-checked/radio-3:[&_img:nth-of-type(4)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(5)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(6)]:scale-100
+                    peer-checked/radio-3:[&_img:nth-of-type(7)]:scale-100
+                ">
+                    <!-- about me -->
+                    <article id="panel-1" class="-translate-x-full
+                        *:transition-all
+                        *:duration-300
+                        *:
+                        *:
+                    ">
+                        <p class="mb-2">Quo quis, repellendus, beatae voluptatum voluptatem natus consectetur cumque obcaecati rerum voluptates qui nisi vero minima modi quam. Eos molestias alias animi illo qui.</p>
+                        <p class="text-sm translate-y-32">Jon B. Elliot</p>
+
+                    </article>
+
+                    <!-- skills -->
+                    <article id="panel-2" class="translate-y-full space-y-4
+                        *:space-y-2
+                        [&_p]:text-teal-500
+                        [&_p]:
+                        [&_.bar]:rounded-full
+                        [&_.bar]:bg-sky-100
+                        [&_.bar]:
+                        [&_.bar]:
+                        [&_.progress]:rounded-full
+                        [&_.progress]:h-3
+                        [&_.progress]:bg-gradient-to-r
+                        [&_.progress]:from-sky-900
+                        [&_.progress]:to-teal-600
+                        [&_.progress]:transition-all
+                        [&_.progress]:duration-300
+                        [&_.progress]:w-[0%]
+                    ">
+                        <div>
+                            <p>Advertising</p>
+                            <div class="bar ">
+                                <div id="progress-1" class="progress "></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>Wedding</p>
+                            <div class="bar ">
+                                <div id="progress-2"  class="progress"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>Fashion</p>
+                            <div class="bar ">
+                                <div id="progress-3"  class="progress"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- portfolio -->
+                    <article id="panel-3" class="translate-x-full overflow-y-auto">
+                        <div class="w-fit flex grid-flow-col auto-rows-auto gap-2
+                            *:size-36
+                            *:object-cover
+                            *:transition-all
+                            *:duration-300
+                            *:scale-0
+                            *:grayscale
+                            hover:*:grayscale-0
+                        ">
+                            <img src="https://picsum.photos/id/27/300/300">
+                            <img src="https://picsum.photos/id/21/300/300">
+                            <img src="https://picsum.photos/id/34/300/300">
+                            <img src="https://picsum.photos/id/59/300/300">
+                            <img src="https://picsum.photos/id/64/300/300">
+                            <img src="https://picsum.photos/id/85/300/300">
+                            <img src="https://picsum.photos/id/129/300/300">
+                        
+                    </article>
+                </div>
+
+            </section>
+            <button type="button" class="p-4 w-full uppercase text-white bg-gradient-to-r from-teal-500 to-teal-400 text-lg 
+                *:transition-all
+                *:duration-300
+                *:block
+                hover:*:scale-150
+                focus-visible:*:scale-150
+            "><span>Hire Me<span></button>
+        </div>
+    </body>
+</html>
