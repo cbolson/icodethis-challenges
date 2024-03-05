@@ -1,0 +1,22 @@
+.material-fill-1 {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+#bg-mask {
+  background: rgb(4, 61, 99);
+  background: linear-gradient(
+    129deg,
+    rgba(4, 61, 99, 1) 0%,
+    rgba(109, 181, 212, 1) 14%,
+    rgba(212, 109, 109, 1) 28%,
+    rgba(149, 109, 212, 1) 42%,
+    rgba(212, 167, 109, 1) 56%,
+    rgba(209, 212, 109, 1) 70%,
+    rgba(109, 212, 139, 1) 74%,
+    rgba(109, 153, 212, 1) 100%
+  );
+  background-size: 1000%;
+
+  /*background-position:15%;
+   background-position: var(--bg-pos,0%);*/
+}
