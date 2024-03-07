@@ -1,0 +1,30 @@
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: movie 120s linear infinite;
+  }
+}
+@keyframes movie {
+  0%,
+  100% {
+    scale: 1.5;
+    transform: translateX(0);
+  }
+  30% {
+    transform: translate(100px, 100px);
+  }
+  60% {
+    transform: translate(40px, 150px);
+  }
+  80% {
+    transform: translateX(-100px, -50px);
+  }
+}
+/*
+#section-2:has(#signin-google:focus-within) #panel-2{ 
+    transform: translateY(0)
+
+}
+#section-2:has(#signin-google:focus-within) #panel-1{
+    transform: translateY(-800px);
+}
+*/
