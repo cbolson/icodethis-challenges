@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Map</title>
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=delicious-handrawn:400|gochi-hand:400"
+      rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js" defer></script>
+  </head>
+  <body
+    class="font-hand bg-teal-700 text-xl tracking-wider flex justify-center items-center min-h-screen p-4 before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-blackboard.webp)] before:inset-0 before:fixed before:opacity-50 before:bg-cover before:bg-center before:bg-no-repeat before:-z-10">
+    <main
+      id="mindmap"
+      class="relative w-full max-w-2xl h-96 [&_.item]:rounded-2xl [&_.item]:border-b-2 [&_.item]:absolute [&_.item]:w-fit [&_.item]:text-center [&_.item]:whitespace-nowrap [&_.item]:py-2 [&_.item]:px-4 [&_.item]:z-10 [&_.item]:transition-all [&_.item]:duration-300 [&_.item]:ease-in-out [&_.item]:shadow-lg">
+      <div
+        scale-up
+        class="[--order:1] item bg-white !rounded-2xl !py-4 !px-6 top-2/4 -translate-y-2/4 left-2/4 -translate-x-2/4 !border-none"
+        data-clr="#F59E0B">
+        <p class="font-bold [--order:1]">
+          Online Mind Mapping
+          <br />- benefits -
+        </p>
+        <div
+          scale-up
+          data-clr="#F59E0B"
+          class="[--order:2] item bg-amber-100 border-amber-500 max-[600px]:-top-40 max-[600px]:-left-0 -top-40 -left-32">
+          <p>Intuative</p>
+          <div
+            scale-up
+            data-clr="#F59E0B"
+            class="[--order:2] item bg-amber-100 border-amber-500 max-[600px]:-top-16 max-[600px]:left-20 -top-16 left-32">
+            <p>Flexible</p>
+          </div>
+        </div>
+        <div
+          scale-up
+          data-clr="#EF4444"
+          class="[--order:3] item bg-red-100 border-red-500 max-[600px]:top-32 max-[600px]:left-12 top-32 -left-56">
+          <p>Memory & Retention</p>
+        </div>
+        <div
+          scale-up
+          data-clr="#22C55E"
+          class="[--order:4] item bg-green-100 border-green-500 max-[600px]:-top-20 max-[600px]:right-0 -top-28 -right-20">
+          <p>Colaboration</p>
+        </div>
+        <div
+          scale-up
+          data-clr="#3B82F6"
+          class="[--order:5] item bg-blue-100 border-blue-500 max-[600px]:top-72 max-[600px]:left-0 top-32 -right-20">
+          <p>Focus</p>
+          <div
+            scale-up
+            data-clr="#3B82F6"
+            class="[--order:6] item bg-blue-100 border-blue-500 max-[600px]:-top-16 max-[600px]:left-20 -top-32 left-32">
+            <p>Free of clutter</p>
+          </div>
+          <div
+            scale-up
+            data-clr="#3B82F6"
+            class="[--order:7] item bg-blue-100 border-blue-500 max-[600px]:top-32 max-[600px]:-left-6 top-0 left-36">
+            <p>Overview of the project</p>
+          </div>
+          <div
+            scale-up
+            data-clr="#3B82F6"
+            class="[--order:8] item bg-blue-100 border-blue-500 max-[600px]:top-16 max-[600px]:left-16 top-20 -left-20">
+            <p>Free flow of ideas</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <svg id="svg-lines" class="absolute inset-0 w-full h-full"></svg>
+  </body>
+</html>

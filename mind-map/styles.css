@@ -1,0 +1,71 @@
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --d: 0;
+    --ani-speed: 300ms;
+  }
+
+  [slide-in-left] {
+    translate: -400px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-in-right] {
+    translate: 400px 0;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-down] {
+    translate: 0 -100px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [slide-up] {
+    translate: 0 100px;
+    animation: slide-in var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-up] {
+    scale: 0;
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-from-top] {
+    transform-origin: top;
+    scale: 1 0;
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+
+  [scale-from-center] {
+    transform-origin: center center;
+    scale: 1 0;
+
+    animation: scale-up var(--ani-speed) forwards;
+    animation-delay: calc(var(--order, 0ms) * var(--ani-speed));
+  }
+}
+
+@keyframes slide-in {
+  to {
+    translate: 0;
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    scale: 0;
+  }
+
+  60% {
+    scale: 1.15;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
