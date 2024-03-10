@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Missed Call</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <!--https://icodethis.com/submissions/72808-->
+    
+    <body class="bg-gradient-to-t from-violet-400 via-rose-200 to-violet-200 flex justify-center items-center min-h-screen">
+
+         <div id="device" class=" bg-zinc-100  h-[600px]  rounded-[2.5rem]  w-full max-w-xs relative  isolate text-black border-8 border-black outline outline-white/50 outline-1 shadow-xl ring-2 ring-black/5 
+            before:bg-[url(https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/bg-iphone-birds.webp)]
+            before:inset-0
+            before:absolute
+            before:opacity-50
+            before:bg-cover
+            before:bg-center
+            before:bg-no-repeat
+            before:-z-10 
+            before:rounded-[2rem]
+         ">
+            <!-- side buttons (to improve) -->
+            <div class="absolute h-12 w-1 bg-zinc-900 -left-3 top-24 rounded-l-md border-r border-white/30"></div>
+            <div class="absolute h-12 w-1 bg-zinc-900 -left-3 top-40 rounded-l-md border-r border-white/30"></div>
+            <div class="absolute h-20 w-1 bg-zinc-900 -right-3 top-28 rounded-r-md border-l border-white/30"></div>
+            
+            <!-- top icons -->
+            <header class="grid grid-cols-3 gap-1 items-center text-xs py-2 px-3">
+                <div class="flex items-center gap-1">12:37 pm</div>
+                <div class="mx-auto relative rounded-full bg-black py-2 w-24 px-3 flex items-center">
+                    <div class="lens bg-[#080928] shadow-inner shadow-indigo-600  ml-auto size-3 rounded-full"></div>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined ml-auto text-base">bluetooth</span>
+                    <span class="material-symbols-outlined text-base">signal_cellular_alt</span>
+                    <span class="material-symbols-outlined text-base">wifi</span>
+                    <span class="material-symbols-outlined rotate-180  text-base">battery_horiz_075</span>
+                </div>
+            </header>
+
+
+
+            <!-- content -->
+            <main class="mx-4 sm:mx-8 rounded-xl overflow-hidden">
+
+                <input type="checkbox" id="radio-1" class="sr-only peer">
+
+
+                <div class="relative isolate text-black overflow-hidden transition-all duration-1000
+                    peer-checked:w-full
+                    peer-checked:[&_#panel-1]:[grid-template-rows:1fr]
+                    peer-checked:[&_#panel-1]:delay-0
+                    peer-checked:[&_#icon-phone]:animate-none
+                    peer-checked:[&_#panel-1_button]:translate-x-0
+                    peer-checked:[&_#panel-1_button]:delay-300
+                    peer-checked:[&_#btn-close]:translate-x-0
+                    peer-checked:[&_#btn-close]:delay-700
+                ">
+                    
+                        
+                    <label for="radio-1" class="flex items-center justify-center gap-4 rounded-3xl bg-black text-white py-2 px-4 mt-4 transition-all duration-300 hover:bg-zinc-800 cursor-pointer">
+                        <span id="icon-phone" class="material-symbols-outlined text-red-500 text-3xl animate-pulse">phone_callback</span>
+                        <p class="font-semibold tracking-wider whitespace-nowrap group-hover:">Missed Call</p>
+                        <span id="btn-close" class="ml-auto translate-x-32  material-symbols-outlined  transition-all duration-300 text-base">close</span>
+                    </label>
+
+                    <section id="panel-1" class="grid [grid-template-rows:0fr] transition-all duration-500 ">
+                        <div class="overflow-hidden">
+
+                            <div class="bg-white rounded-3xl p-4 mt-4 space-y-4">
+                                <div class="flex flex-row items-center gap-4">
+                                    <div class="size-14 border-4 border-slate-200 rounded-full overflow-hidden">
+                                        <img src="https://i.pravatar.cc/150?img=52" alt="Frederick" class="rounded-full size-full">
+                                    </div>
+                                    <div>
+                                        <p class="text-xs">Missed a call from</p>
+                                        <p class="font-medium">Frederick Floyd</p>
+                                        <time class="text-xs opacity-70">09:17 10 Mar, 2024</time>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-4 px-2
+                                    *:flex
+                                    *:items-center
+                                    *:justify-center
+                                    *:gap-2
+                                    *:whitespace-nowrap
+                                    *:text-2xl
+                                    *:text-white
+                                    *:py-2
+                                    *:px-3
+                                    *:w-full
+                                    *:border
+                                    *:rounded-xl
+                                    *:relative
+                                    *:isolate
+                                    *:transition-all
+                                    *:duration-500
+                                    *:ease-in-out
+                                    *:outline-none
+                                    *:ring-0
+                
+                                    after:*:absolute
+                                    after:*:inset-0
+                                    after:*:rounded-xl
+                                    after:*:-z-10
+                                    after:*:transition-all
+                                    after:*:duration-300
+                                    hover:after:*:scale-110
+                                    focus-visible:after:*:scale-110
+                                ">
+                                    <button type="button" class="after:bg-sky-400 hover:after:bg-sky-500 -translate-x-72 material-symbols-outlined">mode_comment</button>
+                                    <button type="button" class="after:bg-green-500 hover:after:bg-green-600 translate-x-72 material-symbols-outlined">call</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+            </main>
+            <div class="absolute bottom-4 left-2/4 -translate-x-2/4 bg-slate-100 rounded-full mt-1 h-1 w-28 mx-auto"></div>
+    
+        </div>    
+    </body>
+</html>
